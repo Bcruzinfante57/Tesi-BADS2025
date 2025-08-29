@@ -102,12 +102,12 @@ if __name__ == '__main__':
     #scrape_brand_eyewear("MiuMiu")
 
     #OPTION 2: Only YSL 
-    #print("\nScraping YSL...")
-    #scrape_brand_eyewear("ysl")
+    print("\nScraping YSL...")
+    scrape_brand_eyewear("ysl")
 
     # OPTION 4: Only Gucci
-    print("\nScraping Gucci...")
-    scrape_brand_eyewear("Gucci")
+    #print("\nScraping Gucci...")
+    #scrape_brand_eyewear("Gucci")
      
     # OPTION 5: Only Louis Vuitton
     #print("\nScraping Louis Vuitton...")
