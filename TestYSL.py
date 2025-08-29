@@ -21,6 +21,7 @@ driver.maximize_window()
 
 time.sleep(3)
 
+## Accept Cookies
 try:
         cookie_btn = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, "//*[normalize-space(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')) = 'accetta tutti i cookie']"))
