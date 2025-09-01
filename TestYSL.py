@@ -13,8 +13,7 @@ import pyautogui
 
 ##This one depends on the chromedriver path in your PC
 
-driver_path = "chromedriver" # Asegúrate de que el archivo chromedriver está en la misma carpeta
-service = Service(driver_path)
+service = Service("/Users/benja/tools/chromedriver")
 driver = webdriver.Chrome(service=service)
 
 url = "https://www.ysl.com/it-it/search?q=occhiali%20da%20sole"
@@ -46,28 +45,37 @@ time.sleep(5) # Espera a que el botón se cargue
 print("Buscando y simulando clic de mouse en el botón 'Vedi tutto'...")
 total_products_count = None
 try:
+    # 1. Usar locateOnScreen para encontrar la imagen del botón.
+    # El archivo 'Vedi.jpg' debe estar en la misma carpeta que el script.
+    button_location = pyautogui.locateOnScreen("Vedi.jpg")
+    
+    if button_location is not None:
+        # 2. Si se encuentra, calcula el centro de la ubicación.
+        button_center = pyautogui.center(button_location)
         
-        # Mover el cursor a las coordenadas fijas
-        pyautogui.moveTo(860, 330, duration=1.5) 
-        time.sleep(1)
+        # 3. Mueve el cursor al centro del botón y haz clic.
+        pyautogui.moveTo(button_center, duration=1.5)
+        time.sleep(1) # Espera para asegurar que el mouse esté en la posición
         pyautogui.click(duration=0.2)
-        pyautogui.click()
         
-        
-        print("Botón 'Vedi tutto' clicado con PyAutoGUI. Cargando todos los productos.")
+        print("Botón 'Vedi' clicado con PyAutoGUI.")
         time.sleep(5)
         
+    else:
+        print("No se pudo encontrar el botón 'Vedi' en la pantalla.")
 
-        vedi_tutto_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, "//*[contains(normalize-space(), 'Vedi tutto')]"))
-        )
-        total_products_text = vedi_tutto_button.text
-        match = re.search(r'\((\d+)\)', total_products_text)
-        if match:
-            total_products_count = int(match.group(1))
+    
+    # 4. Continúa el proceso de Selenium para obtener la cuenta de productos.
+    vedi_tutto_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//*[contains(normalize-space(), 'Vedi tutto')]"))
+    )
+    total_products_text = vedi_tutto_button.text
+    match = re.search(r'\((\d+)\)', total_products_text)
+    if match:
+        total_products_count = int(match.group(1))
 
-except (TimeoutException, NoSuchElementException, ElementNotInteractableException):
-        print("Botón 'Vedi tutto' no encontrado. Asumiendo que todos los productos ya están cargados.")
+except pyautogui.PyAutoGUIException as e:
+    print(f"Error de PyAutoGUI: {e}")
 
 
  # **6. Desplazamiento final para cargar todos los productos**
