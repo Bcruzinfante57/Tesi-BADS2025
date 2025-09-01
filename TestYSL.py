@@ -1,4 +1,4 @@
-import undetected_chromedriver as uc
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -9,10 +9,13 @@ import time
 import os
 import requests
 import re   
+import pyautogui
 
 ##This one depends on the chromedriver path in your PC
 
-driver = uc.Chrome()
+driver_path = "chromedriver" # Asegúrate de que el archivo chromedriver está en la misma carpeta
+service = Service(driver_path)
+driver = webdriver.Chrome(service=service)
 
 url = "https://www.ysl.com/it-it/search?q=occhiali%20da%20sole"
 
@@ -38,28 +41,34 @@ print("Desplazándose hacia abajo para revelar el botón 'Vedi tutto'...")
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 time.sleep(5) # Espera a que el botón se cargue
 
-    # **5. Encontrar y hacer clic en el botón 'Vedi tutto'**
-print("Buscando y haciendo clic en el botón 'Vedi tutto'...")
 
+# 5. Encontrar el botón y simular el clic de un mouse
+print("Buscando y simulando clic de mouse en el botón 'Vedi tutto'...")
 total_products_count = None
 try:
+        
+        # Mover el cursor a las coordenadas fijas
+        pyautogui.moveTo(860, 330, duration=1.5) 
+        time.sleep(1)
+        pyautogui.click(duration=0.2)
+        pyautogui.click()
+        
+        
+        print("Botón 'Vedi tutto' clicado con PyAutoGUI. Cargando todos los productos.")
+        time.sleep(5)
+        
+
         vedi_tutto_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//*[contains(normalize-space(), 'Vedi tutto')]"))
         )
-        vedi_tutto_button.click()
-        print("Botón 'Vedi tutto' clicado. Cargando todos los productos.")
-        time.sleep(5) # Espera a que los productos se carguen
         total_products_text = vedi_tutto_button.text
         match = re.search(r'\((\d+)\)', total_products_text)
         if match:
             total_products_count = int(match.group(1))
-        
-        driver.execute_script("arguments[0].click();", vedi_tutto_button)
-        print("Botón 'Vedi tutto' clicado. Cargando todos los productos.")
-        time.sleep(5)
 
 except (TimeoutException, NoSuchElementException, ElementNotInteractableException):
-        print("Botón 'Vedi tutto' no encontrado o no es clicable. Asumiendo que todos los productos ya están cargados.")
+        print("Botón 'Vedi tutto' no encontrado. Asumiendo que todos los productos ya están cargados.")
+
 
  # **6. Desplazamiento final para cargar todos los productos**
 if total_products_count:
