@@ -34,17 +34,32 @@ except (TimeoutException, NoSuchElementException):
 
 time.sleep(3)
 
-# Desplazamiento final para cargar todos los productos
+# Desplazamiento en pasos para simular un humano
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight * 0.4);")
+print("Desplazando 60%...")
+time.sleep(5)
+
 print("Iniciando desplazamiento para asegurar que todos los productos se carguen.")
+time.sleep(2) # Espera inicial
+
+# Bucle principal para el desplazamiento
+last_height = driver.execute_script("return document.body.scrollHeight* 0.6")
 products_count = 0
-last_height = driver.execute_script("return document.body.scrollHeight")
 
 while True:
-    # Desplazarse hasta el final de la página
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(3) # Esperar a que se carguen los nuevos productos
+    # Short Scroll
+    driver.execute_script("window.scrollBy(0, window.innerHeight * 0.8);")
+    time.sleep(3)
 
-    # Verificar si el número de productos ya no aumenta
+    # Short Scroll
+    driver.execute_script("window.scrollBy(0, window.innerHeight * 0.8);")
+    time.sleep(3)
+
+    # Short Scroll
+    driver.execute_script("window.scrollBy(0, window.innerHeight * 0.8);")
+    time.sleep(3)
+
+    # Obtener el número actual de productos en la página usando selectores combinados
     current_products = driver.find_elements(By.CSS_SELECTOR, "article.c-product")
     new_products_count = len(current_products)
 
@@ -55,7 +70,6 @@ while True:
         print(f"Productos cargados: {new_products_count}")
         products_count = new_products_count
 
-    # Verificar si la altura de la página ha cambiado
     new_height = driver.execute_script("return document.body.scrollHeight")
     if new_height == last_height:
         print("La altura de la página ya no cambia. Todos los productos visibles.")
@@ -64,41 +78,74 @@ while True:
     last_height = new_height
 
 print("Desplazamiento finalizado. Todos los productos visibles.")
-
 time.sleep(10)
 
-# --- RECOLECCIÓN DE IMÁGENES ---
+# --- RECOLECCIÓN DE IMÁGENES (solo la foto del anteojo en la slide ACTIVA) ---
 print("Collecting image URLs...")
 products_to_download = {}
+seen = set()
 
-try:
-    # Encontrar todos los contenedores de productos usando la clase c-product
-    grid_items = driver.find_elements(By.CSS_SELECTOR, "article.c-product")
-    print(f"Número de contenedores de productos encontrados: {len(grid_items)}")
-    
-    for item in grid_items:
-        try:
-            img = item.find_element(By.TAG_NAME, "img")
-            
-            srcset = img.get_attribute("srcset")
-            if srcset:
-                urls = srcset.split(', ')
-                img_url = urls[-1].split(' ')[0]
-            else:
-                img_url = img.get_attribute("src")
+# 1) Cards de producto
+cards = driver.find_elements(By.CSS_SELECTOR, "article.c-product[data-pid]")
+print(f"Número de cards de productos: {len(cards)}")
 
-            code_match = re.search(r'dam.kering.com/(\S+)\?', img_url)
-            if img_url and "kering.com" in img_url and code_match:
-                product_code = code_match.group(1).split('/')[-1].replace('.A.jpg', '')
-                products_to_download[product_code] = img_url
-        except NoSuchElementException:
+for card in cards:
+    try:
+        pid = card.get_attribute("data-pid")
+        if not pid or pid in seen:
             continue
 
-except Exception as e:
-    print(f"Error localizando productos: {e}")
+        # 2) Dentro de cada card: slide activa del carrusel
+        active_img_selector = (
+            "ul.c-product__carousel "
+            "li.c-product__carousel--slide.swiper-slide-active "
+            "img.c-product__image"
+        )
+
+        # Pequeño retry por si el carrusel tarda en pintar
+        img = None
+        for _ in range(6):
+            try:
+                img = card.find_element(By.CSS_SELECTOR, active_img_selector)
+                break
+            except NoSuchElementException:
+                time.sleep(0.5)
+
+        # Fallback: si no encuentra la activa, toma la primera slide
+        if img is None:
+            try:
+                img = card.find_element(
+                    By.CSS_SELECTOR,
+                    "ul.c-product__carousel li.c-product__carousel--slide img.c-product__image"
+                )
+            except NoSuchElementException:
+                continue
+
+        # 3) Tomar la URL de mejor calidad del srcset
+        srcset = img.get_attribute("srcset") or ""
+        if srcset:
+            parts = [p.strip() for p in srcset.split(",")]
+            def width_of(p):
+                toks = p.split()
+                if len(toks) >= 2 and toks[1].endswith("w"):
+                    try:
+                        return int(toks[1][:-1])
+                    except:
+                        return 0
+                return 0
+            best = max(parts, key=width_of)          # la de mayor ancho (ej. Large 1367w)
+            url = best.split()[0]
+        else:
+            url = img.get_attribute("src")
+
+        if url:
+            products_to_download[pid] = url
+            seen.add(pid)
+
+    except Exception:
+        continue
 
 print(f"Total product image URLs found: {len(products_to_download)}")
-
 # --- DESCARGA ---
 image_folder = "imagenes_bottega"
 os.makedirs(image_folder, exist_ok=True)
