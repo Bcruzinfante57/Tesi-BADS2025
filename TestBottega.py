@@ -34,7 +34,7 @@ except (TimeoutException, NoSuchElementException):
 
 time.sleep(3)
 
-# Desplazamiento en pasos para simular un humano
+# Scrolling to simulate a human
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight * 0.4);")
 print("Desplazando 60%...")
 time.sleep(5)
@@ -42,7 +42,7 @@ time.sleep(5)
 print("Iniciando desplazamiento para asegurar que todos los productos se carguen.")
 time.sleep(2) # Espera inicial
 
-# Bucle principal para el desplazamiento
+# Main loop for scrolling
 last_height = driver.execute_script("return document.body.scrollHeight* 0.6")
 products_count = 0
 
@@ -59,7 +59,7 @@ while True:
     driver.execute_script("window.scrollBy(0, window.innerHeight * 0.8);")
     time.sleep(3)
 
-    # Obtener el número actual de productos en la página usando selectores combinados
+    # Get the current number of products on the page using combo selectors
     current_products = driver.find_elements(By.CSS_SELECTOR, "article.c-product")
     new_products_count = len(current_products)
 
@@ -80,12 +80,11 @@ while True:
 print("Desplazamiento finalizado. Todos los productos visibles.")
 time.sleep(10)
 
-# --- RECOLECCIÓN DE IMÁGENES (solo la foto del anteojo en la slide ACTIVA) ---
-print("Collecting image URLs...")
+# --- IMAGE COLLECTION (only the photo of the eyeglass on the ACTIVE slide) ---print("Collecting image URLs...")
 products_to_download = {}
 seen = set()
 
-# 1) Cards de producto
+# 1) Product cards
 cards = driver.find_elements(By.CSS_SELECTOR, "article.c-product[data-pid]")
 print(f"Número de cards de productos: {len(cards)}")
 
@@ -95,14 +94,14 @@ for card in cards:
         if not pid or pid in seen:
             continue
 
-        # 2) Dentro de cada card: slide activa del carrusel
+# 2) Within each card: active carousel slide
         active_img_selector = (
             "ul.c-product__carousel "
             "li.c-product__carousel--slide.swiper-slide-active "
             "img.c-product__image"
         )
 
-        # Pequeño retry por si el carrusel tarda en pintar
+# Small retry in case the carousel takes a while to paint
         img = None
         for _ in range(6):
             try:
@@ -111,7 +110,7 @@ for card in cards:
             except NoSuchElementException:
                 time.sleep(0.5)
 
-        # Fallback: si no encuentra la activa, toma la primera slide
+# Fallback: if the active one is not found, it takes the first slide
         if img is None:
             try:
                 img = card.find_element(
@@ -121,7 +120,7 @@ for card in cards:
             except NoSuchElementException:
                 continue
 
-        # 3) Tomar la URL de mejor calidad del srcset
+#3) Take the best quality URL from the srcset
         srcset = img.get_attribute("srcset") or ""
         if srcset:
             parts = [p.strip() for p in srcset.split(",")]
@@ -133,7 +132,7 @@ for card in cards:
                     except:
                         return 0
                 return 0
-            best = max(parts, key=width_of)          # la de mayor ancho (ej. Large 1367w)
+            best = max(parts, key=width_of)          #larger width
             url = best.split()[0]
         else:
             url = img.get_attribute("src")
@@ -147,8 +146,8 @@ for card in cards:
 
 print(f"Total product image URLs found: {len(products_to_download)}")
 
-# --- DESCARGA ---
-image_folder = "imagenes_bottega"
+# --- DOWNLOAD ---
+image_folder = "images_bottega"
 os.makedirs(image_folder, exist_ok=True)
 
 count = 0
