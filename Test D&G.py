@@ -50,7 +50,7 @@ while True:
     time.sleep(5) # Attesa dopo il clic
 
     # Ottieni il numero attuale di prodotti sulla pagina utilizzando i selettori combinati
-    current_products = driver.find_elements(By.CSS_SELECTOR, "div.ProductHit__product-hit--UcQZQ.product-hit")
+    current_products = driver.find_elements(By.CSS_SELECTOR, "div.SearchHitsItem__search-hit--Mnk4L")
     new_products_count = len(current_products)
 
     if new_products_count == products_count:
@@ -77,15 +77,17 @@ products_to_download = {}
 
 try:
     # 1. Encontrar todos los contenedores de productos
-    grid_items = driver.find_elements(By.CSS_SELECTOR, "div.ProductHit__product-hit--UcQZQ.product-hit")
+    grid_items = driver.find_elements(By.CSS_SELECTOR, "a.ProductMedia__product-media__image-wrapper--HoWNY.product-media__image-wrapper")
     print(f"Número de contenedores de productos encontrados: {len(grid_items)}")
-    
-    # 2. Iterar sobre cada contenedor para encontrar la primera imagen
+
+    # 2. Iterar sobre cada contenedor para encontrar la imagen
     for item in grid_items:
         try:
-            img = item.find_element(By.TAG_NAME, "picture")
-            
-            # Obtener la URL de alta resolución del srcset
+            # Encontrar el elemento <img> dentro del contenedor
+            img = item.find_element(By.TAG_NAME, "img")
+
+            # Obtener la URL de alta resolución del srcset o src
+            img_url = ""
             srcset = img.get_attribute("srcset")
             if srcset:
                 urls = srcset.split(', ')
@@ -93,14 +95,22 @@ try:
             else:
                 img_url = img.get_attribute("src")
 
-            # Validar y extraer el código de producto de la URL
-            code_match = re.search(r'images/zoom/(\S+)\?', img_url)
-            if img_url and code_match:
-                # Extraer el código y limpiar la extensión .jpg si existe
-                product_code = code_match.group(1).replace('.jpg', '').replace('.A', '')
+            if not img_url:
+                continue
+
+            # --- LÓGICA PARA EXTRAER EL CÓDIGO DEL PRODUCTO (MÁS ROBUSTA) ---
+            product_code = None
+            
+            # Patrón para Dolce & Gabbana
+            dolce_match = re.search(r'images/zoom/(\S+)\?', img_url)
+            if dolce_match:
+                product_code = dolce_match.group(1).replace('.jpg', '')
+
+            if product_code:
                 products_to_download[product_code] = img_url
+
         except NoSuchElementException:
-            continue # Si un contenedor no tiene imagen, se salta
+            continue
 
 except Exception as e:
     print(f"Error localizando productos: {e}")
@@ -108,7 +118,7 @@ except Exception as e:
 print(f"Total product image URLs found: {len(products_to_download)}")
 
 # --- DESCARGA ---
-image_folder = "imagenes_D&G"
+image_folder = "images_D&G"
 os.makedirs(image_folder, exist_ok=True)
 
 count = 0

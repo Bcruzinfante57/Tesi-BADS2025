@@ -146,6 +146,7 @@ for card in cards:
         continue
 
 print(f"Total product image URLs found: {len(products_to_download)}")
+
 # --- DESCARGA ---
 image_folder = "imagenes_bottega"
 os.makedirs(image_folder, exist_ok=True)
