@@ -14,36 +14,39 @@ from sklearn.manifold import TSNE
 import os
 from PIL import Image, ImageOps
 
-# Optional libraries
+# Conditional imports
 try:
-    import timm, torch, torchvision
+    import torch
+    import timm
+    import torchvision.transforms as T 
     HAS_TORCH = True
-except Exception:
+except ImportError:
     HAS_TORCH = False
-
-try:
-    import umap
-    HAS_UMAP = True
-except Exception:
-    HAS_UMAP = False
-    
-try:
-    import hdbscan
-    HAS_HDBSCAN = True
-except Exception:
-    HAS_HDBSCAN = False
 
 try:
     from skimage.feature import hog
     from skimage.color import rgb2gray
-    from skimage.measure import regionprops, moments, moments_central, moments_hu
-    # Library for dendrogram
-    from scipy.cluster.hierarchy import dendrogram, linkage, fcluster
+    from skimage.measure import regionprops, moments_central, moments_hu
     HAS_SKIMAGE = True
-    HAS_SCIPY = True
-except Exception:
+except ImportError:
     HAS_SKIMAGE = False
+    
+try:
+    from scipy.cluster.hierarchy import dendrogram, linkage
+    HAS_SCIPY = True
+except ImportError:
     HAS_SCIPY = False
+
+try:
+    import hdbscan
+    HAS_HDBSCAN = True
+except ImportError:
+    HAS_HDBSCAN = False
+
+from sklearn.cluster import AgglomerativeClustering, KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.decomposition import PCA
+
 
 # --- Utilities for Image Processing ---
 _saved_first_crop = False
@@ -59,7 +62,6 @@ def crop_white_bg(pil_img, white_thresh=235):
     y0, y1 = ys.min(), ys.max()
     x0, x1 = xs.min(), xs.max()
     
-    # Add a small buffer to the crop box to ensure no part of the object is cut off
     y0 = max(0, y0 - 5)
     y1 = min(img.height, y1 + 5)
     x0 = max(0, x0 - 5)
@@ -88,15 +90,28 @@ def load_and_preprocess(p, target=(224, 224)):
     return bg
     
 # --- Feature Extraction with ViT and classical methods ---
+_saved_grayscale_example = False
+
 def vit_embedding(img_pil, model, device):
     """Extracts a feature vector using a pretrained ViT model."""
-    import torchvision.transforms as T
+    global _saved_grayscale_example
+    
+    if not _saved_grayscale_example:
+        img_pil.convert('L').save("grayscale_example.jpg")
+        print("Saved 'grayscale_example.jpg' to check the grayscale transformation.")
+        _saved_grayscale_example = True
+        
+    if img_pil.mode != 'RGB':
+        img_pil = img_pil.convert('RGB')
+        
     transform = T.Compose([
         T.Resize((224, 224)),
         T.ToTensor(),
         T.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
     ])
+    
     x = transform(img_pil).unsqueeze(0).to(device)
+    
     with torch.no_grad():
         feat = model.forward_features(x) if hasattr(model, "forward_features") else model(x)
         if feat.ndim == 3:
@@ -127,7 +142,7 @@ def shape_properties_features(img):
     Total: ~13 features
     """
     if not HAS_SKIMAGE:
-        return np.array([])
+        return np.zeros(13)
     
     gray = rgb2gray(np.array(img))
     binary = gray < gray.mean()
@@ -157,7 +172,6 @@ def shape_properties_features(img):
     
     return feats
 
-
 # --- NEW PLOTTING FUNCTIONS ---
 def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=False):
     """
@@ -173,9 +187,7 @@ def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=
         print("No clusters to plot.")
         return
     
-    # Disable tight_layout to handle large number of axes
     plt.rcParams['figure.constrained_layout.use'] = False
-    
     fig, axes = plt.subplots(n_clusters, 1, figsize=(15, 4 * n_clusters))
 
     if n_clusters == 1:
@@ -189,23 +201,18 @@ def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=
 
     for i, label in enumerate(unique_labels):
         cluster_images = [name for name, l in zip(names, labels) if l == label]
-        
         cluster_ax = axes[i]
-        
         n_images = len(cluster_images)
-        if n_images == 0:
-            continue
+        if n_images == 0: continue
         
-        rows = 1
         cols = min(10, n_images)
-        
-        img_h = 1.0 / n_clusters
         img_w = 1.0 / cols
         
         for j, img_name in enumerate(cluster_images):
             try:
-                img_path = IMAGES_DIR / img_name
-                img = Image.open(img_path)
+                # ⭐ MODIFICACIÓN CLAVE: Cargar la imagen preprocesada en lugar de la original ⭐
+                # Necesitas volver a preprocesar aquí para que los bordes de la trama coincidan con el gráfico
+                img = load_and_preprocess(IMAGES_DIR / img_name, target=(224, 224))
                 
                 ax_img = cluster_ax.inset_axes(
                     [j * img_w, 0, img_w, 1],
@@ -254,33 +261,48 @@ def plot_dendrogram(X, names, out_file, title):
     plt.close()
 
 # --- Clustering Functions ---
+def find_optimal_k_agglomerative(X):
+    """Finds a 'broad' optimal k for Agglomerative Clustering using Silhouette Score."""
+    print("🔍 Optimizing k for Agglomerative Clustering (broader styles)...")
+    best_k = None
+    best_score = -1e9
+    scores_list = []
+    
+    k_range = range(3, min(21, len(X) - 1))
+    
+    for k in k_range:
+        clustering = AgglomerativeClustering(n_clusters=k)
+        labels = clustering.fit_predict(X)
+        if len(set(labels)) > 1:
+            score = silhouette_score(X, labels)
+            scores_list.append((k, score))
+            print(f"k={k} → Silhouette Score: {score:.4f}")
+            
+    if not scores_list: return None
+        
+    scores_list.sort(key=lambda x: x[1], reverse=True)
+    best_score = scores_list[0][1]
+    best_k = scores_list[0][0]
+    
+    for k_val, score in scores_list:
+        if k_val > 4 and score / best_score > 0.95:
+            best_k = k_val
+            break
+            
+    return max(4, best_k)
+
 def run_agglomerative(X, names):
-    """
-    Runs Agglomerative Clustering and generates plots for k=2, 3, and 4.
-    """
+    """Runs Agglomerative Clustering with optimal k."""
     print("\n--- Running Agglomerative ---")
-    
-    # Generate the linkage matrix first
-    linked_matrix = linkage(X, method='ward')
-    
-    # Plot for k=2
-    labels_2 = fcluster(linked_matrix, 2, criterion='maxclust')
-    plot_clustered_images(X, labels_2, names, "clusters_agglomerative_k2.png", "Agglomerative Clustering (k=2)")
-    print(f"Agglomerative Clustering with k=2 saved to clusters_agglomerative_k2.png")
-    
-    # Plot for k=3
-    labels_3 = fcluster(linked_matrix, 3, criterion='maxclust')
-    plot_clustered_images(X, labels_3, names, "clusters_agglomerative_k3.png", "Agglomerative Clustering (k=3)")
-    print(f"Agglomerative Clustering with k=3 saved to clusters_agglomerative_k3.png")
+    best_k = find_optimal_k_agglomerative(X)
+    if best_k is not None:
+        model = AgglomerativeClustering(n_clusters=best_k)
+        labels = model.fit_predict(X)
+        plot_clustered_images(X, labels, names, f"clusters_agglomerative.png", f"Agglomerative Clustering (Optimal k={best_k})")
+        print(f"Agglomerative Clustering with optimal k={best_k} saved to clusters_agglomerative.png")
+        return labels
+    return None
 
-    # Plot for k=4
-    labels_4 = fcluster(linked_matrix, 4, criterion='maxclust')
-    plot_clustered_images(X, labels_4, names, "clusters_agglomerative_k4.png", "Agglomerative Clustering (k=4)")
-    print(f"Agglomerative Clustering with k=4 saved to clusters_agglomerative_k4.png")
-
-    return labels_3 # Return labels for the most balanced cluster, k=3
-
-# --- Old clustering functions with auto k removed ---
 def run_kmeans(X, names):
     print("\n--- Running K-Means ---")
     best_k = None
@@ -306,7 +328,7 @@ def run_hdbscan(X, names):
         print("HDBSCAN is not installed. Please install with 'pip install hdbscan' to use this method.")
         return None
     
-    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=5, min_samples=2, cluster_selection_epsilon=0.5)
+    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=5, min_samples=1, cluster_selection_epsilon=0.5)
     labels = model_hdbscan.fit_predict(X)
     
     plot_clustered_images(X, labels, names, f"clusters_hdbscan.png", "HDBSCAN Clustering", show_outliers=True)
@@ -323,26 +345,32 @@ img_files = sorted([p for p in IMAGES_DIR.glob("*") if p.suffix.lower() in (".jp
 if len(img_files) == 0:
     raise SystemExit("No se encontraron imágenes en images_bottega — agrega imágenes y vuelve a correr el script.")
 
-# Load ViT model
+# --- Load Transformer-based Model for Embeddings ---
+
 use_vit = False
 vit_model = None
 device = None
+
+# Options: 'vit_base_patch16_224', 'beit_base_patch16_224', 'vit_base_patch16_224.mae'
+MODEL_NAME = 'vit_base_patch16_224.mae'
+
 if HAS_TORCH:
     try:
-        vit_model = timm.create_model('vit_base_patch16_224', pretrained=True, num_classes=0)
+        vit_model = timm.create_model(MODEL_NAME, pretrained=True, num_classes=0)
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         vit_model.to(device).eval()
         use_vit = True
-        print("Loaded ViT pretrained for embeddings.")
+        print(f"Loaded {MODEL_NAME} pretrained for embeddings.")
     except Exception as e:
-        print("Could not load ViT pretrained (falling back to classical features).", e)
+        print(f"Could not load {MODEL_NAME} pretrained (falling back to classical features).", e)
         use_vit = False
 
-# Extract all features first
+# --- Extract Features ---
 hog_embs = []
 color_embs = []
 shape_embs = []
 names = []
+vit_embs = []
 
 print("Processing images and extracting features...")
 for p in img_files:
@@ -353,6 +381,10 @@ for p in img_files:
         hog_embs.append(hog_features(img))
         color_embs.append(color_hist_features(img))
         shape_embs.append(shape_properties_features(img))
+        
+        if use_vit:
+            vit_embs.append(vit_embedding(img, vit_model, device))
+
     except Exception as e:
         print(f"Error processing {p.name}: {e}")
 
@@ -360,28 +392,76 @@ hog_matrix = np.vstack(hog_embs)
 color_matrix = np.vstack(color_embs)
 shape_matrix = np.vstack(shape_embs)
 
-# Combine shape features (HOG + Hu Moments + Geometric properties)
+# --- Combine Features and Run Clustering ---
 shape_combined_matrix = np.hstack([hog_matrix, shape_matrix])
+print(f"Combined Shape feature matrix shape: {shape_combined_matrix.shape}")
 
-# Standardize and PCA for combined Shape features
 scaler_shape = StandardScaler()
 shape_scaled = scaler_shape.fit_transform(shape_combined_matrix)
-pca_shape = PCA(n_components=min(64, shape_scaled.shape[1]))
-shape_pca = pca_shape.fit_transform(shape_scaled)
-print(f"Combined Shape PCA shape: {shape_pca.shape}")
 
-# Standardize and PCA for Color
-scaler_color = StandardScaler()
-color_scaled = scaler_color.fit_transform(color_matrix)
-pca_color = PCA(n_components=min(64, color_scaled.shape[1]))
-color_pca = pca_color.fit_transform(color_scaled)
-print(f"Color PCA shape: {color_pca.shape}")
+possible_components = [16, 32, 48, 64]
+best_score = -1
+best_n = 0
+best_shape_pca = None
 
-# --- EXECUTE ALL CLUSTERING METHODS ---
-run_kmeans(shape_pca, names)
-run_agglomerative(shape_pca, names)
-run_hdbscan(shape_pca, names)
+print("\nOptimizing PCA components for shape features...")
+if len(shape_scaled) > 3:
+    for n in possible_components:
+        n = min(n, shape_scaled.shape[1])
+        if n < 2: continue
+        pca_temp = PCA(n_components=n)
+        shape_pca_temp = pca_temp.fit_transform(shape_scaled)
+        
+        if len(shape_pca_temp) > 1 and len(set(KMeans(n_clusters=3, random_state=42, n_init='auto').fit_predict(shape_pca_temp))) > 1:
+            km = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(shape_pca_temp)
+            score = silhouette_score(shape_pca_temp, km.labels_)
+            print(f"n_components={n} → Silhouette Score: {score:.4f}")
+            
+            if score > best_score:
+                best_score = score
+                best_n = n
+                best_shape_pca = shape_pca_temp
 
-# Generate Dendrogram for Agglomerative Clustering
-if HAS_SCIPY:
-    plot_dendrogram(shape_pca, names, "dendrogram_agglomerative.png", "Agglomerative Clustering Dendrogram (Shape-based)")
+if best_n == 0 and shape_scaled.shape[1] > 2:
+    best_n = min(32, shape_scaled.shape[1])
+    pca = PCA(n_components=best_n)
+    shape_pca = pca.fit_transform(shape_scaled)
+    print(f"Using fallback PCA with n_components={best_n}")
+elif best_shape_pca is not None:
+    shape_pca = best_shape_pca
+    print(f"✅ Best PCA n_components = {best_n} (Silhouette Score = {best_score:.4f})")
+else:
+    shape_pca = shape_scaled
+    print("Could not perform PCA, using original scaled shape features.")
+    
+
+# Run clustering on Shape Features
+labels_agg = run_agglomerative(shape_pca, names)
+if labels_agg is not None:
+    plot_dendrogram(shape_pca, names, "dendrogram_agglomerative.png", "Agglomerative Clustering Dendrogram (Shape Features)")
+
+labels_kmeans = run_kmeans(shape_pca, names)
+labels_hdbscan = run_hdbscan(shape_pca, names)
+
+# If ViT embeddings are used, combine them with classical features
+if use_vit and vit_embs:
+    try:
+        vit_matrix = np.vstack(vit_embs)
+        print(f"Transformer Embedding shape: {vit_matrix.shape}")
+        
+        scaler_vit = StandardScaler()
+        vit_scaled = scaler_vit.fit_transform(vit_matrix)
+        
+        combined_features = np.hstack([shape_pca, vit_scaled])
+        print(f"Combined feature matrix shape: {combined_features.shape}")
+        
+        # Run clustering on combined features
+        labels_agg_combined = run_agglomerative(combined_features, names)
+        if labels_agg_combined is not None:
+            plot_dendrogram(combined_features, names, "dendrogram_agglomerative_combined.png", "Agglomerative Clustering Dendrogram (Combined Features)")
+        
+        labels_kmeans_combined = run_kmeans(combined_features, names)
+        labels_hdbscan_combined = run_hdbscan(combined_features, names)
+
+    except Exception as e:
+        print(f"Error combining ViT features: {e}")
