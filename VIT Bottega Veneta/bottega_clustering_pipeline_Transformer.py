@@ -49,57 +49,73 @@ from sklearn.decomposition import PCA
 
 
 # --- Utilities for Image Processing ---
+import cv2
+
 _saved_first_crop = False
-def crop_white_bg(pil_img, white_thresh=235):
-    """Crops white background from a PIL image using a more aggressive threshold."""
-    img = pil_img.convert("RGB")
-    arr = np.array(img)
-    mask = np.any(arr < white_thresh, axis=2)
-    if not mask.any():
-        return img
+_saved_first_final = False
+
+def crop_white_bg(pil_img, white_thresh=235, padding=0.15):
+    """Crops white background using contours and adds padding to keep full glasses centered."""
+    img = np.array(pil_img.convert("RGB"))
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     
-    ys, xs = np.where(mask)
-    y0, y1 = ys.min(), ys.max()
-    x0, x1 = xs.min(), xs.max()
+    # Mask for non-white regions
+    mask = gray < white_thresh
+    mask = mask.astype(np.uint8) * 255
+
+    # Find contours
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not contours:
+        return pil_img  # fallback
     
-    y0 = max(0, y0 - 5)
-    y1 = min(img.height, y1 + 5)
-    x0 = max(0, x0 - 5)
-    x1 = min(img.width, x1 + 5)
-    
-    return img.crop((x0, y0, x1, y1))
+    # Take largest contour (should be the glasses)
+    cnt = max(contours, key=cv2.contourArea)
+    x, y, w, h = cv2.boundingRect(cnt)
+
+    # Add proportional padding
+    pad_x = int(w * padding)
+    pad_y = int(h * padding)
+    x0 = max(0, x - pad_x)
+    y0 = max(0, y - pad_y)
+    x1 = min(img.shape[1], x + w + pad_x)
+    y1 = min(img.shape[0], y + h + pad_y)
+
+    cropped = img[y0:y1, x0:x1]
+    return Image.fromarray(cropped)
 
 def load_and_preprocess(p, target=(224, 224)):
     """Loads, crops, and centers an image for model input."""
-    global _saved_first_crop
+    global _saved_first_crop, _saved_first_final
+
     img = Image.open(p).convert("RGB")
-    
     img = crop_white_bg(img)
-    
+
+    # Save crop example
     if not _saved_first_crop:
-        img.save("crop_example_1.jpg")
-        print("Saved 'crop_example_1.jpg' to check the cropping quality.")
+        img.save("example_crop.jpg")
+        print("✅ Saved 'example_crop.jpg' (raw crop example).")
         _saved_first_crop = True
 
+    # Create white background and center the object
     bg = Image.new("RGB", target, (255, 255, 255))
     img_contained = ImageOps.contain(img, target)
-    
+
     paste_x = (target[0] - img_contained.width) // 2
     paste_y = (target[1] - img_contained.height) // 2
     bg.paste(img_contained, (paste_x, paste_y))
+
+    # Save final centered example
+    if not _saved_first_final:
+        bg.save("example_final.jpg")
+        print("✅ Saved 'example_final.jpg' (final centered image).")
+        _saved_first_final = True
+
     return bg
+
     
 # --- Feature Extraction with ViT and classical methods ---
-_saved_grayscale_example = False
-
 def vit_embedding(img_pil, model, device):
-    """Extracts a feature vector using a pretrained ViT model."""
-    global _saved_grayscale_example
-    
-    if not _saved_grayscale_example:
-        img_pil.convert('L').save("grayscale_example.jpg")
-        print("Saved 'grayscale_example.jpg' to check the grayscale transformation.")
-        _saved_grayscale_example = True
+   ## """"Extracts a feature vector using a pre-trained ViT model.""""
         
     if img_pil.mode != 'RGB':
         img_pil = img_pil.convert('RGB')
@@ -328,7 +344,7 @@ def run_hdbscan(X, names):
         print("HDBSCAN is not installed. Please install with 'pip install hdbscan' to use this method.")
         return None
     
-    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=5, min_samples=1, cluster_selection_epsilon=0.5)
+    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, cluster_selection_epsilon=0.5)
     labels = model_hdbscan.fit_predict(X)
     
     plot_clustered_images(X, labels, names, f"clusters_hdbscan.png", "HDBSCAN Clustering", show_outliers=True)
@@ -392,13 +408,22 @@ hog_matrix = np.vstack(hog_embs)
 color_matrix = np.vstack(color_embs)
 shape_matrix = np.vstack(shape_embs)
 
-# --- Combine Features and Run Clustering ---
-shape_combined_matrix = np.hstack([hog_matrix, shape_matrix])
-print(f"Combined Shape feature matrix shape: {shape_combined_matrix.shape}")
 
+# --- FINAL PART: Combine Features and Run Clustering ---
+
+shape_factor = 3.0   # give more weight to shapes
+color_factor = 0.2
+vit_factor = 5.0
+
+# Shape = HOG + geometric features
+shape_combined_matrix = np.hstack([hog_matrix, shape_matrix])
+print(f"Raw Shape feature matrix shape: {shape_combined_matrix.shape}")
+
+# Standardize shape features
 scaler_shape = StandardScaler()
 shape_scaled = scaler_shape.fit_transform(shape_combined_matrix)
 
+# --- PCA optimization for Shape features ---
 possible_components = [16, 32, 48, 64]
 best_score = -1
 best_n = 0
@@ -408,15 +433,16 @@ print("\nOptimizing PCA components for shape features...")
 if len(shape_scaled) > 3:
     for n in possible_components:
         n = min(n, shape_scaled.shape[1])
-        if n < 2: continue
+        if n < 2:
+            continue
         pca_temp = PCA(n_components=n)
         shape_pca_temp = pca_temp.fit_transform(shape_scaled)
-        
-        if len(shape_pca_temp) > 1 and len(set(KMeans(n_clusters=3, random_state=42, n_init='auto').fit_predict(shape_pca_temp))) > 1:
+
+        if len(shape_pca_temp) > 1 and len(set(KMeans(n_clusters=3, random_state=42, n_init="auto").fit_predict(shape_pca_temp))) > 1:
             km = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(shape_pca_temp)
             score = silhouette_score(shape_pca_temp, km.labels_)
             print(f"n_components={n} → Silhouette Score: {score:.4f}")
-            
+
             if score > best_score:
                 best_score = score
                 best_n = n
@@ -433,35 +459,57 @@ elif best_shape_pca is not None:
 else:
     shape_pca = shape_scaled
     print("Could not perform PCA, using original scaled shape features.")
-    
 
-# Run clustering on Shape Features
-labels_agg = run_agglomerative(shape_pca, names)
-if labels_agg is not None:
-    plot_dendrogram(shape_pca, names, "dendrogram_agglomerative.png", "Agglomerative Clustering Dendrogram (Shape Features)")
+# --- Scale other features ---
+scaler_color = StandardScaler()
+color_scaled = scaler_color.fit_transform(color_matrix)
 
-labels_kmeans = run_kmeans(shape_pca, names)
-labels_hdbscan = run_hdbscan(shape_pca, names)
-
-# If ViT embeddings are used, combine them with classical features
 if use_vit and vit_embs:
-    try:
-        vit_matrix = np.vstack(vit_embs)
-        print(f"Transformer Embedding shape: {vit_matrix.shape}")
-        
-        scaler_vit = StandardScaler()
-        vit_scaled = scaler_vit.fit_transform(vit_matrix)
-        
-        combined_features = np.hstack([shape_pca, vit_scaled])
-        print(f"Combined feature matrix shape: {combined_features.shape}")
-        
-        # Run clustering on combined features
-        labels_agg_combined = run_agglomerative(combined_features, names)
-        if labels_agg_combined is not None:
-            plot_dendrogram(combined_features, names, "dendrogram_agglomerative_combined.png", "Agglomerative Clustering Dendrogram (Combined Features)")
-        
-        labels_kmeans_combined = run_kmeans(combined_features, names)
-        labels_hdbscan_combined = run_hdbscan(combined_features, names)
+    vit_matrix = np.vstack(vit_embs)
+    scaler_vit = StandardScaler()
+    vit_scaled = scaler_vit.fit_transform(vit_matrix)
+else:
+    vit_scaled = None
+    print("⚠️ ViT embeddings not available.")
 
-    except Exception as e:
-        print(f"Error combining ViT features: {e}")
+# --- Build feature sets ---
+features_shape = shape_pca * shape_factor
+if vit_scaled is not None:
+    features_shape_vit = np.hstack([shape_pca * shape_factor, vit_scaled * vit_factor])
+    features_shape_vit_color = np.hstack([shape_pca * shape_factor, vit_scaled * vit_factor, color_scaled * color_factor])
+else:
+    features_shape_vit = None
+    features_shape_vit_color = np.hstack([shape_pca * shape_factor, color_scaled * color_factor])
+
+print(f"Shape feature matrix shape: {features_shape.shape}")
+if features_shape_vit is not None:
+    print(f"Shape+ViT feature matrix shape: {features_shape_vit.shape}")
+print(f"Shape+ViT+Color feature matrix shape: {features_shape_vit_color.shape}")
+
+# --- Run clustering on Shape ---
+print("\n🔹 Running clustering on Shape features...")
+labels_agg_shape = run_agglomerative(features_shape, names)
+if labels_agg_shape is not None:
+    # plot_dendrogram(features_shape, names, "dendrogram_shape.png", "Agglomerative Clustering Dendrogram (Shape Features)")
+    pass
+labels_kmeans_shape = run_kmeans(features_shape, names)
+labels_hdbscan_shape = run_hdbscan(features_shape, names)
+
+# --- Run clustering on Shape + ViT ---
+if features_shape_vit is not None:
+    print("\n🔹 Running clustering on Shape+ViT features...")
+    labels_agg_shape_vit = run_agglomerative(features_shape_vit, names)
+    if labels_agg_shape_vit is not None:
+        # plot_dendrogram(features_shape_vit, names, "dendrogram_shape_vit.png", "Agglomerative Clustering Dendrogram (Shape+ViT Features)")
+        pass
+    labels_kmeans_shape_vit = run_kmeans(features_shape_vit, names)
+    labels_hdbscan_shape_vit = run_hdbscan(features_shape_vit, names)
+
+# --- Run clustering on Shape + ViT + Color ---
+print("\n🔹 Running clustering on Shape+ViT+Color features...")
+labels_agg_shape_vit_color = run_agglomerative(features_shape_vit_color, names)
+if labels_agg_shape_vit_color is not None:
+    plot_dendrogram(features_shape_vit_color, names, "dendrogram_shape_vit_color.png", "Agglomerative Clustering Dendrogram (Shape+ViT+Color Features)")
+labels_kmeans_shape_vit_color = run_kmeans(features_shape_vit_color, names)
+labels_hdbscan_shape_vit_color = run_hdbscan(features_shape_vit_color, names)
+print("\n✅ Clustering pipeline completed.")
