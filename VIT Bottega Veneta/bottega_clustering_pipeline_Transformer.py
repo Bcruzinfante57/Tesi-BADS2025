@@ -13,6 +13,7 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import os
 from PIL import Image, ImageOps
+from skimage.feature import local_binary_pattern
 
 # Conditional imports
 try:
@@ -43,12 +44,6 @@ try:
 except ImportError:
     HAS_HDBSCAN = False
 
-from sklearn.cluster import AgglomerativeClustering, KMeans
-from sklearn.metrics import silhouette_score
-from sklearn.decomposition import PCA
-
-
-# --- Utilities for Image Processing ---
 import cv2
 
 _saved_first_crop = False
@@ -184,9 +179,28 @@ def shape_properties_features(img):
         np.array([area, circularity, eccentricity, solidity, aspect_ratio])
     ])
     
-    feats[7:] = feats[7:] / np.linalg.norm(feats[7:] + 1e-8)
+    feats[7:] = feats[7:] / (np.linalg.norm(feats[7:]) + 1e-8)
+
     
     return feats
+
+def texture_lbp_features(img, P=8, R=1, bins=32):
+    """
+    Extract Local Binary Pattern (LBP) histogram features from an image.
+    - P: number of circularly symmetric neighbour set points
+    - R: radius of circle
+    - bins: histogram bins
+    """
+    gray = rgb2gray(np.array(img))  # grayscale
+    lbp = local_binary_pattern(gray, P, R, method="uniform")
+    
+    # Histogram of LBP
+    hist, _ = np.histogram(lbp.ravel(),
+                           bins=bins,
+                           range=(0, bins),
+                           density=True)
+    return hist.astype(float)
+
 
 # --- NEW PLOTTING FUNCTIONS ---
 def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=False):
@@ -226,9 +240,7 @@ def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=
         
         for j, img_name in enumerate(cluster_images):
             try:
-                # ⭐ MODIFICACIÓN CLAVE: Cargar la imagen preprocesada en lugar de la original ⭐
-                # Necesitas volver a preprocesar aquí para que los bordes de la trama coincidan con el gráfico
-                img = load_and_preprocess(IMAGES_DIR / img_name, target=(224, 224))
+                img = preprocessed_images[img_name]
                 
                 ax_img = cluster_ax.inset_axes(
                     [j * img_w, 0, img_w, 1],
@@ -307,24 +319,24 @@ def find_optimal_k_agglomerative(X):
             
     return max(4, best_k)
 
-def run_agglomerative(X, names):
+def run_agglomerative(X, names, out_file="clusters_agglomerative.png", title="Agglomerative Clustering"):
     """Runs Agglomerative Clustering with optimal k."""
     print("\n--- Running Agglomerative ---")
     best_k = find_optimal_k_agglomerative(X)
     if best_k is not None:
         model = AgglomerativeClustering(n_clusters=best_k)
         labels = model.fit_predict(X)
-        plot_clustered_images(X, labels, names, f"clusters_agglomerative.png", f"Agglomerative Clustering (Optimal k={best_k})")
-        print(f"Agglomerative Clustering with optimal k={best_k} saved to clusters_agglomerative.png")
+        plot_clustered_images(X, labels, names, out_file, f"{title} (Optimal k={best_k})")
+        print(f"Agglomerative Clustering with optimal k={best_k} saved to {out_file}")
         return labels
     return None
 
-def run_kmeans(X, names):
+def run_kmeans(X, names, out_file="clusters_kmeans.png", title="K-Means Clustering"):
     print("\n--- Running K-Means ---")
     best_k = None
     best_score = -1e9
     for k in range(2, min(12, len(X) - 1)):
-        km = KMeans(n_clusters=k, random_state=42, n_init='auto')
+        km = KMeans(n_clusters=k, random_state=42, n_init=10)
         labels = km.fit_predict(X)
         if len(set(labels)) > 1:
             score = silhouette_score(X, labels)
@@ -334,20 +346,22 @@ def run_kmeans(X, names):
     if best_k is not None:
         model = KMeans(n_clusters=best_k, random_state=42, n_init='auto')
         labels = model.fit_predict(X)
-        plot_clustered_images(X, labels, names, f"clusters_kmeans.png", f"K-Means Clustering (k={best_k})")
+        plot_clustered_images(X, labels, names, out_file, f"{title} (k={best_k})")
+        print(f"K-Means with k={best_k} saved to {out_file}")
         return labels
     return None
 
-def run_hdbscan(X, names):
+def run_hdbscan(X, names, out_file="clusters_hdbscan.png", title="HDBSCAN Clustering"):
     print("\n--- Running HDBSCAN ---")
     if not HAS_HDBSCAN:
         print("HDBSCAN is not installed. Please install with 'pip install hdbscan' to use this method.")
         return None
     
-    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, cluster_selection_epsilon=0.5)
+    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=3, min_samples=1, cluster_selection_epsilon=0.5)
     labels = model_hdbscan.fit_predict(X)
     
-    plot_clustered_images(X, labels, names, f"clusters_hdbscan.png", "HDBSCAN Clustering", show_outliers=True)
+    plot_clustered_images(X, labels, names, out_file, title, show_outliers=True)
+    print(f"HDBSCAN clustering saved to {out_file}")
     return labels
 
 # --- Main Pipeline ---
@@ -387,6 +401,9 @@ color_embs = []
 shape_embs = []
 names = []
 vit_embs = []
+texture_embs = []
+preprocessed_images = {}
+
 
 print("Processing images and extracting features...")
 for p in img_files:
@@ -394,9 +411,12 @@ for p in img_files:
         img = load_and_preprocess(p, target=(224, 224))
         names.append(p.name)
 
+        preprocessed_images[p.name] = img
+
         hog_embs.append(hog_features(img))
         color_embs.append(color_hist_features(img))
         shape_embs.append(shape_properties_features(img))
+        texture_embs.append(texture_lbp_features(img))
         
         if use_vit:
             vit_embs.append(vit_embedding(img, vit_model, device))
@@ -407,13 +427,16 @@ for p in img_files:
 hog_matrix = np.vstack(hog_embs)
 color_matrix = np.vstack(color_embs)
 shape_matrix = np.vstack(shape_embs)
+texture_matrix = np.vstack(texture_embs)
 
 
 # --- FINAL PART: Combine Features and Run Clustering ---
 
-shape_factor = 3.0   # give more weight to shapes
+shape_factor = 2.0   # give more weight to shapes
 color_factor = 0.2
-vit_factor = 5.0
+vit_factor = 2.0
+texture_factor = 5.0
+
 
 # Shape = HOG + geometric features
 shape_combined_matrix = np.hstack([hog_matrix, shape_matrix])
@@ -472,44 +495,70 @@ else:
     vit_scaled = None
     print("⚠️ ViT embeddings not available.")
 
+scaler_texture = StandardScaler()  # ⭐
+texture_scaled = scaler_texture.fit_transform(texture_matrix) 
+
 # --- Build feature sets ---
 features_shape = shape_pca * shape_factor
 if vit_scaled is not None:
     features_shape_vit = np.hstack([shape_pca * shape_factor, vit_scaled * vit_factor])
-    features_shape_vit_color = np.hstack([shape_pca * shape_factor, vit_scaled * vit_factor, color_scaled * color_factor])
+    features_shape_vit_color_texture = np.hstack([
+        shape_pca * shape_factor,
+        vit_scaled * vit_factor,
+        color_scaled * color_factor,
+        texture_scaled * texture_factor
+    ])
 else:
     features_shape_vit = None
-    features_shape_vit_color = np.hstack([shape_pca * shape_factor, color_scaled * color_factor])
+    features_shape_vit_color_texture = np.hstack([
+        shape_pca * shape_factor,
+        color_scaled * color_factor,
+        texture_scaled * texture_factor
+    ])
 
 print(f"Shape feature matrix shape: {features_shape.shape}")
+
 if features_shape_vit is not None:
     print(f"Shape+ViT feature matrix shape: {features_shape_vit.shape}")
-print(f"Shape+ViT+Color feature matrix shape: {features_shape_vit_color.shape}")
+print(f"Shape+ViT+Color+Texture feature matrix shape: {features_shape_vit_color_texture.shape}")
+
 
 # --- Run clustering on Shape ---
 print("\n🔹 Running clustering on Shape features...")
 labels_agg_shape = run_agglomerative(features_shape, names)
-if labels_agg_shape is not None:
-    # plot_dendrogram(features_shape, names, "dendrogram_shape.png", "Agglomerative Clustering Dendrogram (Shape Features)")
-    pass
 labels_kmeans_shape = run_kmeans(features_shape, names)
 labels_hdbscan_shape = run_hdbscan(features_shape, names)
 
-# --- Run clustering on Shape + ViT ---
-if features_shape_vit is not None:
-    print("\n🔹 Running clustering on Shape+ViT features...")
-    labels_agg_shape_vit = run_agglomerative(features_shape_vit, names)
-    if labels_agg_shape_vit is not None:
-        # plot_dendrogram(features_shape_vit, names, "dendrogram_shape_vit.png", "Agglomerative Clustering Dendrogram (Shape+ViT Features)")
-        pass
-    labels_kmeans_shape_vit = run_kmeans(features_shape_vit, names)
-    labels_hdbscan_shape_vit = run_hdbscan(features_shape_vit, names)
 
-# --- Run clustering on Shape + ViT + Color ---
-print("\n🔹 Running clustering on Shape+ViT+Color features...")
-labels_agg_shape_vit_color = run_agglomerative(features_shape_vit_color, names)
-if labels_agg_shape_vit_color is not None:
-    plot_dendrogram(features_shape_vit_color, names, "dendrogram_shape_vit_color.png", "Agglomerative Clustering Dendrogram (Shape+ViT+Color Features)")
-labels_kmeans_shape_vit_color = run_kmeans(features_shape_vit_color, names)
-labels_hdbscan_shape_vit_color = run_hdbscan(features_shape_vit_color, names)
-print("\n✅ Clustering pipeline completed.")
+# --- Run clustering on Shape + ViT + Color + Texture ---
+print("\n🔹 Running clustering on Shape+ViT+Color+Texture features...")
+
+labels_agg_shape_vit_color_texture = run_agglomerative(
+    features_shape_vit_color_texture,
+    names,
+    out_file="clusters_agglomerative_shape_vit_color_texture.png",
+    title="Agglomerative Clustering (Shape+ViT+Color+Texture)"
+)
+if labels_agg_shape_vit_color_texture is not None:
+    plot_dendrogram(
+        features_shape_vit_color_texture,
+        names,
+        "dendrogram_shape_vit_color_texture.png",
+        "Agglomerative Clustering Dendrogram (Shape+ViT+Color+Texture Features)"
+    )
+
+labels_kmeans_shape_vit_color_texture = run_kmeans(
+    features_shape_vit_color_texture,
+    names,
+    out_file="clusters_kmeans_shape_vit_color_texture.png",
+    title="K-Means Clustering (Shape+ViT+Color+Texture)"
+)
+
+labels_hdbscan_shape_vit_color_texture = run_hdbscan(
+    features_shape_vit_color_texture,
+    names,
+    out_file="clusters_hdbscan_shape_vit_color_texture.png",
+    title="HDBSCAN Clustering (Shape+ViT+Color+Texture)"
+)
+
+print("\n✅ Clustering pipeline completed (Shape+ViT and Shape+ViT+Color+Texture).")
