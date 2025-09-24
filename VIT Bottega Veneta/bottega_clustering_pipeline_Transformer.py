@@ -14,6 +14,7 @@ from sklearn.manifold import TSNE
 import os
 from PIL import Image, ImageOps
 from skimage.feature import local_binary_pattern
+from skimage.filters import gabor
 
 # Conditional imports
 try:
@@ -184,23 +185,21 @@ def shape_properties_features(img):
     
     return feats
 
-def texture_lbp_features(img, P=8, R=1, bins=32):
+def texture_gabor_features(img, frequencies=[0.1, 0.2, 0.3, 0.4]):
     """
-    Extract Local Binary Pattern (LBP) histogram features from an image.
-    - P: number of circularly symmetric neighbour set points
-    - R: radius of circle
-    - bins: histogram bins
+    Extrae características de textura usando filtros de Gabor.
+    - frequencies: lista de frecuencias para los filtros.
+    Devuelve un vector con media y varianza de la respuesta de cada filtro.
     """
-    gray = rgb2gray(np.array(img))  # grayscale
-    lbp = local_binary_pattern(gray, P, R, method="uniform")
-    
-    # Histogram of LBP
-    hist, _ = np.histogram(lbp.ravel(),
-                           bins=bins,
-                           range=(0, bins),
-                           density=True)
-    return hist.astype(float)
-
+    gray = rgb2gray(np.array(img))
+    feats = []
+    for f in frequencies:
+        filt_real, filt_imag = gabor(gray, frequency=f)
+        feats.append(filt_real.mean())
+        feats.append(filt_real.var())
+        feats.append(filt_imag.mean())
+        feats.append(filt_imag.var())
+    return np.array(feats, dtype=float)
 
 # --- NEW PLOTTING FUNCTIONS ---
 def plot_clustered_images(emb_2d, labels, names, out_file, title, show_outliers=False):
@@ -357,7 +356,7 @@ def run_hdbscan(X, names, out_file="clusters_hdbscan.png", title="HDBSCAN Cluste
         print("HDBSCAN is not installed. Please install with 'pip install hdbscan' to use this method.")
         return None
     
-    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=3, min_samples=1, cluster_selection_epsilon=0.5)
+    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, cluster_selection_epsilon=0.5)
     labels = model_hdbscan.fit_predict(X)
     
     plot_clustered_images(X, labels, names, out_file, title, show_outliers=True)
@@ -374,6 +373,7 @@ if not IMAGES_DIR.exists():
 img_files = sorted([p for p in IMAGES_DIR.glob("*") if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])
 if len(img_files) == 0:
     raise SystemExit("No se encontraron imágenes en images_bottega — agrega imágenes y vuelve a correr el script.")
+
 
 # --- Load Transformer-based Model for Embeddings ---
 
@@ -416,7 +416,7 @@ for p in img_files:
         hog_embs.append(hog_features(img))
         color_embs.append(color_hist_features(img))
         shape_embs.append(shape_properties_features(img))
-        texture_embs.append(texture_lbp_features(img))
+        texture_embs.append(texture_gabor_features(img))
         
         if use_vit:
             vit_embs.append(vit_embedding(img, vit_model, device))
@@ -432,10 +432,10 @@ texture_matrix = np.vstack(texture_embs)
 
 # --- FINAL PART: Combine Features and Run Clustering ---
 
-shape_factor = 2.0   # give more weight to shapes
-color_factor = 0.2
-vit_factor = 2.0
-texture_factor = 5.0
+shape_factor = 4.0   
+color_factor = 0.1
+vit_factor = 3.0
+texture_factor = 4.0
 
 
 # Shape = HOG + geometric features
@@ -483,6 +483,7 @@ else:
     shape_pca = shape_scaled
     print("Could not perform PCA, using original scaled shape features.")
 
+
 # --- Scale other features ---
 scaler_color = StandardScaler()
 color_scaled = scaler_color.fit_transform(color_matrix)
@@ -491,20 +492,69 @@ if use_vit and vit_embs:
     vit_matrix = np.vstack(vit_embs)
     scaler_vit = StandardScaler()
     vit_scaled = scaler_vit.fit_transform(vit_matrix)
+
+
+# --- PCA optimization for ViT features ---
+max_components = min(vit_scaled.shape[0], vit_scaled.shape[1])
+
+for n_components in [32, 64, 128]:
+    if n_components >= max_components:
+        print(f"⚠️ Skipping n_components={n_components}, exceeds limit {max_components}")
+        continue
+    try:
+        pca_temp = PCA(n_components=n_components)
+        vit_pca_temp = pca_temp.fit_transform(vit_scaled)
+        km = KMeans(n_clusters=min(10, len(vit_pca_temp)-1), random_state=42).fit(vit_pca_temp)
+        score = silhouette_score(vit_pca_temp, km.labels_)
+        print(f"n_components={n_components} → Silhouette Score: {score:.4f}")
+        ...
+    except Exception as e:
+        print(f"❌ PCA failed for n_components={n_components}: {e}")
+
+if vit_scaled is not None:
+    print("\nOptimizing PCA components for ViT features...")
+    possible_components = [32, 64, 128, 256]
+    best_score_vit = -1
+    best_n_vit = 0
+    best_vit_pca = None
+
+    for n in possible_components:
+        n = min(n, vit_scaled.shape[0], vit_scaled.shape[1])
+        if n < 2:
+            continue
+        pca_temp = PCA(n_components=n)
+        vit_pca_temp = pca_temp.fit_transform(vit_scaled)
+
+        if len(set(KMeans(n_clusters=3, random_state=42, n_init="auto").fit_predict(vit_pca_temp))) > 1:
+            km = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(vit_pca_temp)
+            score = silhouette_score(vit_pca_temp, km.labels_)
+            print(f"n_components={n} → Silhouette Score: {score:.4f}")
+
+            if score > best_score_vit:
+                best_score_vit = score
+                best_n_vit = n
+                best_vit_pca = vit_pca_temp
+
+    if best_vit_pca is not None:
+        vit_pca = best_vit_pca
+        print(f"✅ Best PCA n_components for ViT = {best_n_vit} (Silhouette Score = {best_score_vit:.4f})")
+    else:
+        vit_pca = vit_scaled
+        print("⚠️ Could not optimize ViT PCA, using original embeddings.")
 else:
-    vit_scaled = None
+    vit_pca = None
     print("⚠️ ViT embeddings not available.")
 
-scaler_texture = StandardScaler()  # ⭐
+scaler_texture = StandardScaler()  
 texture_scaled = scaler_texture.fit_transform(texture_matrix) 
 
 # --- Build feature sets ---
 features_shape = shape_pca * shape_factor
-if vit_scaled is not None:
-    features_shape_vit = np.hstack([shape_pca * shape_factor, vit_scaled * vit_factor])
+if vit_pca is not None:
+    features_shape_vit = np.hstack([shape_pca * shape_factor, vit_pca * vit_factor])
     features_shape_vit_color_texture = np.hstack([
         shape_pca * shape_factor,
-        vit_scaled * vit_factor,
+        vit_pca * vit_factor,
         color_scaled * color_factor,
         texture_scaled * texture_factor
     ])
