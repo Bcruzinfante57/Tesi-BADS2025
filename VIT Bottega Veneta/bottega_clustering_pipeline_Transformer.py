@@ -7,7 +7,7 @@ from matplotlib import rcParams
 
 # Libraries for clustering and dimensionality reduction
 from sklearn.cluster import KMeans, AgglomerativeClustering
-from sklearn.metrics import silhouette_score, davies_bouldin_score
+from sklearn.metrics import silhouette_score, davies_bouldin_score, pairwise_distances
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -15,6 +15,8 @@ import os
 from PIL import Image, ImageOps
 from skimage.feature import local_binary_pattern
 from skimage.filters import gabor
+
+
 
 # Conditional imports
 try:
@@ -47,6 +49,7 @@ except ImportError:
 
 import cv2
 
+ # IMAGEN PREPROCESSING #
 _saved_first_crop = False
 _saved_first_final = False
 
@@ -187,10 +190,10 @@ def shape_properties_features(img):
 
 def texture_gabor_features(img, frequencies=[0.1, 0.2, 0.3, 0.4]):
     """
-    Extrae características de textura usando filtros de Gabor.
-    - frequencies: lista de frecuencias para los filtros.
-    Devuelve un vector con media y varianza de la respuesta de cada filtro.
-    """
+    Extracts texture features using Gabor filters.
+- frequencies: List of frequencies for the filters.
+Returns a vector with the mean and variance of each filter's response.
+"""
     gray = rgb2gray(np.array(img))
     feats = []
     for f in frequencies:
@@ -355,13 +358,25 @@ def run_hdbscan(X, names, out_file="clusters_hdbscan.png", title="HDBSCAN Cluste
     if not HAS_HDBSCAN:
         print("HDBSCAN is not installed. Please install with 'pip install hdbscan' to use this method.")
         return None
-    
-    model_hdbscan = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, cluster_selection_epsilon=0.5)
-    labels = model_hdbscan.fit_predict(X)
-    
+
+    # # Precompute cosine distance matrix in float64
+    dist_matrix = pairwise_distances(X, metric="cosine").astype(np.float64)
+
+    # HDBSCAN with precomputed matrix
+    model_hdbscan = hdbscan.HDBSCAN(
+        min_cluster_size=3,
+        min_samples=1,
+        cluster_selection_epsilon=0.0,
+        metric="precomputed"
+    )
+    labels = model_hdbscan.fit_predict(dist_matrix)
+
+    # For visualization we continue using X, not dist_matrix
     plot_clustered_images(X, labels, names, out_file, title, show_outliers=True)
+
     print(f"HDBSCAN clustering saved to {out_file}")
     return labels
+
 
 # --- Main Pipeline ---
 IMAGES_DIR = Path("images_bottega")
@@ -430,12 +445,21 @@ shape_matrix = np.vstack(shape_embs)
 texture_matrix = np.vstack(texture_embs)
 
 
+vit_scaled = None  # inicializar
+
+if use_vit and len(vit_embs) > 0:
+    vit_matrix = np.vstack(vit_embs)  
+    scaler_vit = StandardScaler()
+    vit_scaled = scaler_vit.fit_transform(vit_matrix)
+    print(f"ViT matrix shape: {vit_matrix.shape}")
+else:
+    print("⚠️ No ViT embeddings available, skipping ViT features.")
+
 # --- FINAL PART: Combine Features and Run Clustering ---
 
-shape_factor = 4.0   
-color_factor = 0.1
-vit_factor = 3.0
-texture_factor = 4.0
+shape_factor = 3.0   
+color_factor = 1.0
+texture_factor = 2.0
 
 
 # Shape = HOG + geometric features
@@ -488,127 +512,69 @@ else:
 scaler_color = StandardScaler()
 color_scaled = scaler_color.fit_transform(color_matrix)
 
-if use_vit and vit_embs:
-    vit_matrix = np.vstack(vit_embs)
-    scaler_vit = StandardScaler()
-    vit_scaled = scaler_vit.fit_transform(vit_matrix)
-
-
-# --- PCA optimization for ViT features ---
-max_components = min(vit_scaled.shape[0], vit_scaled.shape[1])
-
-for n_components in [32, 64, 128]:
-    if n_components >= max_components:
-        print(f"⚠️ Skipping n_components={n_components}, exceeds limit {max_components}")
-        continue
-    try:
-        pca_temp = PCA(n_components=n_components)
-        vit_pca_temp = pca_temp.fit_transform(vit_scaled)
-        km = KMeans(n_clusters=min(10, len(vit_pca_temp)-1), random_state=42).fit(vit_pca_temp)
-        score = silhouette_score(vit_pca_temp, km.labels_)
-        print(f"n_components={n_components} → Silhouette Score: {score:.4f}")
-        ...
-    except Exception as e:
-        print(f"❌ PCA failed for n_components={n_components}: {e}")
-
-if vit_scaled is not None:
-    print("\nOptimizing PCA components for ViT features...")
-    possible_components = [32, 64, 128, 256]
-    best_score_vit = -1
-    best_n_vit = 0
-    best_vit_pca = None
-
-    for n in possible_components:
-        n = min(n, vit_scaled.shape[0], vit_scaled.shape[1])
-        if n < 2:
-            continue
-        pca_temp = PCA(n_components=n)
-        vit_pca_temp = pca_temp.fit_transform(vit_scaled)
-
-        if len(set(KMeans(n_clusters=3, random_state=42, n_init="auto").fit_predict(vit_pca_temp))) > 1:
-            km = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(vit_pca_temp)
-            score = silhouette_score(vit_pca_temp, km.labels_)
-            print(f"n_components={n} → Silhouette Score: {score:.4f}")
-
-            if score > best_score_vit:
-                best_score_vit = score
-                best_n_vit = n
-                best_vit_pca = vit_pca_temp
-
-    if best_vit_pca is not None:
-        vit_pca = best_vit_pca
-        print(f"✅ Best PCA n_components for ViT = {best_n_vit} (Silhouette Score = {best_score_vit:.4f})")
-    else:
-        vit_pca = vit_scaled
-        print("⚠️ Could not optimize ViT PCA, using original embeddings.")
-else:
-    vit_pca = None
-    print("⚠️ ViT embeddings not available.")
-
 scaler_texture = StandardScaler()  
 texture_scaled = scaler_texture.fit_transform(texture_matrix) 
 
+
+
 # --- Build feature sets ---
-features_shape = shape_pca * shape_factor
-if vit_pca is not None:
-    features_shape_vit = np.hstack([shape_pca * shape_factor, vit_pca * vit_factor])
-    features_shape_vit_color_texture = np.hstack([
+features_vit = vit_scaled
+if vit_scaled is not None:
+    features_vit = np.hstack([vit_scaled])
+    features_shape_color_texture = np.hstack([
         shape_pca * shape_factor,
-        vit_pca * vit_factor,
         color_scaled * color_factor,
         texture_scaled * texture_factor
     ])
 else:
-    features_shape_vit = None
-    features_shape_vit_color_texture = np.hstack([
+    features_vit = None
+    features_shape_color_texture = np.hstack([
         shape_pca * shape_factor,
         color_scaled * color_factor,
         texture_scaled * texture_factor
     ])
 
-print(f"Shape feature matrix shape: {features_shape.shape}")
+print(f"VIT feature matrix shape: {features_vit.shape}")
 
-if features_shape_vit is not None:
-    print(f"Shape+ViT feature matrix shape: {features_shape_vit.shape}")
-print(f"Shape+ViT+Color+Texture feature matrix shape: {features_shape_vit_color_texture.shape}")
+print(f"Shape+Color+Texture feature matrix shape: {features_shape_color_texture.shape}")
 
 
-# --- Run clustering on Shape ---
-print("\n🔹 Running clustering on Shape features...")
-labels_agg_shape = run_agglomerative(features_shape, names)
-labels_kmeans_shape = run_kmeans(features_shape, names)
-labels_hdbscan_shape = run_hdbscan(features_shape, names)
+# --- Run clustering on VIT ---
+print("\n🔹 Running clustering on VIT features...")
+labels_agg_VIT = run_agglomerative(features_vit, names)
+labels_kmeans_VIT = run_kmeans(features_vit, names)
+labels_hdbscan_VIT = run_hdbscan(features_vit, names)
 
 
-# --- Run clustering on Shape + ViT + Color + Texture ---
-print("\n🔹 Running clustering on Shape+ViT+Color+Texture features...")
+# --- Run clustering on Shape  + Color + Texture ---
+print("\n🔹 Running clustering on Shape+Color+Texture features...")
 
-labels_agg_shape_vit_color_texture = run_agglomerative(
-    features_shape_vit_color_texture,
+labels_agg_shape_color_texture = run_agglomerative(
+    features_shape_color_texture,
     names,
-    out_file="clusters_agglomerative_shape_vit_color_texture.png",
-    title="Agglomerative Clustering (Shape+ViT+Color+Texture)"
+    out_file="clusters_agglomerative_shape_color_texture.png",
+    title="Agglomerative Clustering (Shape+Color+Texture)"
 )
-if labels_agg_shape_vit_color_texture is not None:
+if labels_agg_shape_color_texture is not None:
     plot_dendrogram(
-        features_shape_vit_color_texture,
+        features_shape_color_texture,
         names,
-        "dendrogram_shape_vit_color_texture.png",
-        "Agglomerative Clustering Dendrogram (Shape+ViT+Color+Texture Features)"
+        "dendrogram_shape_color_texture.png",
+        "Agglomerative Clustering Dendrogram (Shape+Color+Texture Features)"
     )
 
-labels_kmeans_shape_vit_color_texture = run_kmeans(
-    features_shape_vit_color_texture,
+labels_kmeans_shape_color_texture = run_kmeans(
+    features_shape_color_texture,
     names,
-    out_file="clusters_kmeans_shape_vit_color_texture.png",
-    title="K-Means Clustering (Shape+ViT+Color+Texture)"
+    out_file="clusters_kmeans_shape_color_texture.png",
+    title="K-Means Clustering (Shape+Color+Texture)"
 )
 
-labels_hdbscan_shape_vit_color_texture = run_hdbscan(
-    features_shape_vit_color_texture,
+labels_hdbscan_shape_color_texture = run_hdbscan(
+    features_shape_color_texture,
     names,
-    out_file="clusters_hdbscan_shape_vit_color_texture.png",
-    title="HDBSCAN Clustering (Shape+ViT+Color+Texture)"
+    out_file="clusters_hdbscan_shape_color_texture.png",
+    title="HDBSCAN Clustering (Shape+Color+Texture)"
 )
 
-print("\n✅ Clustering pipeline completed (Shape+ViT and Shape+ViT+Color+Texture).")
+print("\n✅ Clustering pipeline completed (ViT and Shape+Color+Texture).")
