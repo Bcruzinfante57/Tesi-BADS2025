@@ -291,6 +291,24 @@ def plot_dendrogram(X, names, out_file, title):
     plt.close()
 
 # --- Clustering Functions ---
+from itertools import combinations
+from scipy.spatial.distance import pdist
+
+def cluster_dispersion_pairwise(X, labels):
+    """"Returns the dispersion (average distance between pairs) of each cluster."""
+    dispersions = {}
+    for cluster in set(labels):
+        if cluster == -1:  #ignore outliers if any
+            continue
+        cluster_points = X[np.array(labels) == cluster]
+        if len(cluster_points) <= 1:
+            dispersions[cluster] = 0
+        else:
+            # pdist calculates all distances between pairs of points
+            pairwise_dists = pdist(cluster_points, metric="euclidean")
+            dispersions[cluster] = pairwise_dists.mean()
+    return dispersions
+
 def find_optimal_k_agglomerative(X):
     """Finds a 'broad' optimal k for Agglomerative Clustering using Silhouette Score."""
     print("🔍 Optimizing k for Agglomerative Clustering (broader styles)...")
@@ -322,15 +340,30 @@ def find_optimal_k_agglomerative(X):
     return max(4, best_k)
 
 def run_agglomerative(X, names, out_file="clusters_agglomerative.png", title="Agglomerative Clustering"):
-    """Runs Agglomerative Clustering with optimal k."""
     print("\n--- Running Agglomerative ---")
     best_k = find_optimal_k_agglomerative(X)
     if best_k is not None:
         model = AgglomerativeClustering(n_clusters=best_k)
         labels = model.fit_predict(X)
-        plot_clustered_images(X, labels, names, out_file, f"{title} (Optimal k={best_k})")
-        print(f"Agglomerative Clustering with optimal k={best_k} saved to {out_file}")
-        return labels
+
+        # Calculate internal dispersion (average distance between pairs)
+        dispersions = cluster_dispersion_pairwise(X, labels)
+
+        # Sort clusters from highest to lowest dispersion
+        sorted_clusters = sorted(dispersions.items(), key=lambda x: x[1], reverse=True)
+        cluster_order = {old: new for new, (old, _) in enumerate(sorted_clusters)}
+
+        # Relabel labels according to order
+        new_labels = np.array([cluster_order[l] for l in labels])
+
+       # Ordered plot
+        plot_clustered_images(X, new_labels, names, out_file, f"{title} (Ordered by Pairwise Dist.)")
+
+        print("Cluster ranking by avg. pairwise distance:")
+        for rank, (c, d) in enumerate(sorted_clusters, 1):
+            print(f"  Rank {rank}: Cluster {c} → avg pairwise dist {d:.4f}")
+
+        return new_labels
     return None
 
 def run_kmeans(X, names, out_file="clusters_kmeans.png", title="K-Means Clustering"):
@@ -457,9 +490,9 @@ else:
 
 # --- FINAL PART: Combine Features and Run Clustering ---
 
-shape_factor = 3.0   
+shape_factor = 4.0   
 color_factor = 1.0
-texture_factor = 2.0
+texture_factor = 1.0
 
 
 # Shape = HOG + geometric features
