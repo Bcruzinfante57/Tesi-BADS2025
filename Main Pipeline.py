@@ -4,6 +4,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
+import wandb
+import wandb.proto.wandb_internal_pb2 as p
+print("wandb", wandb.__version__)
+print("has Result?", hasattr(p, "Result"))
 
 # Libraries for clustering and dimensionality reduction
 from sklearn.cluster import KMeans, AgglomerativeClustering
@@ -522,15 +526,99 @@ def run_hdbscan(X, names, out_file="clusters_hdbscan.png", title="HDBSCAN Cluste
     return labels
 
 
+
+
+
+def build_shape_block(
+    hog_matrix,
+    shape_matrix,
+    shape_factor=1.0,
+    candidate_components=(16, 32, 48, 64),
+    random_state=42,
+):
+    """Prepare the shape feature block by mixing HOG and geometric cues."""
+    matrices = []
+    if hog_matrix is not None and getattr(hog_matrix, 'size', 0) > 0:
+        matrices.append(hog_matrix)
+    if shape_matrix is not None and getattr(shape_matrix, 'size', 0) > 0:
+        matrices.append(shape_matrix)
+    if not matrices:
+        raise ValueError('build_shape_block requires at least one non-empty shape matrix')
+
+    shape_combined = np.hstack(matrices)
+    scaler_shape = StandardScaler()
+    shape_scaled = scaler_shape.fit_transform(shape_combined)
+
+    best_score = float('-inf')
+    best_n = 0
+    best_shape = None
+    candidate_components = tuple(candidate_components) if candidate_components else ()
+
+    if shape_scaled.shape[0] > 3 and shape_scaled.shape[1] >= 2:
+        for comp in candidate_components:
+            if comp is None:
+                continue
+            n_components = min(int(comp), shape_scaled.shape[0], shape_scaled.shape[1])
+            if n_components < 2:
+                continue
+            try:
+                pca_temp = PCA(n_components=n_components)
+                shape_pca_temp = pca_temp.fit_transform(shape_scaled)
+            except ValueError:
+                continue
+
+            n_clusters = min(3, shape_pca_temp.shape[0] - 1)
+            if n_clusters < 2:
+                continue
+            try:
+                km = KMeans(n_clusters=n_clusters, random_state=random_state, n_init='auto')
+                labels = km.fit_predict(shape_pca_temp)
+            except ValueError:
+                continue
+            if len(set(labels)) <= 1:
+                continue
+            score = silhouette_score(shape_pca_temp, labels)
+            if score > best_score:
+                best_score = score
+                best_n = n_components
+                best_shape = shape_pca_temp
+
+    used_pca = False
+    if best_shape is not None:
+        shape_out = best_shape
+        used_pca = True
+    else:
+        fallback_n = min(32, shape_scaled.shape[0], shape_scaled.shape[1])
+        if fallback_n >= 2 and shape_scaled.shape[1] > 2:
+            try:
+                pca = PCA(n_components=fallback_n)
+                shape_out = pca.fit_transform(shape_scaled)
+                used_pca = True
+                best_n = fallback_n
+            except ValueError:
+                shape_out = shape_scaled
+                best_n = shape_scaled.shape[1]
+        else:
+            shape_out = shape_scaled
+            best_n = shape_scaled.shape[1]
+
+    shape_out = shape_out * float(shape_factor)
+    info = {
+        'used_pca': used_pca,
+        'n_components': best_n if used_pca else shape_scaled.shape[1],
+        'original_dim': shape_combined.shape[1],
+        'scaled_dim': shape_out.shape[1] if shape_out.ndim == 2 else 1,
+    }
+    return shape_out, info
+
+
 # --- Main Pipeline ---
 IMAGES_DIR = Path("images_bottega")
 if not IMAGES_DIR.exists():
     IMAGES_DIR = Path("imagenes_bottega")
     if not IMAGES_DIR.exists():
         raise SystemExit(f"No se encontró la carpeta {IMAGES_DIR.resolve()} — crea la carpeta y guarda las imágenes allí.")
-
-filter_non_sunglasses_images(IMAGES_DIR)
-
+ALLOWED_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tiff"}
 img_files = sorted([p for p in IMAGES_DIR.glob("*") if p.suffix.lower() in ALLOWED_IMAGE_SUFFIXES])
 if len(img_files) == 0:
     raise SystemExit("No se encontraron imágenes en images_bottega — agrega imágenes y vuelve a correr el script.")
@@ -600,96 +688,63 @@ if use_vit and len(vit_embs) > 0:
     print(f"ViT matrix shape: {vit_matrix.shape}")
 else:
     print("⚠️ No ViT embeddings available, skipping ViT features.")
+# -----------------------------------------------------------
+# FINAL FEATURE ASSEMBLY (order matters; keep as one block)
+# -----------------------------------------------------------
 
-# --- FINAL PART: Combine Features and Run Clustering ---
+# Hyper-parameters for weighting
+# -----------------------------------------------------------
+# FINAL FEATURE ASSEMBLY (order matters; keep as one block)
+# -----------------------------------------------------------
 
-shape_factor = 4.0   
+shape_factor = 4.0
 color_factor = 1.0
 texture_factor = 1.0
 
-
-# Shape = HOG + geometric features
-shape_combined_matrix = np.hstack([hog_matrix, shape_matrix])
-print(f"Raw Shape feature matrix shape: {shape_combined_matrix.shape}")
-
-# Standardize shape features
-scaler_shape = StandardScaler()
-shape_scaled = scaler_shape.fit_transform(shape_combined_matrix)
-
-# --- PCA optimization for Shape features ---
-possible_components = [16, 32, 48, 64]
-best_score = -1
-best_n = 0
-best_shape_pca = None
-
-print("\nOptimizing PCA components for shape features...")
-if len(shape_scaled) > 3:
-    for n in possible_components:
-        n = min(n, shape_scaled.shape[1])
-        if n < 2:
-            continue
-        pca_temp = PCA(n_components=n)
-        shape_pca_temp = pca_temp.fit_transform(shape_scaled)
-
-        if len(shape_pca_temp) > 1 and len(set(KMeans(n_clusters=3, random_state=42, n_init="auto").fit_predict(shape_pca_temp))) > 1:
-            km = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(shape_pca_temp)
-            score = silhouette_score(shape_pca_temp, km.labels_)
-            print(f"n_components={n} → Silhouette Score: {score:.4f}")
-
-            if score > best_score:
-                best_score = score
-                best_n = n
-                best_shape_pca = shape_pca_temp
-
-if best_n == 0 and shape_scaled.shape[1] > 2:
-    best_n = min(32, shape_scaled.shape[1])
-    pca = PCA(n_components=best_n)
-    shape_pca = pca.fit_transform(shape_scaled)
-    print(f"Using fallback PCA with n_components={best_n}")
-elif best_shape_pca is not None:
-    shape_pca = best_shape_pca
-    print(f"✅ Best PCA n_components = {best_n} (Silhouette Score = {best_score:.4f})")
-else:
-    shape_pca = shape_scaled
-    print("Could not perform PCA, using original scaled shape features.")
-
-
-# --- Scale other features ---
+# 1) Scale color & texture
 scaler_color = StandardScaler()
 color_scaled = scaler_color.fit_transform(color_matrix)
 
-scaler_texture = StandardScaler()  
-texture_scaled = scaler_texture.fit_transform(texture_matrix) 
+scaler_texture = StandardScaler()
+texture_scaled = scaler_texture.fit_transform(texture_matrix)
 
+# 2) Build SHAPE block (always returns a valid array)
+shape_pca, shape_info = build_shape_block(
+    hog_matrix, shape_matrix, shape_factor=shape_factor,
+    candidate_components=(16, 32, 48, 64),
+    random_state=42
+)
+print(f"Shape block → used_pca={shape_info['used_pca']}, "
+      f"n_components={shape_info['n_components']}, "
+      f"original_dim={shape_info['original_dim']}, "
+      f"scaled_dim={shape_info['scaled_dim']}")
 
-
-# --- Build feature sets ---
-features_vit = vit_scaled
-if vit_scaled is not None:
-    features_vit = np.hstack([vit_scaled])
-    features_shape_color_texture = np.hstack([
-        shape_pca * shape_factor,
-        color_scaled * color_factor,
-        texture_scaled * texture_factor
-    ])
+# 3) ViT guard
+if use_vit and vit_scaled is not None:
+    features_vit = vit_scaled
+    print(f"VIT feature matrix shape: {features_vit.shape}")
 else:
     features_vit = None
-    features_shape_color_texture = np.hstack([
-        shape_pca * shape_factor,
-        color_scaled * color_factor,
-        texture_scaled * texture_factor
-    ])
+    print("VIT feature matrix not available; will skip ViT clustering.")
 
-print(f"VIT feature matrix shape: {features_vit.shape}")
-
+# 4) Assemble the combined feature set
+features_shape_color_texture = np.hstack([
+    shape_pca,                         # already * shape_factor inside the builder
+    color_scaled * color_factor,
+    texture_scaled * texture_factor
+])
 print(f"Shape+Color+Texture feature matrix shape: {features_shape_color_texture.shape}")
-
 
 # --- Run clustering on VIT ---
 print("\n🔹 Running clustering on VIT features...")
-labels_agg_VIT = run_agglomerative(features_vit, names)
-labels_kmeans_VIT = run_kmeans(features_vit, names)
-labels_hdbscan_VIT = run_hdbscan(features_vit, names)
+if features_vit is not None:
+    labels_agg_VIT = run_agglomerative(features_vit, names)
+    labels_kmeans_VIT = run_kmeans(features_vit, names)
+    labels_hdbscan_VIT = run_hdbscan(features_vit, names)
+else:
+    labels_agg_VIT = labels_kmeans_VIT = labels_hdbscan_VIT = None
+    print("Skipping ViT clustering because no ViT embeddings are available.")
+
 
 
 # --- Run clustering on Shape  + Color + Texture ---
