@@ -10,16 +10,25 @@ import os
 import requests
 import re   
 import pyautogui
+import csv
+from selenium.webdriver.chrome.options import Options
 
 ##This one depends on the chromedriver path in your PC
 
 service = Service("/Users/benja/tools/chromedriver")
-driver = webdriver.Chrome(service=service)
-
 url = "https://www.ysl.com/it-it/search?q=occhiali%20da%20sole"
 
+
+options = Options()
+# Argumentos para evitar la detección de bot de Selenium (el factor clave)
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+# Argumento para simular un navegador real (User-Agent estándar)
+options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+options.add_argument("--start-maximized") # Iniciar maximizado ayuda a renderizar correctamente
+
+driver = webdriver.Chrome(options=options)
 driver.get(url)
-driver.maximize_window()
 
 time.sleep(3)
 
@@ -47,7 +56,7 @@ total_products_count = None
 try:
         
         # Mover el cursor a las coordenadas fijas
-        pyautogui.moveTo(860, 330, duration=1.5) # Usa las coordenadas X e Y que has probado
+        pyautogui.moveTo(860, 350, duration=1.5) # Usa las coordenadas X e Y que has probado
         
         time.sleep(1)
         pyautogui.click(duration=0.3)
@@ -98,58 +107,94 @@ else:
 
 time.sleep(10)
 
-# --- RECOLECCIÓN DE IMÁGENES ---
-print("Collecting image URLs...")
-products_to_download = {}
+# --- CONFIGURACIÓN DE DATOS ---
+print("Collecting image URLs and prices for YSL...")
+products_data = []  # Lista para almacenar (nombre_archivo, precio, img_url)
+product_idx = 1     # Contador para el nombre del archivo (YSL_1, YSL_2, ...)
 
 try:
-    # 1. Encontrar todos los contenedores de productos
+    # 1. Encontrar todos los contenedores de productos (las tarjetas individuales)
     grid_items = driver.find_elements(By.CSS_SELECTOR, "li[id^='grid-item-']")
     print(f"Número de contenedores de productos encontrados: {len(grid_items)}")
     
-    # 2. Iterar sobre cada contenedor para encontrar la primera imagen
+    # 2. Iterar sobre cada contenedor
     for item in grid_items:
+        img_url = ""
+        price = "N/A"
+        
+        # Intentamos obtener la imagen y el precio dentro del mismo contenedor 'item'
         try:
+            # --- IMAGE EXTRACTION ---
             img = item.find_element(By.TAG_NAME, "img")
             
             # Obtener la URL de alta resolución del srcset
             srcset = img.get_attribute("srcset")
             if srcset:
                 urls = srcset.split(', ')
+                # Intentamos encontrar la URL con la resolución más alta (generalmente la última)
                 img_url = urls[-1].split(' ')[0]
             else:
                 img_url = img.get_attribute("src")
 
-            # Validar y extraer el código de producto de la URL
-            code_match = re.search(r'dam.kering.com/(\S+)\?', img_url)
-            if img_url and "kering.com" in img_url and code_match:
-                product_code = code_match.group(1).split('/')[-1].replace('.A.jpg', '')
-                products_to_download[product_code] = img_url
+            # Validar que tengamos una URL
+            if not img_url:
+                continue 
+
+            # --- PRICE EXTRACTION (USANDO data-qa con Regex) ---
+            # El selector busca cualquier elemento cuyo atributo 'data-qa' comience con "plp-product-price-"
+            price_selector = "[data-qa^='plp-product-price-']"
+            try:
+                price_element = item.find_element(By.CSS_SELECTOR, price_selector)
+                price = price_element.text.strip()
+            except NoSuchElementException:
+                price = "N/A" # No se encontró el precio, se mantiene 'N/A'
+
+            
+            # --- GUARDAR DATOS Y NOMBRAR ---
+            if img_url:
+                product_name = f"YSL_{product_idx}"
+                products_data.append((product_name, price, img_url))
+                product_idx += 1 # Aumentar el índice solo si el producto es válido
+            else:
+                print(f"Skipping item: No valid image URL found.")
+                
         except NoSuchElementException:
-            continue # Si un contenedor no tiene imagen, se salta
+            # Si un contenedor no tiene la estructura básica (imagen), se salta
+            continue 
 
 except Exception as e:
-    print(f"Error localizando productos: {e}")
+    print(f"Error general durante la recolección de datos: {e}")
 
-print(f"Total product image URLs found: {len(products_to_download)}")
+print(f"Total products scraped and ready for download: {len(products_data)}")
 
-# --- DESCARGA ---
-image_folder = "imagenes_ysl"
+# --- DESCARGA DE IMÁGENES Y PREPARACIÓN CSV ---
+image_folder = "images_ysl"
 os.makedirs(image_folder, exist_ok=True)
 
 count = 0
-for code, img_url in products_to_download.items():
-    img_path = os.path.join(image_folder, f"{code}.jpg")
+for product_name, price, img_url in products_data:
+    img_path = os.path.join(image_folder, f"{product_name}.jpg")
     
     try:
-        img_data = requests.get(img_url).content
+        # Añadir un timeout para evitar que la descarga se quede colgada
+        img_data = requests.get(img_url, timeout=10).content
         with open(img_path, "wb") as f:
             f.write(img_data)
-        print(f"Image saved: {code}.jpg")
+        print(f"Image saved: {product_name}.jpg ({price})")
         count += 1
     except Exception as e:
         print(f"Error downloading image from {img_url}: {e}")
 
+# --- EXPORT CSV ---
+csv_path = os.path.join(image_folder, "ysl_products.csv")
+with open(csv_path, mode="w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Product Name", "Price"])
+    # Escribimos solo el nombre y el precio
+    writer.writerows([(name, p) for name, p, url in products_data]) 
+
+print(f"✅ CSV saved at {csv_path}")
+print(f"✅ Scraping completed: {count} images saved + {len(products_data)} prices scraped.")
+
 driver.quit()
-print(f"Image scraping completed for {count} products of YSL.")
 

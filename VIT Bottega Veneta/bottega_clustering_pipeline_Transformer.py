@@ -688,6 +688,14 @@ print(f"Shape+Color+Texture feature matrix shape: {features_shape_color_texture.
 # --- Run clustering on VIT ---
 print("\n🔹 Running clustering on VIT features...")
 labels_agg_VIT = run_agglomerative(features_vit, names)
+if labels_agg_VIT is not None:
+    plot_dendrogram(
+        features_vit,
+        names,
+        "dendrogram_vit.png",
+        "Agglomerative Clustering Dendrogram (ViT Features)"
+    )
+    
 labels_kmeans_VIT = run_kmeans(features_vit, names)
 labels_hdbscan_VIT = run_hdbscan(features_vit, names)
 

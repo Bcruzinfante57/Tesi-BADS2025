@@ -9,6 +9,8 @@ import os
 import requests
 import re   
 import pyautogui
+import csv
+
 
 ##This one depends on the chromedriver path in your PC
 
@@ -117,22 +119,49 @@ except Exception as e:
 
 print(f"Total product image URLs found: {len(products_to_download)}")
 
-# --- DESCARGA ---
+# --- RECOLECCIÓN DE PRECIOS ---
+print("Collecting product prices...")
+products_prices = []
+
+try:
+    price_items = driver.find_elements(By.CSS_SELECTOR, "span.money.ProductPriceDiscount__product-price__discount--Acusx.product-price__discount.SearchHitsItem__search-hit__price-item--mBvPF")
+    print(f"Número de precios encontrados: {len(price_items)}")
+
+    for item in price_items:
+        price = item.text.strip()
+        products_prices.append(price)
+
+except Exception as e:
+    print(f"Error localizando precios: {e}")
+
+
+# --- DESCARGA DE IMÁGENES + CREACIÓN CSV ---
 image_folder = "images_D&G"
 os.makedirs(image_folder, exist_ok=True)
 
-count = 0
-for code, img_url in products_to_download.items():
-    img_path = os.path.join(image_folder, f"{code}.jpg")
-    
-    try:
-        img_data = requests.get(img_url).content
-        with open(img_path, "wb") as f:
-            f.write(img_data)
-        print(f"Image saved: {code}.jpg")
-        count += 1
-    except Exception as e:
-        print(f"Error downloading image from {img_url}: {e}")
+csv_path = os.path.join(image_folder, "dolcegabbana_products.csv")
+
+with open(csv_path, mode="w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Product_ID", "Price"])
+
+    for idx, img_url in enumerate(products_to_download, start=1):
+        product_id = f"D&G_{idx}"
+        price = products_prices[idx-1] if idx-1 < len(products_prices) else "N/A"
+
+        # Descargar imagen
+        img_path = os.path.join(image_folder, f"{product_id}.jpg")
+        try:
+            img_data = requests.get(img_url).content
+            with open(img_path, "wb") as img_file:
+                img_file.write(img_data)
+            print(f"Image saved: {product_id}.jpg")
+        except Exception as e:
+            print(f"Error downloading image from {img_url}: {e}")
+
+        # Escribir en CSV
+        writer.writerow([product_id, price])
 
 driver.quit()
-print(f"Image scraping completed for {count} products of D&G.")
+print(f"✅ Scraping completed: {len(products_to_download)} products saved with prices.")
+print(f"✅ CSV saved at {csv_path}")
