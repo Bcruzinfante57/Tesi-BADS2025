@@ -293,6 +293,107 @@ def plot_dendrogram(X, names, out_file, title):
 # --- Clustering Functions ---
 from itertools import combinations
 from scipy.spatial.distance import pdist
+from sklearn.metrics import pairwise_distances
+
+def cluster_pairwise_separation(X, labels, metric="euclidean", aggregate="mean"):
+    """
+    Compute cross-cluster separation for every pair and useful per-cluster stats.
+    Returns:
+      pair_sep: dict with keys (h,f), h<f, value = separation (mean or sum)
+      stats: dict keyed by cluster -> {
+          'min_sep': float,
+          'min_pair': other_cluster_label,
+          'mean_sep': float,
+          'max_sep': float,
+          'max_pair': other_cluster_label
+      }
+    Notes:
+      - Outliers labeled -1 are ignored.
+      - aggregate='mean' is size-invariant; 'sum' follows the raw formula.
+    """
+    uniq = [c for c in sorted(set(labels)) if c != -1]
+    pair_sep = {}
+    # Compute all pairwise separations
+    for i, h in enumerate(uniq):
+        H = X[np.array(labels) == h]
+        if H.shape[0] == 0:  # safety
+            continue
+        for f in uniq[i+1:]:
+            F = X[np.array(labels) == f]
+            if F.shape[0] == 0:
+                continue
+            D = pairwise_distances(H, F, metric=metric)
+            if aggregate == "sum":
+                s = float(D.sum())
+            else:  # "mean" default
+                s = float(D.mean())
+            pair_sep[(h, f)] = s
+
+    # Build per-cluster stats
+    stats = {}
+    for h in uniq:
+        seps = []
+        for f in uniq:
+            if h == f:
+                continue
+            key = (h, f) if h < f else (f, h)
+            if key in pair_sep:
+                seps.append((f, pair_sep[key]))
+        if len(seps) == 0:
+            # isolated single cluster; define zeros
+            stats[h] = {'min_sep': 0., 'min_pair': None,
+                        'mean_sep': 0., 'max_sep': 0., 'max_pair': None}
+        else:
+            # min / max by value
+            f_min, v_min = min(seps, key=lambda t: t[1])
+            f_max, v_max = max(seps, key=lambda t: t[1])
+            v_mean = float(np.mean([v for _, v in seps]))
+            stats[h] = {'min_sep': v_min, 'min_pair': f_min,
+                        'mean_sep': v_mean, 'max_sep': v_max, 'max_pair': f_max}
+    return pair_sep, stats
+
+
+def reorder_labels_by_separation(X, labels,
+                                 metric="euclidean",
+                                 aggregate="mean",
+                                 order_stat="min"):
+    """
+    order_stat in {"min", "mean", "max"} chooses how to rank clusters:
+      - "min": farthest from its closest neighbor (most conservative).
+      - "mean": largest average separation to all others.
+      - "max": has at least one cluster very far away.
+    Returns a remapped label array (0,1,2,...) sorted descending by the chosen stat,
+    plus a report dictionary with stats for printing.
+    """
+    _, stats = cluster_pairwise_separation(X, labels, metric=metric, aggregate=aggregate)
+    # choose key per cluster for ordering
+    if order_stat == "max":
+        keyfun = lambda c: stats[c]['max_sep']
+    elif order_stat == "mean":
+        keyfun = lambda c: stats[c]['mean_sep']
+    else:  # "min" default
+        keyfun = lambda c: stats[c]['min_sep']
+
+    clusters = [c for c in sorted(set(labels)) if c != -1]
+    # Sort clusters by chosen stat (descending = most separated first)
+    sorted_clusters = sorted(clusters, key=keyfun, reverse=True)
+
+    # Relabel to 0..K-1 in this order
+    cluster_order = {old: new for new, old in enumerate(sorted_clusters)}
+    new_labels = np.array([cluster_order[l] if l in cluster_order else -1 for l in labels])
+
+    # Build a ranked printable list with the chosen stat and the paired cluster
+    ranked = []
+    for r, c in enumerate(sorted_clusters, 1):
+        info = stats[c]
+        if order_stat == "max":
+            ranked.append((r, c, info['max_sep'], info['max_pair']))
+        elif order_stat == "mean":
+            ranked.append((r, c, info['mean_sep'], None))
+        else:  # "min"
+            ranked.append((r, c, info['min_sep'], info['min_pair']))
+    return new_labels, ranked, stats
+
 
 def cluster_dispersion_pairwise(X, labels):
     """"Returns the dispersion (average distance between pairs) of each cluster."""
@@ -345,25 +446,35 @@ def run_agglomerative(X, names, out_file="clusters_agglomerative.png", title="Ag
     if best_k is not None:
         model = AgglomerativeClustering(n_clusters=best_k)
         labels = model.fit_predict(X)
+        # --- ORDER BY SEPARATION INSTEAD OF DISPERSION ---
+        # Options:
+        #   aggregate: "mean" (recommended) or "sum"
+        #   order_stat: "min" (farthest from nearest), "mean", or "max"
+        new_labels, ranked, stats = reorder_labels_by_separation(
+            X, labels, metric="euclidean", aggregate="mean", order_stat="min"
+        )
 
-        # Calculate internal dispersion (average distance between pairs)
-        dispersions = cluster_dispersion_pairwise(X, labels)
+        # Plot with the new order
+        plot_clustered_images(
+            X, new_labels, names, out_file,
+            f"{title} (Ordered by Separation: farthest-from-nearest)"
+        )
 
-        # Sort clusters from highest to lowest dispersion
-        sorted_clusters = sorted(dispersions.items(), key=lambda x: x[1], reverse=True)
-        cluster_order = {old: new for new, (old, _) in enumerate(sorted_clusters)}
+        # Console report
+        print("Cluster ranking by separation (farthest from nearest neighbor first):")
+        for rank, c, sep_val, other in ranked:
+            neighbor_txt = f" (nearest: {other})" if other is not None else ""
+            print(f"  Rank {rank}: Cluster {c} → min-sep {sep_val:.4f}{neighbor_txt}")
 
-        # Relabel labels according to order
-        new_labels = np.array([cluster_order[l] for l in labels])
-
-       # Ordered plot
-        plot_clustered_images(X, new_labels, names, out_file, f"{title} (Ordered by Pairwise Dist.)")
-
-        print("Cluster ranking by avg. pairwise distance:")
-        for rank, (c, d) in enumerate(sorted_clusters, 1):
-            print(f"  Rank {rank}: Cluster {c} → avg pairwise dist {d:.4f}")
+        # (Optional) more detail
+        print("\nSeparation stats per cluster [min / mean / max]:")
+        for c in sorted(stats.keys()):
+            s = stats[c]
+            print(f"  Cluster {c}: min={s['min_sep']:.4f} (to {s['min_pair']}), "
+                  f"mean={s['mean_sep']:.4f}, max={s['max_sep']:.4f} (to {s['max_pair']})")
 
         return new_labels
+
     return None
 
 def run_kmeans(X, names, out_file="clusters_kmeans.png", title="K-Means Clustering"):
@@ -418,7 +529,9 @@ if not IMAGES_DIR.exists():
     if not IMAGES_DIR.exists():
         raise SystemExit(f"No se encontró la carpeta {IMAGES_DIR.resolve()} — crea la carpeta y guarda las imágenes allí.")
 
-img_files = sorted([p for p in IMAGES_DIR.glob("*") if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")])
+filter_non_sunglasses_images(IMAGES_DIR)
+
+img_files = sorted([p for p in IMAGES_DIR.glob("*") if p.suffix.lower() in ALLOWED_IMAGE_SUFFIXES])
 if len(img_files) == 0:
     raise SystemExit("No se encontraron imágenes en images_bottega — agrega imágenes y vuelve a correr el script.")
 
