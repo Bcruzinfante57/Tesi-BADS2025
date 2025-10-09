@@ -54,9 +54,10 @@ import cv2
 
 # --- GLOBAL CONFIGURATION ---
 EMBEDDING_CACHE_FILE = Path("all_brands_embeddings_cache.pkl")
-TARGET_BRAND = "YSL" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
+TARGET_BRAND = "Bottega Veneta" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
 MIN_PRICE = 100
 MAX_PRICE = 1000
+ORDER_BY = "Inter"  # "Inter" (Separation) or "Intra" (Cohesion)
 ALLOWED_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"}
 
 # IMAGEN PREPROCESSING #
@@ -66,23 +67,23 @@ _saved_first_final = False
 
 def crop_white_bg(pil_img, adaptive=True, padding=0.35): # PADDING MANTENIDO EN 0.35
     """
-    Recorte de objeto robusto para fotos de productos (gafas), 
-    maneja fondos blancos/grises variables, sombras suaves y bordes translúcidos.
-    
-    Ajustes aplicados para MEJORAR LA DETECCIÓN DE BORDES FINOS y evitar el recorte excesivo:
-    1. Pre-procesamiento con Suavizado Gaussiano (Gaussian Blur) para reducir ruido de fondo.
-    2. Umbral Adaptativo (C=15) más laxo para captar bordes finos.
-    3. Cierre Extremo y Dilatación Reforzada para asegurar la fusión de todas las partes del objeto.
-    4. **Detección de Múltiples Contornos** para asegurar que se capturen ambos lentes si están separados.
-    5. Padding establecido en 0.35 (35% de margen) para un buen centrado.
+    Robust object cropping for product photos (eyeglasses),
+    handles variable white/gray backgrounds, soft shadows, and translucent edges.
 
-    :param pil_img: PIL Image (asume fondo claro).
-    :param adaptive: Booleano para usar Umbral Adaptativo (mantener en True).
-    :param padding: Margen fraccional añadido alrededor del objeto (0.35 = 35%).
-    :return: PIL Image recortada con fondo normalizado a blanco puro.
+    Adjustments applied to IMPROVE FINE EDGE DETECTION and prevent over-cropping:
+    1. Pre-processing with Gaussian Blur to reduce background noise.
+    2. Looser Adaptive Threshold (C=15) to capture fine edges.
+    3. Enhanced Extreme Closure and Dilation to ensure all parts of the object are blended.
+    4. **Multiple Contour Detection** to ensure both lenses are captured if they are separated.
+    5. Padding set to 0.35 (35% margin) for good centering.
+
+    :param pil_img: PIL Image (assumes light background).
+    :param adaptive: Boolean to use Adaptive Threshold (maintain (True).
+    :param padding: Fractional padding added around the object (0.35 = 35%).
+    :return: PIL Image clipped with background normalized to pure white.
     """
     try:
-        # Convertir a numpy array y escala de grises
+        # Convert to numpy array and grayscale
         img_np = np.array(pil_img.convert("RGB"))
         gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
 
@@ -290,34 +291,73 @@ def texture_gabor_features(img, frequencies=[0.1, 0.2, 0.3, 0.4]):
         feats.append(filt_imag.var())
     return np.array(feats, dtype=float)
 
-# --- NUEVA FUNCIÓN DE PLOTTING (BLINDADA CONTRA ERRORES DE ARGUMENTOS) ---
+# --- Clustering Visualization -- PNG OUTPUT---
 
-# --- NUEVA FUNCIÓN DE PLOTTING (BLINDADA CONTRA DESALINEACIÓN DE ARGUMENTOS) ---
-# Se adapta a la llamada: plot_clustered_images(X, new_labels, names, prices, out_file, title_str)
-
-def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_str, show_outliers=False):
+def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_str, 
+                          show_outliers=False, sorted_labels_list=None, remapped_labels=None):
     """
-    Crea una cuadrícula de imágenes organizada por clúster. La firma de la función
-    ha sido modificada para aceptar la lista de precios (prices_list) como cuarto argumento
-    y usarla para el ploteo, en lugar de un DataFrame de precios que no se estaba pasando.
+    Creates a grid of images organized by cluster. The function has been
+    updated to calculate and display the Average, Minimum, and Maximum Price
+    for each cluster in the subplot title. The cluster plotting order can be
+    determined by an external ranking function like reorder_labels.
+
+    :param emb_2d: The two-dimensional embeddings (T-SNE/PCA) of the object.
+    :param labels: The cluster labels assigned to each object.
+    :param names: The list of names/stems of the image files.
+    :param prices_list: The list of prices corresponding to each name.
+    :param out_file: The name of the output PNG file.
+    :param title_str: The main title of the plot.
+    :param show_outliers: Boolean to include or exclude the Noise cluster (-1).
+    :param sorted_labels_list: (Optional) List of cluster labels (0, 1, 2, ...) 
+                               in the desired plotting order, from reorder_labels' ranked result.
+    :param remapped_labels: (Optional) The labels array remapped to 0, 1, 2, ... from 
+                            reorder_labels' first returned value.
     """
     import numpy as np
     import matplotlib.pyplot as plt
-    # Asume que 're' y 'preprocessed_images' están accesibles globalmente.
+    import pandas as pd
     global preprocessed_images
 
-    # 1. Adaptación de Datos
-    # Mapear nombres a precios para una búsqueda rápida (usa la lista de precios)
+    # --- CRITICAL CHANGE 1: Use remapped_labels if provided for plotting logic ---
+    current_labels = remapped_labels if remapped_labels is not None else labels
+    
+    # 1. Data Adaptation
     if len(names) == len(prices_list):
-        price_map = dict(zip(names, prices_list))
-    else:
-        print("Error: La lista de nombres y precios no coinciden en longitud. Los precios no se mostrarán.")
-        price_map = {}
+        try:
+            prices_list_float = [float(p) for p in prices_list] 
+        except ValueError:
+            print("Error: Prices contain non-numeric values. Price analysis will be skipped.")
+            prices_list_float = []
 
-    if show_outliers:
-        unique_labels = sorted(list(set(labels)))
+        price_map = dict(zip(names, prices_list_float))
     else:
-        unique_labels = sorted([l for l in list(set(labels)) if l != -1])
+        print("Error: Names and prices lists do not match in length. Prices will not be shown.")
+        price_map = {}
+        prices_list_float = []
+        
+    # =========================================================================
+    # CLUSTER STATISTICS CALCULATION (Using current_labels)
+    # =========================================================================
+    cluster_stats = pd.DataFrame(columns=['label', 'mean', 'min', 'max', 'count'])
+    if prices_list_float and len(current_labels) == len(prices_list_float):
+        df_data = pd.DataFrame({
+            'label': current_labels,
+            'price': prices_list_float
+        })
+        cluster_stats = df_data.groupby('label')['price'].agg(['mean', 'min', 'max', 'count']).reset_index()
+        cluster_stats['label'] = cluster_stats['label'].astype(int)
+    # =========================================================================
+
+    # --- CRITICAL CHANGE 2: Determine plotting order ---
+    if sorted_labels_list is not None:
+        # If provided, use the externally calculated order
+        unique_labels = [l for l in sorted_labels_list if show_outliers or l != -1]
+    else:
+        # Otherwise, use the original logic (sorted numerical order based on current labels)
+        if show_outliers:
+            unique_labels = sorted(list(set(current_labels)))
+        else:
+            unique_labels = sorted([l for l in list(set(current_labels)) if l != -1])
 
     n_clusters = len(unique_labels)
     if n_clusters == 0:
@@ -325,20 +365,27 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
         return
     
     plt.rcParams['figure.constrained_layout.use'] = False
-    # Ajuste para evitar error al hacer subplots con una sola fila
-    fig, axes = plt.subplots(max(1, n_clusters), 1, figsize=(15, 5 * n_clusters)) 
+    fig, axes = plt.subplots(max(1, n_clusters), 1, figsize=(15, 6 * n_clusters)) 
 
     if n_clusters == 1:
-        axes = [axes] # Asegura que siempre sea iterable
+        axes = [axes] # Ensures it is always iterable
 
     colors = plt.cm.Set3(np.linspace(0, 1, n_clusters))
-    if -1 in labels and show_outliers:
-        colors = np.insert(colors, list(unique_labels).index(-1), [0.8, 0.8, 0.8, 1], axis=0)
-    
+    # Assigns gray color to Noise (-1) if it's in the plotting order
+    if -1 in unique_labels:
+        noise_index = unique_labels.index(-1)
+        # Check if Set3 is large enough, otherwise use general approach
+        if noise_index < len(colors):
+            colors = np.insert(colors, noise_index, [0.8, 0.8, 0.8, 1], axis=0)
+        else:
+            # Handle case where -1 might be the only label
+            colors = np.array([[0.8, 0.8, 0.8, 1]])
+
     plt.suptitle(title_str, fontsize=20, fontweight='bold')
 
     for i, label in enumerate(unique_labels):
-        cluster_images = [name for name, l in zip(names, labels) if l == label]
+        # Filter images using current_labels (the remapped or original labels)
+        cluster_images = [name for name, l in zip(names, current_labels) if l == label]
         cluster_ax = axes[i]
         n_images = len(cluster_images)
         if n_images == 0: continue
@@ -347,34 +394,60 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
         img_h = 0.7 
         img_w = 1.0 / cols
         
+        # ---------------------------------------------------------------------
+        # PREPARATION OF STATISTICS TEXT FOR THE SUBPLOT TITLE
+        # ---------------------------------------------------------------------
+        title_stats_text = ""
+        stats_row = cluster_stats[cluster_stats['label'] == label]
+
+        if not stats_row.empty:
+            stats = stats_row.iloc[0]
+            avg = f"€{stats['mean']:.0f}"
+            min_p = f"€{stats['min']:.0f}"
+            max_p = f"€{stats['max']:.0f}"
+            
+            if label == -1:
+                 # Format for Outliers
+                title_label = f"Noise Cluster (-1) (n={n_images})"
+            else:
+                # The label here is the NEW, RANKED label (0, 1, 2, ...)
+                title_label = f"Cluster {label} (n={n_images})"
+
+            # Multi-line Title
+            title_stats_text = (
+                f"{title_label}\n"
+                f"Avg: {avg} | Min: {min_p} | Max: {max_p}"
+            )
+        else:
+            # Fallback case if no statistics are available
+            if label == -1:
+                title_stats_text = f"Noise Cluster (-1) (n={n_images})"
+            else:
+                title_stats_text = f"Cluster {label} (n={n_images})"
+                
+        # ---------------------------------------------------------------------
+        
         for j, img_name_stem in enumerate(cluster_images):
             try:
-                # 2. Recuperar imagen
+                # 2. Retrieve image
                 if img_name_stem not in preprocessed_images:
                      print(f"Warning: Image stem '{img_name_stem}' not found in preprocessed_images. Skipping.")
                      continue
                     
                 img = preprocessed_images[img_name_stem]
                 
-                # --- Preparación de Texto ---
+                # --- Price Text Preparation per Image ---
                 display_product_name = img_name_stem
                 display_price = "N/A"
                 
-                # Obtener Precio del mapa
                 display_price_raw = price_map.get(img_name_stem)
                 if display_price_raw is not None:
-                    # **FIX 1: MÁXIMA ROBUSTEZ** (Asegura que display_product_name es una cadena segura)
-                    # En la llamada de 'run_agglomerative', prices_list contiene solo números, 
-                    # por lo que evitamos cualquier manipulación de string en un "nombre de producto"
-                    # que provenga de una fuente de datos inexistente.
-                    
-                    # Usamos el nombre del archivo como nombre del producto
                     if len(display_product_name) > 15: 
                         display_product_name = display_product_name[:12] + "..."
                         
                     display_price = f"€{float(display_price_raw):.0f}"
                 
-                # 3. Dibujar Imagen
+                # 3. Draw Image
                 ax_img = cluster_ax.inset_axes(
                     [j * img_w, 1 - img_h, img_w, img_h],
                     transform=cluster_ax.transAxes
@@ -384,13 +457,13 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
                 ax_img.set_xticks([])
                 ax_img.set_yticks([])
 
-                # 4. Dibujar Borde
+                # 4. Draw Border
                 border_color = 'red' if label == -1 else colors[i]
                 for spine in ax_img.spines.values():
                     spine.set_edgecolor(border_color)
                     spine.set_linewidth(3)
                 
-                # 5. Dibujar Texto (Nombre y Precio)
+                # 5. Draw Text (Name and Price)
                 y_coord_name = 1 - img_h - 0.03
                 y_coord_price = y_coord_name - 0.05 
                 
@@ -414,15 +487,13 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
                 )
 
             except Exception as e:
-                # El error de string indices debe estar resuelto, pero mantenemos el manejo
                 print(f"Error loading image stem {img_name_stem}: {e}")
         
-        cluster_ax.set_title(f"Cluster {label} (n={n_images})", loc='left', fontsize=14, pad=10)
+        # 6. DRAW CLUSTER TITLE (NOW WITH STATISTICS)
+        cluster_ax.set_title(title_stats_text, loc='left', fontsize=12, pad=10, fontweight='bold')
         cluster_ax.set_axis_off()
 
-    # **FIX 2: Manejo robusto de out_file** (Previene ValueError: Format '0' is not supported)
-    # out_file en esta firma es el argumento que originalmente era el 5to, y que en tu llamada 
-    # run_agglomerative es el string correcto. Pero se mantiene la validación por si acaso.
+    # Robust handling of out_file
     if not isinstance(out_file, str) or not any(out_file.lower().endswith(ext) for ext in ['.png', '.jpg', '.pdf']):
         safe_filename = f"clusters_output_{title_str.replace(' ', '_').replace('(', '').replace(')', '')}.png"
         print(f"Warning: 'out_file' was an invalid type. Saving as: {safe_filename}")
@@ -449,6 +520,71 @@ def plot_dendrogram(X, names, out_file, title):
     plt.xlabel('Images')
     plt.savefig(out_file, dpi=200, bbox_inches='tight')
     plt.close()
+
+def plot_2d_clusters(emb_2d, labels, title_str="2D Cluster Scatter Plot", out_file="2d_clusters.png", remapped_labels=None):
+    """
+    Generates a 2D scatter plot of the clusters.
+
+    :param emb_2d: NumPy array of two dimensions (X, Y coordinates) for each point. (n_samples, 2).
+    :param labels: Cluster labels array or list (used for data filtering if remapped_labels is None).
+    :param title_str: Main title of the plot.
+    :param out_file: Name of the output PNG file.
+    :param remapped_labels: (Optional) The labels (0, 1, 2, ...) to be used for coloring and legend names.
+    """
+    
+    # Use remapped_labels for coloring and grouping if provided; otherwise, use the original labels
+    plotting_labels = remapped_labels if remapped_labels is not None else labels
+    
+    if emb_2d.shape[1] != 2:
+        raise ValueError("emb_2d must have exactly 2 columns for a 2D scatter plot (X, Y coordinates).")
+
+    # Get unique labels to iterate over (excluding -1 unless it's the only one)
+    unique_labels = sorted(list(set(plotting_labels)))
+    
+    # We define the number of clusters for the color map excluding noise if present.
+    n_colors = len([l for l in unique_labels if l != -1])
+    
+    # Use 'tab20' for good color differentiation up to 20 clusters
+    cmap = plt.cm.get_cmap('tab20', max(1, n_colors))
+
+    plt.figure(figsize=(10, 8))
+
+    for i, label in enumerate(unique_labels):
+        if label == -1: # Noise/Outliers
+            color = 'gray'
+            label_name = 'Noise (-1)'
+            # Use the last index of the color map if noise needs to be included, 
+            # but usually, gray is better.
+        else:
+            # Assign color based on the label's rank (0, 1, 2, ...)
+            color = cmap(i if n_colors > 0 else 0) 
+            label_name = f'Cluster {label}'
+
+        # Select only the points belonging to this cluster/label
+        cluster_points = emb_2d[plotting_labels == label]
+        
+        # Plot the points
+        plt.scatter(
+            cluster_points[:, 0], # X Coordinates
+            cluster_points[:, 1], # Y Coordinates
+            color=color,
+            label=label_name,
+            s=50, # Size of the points
+            alpha=0.7, 
+            edgecolors='k', # Black border for points
+            linewidth=0.2 
+        )
+
+    plt.title(title_str, fontsize=16, fontweight='bold')
+    plt.xlabel("Dimension 1")
+    plt.ylabel("Dimension 2")
+    plt.grid(True, linestyle='--', alpha=0.6) 
+    # Move legend outside to the top-right
+    plt.legend(title="Clusters", bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.) 
+    plt.tight_layout(rect=[0, 0, 1.0, 1.0]) # Adjust layout to include legend
+    plt.savefig(out_file, dpi=300)
+    plt.close()
+    print(f"2D cluster scatter plot saved to {out_file}")
 
 # --- Clustering Functions (No changes here, kept for completeness) ---
 from itertools import combinations
@@ -490,29 +626,120 @@ def cluster_pairwise_separation(X, labels, metric="euclidean", aggregate="mean")
             stats[h] = {'min_sep': v_min, 'min_pair': f_min, 'mean_sep': v_mean, 'max_sep': v_max, 'max_pair': f_max}
     return pair_sep, stats
 
+def cluster_cohesion(X, labels, metric="euclidean", aggregate="mean"):
+    """
+    Compute within-cluster cohesion (e.g., sum or mean of all unique
+    pairwise distances) for each cluster.
 
-def reorder_labels_by_separation(X, labels, metric="euclidean", aggregate="mean", order_stat="min"):
+    Notes:
+      - Outliers labeled -1 are ignored.
+      - Cohesion is 0.0 for clusters with 0 or 1 point.
+    """
+    uniq = [c for c in sorted(set(labels)) if c != -1]
+    cohesion = {}
+    for h in uniq:
+        H = X[np.array(labels) == h]
+        n_points = H.shape[0]
+
+        if n_points <= 1:
+            s = 0.0
+        else:
+            # Calculate pairwise distances within the cluster H
+            D = pairwise_distances(H, metric=metric)
+            
+            # The sum of unique pairwise distances (excluding diagonal and duplicates) is D.sum() / 2
+            sum_unique_distances = D.sum() / 2
+            
+            if aggregate == "sum":
+                s = float(sum_unique_distances)
+            else: # aggregate == "mean" (Average unique pairwise distance)
+                # Total number of unique pairs is n_points * (n_points - 1) / 2
+                n_pairs = n_points * (n_points - 1) / 2
+                if n_pairs > 0:
+                    s = float(sum_unique_distances / n_pairs)
+                else:
+                    s = 0.0
+
+        cohesion[h] = s
+
+    return cohesion
+
+def reorder_labels(X, labels, metric="euclidean", aggregate="mean", order_stat="min", ranking_by=ORDER_BY):
     """
     Returns a remapped label array (0,1,2,...) sorted descending by the chosen stat.
+    The sorting can be based on 'Inter' (Separation) or 'Intra' (Cohesion/Dispersion).
+    
+    Args:
+        X (np.ndarray): Data array.
+        labels (np.ndarray): Cluster labels.
+        metric (str): Distance metric.
+        aggregate (str): Aggregation method ("mean" or "sum").
+        order_stat (str): Stat to use for ordering ('min', 'mean', 'max' for 'Inter'; 
+                          not used for 'Intra').
+        ranking_by (str): The type of ranking: "Inter" (Separation) or "Intra" (Cohesion/Dispersion).
     """
-    _, stats = cluster_pairwise_separation(X, labels, metric=metric, aggregate=aggregate)
-    if order_stat == "max": keyfun = lambda c: stats[c]['max_sep']
-    elif order_stat == "mean": keyfun = lambda c: stats[c]['mean_sep']
-    else: keyfun = lambda c: stats[c]['min_sep']
+    
+    # 1. Get required metrics
+    
+    if ranking_by == "Intra":
+        # Rank by Cohesion/Dispersion (highest internal distance first)
+        stats_cohesion = cluster_cohesion(X, labels, metric=metric, aggregate=aggregate)
+        keyfun = lambda c: stats_cohesion[c]
+        metric_name = f"intra_{aggregate}"
+        output_stats = stats_cohesion
+        
+    elif ranking_by == "Inter":
+        # Rank by Separation (highest separation distance first)
+        _, stats_separation = cluster_pairwise_separation(X, labels, metric=metric, aggregate=aggregate)
+        output_stats = stats_separation
+        
+        if order_stat == "max": 
+            keyfun = lambda c: stats_separation[c]['max_sep']
+            metric_name = "max_sep"
+        elif order_stat == "mean": 
+            keyfun = lambda c: stats_separation[c]['mean_sep']
+            metric_name = "mean_sep"
+        else: # order_stat == "min" (default: max distance to closest neighbor)
+            keyfun = lambda c: stats_separation[c]['min_sep']
+            metric_name = "min_sep"
+    else:
+        raise ValueError("ranking_by must be 'Inter' or 'Intra'")
 
+    # 2. Sort clusters and create mapping
+    
     clusters = [c for c in sorted(set(labels)) if c != -1]
-    sorted_clusters = sorted(clusters, key=keyfun, reverse=True)
+    
+    # CRITICAL: Always use reverse=True to prioritize the highest value for the metric:
+    # - For Separation ("Inter"), max separation is best.
+    # - For Cohesion ("Intra"), max internal distance (dispersion) is requested.
+    is_reverse = True 
+
+    sorted_clusters = sorted(clusters, key=keyfun, reverse=is_reverse)
 
     cluster_order = {old: new for new, old in enumerate(sorted_clusters)}
     new_labels = np.array([cluster_order[l] if l in cluster_order else -1 for l in labels])
 
+    # 3. Build the ranking list
+    
     ranked = []
+    
     for r, c in enumerate(sorted_clusters, 1):
-        info = stats[c]
-        if order_stat == "max": ranked.append((r, c, info['max_sep'], info['max_pair']))
-        elif order_stat == "mean": ranked.append((r, c, info['mean_sep'], None))
-        else: ranked.append((r, c, info['min_sep'], info['min_pair']))
-    return new_labels, ranked, stats
+        if ranking_by == "Intra":
+            # Cohesion/Dispersion value
+            stat_value = output_stats[c]
+            # No associated pair for intra-cluster metric
+            ranked.append((r, c, stat_value, None, metric_name)) 
+        else: # ranking_by == "Inter" (Separation)
+            info = output_stats[c]
+            # Determine the value and associated pair based on order_stat
+            if order_stat == "max": 
+                ranked.append((r, c, info['max_sep'], info['max_pair'], metric_name))
+            elif order_stat == "mean": 
+                ranked.append((r, c, info['mean_sep'], None, metric_name))
+            else: # min
+                ranked.append((r, c, info['min_sep'], info['min_pair'], metric_name))
+                
+    return new_labels, ranked, output_stats
 
 def find_optimal_k_agglomerative(X):
     """Finds a 'broad' optimal k for Agglomerative Clustering using Silhouette Score."""
@@ -544,28 +771,78 @@ def find_optimal_k_agglomerative(X):
     return max(4, best_k)
 
 def run_agglomerative(X, names, prices, out_file="clusters_agglomerative.png", title="Agglomerative Clustering"):
+    """
+    Runs Agglomerative Clustering, finds the optimal K, and plots the results 
+    ordered by the global ORDER_BY setting ("Inter" for Separation or "Intra" for Dispersion).
+    
+    Returns the remapped (0, 1, 2, ...) cluster labels.
+    """
     print("\n--- Running Agglomerative ---")
-    best_k = find_optimal_k_agglomerative(X)
+    # Assumes find_optimal_k_agglomerative(X) is defined elsewhere
+    best_k = find_optimal_k_agglomerative(X) 
+    
     if best_k is not None:
         model = AgglomerativeClustering(n_clusters=best_k)
         labels = model.fit_predict(X)
-        new_labels, ranked, stats = reorder_labels_by_separation(
+        
+        # --- 1. Reorder Labels based on Global ORDER_BY ---
+        # NOTE: The global variable ORDER_BY must be accessible here.
+        # It's passed as the default value in the reorder_labels definition.
+        remapped_labels, ranked_info, stats = reorder_labels(
             X, labels, metric="euclidean", aggregate="mean", order_stat="min"
         )
+        
+        # Extract the ordered list of labels (0, 1, 2, ...) for plotting
+        sorted_labels_list = [c for r, c, _, _, _ in ranked_info]
+
+        # Determine the description for the plot title based on the ranking metric
+        ranking_metric = ranked_info[0][-1] # Last element in the tuple (e.g., 'min_sep', 'intra_mean')
+        
+        if ranking_metric.startswith('min_sep'):
+            ordering_desc = "Separation: farthest-from-nearest"
+        elif ranking_metric.startswith('max_sep'):
+            ordering_desc = "Separation: max distance"
+        elif ranking_metric.startswith('mean_sep'):
+            ordering_desc = "Separation: mean distance"
+        elif ranking_metric.startswith('intra_'):
+            ordering_desc = "Dispersion: most dispersed cluster first"
+        else:
+            ordering_desc = f"Ranked by {ranking_metric}"
+            
+        # --- 2. Plotting with Ordering ---
         plot_clustered_images(
-            X, new_labels, names, prices, out_file,
-            f"{title} (Ordered by Separation: farthest-from-nearest)"
+            X, 
+            labels, # Use original labels for the base plot call structure
+            names, 
+            prices, 
+            out_file,
+            f"{title} (Ordered by {ordering_desc})",
+            show_outliers=True, # Assuming you want to show outliers by default here
+            
+            # Parameters for ordering:
+            sorted_labels_list=sorted_labels_list,
+            remapped_labels=remapped_labels 
         )
-        print("Cluster ranking by separation (farthest from nearest neighbor first):")
-        for rank, c, sep_val, other in ranked:
-            neighbor_txt = f" (nearest: {other})" if other is not None else ""
-            print(f"  Rank {rank}: Cluster {c} → min-sep {sep_val:.4f}{neighbor_txt}")
-        print("\nSeparation stats per cluster [min / mean / max]:")
-        for c in sorted(stats.keys()):
-            s = stats[c]
-            print(f"  Cluster {c}: min={s['min_sep']:.4f} (to {s['min_pair']}), "
-                  f"mean={s['mean_sep']:.4f}, max={s['max_sep']:.4f} (to {s['max_pair']})")
-        return new_labels
+        
+        # --- 3. Print Ranking and Stats ---
+        print(f"\nCluster ranking (top rank is best, metric: {ranking_metric}):")
+        for rank, c, val, other, metric in ranked_info:
+            if ranking_metric.startswith('intra'):
+                 print(f"  Rank {rank}: Cluster {c} → {metric} {val:.4f}")
+            else:
+                 neighbor_txt = f" (nearest: {other})" if metric.endswith('sep') and other is not None else ""
+                 print(f"  Rank {rank}: Cluster {c} → {metric} {val:.4f}{neighbor_txt}")
+
+        if ranking_metric.startswith('min_sep') or ranking_metric.startswith('mean_sep') or ranking_metric.startswith('max_sep'):
+            print("\nSeparation stats per cluster [min / mean / max]:")
+            for c in sorted(stats.keys()):
+                s = stats[c]
+                print(f"  Cluster {c}: min={s['min_sep']:.4f} (to {s['min_pair']}), "
+                      f"mean={s['mean_sep']:.4f}, max={s['max_sep']:.4f} (to {s['max_pair']})")
+        
+        # Return the remapped labels for consistency if the caller needs them
+        return remapped_labels
+        
     return None
 
 def run_kmeans(X, names, prices, out_file="clusters_kmeans.png", title="K-Means Clustering"):
@@ -938,7 +1215,7 @@ else:
     print("⚠️ ViT embeddings not available or insufficient for clustering.")
     
 # Hyper-parameters for weighting
-shape_factor = 4.0
+shape_factor = 2.0
 color_factor = 1.0
 texture_factor = 1.0
 
@@ -970,7 +1247,35 @@ print(f"Shape+Color+Texture feature matrix shape: {features_shape_color_texture.
 
 # --- Run clustering on VIT ---
 print("\n🔹 Running clustering on VIT features...")
+
 if use_vit_for_clustering:
+    
+    # =========================================================================
+    # STEP 1: Generate 2D Embeddings (Required for scatter plots)
+    # =========================================================================
+    print("✨ Performing t-SNE reduction to 2D for visualization...")
+    
+    # NOTE: Ensure 'from sklearn.manifold import TSNE' is imported at the start.
+    try:
+        from sklearn.manifold import TSNE
+        # Dimensionality reduction on the scaled ViT feature matrix
+        vit_emb_2d = TSNE(
+            n_components=2, 
+            random_state=42, 
+            perplexity=30.0, 
+            init='pca', 
+            learning_rate='auto', 
+            n_iter=500
+        ).fit_transform(vit_scaled)
+    except Exception as e:
+        print(f"❌ Error during t-SNE reduction for ViT: {e}. Skipping 2D plots.")
+        vit_emb_2d = None
+
+    # --- STEP 2: Clustering Execution (Generates ORIGINAL and ORDERED IMAGE PLOTS) ---
+    
+    # NOTE: run_agglomerative is assumed to return the RE-MAPPED (0, 1, 2, ...) labels
+    # and generates the ORIGINAL plot AND the ORDERED image plot internally.
+    
     labels_agg_VIT = run_agglomerative(
         vit_scaled, target_names, target_prices_list,
         out_file=f"clusters_agg_VIT_{TARGET_BRAND}.png",
@@ -986,14 +1291,73 @@ if use_vit_for_clustering:
         out_file=f"clusters_hdbscan_VIT_{TARGET_BRAND}.png",
         title=f"HDBSCAN Clustering (ViT Embeddings) - {TARGET_BRAND} (€{MIN_PRICE}-€{MAX_PRICE})"
     )
+    
+    # =========================================================================
+    # STEP 3: Generate ORDERED 2D Scatter Plots for ALL ViT Results
+    # =========================================================================
+    
+    if vit_emb_2d is not None:
+        print("\n✨ Generating ORDERED 2D Scatter Plots for ViT results...")
+
+        clustering_results_vit = {
+            "Agglomerative": labels_agg_VIT,
+            "KMeans": labels_kmeans_VIT,
+            "HDBSCAN": labels_hdbscan_VIT,
+        }
+
+        # Determine the description for the plot title
+        ranking_desc = f"Ranked by {ORDER_BY}"
+        
+        for name, labels in clustering_results_vit.items():
+            if labels is None: continue
+            
+            # Re-run reorder_labels to get the consistent 0-based labels (new_labels).
+            # Rank 1 = new_labels 0
+            new_labels, ranked_info, _ = reorder_labels(
+                X=vit_scaled, 
+                labels=labels, 
+                ranking_by=ORDER_BY 
+            )
+            
+            # Generate the 2D scatter plot
+            # remapped_labels=new_labels ensures Rank 1 is Cluster 0, Rank 2 is Cluster 1, etc.
+            plot_2d_clusters(
+                emb_2d=vit_emb_2d, 
+                labels=labels, 
+                remapped_labels=new_labels, 
+                title_str=f"2D Scatter: {name} Clustering - {TARGET_BRAND}", 
+                out_file=f"2D_scatter_{name}_VIT_{TARGET_BRAND}.png"
+            )
+            
+            # --- Also explicitly generate the ORDERED Image Plot here for clarity/safety ---
+            # NOTE: If run_* already generates 'clusters_ordered_...' this is redundant. 
+            # I'll keep the call simple to avoid double-plotting the image grid.
+            # If the run_* functions are only generating the original plot, then uncomment 
+            # the following block:
+            
+            # # Re-extract sorted list for plot_clustered_images
+            # sorted_labels_list = [c for r, c, _, _, _ in ranked_info] 
+            # plot_clustered_images(
+            #     emb_2d=vit_scaled, 
+            #     labels=labels, 
+            #     names=target_names, 
+            #     prices_list=target_prices_list, 
+            #     out_file=f"clusters_ordered_{name}_VIT_{TARGET_BRAND}.png", 
+            #     title_str=f"ORDERED {name} Clustering (ViT Embeddings) - {TARGET_BRAND} (Ranked by {ORDER_BY})", 
+            #     show_outliers=True,
+            #     sorted_labels_list=sorted_labels_list,
+            #     remapped_labels=new_labels
+            # )
+
+    
 else:
     labels_agg_VIT = labels_kmeans_VIT = labels_hdbscan_VIT = None
     print("Skipping ViT clustering.")
 
-
-# --- Run clustering on Shape  + Color + Texture ---
+# --- Run clustering on Shape  + Color + Texture (MANUAL FEATURES) ---
 print("\n🔹 Running clustering on Shape+Color+Texture features...")
 
+# --- Clustering Execution (Original Plots) ---
 labels_agg_shape_color_texture = run_agglomerative(
     features_shape_color_texture,
     target_names,
@@ -1002,6 +1366,7 @@ labels_agg_shape_color_texture = run_agglomerative(
     title=f"Agglomerative Clustering (Shape+Color+Texture) - {TARGET_BRAND} (€{MIN_PRICE}-€{MAX_PRICE})"
 )
 if labels_agg_shape_color_texture is not None:
+    # NOTE: The dendrogram is a separate plot not explicitly requested as an "ordered" cluster plot.
     plot_dendrogram(
         features_shape_color_texture,
         target_names,
@@ -1025,4 +1390,43 @@ labels_hdbscan_shape_color_texture = run_hdbscan(
     title=f"HDBSCAN Clustering (Shape+Color+Texture) - {TARGET_BRAND} (€{MIN_PRICE}-€{MAX_PRICE})"
 )
 
-print("\n✅ Clustering pipeline completed.")
+# --- Generate ORDERED Image Plots for Shape+Color+Texture Results ---
+print(f"\n✨ Generating ORDERED plots for Shape+Color+Texture results (Ordering by {ORDER_BY})...")
+
+clustering_results_sct = {
+    "Agglomerative": labels_agg_shape_color_texture,
+    "KMeans": labels_kmeans_shape_color_texture,
+    "HDBSCAN": labels_hdbscan_shape_color_texture,
+}
+
+for name, labels in clustering_results_sct.items():
+    if labels is None: continue
+    
+    # 1. Reorder labels
+    # Rank 1 = new_labels 0
+    new_labels, ranked_info, _ = reorder_labels(
+        X=features_shape_color_texture, 
+        labels=labels, 
+        ranking_by=ORDER_BY
+    )
+    # sorted_labels_list holds the original cluster labels, ordered by rank. 
+    # This is used by the plotting function to determine image grouping order.
+    sorted_labels_list = [c for r, c, _, _, _ in ranked_info]
+    
+    # 2. Generate the ordered image plot (as requested for Manual Features)
+    # remapped_labels=new_labels ensures Rank 1 is Cluster 0, Rank 2 is Cluster 1, etc.
+    plot_clustered_images(
+        emb_2d=features_shape_color_texture, # This is the feature matrix, not the 2D emb
+        labels=labels, 
+        names=target_names, 
+        prices_list=target_prices_list, 
+        out_file=f"clusters_ordered_{name}_SCT_{TARGET_BRAND}.png", 
+        title_str=f"ORDERED {name} Clustering (Shape+Color+Texture) - {TARGET_BRAND} (Ranked by {ORDER_BY})", 
+        show_outliers=True,
+        
+        # Ordering parameters
+        sorted_labels_list=sorted_labels_list,
+        remapped_labels=new_labels
+    )
+
+print("\n✅ Clustering pipeline completed. All standard and ordered plots generated.")
