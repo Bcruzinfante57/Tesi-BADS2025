@@ -290,28 +290,24 @@ def texture_gabor_features(img, frequencies=[0.1, 0.2, 0.3, 0.4]):
         feats.append(filt_imag.var())
     return np.array(feats, dtype=float)
 
-# --- NUEVA FUNCIÓN DE PLOTTING (BLINDADA CONTRA ERRORES DE ARGUMENTOS) ---
-
-# --- NUEVA FUNCIÓN DE PLOTTING (BLINDADA CONTRA DESALINEACIÓN DE ARGUMENTOS) ---
-# Se adapta a la llamada: plot_clustered_images(X, new_labels, names, prices, out_file, title_str)
 
 def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_str, show_outliers=False):
     """
-    Crea una cuadrícula de imágenes organizada por clúster. La firma de la función
-    ha sido modificada para aceptar la lista de precios (prices_list) como cuarto argumento
-    y usarla para el ploteo, en lugar de un DataFrame de precios que no se estaba pasando.
+    Creates an image grid organized by cluster. The function signature has been 
+    modified to accept the prices list (prices_list) and use it for plotting.
+    Price statistics (Min/Mean/Max) are added to each cluster's title.
     """
     import numpy as np
     import matplotlib.pyplot as plt
-    # Asume que 're' y 'preprocessed_images' están accesibles globalmente.
+    # Assumes 'preprocessed_images' is globally accessible.
     global preprocessed_images
 
-    # 1. Adaptación de Datos
-    # Mapear nombres a precios para una búsqueda rápida (usa la lista de precios)
+    # 1. Data Adaptation
+    # Map names to prices for quick lookup (uses the prices list)
     if len(names) == len(prices_list):
         price_map = dict(zip(names, prices_list))
     else:
-        print("Error: La lista de nombres y precios no coinciden en longitud. Los precios no se mostrarán.")
+        print("Error: Names and prices list lengths do not match. Prices will not be shown.")
         price_map = {}
 
     if show_outliers:
@@ -325,11 +321,11 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
         return
     
     plt.rcParams['figure.constrained_layout.use'] = False
-    # Ajuste para evitar error al hacer subplots con una sola fila
+    # Adjustment to prevent error when making subplots with a single row
     fig, axes = plt.subplots(max(1, n_clusters), 1, figsize=(15, 5 * n_clusters)) 
 
     if n_clusters == 1:
-        axes = [axes] # Asegura que siempre sea iterable
+        axes = [axes] # Ensures it's always iterable
 
     colors = plt.cm.Set3(np.linspace(0, 1, n_clusters))
     if -1 in labels and show_outliers:
@@ -339,6 +335,25 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
 
     for i, label in enumerate(unique_labels):
         cluster_images = [name for name, l in zip(names, labels) if l == label]
+        
+        # --- NEW: Get cluster prices and calculate statistics ---
+        cluster_prices = [price_map[name] for name in cluster_images if name in price_map]
+        stats_text = ""
+        
+        if cluster_prices:
+            # Ensure prices are treated as numeric
+            numeric_prices = np.array(cluster_prices, dtype=float) 
+            
+            price_min = np.min(numeric_prices)
+            price_max = np.max(numeric_prices)
+            price_mean = np.mean(numeric_prices)
+            
+            stats_text = (
+                f" | Price Stats (Min/Mean/Max): "
+                f"€{price_min:.0f} / €{price_mean:.0f} / €{price_max:.0f}"
+            )
+        # --- END NEW ---
+        
         cluster_ax = axes[i]
         n_images = len(cluster_images)
         if n_images == 0: continue
@@ -349,32 +364,27 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
         
         for j, img_name_stem in enumerate(cluster_images):
             try:
-                # 2. Recuperar imagen
+                # 2. Retrieve image
                 if img_name_stem not in preprocessed_images:
                      print(f"Warning: Image stem '{img_name_stem}' not found in preprocessed_images. Skipping.")
                      continue
                     
                 img = preprocessed_images[img_name_stem]
                 
-                # --- Preparación de Texto ---
+                # --- Text Preparation ---
                 display_product_name = img_name_stem
                 display_price = "N/A"
                 
-                # Obtener Precio del mapa
+                # Get Price from map
                 display_price_raw = price_map.get(img_name_stem)
                 if display_price_raw is not None:
-                    # **FIX 1: MÁXIMA ROBUSTEZ** (Asegura que display_product_name es una cadena segura)
-                    # En la llamada de 'run_agglomerative', prices_list contiene solo números, 
-                    # por lo que evitamos cualquier manipulación de string en un "nombre de producto"
-                    # que provenga de una fuente de datos inexistente.
-                    
-                    # Usamos el nombre del archivo como nombre del producto
+                    # Use the file name as the product name
                     if len(display_product_name) > 15: 
                         display_product_name = display_product_name[:12] + "..."
                         
                     display_price = f"€{float(display_price_raw):.0f}"
                 
-                # 3. Dibujar Imagen
+                # 3. Draw Image
                 ax_img = cluster_ax.inset_axes(
                     [j * img_w, 1 - img_h, img_w, img_h],
                     transform=cluster_ax.transAxes
@@ -384,13 +394,13 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
                 ax_img.set_xticks([])
                 ax_img.set_yticks([])
 
-                # 4. Dibujar Borde
+                # 4. Draw Border
                 border_color = 'red' if label == -1 else colors[i]
                 for spine in ax_img.spines.values():
                     spine.set_edgecolor(border_color)
                     spine.set_linewidth(3)
                 
-                # 5. Dibujar Texto (Nombre y Precio)
+                # 5. Draw Text (Name and Price)
                 y_coord_name = 1 - img_h - 0.03
                 y_coord_price = y_coord_name - 0.05 
                 
@@ -414,15 +424,19 @@ def plot_clustered_images(emb_2d, labels, names, prices_list, out_file, title_st
                 )
 
             except Exception as e:
-                # El error de string indices debe estar resuelto, pero mantenemos el manejo
+                # Error handling for image loading
                 print(f"Error loading image stem {img_name_stem}: {e}")
         
-        cluster_ax.set_title(f"Cluster {label} (n={n_images})", loc='left', fontsize=14, pad=10)
+        # --- Updated Cluster Title with Statistics ---
+        cluster_ax.set_title(
+            f"Cluster {label} (n={n_images}){stats_text}", 
+            loc='left', 
+            fontsize=14, 
+            pad=10
+        )
         cluster_ax.set_axis_off()
 
-    # **FIX 2: Manejo robusto de out_file** (Previene ValueError: Format '0' is not supported)
-    # out_file en esta firma es el argumento que originalmente era el 5to, y que en tu llamada 
-    # run_agglomerative es el string correcto. Pero se mantiene la validación por si acaso.
+    # **FIX 2: Robust out_file handling**
     if not isinstance(out_file, str) or not any(out_file.lower().endswith(ext) for ext in ['.png', '.jpg', '.pdf']):
         safe_filename = f"clusters_output_{title_str.replace(' ', '_').replace('(', '').replace(')', '')}.png"
         print(f"Warning: 'out_file' was an invalid type. Saving as: {safe_filename}")
