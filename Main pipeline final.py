@@ -54,7 +54,7 @@ import cv2
 
 # --- GLOBAL CONFIGURATION ---
 EMBEDDING_CACHE_FILE = Path("all_brands_embeddings_cache.pkl")
-TARGET_BRAND = "YSL" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
+TARGET_BRAND = "Fendi" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
 MIN_PRICE = 100
 MAX_PRICE = 1000
 ALLOWED_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"}
@@ -990,6 +990,16 @@ if use_vit_for_clustering:
         out_file=f"clusters_agg_VIT_{TARGET_BRAND}.png",
         title=f"Agglomerative Clustering (ViT Embeddings) - {TARGET_BRAND} (€{MIN_PRICE}-€{MAX_PRICE})"
     )
+    
+    # ✅ DENDROGRAM NOW USES VIT_SCALED FEATURES
+    if labels_agg_VIT is not None:
+        plot_dendrogram(
+            vit_scaled, # <-- USING ViT FEATURES
+            target_names,
+            f"dendrogram_agg_VIT_{TARGET_BRAND}.png", # <-- UPDATED FILENAME
+            f"Agglomerative Clustering Dendrogram (ViT Embeddings) - {TARGET_BRAND}" # <-- UPDATED TITLE
+        )
+        
     labels_kmeans_VIT = run_kmeans(
         vit_scaled, target_names, target_prices_list,
         out_file=f"clusters_kmeans_VIT_{TARGET_BRAND}.png",
@@ -1016,12 +1026,7 @@ labels_agg_shape_color_texture = run_agglomerative(
     title=f"Agglomerative Clustering (Shape+Color+Texture) - {TARGET_BRAND} (€{MIN_PRICE}-€{MAX_PRICE})"
 )
 if labels_agg_shape_color_texture is not None:
-    plot_dendrogram(
-        features_shape_color_texture,
-        target_names,
-        f"dendrogram_shape_color_texture_{TARGET_BRAND}.png",
-        f"Agglomerative Clustering Dendrogram (Shape+Color+Texture Features) - {TARGET_BRAND}"
-    )
+    pass 
 
 labels_kmeans_shape_color_texture = run_kmeans(
     features_shape_color_texture,
