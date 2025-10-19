@@ -54,9 +54,9 @@ import cv2
 
 # --- GLOBAL CONFIGURATION ---
 EMBEDDING_CACHE_FILE = Path("all_brands_embeddings_cache.pkl")
-TARGET_BRAND = "Fendi" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
+TARGET_BRAND = "Dolce&Gabbana" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
 MIN_PRICE = 100
-MAX_PRICE = 1000
+MAX_PRICE = 20000
 ALLOWED_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"}
 
 # IMAGEN PREPROCESSING #
@@ -64,85 +64,85 @@ _saved_first_crop = False
 _saved_first_final = False
 
 
-def crop_white_bg(pil_img, adaptive=True, padding=0.35): # PADDING MANTENIDO EN 0.35
+def crop_white_bg(pil_img, adaptive=True, padding=0.35): # PADDING maintained at 0.35
     """
-    Recorte de objeto robusto para fotos de productos (gafas), 
-    maneja fondos blancos/grises variables, sombras suaves y bordes translúcidos.
+    Robust object cropping for product photos (glasses), 
+    handles variable white/gray backgrounds, soft shadows, and translucent edges.
     
-    Ajustes aplicados para MEJORAR LA DETECCIÓN DE BORDES FINOS y evitar el recorte excesivo:
-    1. Pre-procesamiento con Suavizado Gaussiano (Gaussian Blur) para reducir ruido de fondo.
-    2. Umbral Adaptativo (C=15) más laxo para captar bordes finos.
-    3. Cierre Extremo y Dilatación Reforzada para asegurar la fusión de todas las partes del objeto.
-    4. **Detección de Múltiples Contornos** para asegurar que se capturen ambos lentes si están separados.
-    5. Padding establecido en 0.35 (35% de margen) para un buen centrado.
+    Adjustments applied to ENHANCE FINE EDGE DETECTION and prevent excessive cropping:
+    1. Pre-processing with Gaussian Blur to reduce background noise.
+    2. Looser Adaptive Threshold (C=15) to capture fine edges.
+    3. Extreme Closing and Reinforced Dilation to ensure all object parts are merged.
+    4. **Multiple Contour Detection** to ensure both lenses are captured if separated.
+    5. Padding set to 0.35 (35% margin) for good centering.
 
-    :param pil_img: PIL Image (asume fondo claro).
-    :param adaptive: Booleano para usar Umbral Adaptativo (mantener en True).
-    :param padding: Margen fraccional añadido alrededor del objeto (0.35 = 35%).
-    :return: PIL Image recortada con fondo normalizado a blanco puro.
+    :param pil_img: PIL Image (assumes light background).
+    :param adaptive: Boolean to use Adaptive Threshold (keep at True).
+    :param padding: Fractional margin added around the object (0.35 = 35%).
+    :return: Cropped PIL Image with background normalized to pure white.
     """
     try:
-        # Convertir a numpy array y escala de grises
+        # Convert to numpy array and grayscale
         img_np = np.array(pil_img.convert("RGB"))
         gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
 
-        # === 0. PRE-PROCESAMIENTO: SUAVIZADO GAUSSIANO ===
-        # Suavizar la imagen para reducir el ruido y las transiciones de sombra sutiles.
+        # === 0. PRE-PROCESSING: GAUSSIAN BLUR ===
+        # Smooth the image to reduce noise and subtle shadow transitions.
         gray_blurred = cv2.GaussianBlur(gray, (5, 5), 0)
         
-        # === 1. SEPARACIÓN DE FONDO: UMBRAL ADAPTATIVO ===
-        # Aplicado sobre la imagen suavizada
+        # === 1. BACKGROUND SEPARATION: ADAPTIVE THRESHOLD ===
+        # Applied on the blurred image
         adaptive_mask = cv2.adaptiveThreshold(
             gray_blurred, 
             255,
             cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
             cv2.THRESH_BINARY_INV,
             blockSize=51, 
-            C=15         # C=15 para hacer la detección de objeto menos estricta
+            C=15         # C=15 to make object detection less strict
         )
         mask = adaptive_mask
 
-        # === 2. ETAPA DE LIMPIEZA MORFOLÓGICA ===
+        # === 2. MORPHOLOGICAL CLEANUP STAGE ===
         
-        # Apertura (OPEN): Elimina ruido muy pequeño.
+        # Opening (OPEN): Eliminates very small noise.
         kernel_small = np.ones((5,5), np.uint8)
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel_small, iterations=1)
         
-        # CIERRE EXTREMO: Conecta marcos rotos o partes del objeto.
+        # EXTREME CLOSING: Connects broken frames or object parts.
         kernel_close = np.ones((25,25), np.uint8) 
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel_close, iterations=4)
         
-        # DILATACIÓN REFORZADA: Se mantiene para un último margen antes de detectar contornos.
+        # REINFORCED DILATION: Maintained for a final margin before contour detection.
         kernel_dilate = np.ones((10,10), np.uint8) 
         mask = cv2.dilate(mask, kernel_dilate, iterations=2) 
 
 
-        # === 3. DETECTAR OBJETO PRINCIPAL (AHORA MÚLTIPLES OBJETOS) ===
+        # === 3. DETECT MAIN OBJECT (NOW MULTIPLE OBJECTS) ===
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         
         if not contours:
-            print("⚠️ No se encontraron contornos — devolviendo imagen original.")
+            print("⚠️ No contours found — returning original image.")
             return pil_img
 
-        # Filtrar contornos muy pequeños (ruido residual)
-        min_area = 200 # CAMBIO CLAVE: Reducido a 200 píxeles para incluir patillas finas y bordes
+        # Filter very small contours (residual noise)
+        min_area = 200 # KEY CHANGE: Reduced to 200 pixels to include thin temples and edges
         valid_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_area]
 
         if not valid_contours:
-            print("⚠️ Contornos válidos no encontrados después del filtrado — devolviendo imagen original.")
+            print("⚠️ Valid contours not found after filtering — returning original image.")
             return pil_img
 
-        # Calcular una única caja delimitadora (bounding box) que abarque TODOS los contornos válidos
+        # Calculate a single bounding box encompassing ALL valid contours
         all_points = np.concatenate(valid_contours)
         
-        # Obtener la caja delimitadora (x, y, w, h) de todos los puntos
+        # Get the bounding box (x, y, w, h) for all points
         x, y, w, h = cv2.boundingRect(all_points)
 
-        # === 4. APLICAR PADDING (35%) ===
+        # === 4. APPLY PADDING (35%) ===
         pad_x = int(w * padding)
         pad_y = int(h * padding)
         
-        # Calcular los límites con padding, asegurando no exceder los bordes de la imagen
+        # Calculate bounds with padding, ensuring not to exceed image edges
         x0 = max(0, x - pad_x)
         y0 = max(0, y - pad_y)
         x1 = min(img_np.shape[1], x + w + pad_x)
@@ -151,11 +151,11 @@ def crop_white_bg(pil_img, adaptive=True, padding=0.35): # PADDING MANTENIDO EN 
         cropped = img_np[y0:y1, x0:x1]
 
         if cropped.size == 0:
-            print("⚠️ Imagen recortada vacía — devolviendo imagen original.")
+            print("⚠️ Empty cropped image — returning original image.")
             return pil_img
 
-        # === 5. POST-PROCESAMIENTO: NORMALIZAR FONDO ===
-        # Forzar a blanco puro cualquier píxel que sea claro (>= 250) en el área recortada.
+        # === 5. POST-PROCESSING: NORMALIZE BACKGROUND ===
+        # Force any light pixel (>= 250) in the cropped area to pure white.
         cropped_gray = cv2.cvtColor(cropped, cv2.COLOR_RGB2GRAY)
         _, bg_mask = cv2.threshold(cropped_gray, 250, 255, cv2.THRESH_BINARY)
         bg_mask_3ch = cv2.cvtColor(bg_mask, cv2.COLOR_GRAY2BGR)
@@ -164,8 +164,8 @@ def crop_white_bg(pil_img, adaptive=True, padding=0.35): # PADDING MANTENIDO EN 
         return Image.fromarray(clean_cropped.astype(np.uint8))
     
     except Exception as e:
-        # Registro de errores
-        print(f"Error crítico en crop_white_bg: {e}. Devolviendo imagen original.")
+        # Error logging
+        print(f"Critical error in crop_white_bg: {e}. Returning original image.")
         return pil_img
 
 
@@ -708,13 +708,14 @@ def build_shape_block(
 
 
 # --- 1. GENERAL CONFIGURATION --> BRANDS AND DATA ---
-brands = ["Bottega Veneta", "Dolce&Gabbana", "Fendi", "Prada", "YSL"] 
+brands = ["Bottega Veneta", "Dolce&Gabbana", "Fendi", "Prada", "YSL","Cartier"] 
 brand_folders = {
     "Bottega Veneta": "images_bottega",
     "Dolce&Gabbana": "images_D&G",
     "Fendi": "images_Fendi",
     "Prada": "images_Prada",
-    "YSL": "images_YSL"
+    "YSL": "images_YSL",
+    "Cartier": "images_Cartier",
 }
 # MIN_PRICE and MAX_PRICE are set globally at the top.
 
@@ -741,8 +742,8 @@ for brand in brands:
 
     df_prices = pd.read_csv(csv_files[0])
 
-    # Normalize column names: strip spaces, lowercase, replace spaces with underscores
-    df_prices.columns = df_prices.columns.str.strip().str.lower().str.replace(" ", "_")
+    # Normalize column names: strip spaces, lowercase, replace spaces AND periods with underscores
+    df_prices.columns = df_prices.columns.str.strip().str.lower().str.replace(" ", "_").str.replace(".", "_", regex=False)
 
     name_col = next((c for c in df_prices.columns if c.startswith("product")), None)
     price_col = next((c for c in df_prices.columns if "price" in c), None)
@@ -759,9 +760,13 @@ for brand in brands:
     df_prices["price_eur"] = (
         df_prices[price_col]
         .astype(str) 
-        .str.replace(r"[^\d.]", "", regex=True) # Remove anything that is not a digit or dot
+        # === KEY FIX: Strictly keep only DIGITS (\d) ===
+        # This converts a price like "1.000 €" to "1000", ensuring no decimals.
+        .str.replace(r"[^\d]", "", regex=True) 
     )
-    df_prices["price_eur"] = pd.to_numeric(df_prices["price_eur"], errors='coerce')
+    
+    # Convert to integer (Int64) to handle NaNs and enforce no decimals.
+    df_prices["price_eur"] = pd.to_numeric(df_prices["price_eur"], errors='coerce').astype('Int64')
     df_prices.dropna(subset=['price_eur'], inplace=True)
     
     # --- KEY FIX: Use the STEM (product_name) as the universal join key ---
