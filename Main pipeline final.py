@@ -54,7 +54,7 @@ import cv2
 
 # --- GLOBAL CONFIGURATION ---
 EMBEDDING_CACHE_FILE = Path("all_brands_embeddings_cache.pkl")
-TARGET_BRAND = "Prada" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
+TARGET_BRAND = "Bottega Veneta" # <--- CONFIGURE THE BRAND TO ANALYZE HERE
 MIN_PRICE = 100
 MAX_PRICE = 20000
 ALLOWED_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".webp"}
