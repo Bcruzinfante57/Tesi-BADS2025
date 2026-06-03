@@ -1,0 +1,1757 @@
+{
+  "threshold": 0.92,
+  "brands": {
+    "Bottega Veneta": {
+      "threshold": 0.92,
+      "f25_count": 123,
+      "s26_count": 162,
+      "n_persisted": 91,
+      "n_new_in_s26": 71,
+      "n_discontinued_from_f25": 29,
+      "persistence_rate_f25": 0.7642,
+      "novelty_rate_s26": 0.4383,
+      "cos_sim_distribution": {
+        "best_per_s26": {
+          "p05": 0.8043,
+          "p10": 0.8339,
+          "p25": 0.8711,
+          "p50": 0.9363,
+          "p75": 0.9651,
+          "p90": 0.9722,
+          "p95": 0.9785
+        },
+        "best_per_f25": {
+          "p05": 0.8696,
+          "p10": 0.8892,
+          "p25": 0.9214,
+          "p50": 0.9557,
+          "p75": 0.9681,
+          "p90": 0.977,
+          "p95": 0.9793
+        }
+      },
+      "persisted": [
+        {
+          "f25_img": "Bottega_1.jpg",
+          "s26_img": "Bottega_1.jpg",
+          "cos_sim": 0.9786
+        },
+        {
+          "f25_img": "Bottega_101.jpg",
+          "s26_img": "Bottega_10.jpg",
+          "cos_sim": 0.9681
+        },
+        {
+          "f25_img": "Bottega_70.jpg",
+          "s26_img": "Bottega_100.jpg",
+          "cos_sim": 0.9715
+        },
+        {
+          "f25_img": "Bottega_52.jpg",
+          "s26_img": "Bottega_101.jpg",
+          "cos_sim": 0.9626
+        },
+        {
+          "f25_img": "Bottega_63.jpg",
+          "s26_img": "Bottega_103.jpg",
+          "cos_sim": 0.9205
+        },
+        {
+          "f25_img": "Bottega_44.jpg",
+          "s26_img": "Bottega_105.jpg",
+          "cos_sim": 0.9656
+        },
+        {
+          "f25_img": "Bottega_69.jpg",
+          "s26_img": "Bottega_106.jpg",
+          "cos_sim": 0.9699
+        },
+        {
+          "f25_img": "Bottega_22.jpg",
+          "s26_img": "Bottega_108.jpg",
+          "cos_sim": 0.9626
+        },
+        {
+          "f25_img": "Bottega_68.jpg",
+          "s26_img": "Bottega_110.jpg",
+          "cos_sim": 0.9782
+        },
+        {
+          "f25_img": "Bottega_88.jpg",
+          "s26_img": "Bottega_113.jpg",
+          "cos_sim": 0.9584
+        },
+        {
+          "f25_img": "Bottega_77.jpg",
+          "s26_img": "Bottega_119.jpg",
+          "cos_sim": 0.9645
+        },
+        {
+          "f25_img": "Bottega_15.jpg",
+          "s26_img": "Bottega_12.jpg",
+          "cos_sim": 0.9715
+        },
+        {
+          "f25_img": "Bottega_97.jpg",
+          "s26_img": "Bottega_123.jpg",
+          "cos_sim": 0.9845
+        },
+        {
+          "f25_img": "Bottega_85.jpg",
+          "s26_img": "Bottega_124.jpg",
+          "cos_sim": 0.95
+        },
+        {
+          "f25_img": "Bottega_74.jpg",
+          "s26_img": "Bottega_127.jpg",
+          "cos_sim": 0.9618
+        },
+        {
+          "f25_img": "Bottega_87.jpg",
+          "s26_img": "Bottega_128.jpg",
+          "cos_sim": 0.9561
+        },
+        {
+          "f25_img": "Bottega_5.jpg",
+          "s26_img": "Bottega_13.jpg",
+          "cos_sim": 0.9793
+        },
+        {
+          "f25_img": "Bottega_103.jpg",
+          "s26_img": "Bottega_130.jpg",
+          "cos_sim": 0.9707
+        },
+        {
+          "f25_img": "Bottega_13.jpg",
+          "s26_img": "Bottega_131.jpg",
+          "cos_sim": 0.966
+        },
+        {
+          "f25_img": "Bottega_91.jpg",
+          "s26_img": "Bottega_132.jpg",
+          "cos_sim": 0.9616
+        },
+        {
+          "f25_img": "Bottega_99.jpg",
+          "s26_img": "Bottega_133.jpg",
+          "cos_sim": 0.9793
+        },
+        {
+          "f25_img": "Bottega_96.jpg",
+          "s26_img": "Bottega_134.jpg",
+          "cos_sim": 0.9664
+        },
+        {
+          "f25_img": "Bottega_12.jpg",
+          "s26_img": "Bottega_135.jpg",
+          "cos_sim": 0.9561
+        },
+        {
+          "f25_img": "Bottega_107.jpg",
+          "s26_img": "Bottega_136.jpg",
+          "cos_sim": 0.9772
+        },
+        {
+          "f25_img": "Bottega_104.jpg",
+          "s26_img": "Bottega_137.jpg",
+          "cos_sim": 0.9463
+        },
+        {
+          "f25_img": "Bottega_94.jpg",
+          "s26_img": "Bottega_138.jpg",
+          "cos_sim": 0.9514
+        },
+        {
+          "f25_img": "Bottega_119.jpg",
+          "s26_img": "Bottega_139.jpg",
+          "cos_sim": 0.9748
+        },
+        {
+          "f25_img": "Bottega_83.jpg",
+          "s26_img": "Bottega_141.jpg",
+          "cos_sim": 0.9641
+        },
+        {
+          "f25_img": "Bottega_102.jpg",
+          "s26_img": "Bottega_142.jpg",
+          "cos_sim": 0.9353
+        },
+        {
+          "f25_img": "Bottega_117.jpg",
+          "s26_img": "Bottega_143.jpg",
+          "cos_sim": 0.9382
+        },
+        {
+          "f25_img": "Bottega_51.jpg",
+          "s26_img": "Bottega_144.jpg",
+          "cos_sim": 0.9395
+        },
+        {
+          "f25_img": "Bottega_106.jpg",
+          "s26_img": "Bottega_145.jpg",
+          "cos_sim": 0.9225
+        },
+        {
+          "f25_img": "Bottega_110.jpg",
+          "s26_img": "Bottega_146.jpg",
+          "cos_sim": 0.9431
+        },
+        {
+          "f25_img": "Bottega_120.jpg",
+          "s26_img": "Bottega_147.jpg",
+          "cos_sim": 0.9586
+        },
+        {
+          "f25_img": "Bottega_49.jpg",
+          "s26_img": "Bottega_148.jpg",
+          "cos_sim": 0.952
+        },
+        {
+          "f25_img": "Bottega_126.jpg",
+          "s26_img": "Bottega_149.jpg",
+          "cos_sim": 0.9506
+        },
+        {
+          "f25_img": "Bottega_113.jpg",
+          "s26_img": "Bottega_150.jpg",
+          "cos_sim": 0.948
+        },
+        {
+          "f25_img": "Bottega_112.jpg",
+          "s26_img": "Bottega_151.jpg",
+          "cos_sim": 0.9356
+        },
+        {
+          "f25_img": "Bottega_124.jpg",
+          "s26_img": "Bottega_152.jpg",
+          "cos_sim": 0.9707
+        },
+        {
+          "f25_img": "Bottega_123.jpg",
+          "s26_img": "Bottega_153.jpg",
+          "cos_sim": 0.9392
+        },
+        {
+          "f25_img": "Bottega_108.jpg",
+          "s26_img": "Bottega_154.jpg",
+          "cos_sim": 0.953
+        },
+        {
+          "f25_img": "Bottega_118.jpg",
+          "s26_img": "Bottega_155.jpg",
+          "cos_sim": 0.9418
+        },
+        {
+          "f25_img": "Bottega_122.jpg",
+          "s26_img": "Bottega_156.jpg",
+          "cos_sim": 0.9651
+        },
+        {
+          "f25_img": "Bottega_105.jpg",
+          "s26_img": "Bottega_157.jpg",
+          "cos_sim": 0.9278
+        },
+        {
+          "f25_img": "Bottega_116.jpg",
+          "s26_img": "Bottega_159.jpg",
+          "cos_sim": 0.9219
+        },
+        {
+          "f25_img": "Bottega_73.jpg",
+          "s26_img": "Bottega_16.jpg",
+          "cos_sim": 0.9588
+        },
+        {
+          "f25_img": "Bottega_111.jpg",
+          "s26_img": "Bottega_160.jpg",
+          "cos_sim": 0.9564
+        },
+        {
+          "f25_img": "Bottega_89.jpg",
+          "s26_img": "Bottega_17.jpg",
+          "cos_sim": 0.9701
+        },
+        {
+          "f25_img": "Bottega_23.jpg",
+          "s26_img": "Bottega_19.jpg",
+          "cos_sim": 0.9675
+        },
+        {
+          "f25_img": "Bottega_28.jpg",
+          "s26_img": "Bottega_20.jpg",
+          "cos_sim": 0.9628
+        },
+        {
+          "f25_img": "Bottega_21.jpg",
+          "s26_img": "Bottega_25.jpg",
+          "cos_sim": 0.9651
+        },
+        {
+          "f25_img": "Bottega_18.jpg",
+          "s26_img": "Bottega_27.jpg",
+          "cos_sim": 0.9682
+        },
+        {
+          "f25_img": "Bottega_27.jpg",
+          "s26_img": "Bottega_29.jpg",
+          "cos_sim": 0.9703
+        },
+        {
+          "f25_img": "Bottega_63.jpg",
+          "s26_img": "Bottega_3.jpg",
+          "cos_sim": 0.9697
+        },
+        {
+          "f25_img": "Bottega_6.jpg",
+          "s26_img": "Bottega_30.jpg",
+          "cos_sim": 0.9777
+        },
+        {
+          "f25_img": "Bottega_56.jpg",
+          "s26_img": "Bottega_31.jpg",
+          "cos_sim": 0.9229
+        },
+        {
+          "f25_img": "Bottega_54.jpg",
+          "s26_img": "Bottega_34.jpg",
+          "cos_sim": 0.9337
+        },
+        {
+          "f25_img": "Bottega_36.jpg",
+          "s26_img": "Bottega_35.jpg",
+          "cos_sim": 0.9716
+        },
+        {
+          "f25_img": "Bottega_56.jpg",
+          "s26_img": "Bottega_37.jpg",
+          "cos_sim": 0.9691
+        },
+        {
+          "f25_img": "Bottega_19.jpg",
+          "s26_img": "Bottega_39.jpg",
+          "cos_sim": 0.9419
+        },
+        {
+          "f25_img": "Bottega_17.jpg",
+          "s26_img": "Bottega_41.jpg",
+          "cos_sim": 0.9723
+        },
+        {
+          "f25_img": "Bottega_14.jpg",
+          "s26_img": "Bottega_45.jpg",
+          "cos_sim": 0.9557
+        },
+        {
+          "f25_img": "Bottega_127.jpg",
+          "s26_img": "Bottega_46.jpg",
+          "cos_sim": 0.9371
+        },
+        {
+          "f25_img": "Bottega_39.jpg",
+          "s26_img": "Bottega_48.jpg",
+          "cos_sim": 0.9813
+        },
+        {
+          "f25_img": "Bottega_103.jpg",
+          "s26_img": "Bottega_5.jpg",
+          "cos_sim": 0.9319
+        },
+        {
+          "f25_img": "Bottega_43.jpg",
+          "s26_img": "Bottega_51.jpg",
+          "cos_sim": 0.9478
+        },
+        {
+          "f25_img": "Bottega_9.jpg",
+          "s26_img": "Bottega_55.jpg",
+          "cos_sim": 0.9648
+        },
+        {
+          "f25_img": "Bottega_40.jpg",
+          "s26_img": "Bottega_59.jpg",
+          "cos_sim": 0.9439
+        },
+        {
+          "f25_img": "Bottega_55.jpg",
+          "s26_img": "Bottega_60.jpg",
+          "cos_sim": 0.9666
+        },
+        {
+          "f25_img": "Bottega_25.jpg",
+          "s26_img": "Bottega_61.jpg",
+          "cos_sim": 0.9673
+        },
+        {
+          "f25_img": "Bottega_38.jpg",
+          "s26_img": "Bottega_63.jpg",
+          "cos_sim": 0.9827
+        },
+        {
+          "f25_img": "Bottega_63.jpg",
+          "s26_img": "Bottega_66.jpg",
+          "cos_sim": 0.9532
+        },
+        {
+          "f25_img": "Bottega_119.jpg",
+          "s26_img": "Bottega_7.jpg",
+          "cos_sim": 0.9348
+        },
+        {
+          "f25_img": "Bottega_26.jpg",
+          "s26_img": "Bottega_71.jpg",
+          "cos_sim": 0.966
+        },
+        {
+          "f25_img": "Bottega_33.jpg",
+          "s26_img": "Bottega_74.jpg",
+          "cos_sim": 0.9779
+        },
+        {
+          "f25_img": "Bottega_53.jpg",
+          "s26_img": "Bottega_76.jpg",
+          "cos_sim": 0.9741
+        },
+        {
+          "f25_img": "Bottega_8.jpg",
+          "s26_img": "Bottega_77.jpg",
+          "cos_sim": 0.9631
+        },
+        {
+          "f25_img": "Bottega_64.jpg",
+          "s26_img": "Bottega_79.jpg",
+          "cos_sim": 0.9852
+        },
+        {
+          "f25_img": "Bottega_67.jpg",
+          "s26_img": "Bottega_83.jpg",
+          "cos_sim": 0.9806
+        },
+        {
+          "f25_img": "Bottega_59.jpg",
+          "s26_img": "Bottega_84.jpg",
+          "cos_sim": 0.9573
+        },
+        {
+          "f25_img": "Bottega_41.jpg",
+          "s26_img": "Bottega_85.jpg",
+          "cos_sim": 0.9651
+        },
+        {
+          "f25_img": "Bottega_61.jpg",
+          "s26_img": "Bottega_87.jpg",
+          "cos_sim": 0.979
+        },
+        {
+          "f25_img": "Bottega_20.jpg",
+          "s26_img": "Bottega_88.jpg",
+          "cos_sim": 0.9679
+        },
+        {
+          "f25_img": "Bottega_78.jpg",
+          "s26_img": "Bottega_89.jpg",
+          "cos_sim": 0.9605
+        },
+        {
+          "f25_img": "Bottega_4.jpg",
+          "s26_img": "Bottega_9.jpg",
+          "cos_sim": 0.9701
+        },
+        {
+          "f25_img": "Bottega_29.jpg",
+          "s26_img": "Bottega_90.jpg",
+          "cos_sim": 0.9515
+        },
+        {
+          "f25_img": "Bottega_47.jpg",
+          "s26_img": "Bottega_92.jpg",
+          "cos_sim": 0.9634
+        },
+        {
+          "f25_img": "Bottega_65.jpg",
+          "s26_img": "Bottega_94.jpg",
+          "cos_sim": 0.9695
+        },
+        {
+          "f25_img": "Bottega_76.jpg",
+          "s26_img": "Bottega_95.jpg",
+          "cos_sim": 0.9761
+        },
+        {
+          "f25_img": "Bottega_58.jpg",
+          "s26_img": "Bottega_96.jpg",
+          "cos_sim": 0.971
+        },
+        {
+          "f25_img": "Bottega_50.jpg",
+          "s26_img": "Bottega_98.jpg",
+          "cos_sim": 0.9445
+        }
+      ],
+      "new_in_s26": [
+        {
+          "s26_img": "Bottega_102.jpg",
+          "best_f25_match": "Bottega_19.jpg",
+          "best_cos_sim": 0.9094
+        },
+        {
+          "s26_img": "Bottega_104.jpg",
+          "best_f25_match": "Bottega_13.jpg",
+          "best_cos_sim": 0.9194
+        },
+        {
+          "s26_img": "Bottega_107.jpg",
+          "best_f25_match": "Bottega_63.jpg",
+          "best_cos_sim": 0.867
+        },
+        {
+          "s26_img": "Bottega_109.jpg",
+          "best_f25_match": "Bottega_86.jpg",
+          "best_cos_sim": 0.849
+        },
+        {
+          "s26_img": "Bottega_11.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.8038
+        },
+        {
+          "s26_img": "Bottega_111.jpg",
+          "best_f25_match": "Bottega_89.jpg",
+          "best_cos_sim": 0.915
+        },
+        {
+          "s26_img": "Bottega_112.jpg",
+          "best_f25_match": "Bottega_79.jpg",
+          "best_cos_sim": 0.767
+        },
+        {
+          "s26_img": "Bottega_114.jpg",
+          "best_f25_match": "Bottega_94.jpg",
+          "best_cos_sim": 0.8556
+        },
+        {
+          "s26_img": "Bottega_115.jpg",
+          "best_f25_match": "Bottega_62.jpg",
+          "best_cos_sim": 0.8372
+        },
+        {
+          "s26_img": "Bottega_116.jpg",
+          "best_f25_match": "Bottega_52.jpg",
+          "best_cos_sim": 0.8993
+        },
+        {
+          "s26_img": "Bottega_117.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.8714
+        },
+        {
+          "s26_img": "Bottega_118.jpg",
+          "best_f25_match": "Bottega_86.jpg",
+          "best_cos_sim": 0.8183
+        },
+        {
+          "s26_img": "Bottega_120.jpg",
+          "best_f25_match": "Bottega_69.jpg",
+          "best_cos_sim": 0.8687
+        },
+        {
+          "s26_img": "Bottega_121.jpg",
+          "best_f25_match": "Bottega_124.jpg",
+          "best_cos_sim": 0.7843
+        },
+        {
+          "s26_img": "Bottega_122.jpg",
+          "best_f25_match": "Bottega_92.jpg",
+          "best_cos_sim": 0.8608
+        },
+        {
+          "s26_img": "Bottega_125.jpg",
+          "best_f25_match": "Bottega_82.jpg",
+          "best_cos_sim": 0.8369
+        },
+        {
+          "s26_img": "Bottega_126.jpg",
+          "best_f25_match": "Bottega_8.jpg",
+          "best_cos_sim": 0.862
+        },
+        {
+          "s26_img": "Bottega_129.jpg",
+          "best_f25_match": "Bottega_113.jpg",
+          "best_cos_sim": 0.7357
+        },
+        {
+          "s26_img": "Bottega_14.jpg",
+          "best_f25_match": "Bottega_68.jpg",
+          "best_cos_sim": 0.8711
+        },
+        {
+          "s26_img": "Bottega_140.jpg",
+          "best_f25_match": "Bottega_83.jpg",
+          "best_cos_sim": 0.6777
+        },
+        {
+          "s26_img": "Bottega_15.jpg",
+          "best_f25_match": "Bottega_7.jpg",
+          "best_cos_sim": 0.897
+        },
+        {
+          "s26_img": "Bottega_158.jpg",
+          "best_f25_match": "Bottega_100.jpg",
+          "best_cos_sim": 0.9199
+        },
+        {
+          "s26_img": "Bottega_161.jpg",
+          "best_f25_match": "Bottega_82.jpg",
+          "best_cos_sim": 0.8771
+        },
+        {
+          "s26_img": "Bottega_162.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.7708
+        },
+        {
+          "s26_img": "Bottega_18.jpg",
+          "best_f25_match": "Bottega_79.jpg",
+          "best_cos_sim": 0.8776
+        },
+        {
+          "s26_img": "Bottega_2.jpg",
+          "best_f25_match": "Bottega_85.jpg",
+          "best_cos_sim": 0.7866
+        },
+        {
+          "s26_img": "Bottega_21.jpg",
+          "best_f25_match": "Bottega_39.jpg",
+          "best_cos_sim": 0.9078
+        },
+        {
+          "s26_img": "Bottega_22.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.7973
+        },
+        {
+          "s26_img": "Bottega_23.jpg",
+          "best_f25_match": "Bottega_103.jpg",
+          "best_cos_sim": 0.8874
+        },
+        {
+          "s26_img": "Bottega_24.jpg",
+          "best_f25_match": "Bottega_68.jpg",
+          "best_cos_sim": 0.8289
+        },
+        {
+          "s26_img": "Bottega_26.jpg",
+          "best_f25_match": "Bottega_73.jpg",
+          "best_cos_sim": 0.8836
+        },
+        {
+          "s26_img": "Bottega_28.jpg",
+          "best_f25_match": "Bottega_23.jpg",
+          "best_cos_sim": 0.8865
+        },
+        {
+          "s26_img": "Bottega_32.jpg",
+          "best_f25_match": "Bottega_44.jpg",
+          "best_cos_sim": 0.9118
+        },
+        {
+          "s26_img": "Bottega_33.jpg",
+          "best_f25_match": "Bottega_82.jpg",
+          "best_cos_sim": 0.8771
+        },
+        {
+          "s26_img": "Bottega_36.jpg",
+          "best_f25_match": "Bottega_87.jpg",
+          "best_cos_sim": 0.8258
+        },
+        {
+          "s26_img": "Bottega_38.jpg",
+          "best_f25_match": "Bottega_56.jpg",
+          "best_cos_sim": 0.8833
+        },
+        {
+          "s26_img": "Bottega_4.jpg",
+          "best_f25_match": "Bottega_65.jpg",
+          "best_cos_sim": 0.8623
+        },
+        {
+          "s26_img": "Bottega_40.jpg",
+          "best_f25_match": "Bottega_33.jpg",
+          "best_cos_sim": 0.9152
+        },
+        {
+          "s26_img": "Bottega_42.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.7708
+        },
+        {
+          "s26_img": "Bottega_43.jpg",
+          "best_f25_match": "Bottega_121.jpg",
+          "best_cos_sim": 0.814
+        },
+        {
+          "s26_img": "Bottega_44.jpg",
+          "best_f25_match": "Bottega_61.jpg",
+          "best_cos_sim": 0.9026
+        },
+        {
+          "s26_img": "Bottega_47.jpg",
+          "best_f25_match": "Bottega_69.jpg",
+          "best_cos_sim": 0.8541
+        },
+        {
+          "s26_img": "Bottega_49.jpg",
+          "best_f25_match": "Bottega_28.jpg",
+          "best_cos_sim": 0.9065
+        },
+        {
+          "s26_img": "Bottega_50.jpg",
+          "best_f25_match": "Bottega_107.jpg",
+          "best_cos_sim": 0.8888
+        },
+        {
+          "s26_img": "Bottega_52.jpg",
+          "best_f25_match": "Bottega_15.jpg",
+          "best_cos_sim": 0.9171
+        },
+        {
+          "s26_img": "Bottega_53.jpg",
+          "best_f25_match": "Bottega_23.jpg",
+          "best_cos_sim": 0.8484
+        },
+        {
+          "s26_img": "Bottega_54.jpg",
+          "best_f25_match": "Bottega_28.jpg",
+          "best_cos_sim": 0.8699
+        },
+        {
+          "s26_img": "Bottega_56.jpg",
+          "best_f25_match": "Bottega_64.jpg",
+          "best_cos_sim": 0.8938
+        },
+        {
+          "s26_img": "Bottega_57.jpg",
+          "best_f25_match": "Bottega_23.jpg",
+          "best_cos_sim": 0.8701
+        },
+        {
+          "s26_img": "Bottega_58.jpg",
+          "best_f25_match": "Bottega_19.jpg",
+          "best_cos_sim": 0.8993
+        },
+        {
+          "s26_img": "Bottega_6.jpg",
+          "best_f25_match": "Bottega_99.jpg",
+          "best_cos_sim": 0.8991
+        },
+        {
+          "s26_img": "Bottega_62.jpg",
+          "best_f25_match": "Bottega_83.jpg",
+          "best_cos_sim": 0.8287
+        },
+        {
+          "s26_img": "Bottega_64.jpg",
+          "best_f25_match": "Bottega_80.jpg",
+          "best_cos_sim": 0.8383
+        },
+        {
+          "s26_img": "Bottega_65.jpg",
+          "best_f25_match": "Bottega_13.jpg",
+          "best_cos_sim": 0.839
+        },
+        {
+          "s26_img": "Bottega_67.jpg",
+          "best_f25_match": "Bottega_37.jpg",
+          "best_cos_sim": 0.9096
+        },
+        {
+          "s26_img": "Bottega_68.jpg",
+          "best_f25_match": "Bottega_79.jpg",
+          "best_cos_sim": 0.9132
+        },
+        {
+          "s26_img": "Bottega_69.jpg",
+          "best_f25_match": "Bottega_28.jpg",
+          "best_cos_sim": 0.8162
+        },
+        {
+          "s26_img": "Bottega_70.jpg",
+          "best_f25_match": "Bottega_72.jpg",
+          "best_cos_sim": 0.8574
+        },
+        {
+          "s26_img": "Bottega_72.jpg",
+          "best_f25_match": "Bottega_80.jpg",
+          "best_cos_sim": 0.8482
+        },
+        {
+          "s26_img": "Bottega_73.jpg",
+          "best_f25_match": "Bottega_55.jpg",
+          "best_cos_sim": 0.8338
+        },
+        {
+          "s26_img": "Bottega_75.jpg",
+          "best_f25_match": "Bottega_82.jpg",
+          "best_cos_sim": 0.8833
+        },
+        {
+          "s26_img": "Bottega_78.jpg",
+          "best_f25_match": "Bottega_103.jpg",
+          "best_cos_sim": 0.8986
+        },
+        {
+          "s26_img": "Bottega_8.jpg",
+          "best_f25_match": "Bottega_73.jpg",
+          "best_cos_sim": 0.8596
+        },
+        {
+          "s26_img": "Bottega_80.jpg",
+          "best_f25_match": "Bottega_79.jpg",
+          "best_cos_sim": 0.872
+        },
+        {
+          "s26_img": "Bottega_81.jpg",
+          "best_f25_match": "Bottega_79.jpg",
+          "best_cos_sim": 0.8686
+        },
+        {
+          "s26_img": "Bottega_82.jpg",
+          "best_f25_match": "Bottega_50.jpg",
+          "best_cos_sim": 0.8579
+        },
+        {
+          "s26_img": "Bottega_86.jpg",
+          "best_f25_match": "Bottega_29.jpg",
+          "best_cos_sim": 0.8144
+        },
+        {
+          "s26_img": "Bottega_91.jpg",
+          "best_f25_match": "Bottega_28.jpg",
+          "best_cos_sim": 0.8903
+        },
+        {
+          "s26_img": "Bottega_93.jpg",
+          "best_f25_match": "Bottega_87.jpg",
+          "best_cos_sim": 0.8635
+        },
+        {
+          "s26_img": "Bottega_97.jpg",
+          "best_f25_match": "Bottega_114.jpg",
+          "best_cos_sim": 0.8346
+        },
+        {
+          "s26_img": "Bottega_99.jpg",
+          "best_f25_match": "Bottega_69.jpg",
+          "best_cos_sim": 0.8422
+        }
+      ],
+      "discontinued_from_f25": [
+        {
+          "f25_img": "Bottega_10.jpg",
+          "best_s26_match": "Bottega_100.jpg",
+          "best_cos_sim": 0.8493
+        },
+        {
+          "f25_img": "Bottega_100.jpg",
+          "best_s26_match": "Bottega_158.jpg",
+          "best_cos_sim": 0.9199
+        },
+        {
+          "f25_img": "Bottega_11.jpg",
+          "best_s26_match": "Bottega_48.jpg",
+          "best_cos_sim": 0.9036
+        },
+        {
+          "f25_img": "Bottega_114.jpg",
+          "best_s26_match": "Bottega_144.jpg",
+          "best_cos_sim": 0.8347
+        },
+        {
+          "f25_img": "Bottega_121.jpg",
+          "best_s26_match": "Bottega_160.jpg",
+          "best_cos_sim": 0.8759
+        },
+        {
+          "f25_img": "Bottega_16.jpg",
+          "best_s26_match": "Bottega_30.jpg",
+          "best_cos_sim": 0.8733
+        },
+        {
+          "f25_img": "Bottega_24.jpg",
+          "best_s26_match": "Bottega_64.jpg",
+          "best_cos_sim": 0.7569
+        },
+        {
+          "f25_img": "Bottega_30.jpg",
+          "best_s26_match": "Bottega_26.jpg",
+          "best_cos_sim": 0.8663
+        },
+        {
+          "f25_img": "Bottega_31.jpg",
+          "best_s26_match": "Bottega_136.jpg",
+          "best_cos_sim": 0.8498
+        },
+        {
+          "f25_img": "Bottega_35.jpg",
+          "best_s26_match": "Bottega_74.jpg",
+          "best_cos_sim": 0.9016
+        },
+        {
+          "f25_img": "Bottega_45.jpg",
+          "best_s26_match": "Bottega_85.jpg",
+          "best_cos_sim": 0.9028
+        },
+        {
+          "f25_img": "Bottega_46.jpg",
+          "best_s26_match": "Bottega_108.jpg",
+          "best_cos_sim": 0.9083
+        },
+        {
+          "f25_img": "Bottega_48.jpg",
+          "best_s26_match": "Bottega_95.jpg",
+          "best_cos_sim": 0.9136
+        },
+        {
+          "f25_img": "Bottega_57.jpg",
+          "best_s26_match": "Bottega_10.jpg",
+          "best_cos_sim": 0.8881
+        },
+        {
+          "f25_img": "Bottega_60.jpg",
+          "best_s26_match": "Bottega_88.jpg",
+          "best_cos_sim": 0.911
+        },
+        {
+          "f25_img": "Bottega_62.jpg",
+          "best_s26_match": "Bottega_98.jpg",
+          "best_cos_sim": 0.8935
+        },
+        {
+          "f25_img": "Bottega_66.jpg",
+          "best_s26_match": "Bottega_106.jpg",
+          "best_cos_sim": 0.9108
+        },
+        {
+          "f25_img": "Bottega_7.jpg",
+          "best_s26_match": "Bottega_34.jpg",
+          "best_cos_sim": 0.9062
+        },
+        {
+          "f25_img": "Bottega_71.jpg",
+          "best_s26_match": "Bottega_105.jpg",
+          "best_cos_sim": 0.8851
+        },
+        {
+          "f25_img": "Bottega_72.jpg",
+          "best_s26_match": "Bottega_71.jpg",
+          "best_cos_sim": 0.8852
+        },
+        {
+          "f25_img": "Bottega_75.jpg",
+          "best_s26_match": "Bottega_48.jpg",
+          "best_cos_sim": 0.8804
+        },
+        {
+          "f25_img": "Bottega_79.jpg",
+          "best_s26_match": "Bottega_68.jpg",
+          "best_cos_sim": 0.9132
+        },
+        {
+          "f25_img": "Bottega_81.jpg",
+          "best_s26_match": "Bottega_76.jpg",
+          "best_cos_sim": 0.8475
+        },
+        {
+          "f25_img": "Bottega_82.jpg",
+          "best_s26_match": "Bottega_39.jpg",
+          "best_cos_sim": 0.9186
+        },
+        {
+          "f25_img": "Bottega_84.jpg",
+          "best_s26_match": "Bottega_32.jpg",
+          "best_cos_sim": 0.8998
+        },
+        {
+          "f25_img": "Bottega_86.jpg",
+          "best_s26_match": "Bottega_105.jpg",
+          "best_cos_sim": 0.9092
+        },
+        {
+          "f25_img": "Bottega_90.jpg",
+          "best_s26_match": "Bottega_119.jpg",
+          "best_cos_sim": 0.9084
+        },
+        {
+          "f25_img": "Bottega_92.jpg",
+          "best_s26_match": "Bottega_88.jpg",
+          "best_cos_sim": 0.8978
+        },
+        {
+          "f25_img": "Bottega_95.jpg",
+          "best_s26_match": "Bottega_124.jpg",
+          "best_cos_sim": 0.8692
+        }
+      ]
+    },
+    "Dolce & Gabbana": {
+      "threshold": 0.92,
+      "f25_count": 161,
+      "s26_count": 114,
+      "n_persisted": 94,
+      "n_new_in_s26": 20,
+      "n_discontinued_from_f25": 31,
+      "persistence_rate_f25": 0.8075,
+      "novelty_rate_s26": 0.1754,
+      "cos_sim_distribution": {
+        "best_per_s26": {
+          "p05": 0.8933,
+          "p10": 0.9117,
+          "p25": 0.935,
+          "p50": 0.9716,
+          "p75": 0.9998,
+          "p90": 0.9999,
+          "p95": 1.0
+        },
+        "best_per_f25": {
+          "p05": 0.8694,
+          "p10": 0.897,
+          "p25": 0.9288,
+          "p50": 0.9576,
+          "p75": 0.9995,
+          "p90": 0.9999,
+          "p95": 1.0
+        }
+      },
+      "persisted": [
+        {
+          "f25_img": "D&G_73.jpg",
+          "s26_img": "D&G_1.jpg",
+          "cos_sim": 0.9443
+        },
+        {
+          "f25_img": "D&G_122.jpg",
+          "s26_img": "D&G_100.jpg",
+          "cos_sim": 0.9991
+        },
+        {
+          "f25_img": "D&G_94.jpg",
+          "s26_img": "D&G_101.jpg",
+          "cos_sim": 0.9729
+        },
+        {
+          "f25_img": "D&G_128.jpg",
+          "s26_img": "D&G_102.jpg",
+          "cos_sim": 0.9996
+        },
+        {
+          "f25_img": "D&G_130.jpg",
+          "s26_img": "D&G_103.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_131.jpg",
+          "s26_img": "D&G_104.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_132.jpg",
+          "s26_img": "D&G_105.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_136.jpg",
+          "s26_img": "D&G_106.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_137.jpg",
+          "s26_img": "D&G_107.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_140.jpg",
+          "s26_img": "D&G_108.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_147.jpg",
+          "s26_img": "D&G_110.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_148.jpg",
+          "s26_img": "D&G_111.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_153.jpg",
+          "s26_img": "D&G_112.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_157.jpg",
+          "s26_img": "D&G_113.jpg",
+          "cos_sim": 0.9996
+        },
+        {
+          "f25_img": "D&G_89.jpg",
+          "s26_img": "D&G_114.jpg",
+          "cos_sim": 0.9266
+        },
+        {
+          "f25_img": "D&G_123.jpg",
+          "s26_img": "D&G_16.jpg",
+          "cos_sim": 0.9269
+        },
+        {
+          "f25_img": "D&G_123.jpg",
+          "s26_img": "D&G_17.jpg",
+          "cos_sim": 0.9276
+        },
+        {
+          "f25_img": "D&G_80.jpg",
+          "s26_img": "D&G_18.jpg",
+          "cos_sim": 0.9626
+        },
+        {
+          "f25_img": "D&G_123.jpg",
+          "s26_img": "D&G_19.jpg",
+          "cos_sim": 0.9431
+        },
+        {
+          "f25_img": "D&G_79.jpg",
+          "s26_img": "D&G_2.jpg",
+          "cos_sim": 0.9703
+        },
+        {
+          "f25_img": "D&G_43.jpg",
+          "s26_img": "D&G_20.jpg",
+          "cos_sim": 0.955
+        },
+        {
+          "f25_img": "D&G_154.jpg",
+          "s26_img": "D&G_21.jpg",
+          "cos_sim": 0.965
+        },
+        {
+          "f25_img": "D&G_80.jpg",
+          "s26_img": "D&G_22.jpg",
+          "cos_sim": 0.975
+        },
+        {
+          "f25_img": "D&G_97.jpg",
+          "s26_img": "D&G_23.jpg",
+          "cos_sim": 0.9211
+        },
+        {
+          "f25_img": "D&G_103.jpg",
+          "s26_img": "D&G_24.jpg",
+          "cos_sim": 0.9632
+        },
+        {
+          "f25_img": "D&G_46.jpg",
+          "s26_img": "D&G_25.jpg",
+          "cos_sim": 0.9601
+        },
+        {
+          "f25_img": "D&G_45.jpg",
+          "s26_img": "D&G_26.jpg",
+          "cos_sim": 0.9218
+        },
+        {
+          "f25_img": "D&G_65.jpg",
+          "s26_img": "D&G_29.jpg",
+          "cos_sim": 0.9369
+        },
+        {
+          "f25_img": "D&G_44.jpg",
+          "s26_img": "D&G_3.jpg",
+          "cos_sim": 0.9582
+        },
+        {
+          "f25_img": "D&G_1.jpg",
+          "s26_img": "D&G_30.jpg",
+          "cos_sim": 0.9375
+        },
+        {
+          "f25_img": "D&G_72.jpg",
+          "s26_img": "D&G_32.jpg",
+          "cos_sim": 0.9746
+        },
+        {
+          "f25_img": "D&G_31.jpg",
+          "s26_img": "D&G_33.jpg",
+          "cos_sim": 0.965
+        },
+        {
+          "f25_img": "D&G_98.jpg",
+          "s26_img": "D&G_34.jpg",
+          "cos_sim": 0.9461
+        },
+        {
+          "f25_img": "D&G_143.jpg",
+          "s26_img": "D&G_35.jpg",
+          "cos_sim": 0.931
+        },
+        {
+          "f25_img": "D&G_91.jpg",
+          "s26_img": "D&G_36.jpg",
+          "cos_sim": 0.941
+        },
+        {
+          "f25_img": "D&G_53.jpg",
+          "s26_img": "D&G_37.jpg",
+          "cos_sim": 0.9642
+        },
+        {
+          "f25_img": "D&G_31.jpg",
+          "s26_img": "D&G_38.jpg",
+          "cos_sim": 0.9586
+        },
+        {
+          "f25_img": "D&G_101.jpg",
+          "s26_img": "D&G_39.jpg",
+          "cos_sim": 0.9664
+        },
+        {
+          "f25_img": "D&G_112.jpg",
+          "s26_img": "D&G_43.jpg",
+          "cos_sim": 0.9661
+        },
+        {
+          "f25_img": "D&G_154.jpg",
+          "s26_img": "D&G_44.jpg",
+          "cos_sim": 0.9729
+        },
+        {
+          "f25_img": "D&G_60.jpg",
+          "s26_img": "D&G_45.jpg",
+          "cos_sim": 0.9507
+        },
+        {
+          "f25_img": "D&G_53.jpg",
+          "s26_img": "D&G_46.jpg",
+          "cos_sim": 0.9616
+        },
+        {
+          "f25_img": "D&G_97.jpg",
+          "s26_img": "D&G_48.jpg",
+          "cos_sim": 0.9471
+        },
+        {
+          "f25_img": "D&G_121.jpg",
+          "s26_img": "D&G_50.jpg",
+          "cos_sim": 0.9585
+        },
+        {
+          "f25_img": "D&G_31.jpg",
+          "s26_img": "D&G_51.jpg",
+          "cos_sim": 0.9624
+        },
+        {
+          "f25_img": "D&G_68.jpg",
+          "s26_img": "D&G_52.jpg",
+          "cos_sim": 0.9347
+        },
+        {
+          "f25_img": "D&G_67.jpg",
+          "s26_img": "D&G_53.jpg",
+          "cos_sim": 0.9359
+        },
+        {
+          "f25_img": "D&G_57.jpg",
+          "s26_img": "D&G_54.jpg",
+          "cos_sim": 0.9494
+        },
+        {
+          "f25_img": "D&G_16.jpg",
+          "s26_img": "D&G_55.jpg",
+          "cos_sim": 0.9609
+        },
+        {
+          "f25_img": "D&G_75.jpg",
+          "s26_img": "D&G_56.jpg",
+          "cos_sim": 0.941
+        },
+        {
+          "f25_img": "D&G_122.jpg",
+          "s26_img": "D&G_57.jpg",
+          "cos_sim": 0.9231
+        },
+        {
+          "f25_img": "D&G_57.jpg",
+          "s26_img": "D&G_58.jpg",
+          "cos_sim": 0.9538
+        },
+        {
+          "f25_img": "D&G_2.jpg",
+          "s26_img": "D&G_59.jpg",
+          "cos_sim": 0.9984
+        },
+        {
+          "f25_img": "D&G_22.jpg",
+          "s26_img": "D&G_60.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_24.jpg",
+          "s26_img": "D&G_61.jpg",
+          "cos_sim": 0.9992
+        },
+        {
+          "f25_img": "D&G_6.jpg",
+          "s26_img": "D&G_62.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_11.jpg",
+          "s26_img": "D&G_63.jpg",
+          "cos_sim": 0.9994
+        },
+        {
+          "f25_img": "D&G_8.jpg",
+          "s26_img": "D&G_64.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_3.jpg",
+          "s26_img": "D&G_65.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_13.jpg",
+          "s26_img": "D&G_66.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_14.jpg",
+          "s26_img": "D&G_67.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_18.jpg",
+          "s26_img": "D&G_68.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_27.jpg",
+          "s26_img": "D&G_69.jpg",
+          "cos_sim": 0.9989
+        },
+        {
+          "f25_img": "D&G_91.jpg",
+          "s26_img": "D&G_7.jpg",
+          "cos_sim": 0.921
+        },
+        {
+          "f25_img": "D&G_28.jpg",
+          "s26_img": "D&G_70.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_30.jpg",
+          "s26_img": "D&G_71.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_31.jpg",
+          "s26_img": "D&G_72.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_33.jpg",
+          "s26_img": "D&G_73.jpg",
+          "cos_sim": 0.9996
+        },
+        {
+          "f25_img": "D&G_34.jpg",
+          "s26_img": "D&G_74.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_35.jpg",
+          "s26_img": "D&G_75.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_39.jpg",
+          "s26_img": "D&G_76.jpg",
+          "cos_sim": 0.9986
+        },
+        {
+          "f25_img": "D&G_44.jpg",
+          "s26_img": "D&G_77.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_48.jpg",
+          "s26_img": "D&G_78.jpg",
+          "cos_sim": 0.9996
+        },
+        {
+          "f25_img": "D&G_53.jpg",
+          "s26_img": "D&G_79.jpg",
+          "cos_sim": 0.999
+        },
+        {
+          "f25_img": "D&G_64.jpg",
+          "s26_img": "D&G_80.jpg",
+          "cos_sim": 0.9995
+        },
+        {
+          "f25_img": "D&G_65.jpg",
+          "s26_img": "D&G_81.jpg",
+          "cos_sim": 0.9988
+        },
+        {
+          "f25_img": "D&G_68.jpg",
+          "s26_img": "D&G_82.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_69.jpg",
+          "s26_img": "D&G_83.jpg",
+          "cos_sim": 0.9994
+        },
+        {
+          "f25_img": "D&G_70.jpg",
+          "s26_img": "D&G_84.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_72.jpg",
+          "s26_img": "D&G_85.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_79.jpg",
+          "s26_img": "D&G_86.jpg",
+          "cos_sim": 0.999
+        },
+        {
+          "f25_img": "D&G_80.jpg",
+          "s26_img": "D&G_87.jpg",
+          "cos_sim": 0.9992
+        },
+        {
+          "f25_img": "D&G_90.jpg",
+          "s26_img": "D&G_88.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_91.jpg",
+          "s26_img": "D&G_89.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_93.jpg",
+          "s26_img": "D&G_90.jpg",
+          "cos_sim": 0.9998
+        },
+        {
+          "f25_img": "D&G_94.jpg",
+          "s26_img": "D&G_91.jpg",
+          "cos_sim": 0.9995
+        },
+        {
+          "f25_img": "D&G_100.jpg",
+          "s26_img": "D&G_92.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_101.jpg",
+          "s26_img": "D&G_93.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_110.jpg",
+          "s26_img": "D&G_94.jpg",
+          "cos_sim": 0.9999
+        },
+        {
+          "f25_img": "D&G_111.jpg",
+          "s26_img": "D&G_95.jpg",
+          "cos_sim": 0.999
+        },
+        {
+          "f25_img": "D&G_113.jpg",
+          "s26_img": "D&G_96.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_114.jpg",
+          "s26_img": "D&G_97.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_118.jpg",
+          "s26_img": "D&G_98.jpg",
+          "cos_sim": 1.0
+        },
+        {
+          "f25_img": "D&G_121.jpg",
+          "s26_img": "D&G_99.jpg",
+          "cos_sim": 1.0
+        }
+      ],
+      "new_in_s26": [
+        {
+          "s26_img": "D&G_10.jpg",
+          "best_f25_match": "D&G_91.jpg",
+          "best_cos_sim": 0.9109
+        },
+        {
+          "s26_img": "D&G_109.jpg",
+          "best_f25_match": "D&G_108.jpg",
+          "best_cos_sim": 0.9095
+        },
+        {
+          "s26_img": "D&G_11.jpg",
+          "best_f25_match": "D&G_11.jpg",
+          "best_cos_sim": 0.9119
+        },
+        {
+          "s26_img": "D&G_12.jpg",
+          "best_f25_match": "D&G_56.jpg",
+          "best_cos_sim": 0.9135
+        },
+        {
+          "s26_img": "D&G_13.jpg",
+          "best_f25_match": "D&G_91.jpg",
+          "best_cos_sim": 0.8856
+        },
+        {
+          "s26_img": "D&G_14.jpg",
+          "best_f25_match": "D&G_64.jpg",
+          "best_cos_sim": 0.9064
+        },
+        {
+          "s26_img": "D&G_15.jpg",
+          "best_f25_match": "D&G_64.jpg",
+          "best_cos_sim": 0.9111
+        },
+        {
+          "s26_img": "D&G_27.jpg",
+          "best_f25_match": "D&G_35.jpg",
+          "best_cos_sim": 0.9182
+        },
+        {
+          "s26_img": "D&G_28.jpg",
+          "best_f25_match": "D&G_36.jpg",
+          "best_cos_sim": 0.8939
+        },
+        {
+          "s26_img": "D&G_31.jpg",
+          "best_f25_match": "D&G_1.jpg",
+          "best_cos_sim": 0.9132
+        },
+        {
+          "s26_img": "D&G_4.jpg",
+          "best_f25_match": "D&G_125.jpg",
+          "best_cos_sim": 0.8721
+        },
+        {
+          "s26_img": "D&G_40.jpg",
+          "best_f25_match": "D&G_99.jpg",
+          "best_cos_sim": 0.8924
+        },
+        {
+          "s26_img": "D&G_41.jpg",
+          "best_f25_match": "D&G_52.jpg",
+          "best_cos_sim": 0.9158
+        },
+        {
+          "s26_img": "D&G_42.jpg",
+          "best_f25_match": "D&G_43.jpg",
+          "best_cos_sim": 0.9169
+        },
+        {
+          "s26_img": "D&G_47.jpg",
+          "best_f25_match": "D&G_157.jpg",
+          "best_cos_sim": 0.9178
+        },
+        {
+          "s26_img": "D&G_49.jpg",
+          "best_f25_match": "D&G_37.jpg",
+          "best_cos_sim": 0.9197
+        },
+        {
+          "s26_img": "D&G_5.jpg",
+          "best_f25_match": "D&G_93.jpg",
+          "best_cos_sim": 0.8846
+        },
+        {
+          "s26_img": "D&G_6.jpg",
+          "best_f25_match": "D&G_98.jpg",
+          "best_cos_sim": 0.9116
+        },
+        {
+          "s26_img": "D&G_8.jpg",
+          "best_f25_match": "D&G_150.jpg",
+          "best_cos_sim": 0.8805
+        },
+        {
+          "s26_img": "D&G_9.jpg",
+          "best_f25_match": "D&G_149.jpg",
+          "best_cos_sim": 0.8579
+        }
+      ],
+      "discontinued_from_f25": [
+        {
+          "f25_img": "D&G_106.jpg",
+          "best_s26_match": "D&G_113.jpg",
+          "best_cos_sim": 0.92
+        },
+        {
+          "f25_img": "D&G_107.jpg",
+          "best_s26_match": "D&G_41.jpg",
+          "best_cos_sim": 0.8197
+        },
+        {
+          "f25_img": "D&G_109.jpg",
+          "best_s26_match": "D&G_112.jpg",
+          "best_cos_sim": 0.9154
+        },
+        {
+          "f25_img": "D&G_115.jpg",
+          "best_s26_match": "D&G_113.jpg",
+          "best_cos_sim": 0.8582
+        },
+        {
+          "f25_img": "D&G_117.jpg",
+          "best_s26_match": "D&G_96.jpg",
+          "best_cos_sim": 0.897
+        },
+        {
+          "f25_img": "D&G_119.jpg",
+          "best_s26_match": "D&G_62.jpg",
+          "best_cos_sim": 0.9158
+        },
+        {
+          "f25_img": "D&G_127.jpg",
+          "best_s26_match": "D&G_100.jpg",
+          "best_cos_sim": 0.8496
+        },
+        {
+          "f25_img": "D&G_134.jpg",
+          "best_s26_match": "D&G_112.jpg",
+          "best_cos_sim": 0.8978
+        },
+        {
+          "f25_img": "D&G_138.jpg",
+          "best_s26_match": "D&G_54.jpg",
+          "best_cos_sim": 0.8809
+        },
+        {
+          "f25_img": "D&G_139.jpg",
+          "best_s26_match": "D&G_55.jpg",
+          "best_cos_sim": 0.8694
+        },
+        {
+          "f25_img": "D&G_142.jpg",
+          "best_s26_match": "D&G_79.jpg",
+          "best_cos_sim": 0.8972
+        },
+        {
+          "f25_img": "D&G_149.jpg",
+          "best_s26_match": "D&G_109.jpg",
+          "best_cos_sim": 0.8958
+        },
+        {
+          "f25_img": "D&G_150.jpg",
+          "best_s26_match": "D&G_8.jpg",
+          "best_cos_sim": 0.8805
+        },
+        {
+          "f25_img": "D&G_156.jpg",
+          "best_s26_match": "D&G_113.jpg",
+          "best_cos_sim": 0.915
+        },
+        {
+          "f25_img": "D&G_158.jpg",
+          "best_s26_match": "D&G_113.jpg",
+          "best_cos_sim": 0.8782
+        },
+        {
+          "f25_img": "D&G_159.jpg",
+          "best_s26_match": "D&G_41.jpg",
+          "best_cos_sim": 0.8921
+        },
+        {
+          "f25_img": "D&G_29.jpg",
+          "best_s26_match": "D&G_71.jpg",
+          "best_cos_sim": 0.91
+        },
+        {
+          "f25_img": "D&G_40.jpg",
+          "best_s26_match": "D&G_76.jpg",
+          "best_cos_sim": 0.9034
+        },
+        {
+          "f25_img": "D&G_49.jpg",
+          "best_s26_match": "D&G_41.jpg",
+          "best_cos_sim": 0.9088
+        },
+        {
+          "f25_img": "D&G_51.jpg",
+          "best_s26_match": "D&G_20.jpg",
+          "best_cos_sim": 0.9195
+        },
+        {
+          "f25_img": "D&G_56.jpg",
+          "best_s26_match": "D&G_90.jpg",
+          "best_cos_sim": 0.9195
+        },
+        {
+          "f25_img": "D&G_76.jpg",
+          "best_s26_match": "D&G_63.jpg",
+          "best_cos_sim": 0.8863
+        },
+        {
+          "f25_img": "D&G_81.jpg",
+          "best_s26_match": "D&G_72.jpg",
+          "best_cos_sim": 0.9063
+        },
+        {
+          "f25_img": "D&G_82.jpg",
+          "best_s26_match": "D&G_113.jpg",
+          "best_cos_sim": 0.854
+        },
+        {
+          "f25_img": "D&G_83.jpg",
+          "best_s26_match": "D&G_70.jpg",
+          "best_cos_sim": 0.8893
+        },
+        {
+          "f25_img": "D&G_84.jpg",
+          "best_s26_match": "D&G_68.jpg",
+          "best_cos_sim": 0.9063
+        },
+        {
+          "f25_img": "D&G_85.jpg",
+          "best_s26_match": "D&G_40.jpg",
+          "best_cos_sim": 0.8596
+        },
+        {
+          "f25_img": "D&G_86.jpg",
+          "best_s26_match": "D&G_90.jpg",
+          "best_cos_sim": 0.8257
+        },
+        {
+          "f25_img": "D&G_87.jpg",
+          "best_s26_match": "D&G_100.jpg",
+          "best_cos_sim": 0.8477
+        },
+        {
+          "f25_img": "D&G_95.jpg",
+          "best_s26_match": "D&G_80.jpg",
+          "best_cos_sim": 0.8372
+        },
+        {
+          "f25_img": "D&G_96.jpg",
+          "best_s26_match": "D&G_38.jpg",
+          "best_cos_sim": 0.9108
+        }
+      ]
+    }
+  }
+}

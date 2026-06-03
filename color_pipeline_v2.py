@@ -40,14 +40,27 @@ from PIL import Image, ImageFilter
 
 REPO_ROOT = Path(__file__).parent
 
-BRANDS = {
-    "Dolce & Gabbana": "images_D&G",
-    "Bottega Veneta":  "images_bottega",
-    "Cartier":         "images_Cartier",
-    "Fendi":           "images_Fendi",
-    "Prada":           "images_Prada",
-    "YSL":             "images_ysl",
+# Snapshot → brand → image folder (paths relative to REPO_ROOT).
+# F25 lives in the original /images_<brand>/ dirs the thesis scrapers wrote to.
+# S26 lives under /snapshots/S26/raw/<brand>/  with only the brands we've
+# successfully re-scraped so far.
+SNAPSHOTS: dict[str, dict[str, str]] = {
+    "F25": {
+        "Dolce & Gabbana": "images_D&G",
+        "Bottega Veneta":  "images_bottega",
+        "Cartier":         "images_Cartier",
+        "Fendi":           "images_Fendi",
+        "Prada":           "images_Prada",
+        "YSL":             "images_ysl",
+    },
+    "S26": {
+        "Dolce & Gabbana": "snapshots/S26/raw/dg",
+        "Bottega Veneta":  "snapshots/S26/raw/bottega",
+    },
 }
+
+# Default: process the F25 baseline (the original behaviour of this script).
+BRANDS = SNAPSHOTS["F25"]
 
 # Pipeline hyperparameters
 PROCESS_SIZE       = 256     # resize for color analysis (preserves minority regions)
@@ -392,12 +405,16 @@ def extract_palette(img_path: Path) -> list[dict]:
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--snapshot", default="F25", choices=list(SNAPSHOTS.keys()),
+                    help="Which snapshot to process (default: F25). S26 only has Bottega + D&G so far.")
     ap.add_argument("--brand", default="all", help="Brand name or 'all' (default)")
     ap.add_argument("--limit", type=int, default=5, help="Max images per brand (0 = all)")
     ap.add_argument("--output", default="palettes_v2.json", help="Output JSON path")
     args = ap.parse_args()
 
-    brands = BRANDS if args.brand == "all" else {args.brand: BRANDS[args.brand]}
+    snapshot_brands = SNAPSHOTS[args.snapshot]
+    brands = snapshot_brands if args.brand == "all" else {args.brand: snapshot_brands[args.brand]}
+    print(f"[snapshot] {args.snapshot} — {len(brands)} brand(s): {list(brands.keys())}")
 
     out = {}
     t_start = time.time()
