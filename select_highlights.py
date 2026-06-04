@@ -41,9 +41,42 @@ BRAND_SLUGS = {
     "Dolce & Gabbana": "dg",
 }
 
-N_HIGHLIGHTS = 8
+N_HIGHLIGHTS = 4
 
 BUNDLE_SRC = REPO_ROOT / "snapshots" / "cluster_data_v2.json"
+
+
+def composite_score(product: dict, snapshot_products: list[dict], color_hist: dict) -> float:
+    """Editorial relevance score — higher = more striking.
+
+    Two ingredients, both normalized to roughly [0, 1] before summing:
+
+      price_z        |(price - mean) / std|    — how extreme this product's
+                                                  price is for its season-brand
+      color_rarity   1 - count(bucket)/N        — how rare its dominant color
+                                                  bucket is for its season-brand
+
+    A piece that's both at the wings of the price distribution AND in an
+    uncommon palette scores at the top.
+    """
+    palette = product.get("palette") or []
+    if not palette or not snapshot_products:
+        return 0.0
+
+    prices = [p["price_eur"] for p in snapshot_products if p.get("price_eur") is not None]
+    if not prices:
+        return 0.0
+    mean = sum(prices) / len(prices)
+    var = sum((p - mean) ** 2 for p in prices) / max(len(prices) - 1, 1)
+    std = var ** 0.5 or 1.0
+
+    price_z = abs((product["price_eur"] - mean) / std) if product.get("price_eur") else 0.0
+
+    dom = palette[0]["name_bucket"]
+    total = sum(color_hist.values()) or 1
+    color_rarity = 1.0 - (color_hist.get(dom, 0) / total)
+
+    return price_z + color_rarity
 
 
 def main():
@@ -58,14 +91,35 @@ def main():
         brand_block = bundle["brands"][brand]
         match = brand_block["matching"]
 
-        # Novelties — sort by best_cos_sim ASC (most distinct first)
-        novelties = sorted(match["new_s26_products"], key=lambda x: x["best_cos_sim"])[:N_HIGHLIGHTS]
-        # Discontinued — sort by best_cos_sim ASC (most absent first)
-        discontinued = sorted(match["discontinued_f25_products"], key=lambda x: x["best_cos_sim"])[:N_HIGHLIGHTS]
+        s26_products = brand_block["snapshots"]["S26"]["products"]
+        f25_products = brand_block["snapshots"]["F25"]["products"]
+        s26_hist = brand_block["snapshots"]["S26"]["color_histogram"]
+        f25_hist = brand_block["snapshots"]["F25"]["color_histogram"]
 
-        # Index S26 / F25 products by image filename for quick lookup of palette + price
-        s26_index = {p["image"]: p for p in brand_block["snapshots"]["S26"]["products"]}
-        f25_index = {p["image"]: p for p in brand_block["snapshots"]["F25"]["products"]}
+        s26_index = {p["image"]: p for p in s26_products}
+        f25_index = {p["image"]: p for p in f25_products}
+
+        # Score each novelty by composite (price extremity + color rarity)
+        novelty_candidates = []
+        for n in match["new_s26_products"]:
+            prod = s26_index.get(n["s26_img"])
+            if not prod:
+                continue
+            score = composite_score(prod, s26_products, s26_hist)
+            novelty_candidates.append((score, n))
+        novelty_candidates.sort(key=lambda x: -x[0])
+        novelties = [n for _, n in novelty_candidates[:N_HIGHLIGHTS]]
+
+        # Same scoring for discontinued, but using the F25 distributions
+        disc_candidates = []
+        for d in match["discontinued_f25_products"]:
+            prod = f25_index.get(d["f25_img"])
+            if not prod:
+                continue
+            score = composite_score(prod, f25_products, f25_hist)
+            disc_candidates.append((score, d))
+        disc_candidates.sort(key=lambda x: -x[0])
+        discontinued = [d for _, d in disc_candidates[:N_HIGHLIGHTS]]
 
         brand_highlights = {
             "novelties": [],
