@@ -126,10 +126,16 @@ def main():
                 pinfo = brand_palettes.get(p["image"], {})
                 p["palette"] = pinfo.get("palette", [])
 
+            # Histogram = "how many PRODUCTS show this colour bucket at least once".
+            # NOT "how many colour detections fell in this bucket" — that older
+            # semantics over-counted (each product has 3-7 palette centroids and
+            # a single product can have several shades of grey, etc), producing
+            # bucket totals larger than n_products which is misleading.
             color_hist = Counter()
             for p in products:
-                for col in p["palette"]:
-                    color_hist[col["name_bucket"]] += 1
+                seen = set(col["name_bucket"] for col in p["palette"])
+                for bucket in seen:
+                    color_hist[bucket] += 1
 
             prices = [p["price_eur"] for p in products]
             out["brands"][brand]["snapshots"][snap] = {
