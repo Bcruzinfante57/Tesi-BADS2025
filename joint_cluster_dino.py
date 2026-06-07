@@ -66,9 +66,26 @@ BRANDS = {
 BACKBONES = ["DINO", "MAE"]
 
 K_MIN = 3
-K_MAX = 20  # widened to match the thesis pipeline's range (was 12, then 20)
-PCA_DIMS = 50
-THESIS_RULE_THRESHOLD = 0.95  # follows Main pipeline final.py:553 (score / best_score > 0.95)
+K_MAX = 20  # matches thesis pipeline range
+USE_PCA = False  # thesis tested PCA and confirmed it didn't help — stay in 768-d
+PCA_DIMS = 50    # only used if USE_PCA is enabled
+THESIS_RULE_THRESHOLD = 0.95  # Main pipeline final.py:553 (score / best_score > 0.95)
+
+
+def standardize(X: torch.Tensor) -> torch.Tensor:
+    """sklearn-style StandardScaler — zero-mean unit-variance per feature.
+
+    Critical preprocessing for Ward clustering. L2 row-normalization (which
+    the matching pipeline uses) puts every vector on the unit sphere; that
+    artificially compresses Euclidean distances and makes silhouette look
+    high while erasing real magnitude differences. StandardScaler centres
+    each feature and rescales it to unit variance, preserving the geometric
+    information Ward needs. This is exactly what the thesis applied (see
+    export_for_conan.py:292-295).
+    """
+    mean = X.mean(0)
+    std = X.std(0).clamp(min=1e-8)
+    return (X - mean) / std
 
 
 def thesis_rule_select_k(silhouettes_by_k: dict[int, float]) -> int:
@@ -252,11 +269,17 @@ def cluster_set(label: str, emb_raw: torch.Tensor, prods: list[dict], slug: str,
         return {"n_products": n, "n_clusters": 0, "silhouette_score": -1.0,
                 "silhouettes_by_k": {}, "clusters": []}
 
-    # PCA(50) preprocessing — matches the thesis pipeline. Without it,
-    # silhouette is mechanically suppressed by curse-of-dimensionality on
-    # 768-d unit vectors, and the thesis rule's 95% threshold catches fewer
-    # k values (so we'd lose the granular clusters the editorial display needs).
-    emb = pca_t(emb_raw, PCA_DIMS) if n > PCA_DIMS else emb_raw
+    # Preprocessing — this is the step that matters most for the silhouette
+    # curve shape. The thesis applies StandardScaler (zero-mean unit-variance
+    # per feature), NOT L2 row-normalization. Reproducing the thesis behaviour:
+    #   raw 768-d embedding → StandardScaler → Ward
+    # gives silhouette curves around 0.08 that stay flat across k, which is
+    # what makes the thesis-rule (95% threshold) catch k=13 for Bottega and
+    # similar high counts for Cartier/YSL. PCA is left as an opt-in branch
+    # because the thesis confirmed it didn't help.
+    emb = standardize(emb_raw)
+    if USE_PCA and n > PCA_DIMS:
+        emb = pca_t(emb, PCA_DIMS)
 
     t0 = time.time()
     merge_history, cluster_members = ward_full_t(emb)
