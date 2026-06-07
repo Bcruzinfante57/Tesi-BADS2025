@@ -43,16 +43,27 @@ OUT_PATH = REPO_ROOT / "snapshots" / "cluster_data_dino.json"
 
 BRANDS = {
     "Bottega Veneta": {
-        "f25_pt": "Bottega_Veneta_F25_n123.pt",
-        "s26_pt": "Bottega_Veneta_S26_n162.pt",
+        "f25_pt_dino": "DINO_Bottega_Veneta_F25_n123.pt",
+        "s26_pt_dino": "DINO_Bottega_Veneta_S26_n162.pt",
+        "f25_pt_mae":  "MAE_Bottega_Veneta_F25_n123.pt",
+        "s26_pt_mae":  "MAE_Bottega_Veneta_S26_n162.pt",
+        # Legacy filenames (the original joint_cluster_dino run wrote here without the prefix)
+        "f25_pt_legacy_dino": "Bottega_Veneta_F25_n123.pt",
+        "s26_pt_legacy_dino": "Bottega_Veneta_S26_n162.pt",
         "slug": "bottega",
     },
     "Dolce & Gabbana": {
-        "f25_pt": "Dolce_and_Gabbana_F25_n161.pt",
-        "s26_pt": "Dolce_and_Gabbana_S26_n114.pt",
+        "f25_pt_dino": "DINO_Dolce_and_Gabbana_F25_n161.pt",
+        "s26_pt_dino": "DINO_Dolce_and_Gabbana_S26_n114.pt",
+        "f25_pt_mae":  "MAE_Dolce_and_Gabbana_F25_n161.pt",
+        "s26_pt_mae":  "MAE_Dolce_and_Gabbana_S26_n114.pt",
+        "f25_pt_legacy_dino": "Dolce_and_Gabbana_F25_n161.pt",
+        "s26_pt_legacy_dino": "Dolce_and_Gabbana_S26_n114.pt",
         "slug": "dg",
     },
 }
+
+BACKBONES = ["DINO", "MAE"]
 
 K_MIN = 3
 K_MAX = 20  # widened to match the thesis pipeline's range (was 12, then 20)
@@ -177,11 +188,25 @@ def silhouette_t(X: torch.Tensor, lbl: torch.Tensor) -> float:
 # Helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
-def load_brand_products(brand: str) -> tuple[torch.Tensor, list[dict]]:
-    """Concatenate F25 + S26 embeddings + product metadata for one brand."""
+def load_brand_products(brand: str, backbone: str) -> tuple[torch.Tensor, list[dict]]:
+    """Concatenate F25 + S26 embeddings + product metadata for one brand × backbone."""
     cfg = BRANDS[brand]
-    f25_emb = torch.load(EMBED_DIR / cfg["f25_pt"], map_location="cpu")
-    s26_emb = torch.load(EMBED_DIR / cfg["s26_pt"], map_location="cpu")
+    if backbone == "DINO":
+        f25_path = EMBED_DIR / cfg["f25_pt_dino"]
+        s26_path = EMBED_DIR / cfg["s26_pt_dino"]
+        # Fall back to the legacy DINO filename (no backbone prefix) if the
+        # benchmark hasn't been re-run yet
+        if not f25_path.exists():
+            f25_path = EMBED_DIR / cfg["f25_pt_legacy_dino"]
+        if not s26_path.exists():
+            s26_path = EMBED_DIR / cfg["s26_pt_legacy_dino"]
+    elif backbone == "MAE":
+        f25_path = EMBED_DIR / cfg["f25_pt_mae"]
+        s26_path = EMBED_DIR / cfg["s26_pt_mae"]
+    else:
+        raise ValueError(backbone)
+    f25_emb = torch.load(f25_path, map_location="cpu")
+    s26_emb = torch.load(s26_path, map_location="cpu")
 
     f25_prods = BUNDLE_V2["brands"][brand]["snapshots"]["F25"]["products"]
     s26_prods = BUNDLE_V2["brands"][brand]["snapshots"]["S26"]["products"]
@@ -307,10 +332,10 @@ def cluster_set(label: str, emb_raw: torch.Tensor, prods: list[dict], slug: str,
     }
 
 
-def cluster_brand(brand: str, k_min: int, k_max: int) -> dict:
-    """Joint + F25-only + S26-only clusterings for one brand."""
-    print(f"\n=== {brand} ===")
-    emb, prods = load_brand_products(brand)
+def cluster_brand(brand: str, backbone: str, k_min: int, k_max: int) -> dict:
+    """Joint + F25-only + S26-only clusterings for one brand × backbone."""
+    print(f"\n=== {brand} · {backbone} ===")
+    emb, prods = load_brand_products(brand, backbone)
     slug = BRANDS[brand]["slug"]
 
     f25_idx = [i for i, p in enumerate(prods) if p["season"] == "F25"]
@@ -321,27 +346,43 @@ def cluster_brand(brand: str, k_min: int, k_max: int) -> dict:
     prods_s26 = [prods[i] for i in s26_idx]
 
     return {
-        "joint": cluster_set("joint", emb, prods, slug, k_min, k_max),
-        "F25":   cluster_set("F25-only", emb_f25, prods_f25, slug, k_min, k_max),
-        "S26":   cluster_set("S26-only", emb_s26, prods_s26, slug, k_min, k_max),
+        "joint": cluster_set(f"joint·{backbone}", emb, prods, slug, k_min, k_max),
+        "F25":   cluster_set(f"F25·{backbone}",   emb_f25, prods_f25, slug, k_min, k_max),
+        "S26":   cluster_set(f"S26·{backbone}",   emb_s26, prods_s26, slug, k_min, k_max),
     }
 
 
 def main():
-    out = {"backbone": "vit_base_patch16_224.dino", "brands": {}}
-    for brand in BRANDS.keys():
-        out["brands"][brand] = cluster_brand(brand, K_MIN, K_MAX)
+    # Output groups both backbones so the frontend can offer a sub-toggle.
+    # schema_version=2 distinguishes from the old flat shape.
+    out = {
+        "schema_version": 2,
+        "backbones": {},
+    }
+    for backbone in BACKBONES:
+        out["backbones"][backbone] = {
+            "model_id":
+                "vit_base_patch16_224.dino" if backbone == "DINO" else
+                "vit_base_patch16_224.mae",
+            "prep": f"PCA({PCA_DIMS})",
+            "algo": "Ward Agglomerative",
+            "selection": f"thesis rule (>{int(THESIS_RULE_THRESHOLD*100)}% of best, k>4, floor 4)",
+            "brands": {},
+        }
+        for brand in BRANDS.keys():
+            out["backbones"][backbone]["brands"][brand] = cluster_brand(brand, backbone, K_MIN, K_MAX)
 
     OUT_PATH.write_text(json.dumps(out, indent=2))
     print(f"\n[done] wrote {OUT_PATH}")
 
     print("\nSummary:")
-    for brand, info in out["brands"].items():
-        for mode_label, mode in info.items():
-            n = mode.get("n_products", 0)
-            k = mode.get("n_clusters", 0)
-            silh = mode.get("silhouette_score", -1.0)
-            print(f"  {brand:18s} {mode_label:5s}  n={n:3d} k={k:2d} silhouette={silh:.4f}")
+    for backbone, info in out["backbones"].items():
+        for brand, modes in info["brands"].items():
+            for mode_label, mode in modes.items():
+                n = mode.get("n_products", 0)
+                k = mode.get("n_clusters", 0)
+                silh = mode.get("silhouette_score", -1.0)
+                print(f"  {backbone:4s}  {brand:18s} {mode_label:5s}  n={n:3d} k={k:2d} silhouette={silh:.4f}")
 
 
 if __name__ == "__main__":
