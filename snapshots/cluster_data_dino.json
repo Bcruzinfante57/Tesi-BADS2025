@@ -4,245 +4,65 @@
     "Bottega Veneta": {
       "joint": {
         "n_products": 285,
-        "n_clusters": 11,
-        "silhouette_score": 0.1077,
+        "n_clusters": 20,
+        "silhouette_score": 0.1422,
         "silhouettes_by_k": {
-          "3": 0.0992,
-          "4": 0.1043,
-          "5": 0.0793,
-          "6": 0.0929,
-          "7": 0.1001,
-          "8": 0.0993,
-          "9": 0.0965,
-          "10": 0.1005,
-          "11": 0.1077,
-          "12": 0.1025
+          "3": 0.1358,
+          "4": 0.1346,
+          "5": 0.1176,
+          "6": 0.1157,
+          "7": 0.1222,
+          "8": 0.1313,
+          "9": 0.1305,
+          "10": 0.1328,
+          "11": 0.1373,
+          "12": 0.1197,
+          "13": 0.1262,
+          "14": 0.1335,
+          "15": 0.1232,
+          "16": 0.1243,
+          "17": 0.1242,
+          "18": 0.1317,
+          "19": 0.1364,
+          "20": 0.1422
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 54,
+            "n_products": 45,
             "season_composition": {
-              "F25": 21,
-              "S26": 33
-            },
-            "dominant_colors": [
-              "#ca9197",
-              "#191714",
-              "#302e2e"
-            ],
-            "price_stats": {
-              "min": 270.0,
-              "max": 520.0,
-              "mean": 393.33,
-              "count": 54
-            },
-            "price_stats_by_season": {
-              "F25": {
-                "min": 270.0,
-                "max": 520.0,
-                "mean": 393.33,
-                "count": 21
-              },
-              "S26": {
-                "min": 270.0,
-                "max": 520.0,
-                "mean": 393.33,
-                "count": 33
-              }
-            },
-            "images": [
-              "/snapshots/S26/bottega/Bottega_150.jpg",
-              "/snapshots/F25/bottega/Bottega_41.jpg",
-              "/snapshots/F25/bottega/Bottega_118.jpg"
-            ],
-            "all_images": [
-              "/snapshots/F25/bottega/Bottega_10.jpg",
-              "/snapshots/F25/bottega/Bottega_103.jpg",
-              "/snapshots/F25/bottega/Bottega_106.jpg",
-              "/snapshots/F25/bottega/Bottega_108.jpg",
-              "/snapshots/F25/bottega/Bottega_118.jpg",
-              "/snapshots/F25/bottega/Bottega_2.jpg",
-              "/snapshots/F25/bottega/Bottega_21.jpg",
-              "/snapshots/F25/bottega/Bottega_24.jpg",
-              "/snapshots/F25/bottega/Bottega_37.jpg",
-              "/snapshots/F25/bottega/Bottega_39.jpg",
-              "/snapshots/F25/bottega/Bottega_41.jpg",
-              "/snapshots/F25/bottega/Bottega_57.jpg",
-              "/snapshots/F25/bottega/Bottega_67.jpg",
-              "/snapshots/F25/bottega/Bottega_68.jpg",
-              "/snapshots/F25/bottega/Bottega_74.jpg",
-              "/snapshots/F25/bottega/Bottega_84.jpg",
-              "/snapshots/F25/bottega/Bottega_86.jpg",
-              "/snapshots/F25/bottega/Bottega_88.jpg",
-              "/snapshots/F25/bottega/Bottega_89.jpg",
-              "/snapshots/F25/bottega/Bottega_92.jpg",
-              "/snapshots/F25/bottega/Bottega_95.jpg",
-              "/snapshots/S26/bottega/Bottega_101.jpg",
-              "/snapshots/S26/bottega/Bottega_102.jpg",
-              "/snapshots/S26/bottega/Bottega_11.jpg",
-              "/snapshots/S26/bottega/Bottega_114.jpg",
-              "/snapshots/S26/bottega/Bottega_117.jpg",
-              "/snapshots/S26/bottega/Bottega_119.jpg",
-              "/snapshots/S26/bottega/Bottega_122.jpg",
-              "/snapshots/S26/bottega/Bottega_126.jpg",
-              "/snapshots/S26/bottega/Bottega_130.jpg",
-              "/snapshots/S26/bottega/Bottega_133.jpg",
-              "/snapshots/S26/bottega/Bottega_136.jpg",
-              "/snapshots/S26/bottega/Bottega_149.jpg",
-              "/snapshots/S26/bottega/Bottega_15.jpg",
-              "/snapshots/S26/bottega/Bottega_150.jpg",
-              "/snapshots/S26/bottega/Bottega_151.jpg",
-              "/snapshots/S26/bottega/Bottega_155.jpg",
-              "/snapshots/S26/bottega/Bottega_157.jpg",
-              "/snapshots/S26/bottega/Bottega_20.jpg",
-              "/snapshots/S26/bottega/Bottega_21.jpg",
-              "/snapshots/S26/bottega/Bottega_27.jpg",
-              "/snapshots/S26/bottega/Bottega_3.jpg",
-              "/snapshots/S26/bottega/Bottega_4.jpg",
-              "/snapshots/S26/bottega/Bottega_42.jpg",
-              "/snapshots/S26/bottega/Bottega_45.jpg",
-              "/snapshots/S26/bottega/Bottega_5.jpg",
-              "/snapshots/S26/bottega/Bottega_6.jpg",
-              "/snapshots/S26/bottega/Bottega_70.jpg",
-              "/snapshots/S26/bottega/Bottega_86.jpg",
-              "/snapshots/S26/bottega/Bottega_9.jpg",
-              "/snapshots/S26/bottega/Bottega_90.jpg",
-              "/snapshots/S26/bottega/Bottega_92.jpg",
-              "/snapshots/S26/bottega/Bottega_96.jpg",
-              "/snapshots/S26/bottega/Bottega_97.jpg"
-            ],
-            "is_new_in_s26": false,
-            "is_discontinued_from_f25": false
-          },
-          {
-            "id": 1,
-            "n_products": 50,
-            "season_composition": {
-              "F25": 26,
-              "S26": 24
-            },
-            "dominant_colors": [
-              "#a56c3a",
-              "#0f0c0a",
-              "#54301d"
-            ],
-            "price_stats": {
-              "min": 270.0,
-              "max": 520.0,
-              "mean": 383.6,
-              "count": 50
-            },
-            "price_stats_by_season": {
-              "F25": {
-                "min": 270.0,
-                "max": 520.0,
-                "mean": 383.08,
-                "count": 26
-              },
-              "S26": {
-                "min": 270.0,
-                "max": 520.0,
-                "mean": 384.17,
-                "count": 24
-              }
-            },
-            "images": [
-              "/snapshots/F25/bottega/Bottega_121.jpg",
-              "/snapshots/F25/bottega/Bottega_33.jpg",
-              "/snapshots/S26/bottega/Bottega_142.jpg"
-            ],
-            "all_images": [
-              "/snapshots/F25/bottega/Bottega_101.jpg",
-              "/snapshots/F25/bottega/Bottega_102.jpg",
-              "/snapshots/F25/bottega/Bottega_113.jpg",
-              "/snapshots/F25/bottega/Bottega_117.jpg",
-              "/snapshots/F25/bottega/Bottega_119.jpg",
-              "/snapshots/F25/bottega/Bottega_121.jpg",
-              "/snapshots/F25/bottega/Bottega_125.jpg",
-              "/snapshots/F25/bottega/Bottega_126.jpg",
-              "/snapshots/F25/bottega/Bottega_127.jpg",
-              "/snapshots/F25/bottega/Bottega_33.jpg",
-              "/snapshots/F25/bottega/Bottega_38.jpg",
-              "/snapshots/F25/bottega/Bottega_4.jpg",
-              "/snapshots/F25/bottega/Bottega_43.jpg",
-              "/snapshots/F25/bottega/Bottega_47.jpg",
-              "/snapshots/F25/bottega/Bottega_48.jpg",
-              "/snapshots/F25/bottega/Bottega_50.jpg",
-              "/snapshots/F25/bottega/Bottega_53.jpg",
-              "/snapshots/F25/bottega/Bottega_55.jpg",
-              "/snapshots/F25/bottega/Bottega_58.jpg",
-              "/snapshots/F25/bottega/Bottega_61.jpg",
-              "/snapshots/F25/bottega/Bottega_63.jpg",
-              "/snapshots/F25/bottega/Bottega_66.jpg",
-              "/snapshots/F25/bottega/Bottega_69.jpg",
-              "/snapshots/F25/bottega/Bottega_79.jpg",
-              "/snapshots/F25/bottega/Bottega_83.jpg",
-              "/snapshots/F25/bottega/Bottega_96.jpg",
-              "/snapshots/S26/bottega/Bottega_107.jpg",
-              "/snapshots/S26/bottega/Bottega_111.jpg",
-              "/snapshots/S26/bottega/Bottega_112.jpg",
-              "/snapshots/S26/bottega/Bottega_113.jpg",
-              "/snapshots/S26/bottega/Bottega_116.jpg",
-              "/snapshots/S26/bottega/Bottega_125.jpg",
-              "/snapshots/S26/bottega/Bottega_127.jpg",
-              "/snapshots/S26/bottega/Bottega_129.jpg",
-              "/snapshots/S26/bottega/Bottega_142.jpg",
-              "/snapshots/S26/bottega/Bottega_147.jpg",
-              "/snapshots/S26/bottega/Bottega_152.jpg",
-              "/snapshots/S26/bottega/Bottega_154.jpg",
-              "/snapshots/S26/bottega/Bottega_158.jpg",
-              "/snapshots/S26/bottega/Bottega_2.jpg",
-              "/snapshots/S26/bottega/Bottega_23.jpg",
-              "/snapshots/S26/bottega/Bottega_24.jpg",
-              "/snapshots/S26/bottega/Bottega_28.jpg",
-              "/snapshots/S26/bottega/Bottega_39.jpg",
-              "/snapshots/S26/bottega/Bottega_72.jpg",
-              "/snapshots/S26/bottega/Bottega_73.jpg",
-              "/snapshots/S26/bottega/Bottega_74.jpg",
-              "/snapshots/S26/bottega/Bottega_76.jpg",
-              "/snapshots/S26/bottega/Bottega_84.jpg",
-              "/snapshots/S26/bottega/Bottega_85.jpg"
-            ],
-            "is_new_in_s26": false,
-            "is_discontinued_from_f25": false
-          },
-          {
-            "id": 2,
-            "n_products": 44,
-            "season_composition": {
-              "F25": 20,
-              "S26": 24
+              "F25": 19,
+              "S26": 26
             },
             "dominant_colors": [
               "#2d1f1f",
               "#473939",
-              "#1c191a"
+              "#131112"
             ],
             "price_stats": {
               "min": 270.0,
               "max": 520.0,
-              "mean": 383.86,
-              "count": 44
+              "mean": 387.56,
+              "count": 45
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 361.0,
-                "count": 20
+                "mean": 361.58,
+                "count": 19
               },
               "S26": {
                 "min": 280.0,
                 "max": 520.0,
-                "mean": 402.92,
-                "count": 24
+                "mean": 406.54,
+                "count": 26
               }
             },
             "images": [
-              "/snapshots/F25/bottega/Bottega_107.jpg",
-              "/snapshots/F25/bottega/Bottega_6.jpg",
-              "/snapshots/F25/bottega/Bottega_65.jpg"
+              "/snapshots/F25/bottega/Bottega_104.jpg",
+              "/snapshots/F25/bottega/Bottega_65.jpg",
+              "/snapshots/F25/bottega/Bottega_35.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_100.jpg",
@@ -251,7 +71,6 @@
               "/snapshots/F25/bottega/Bottega_111.jpg",
               "/snapshots/F25/bottega/Bottega_120.jpg",
               "/snapshots/F25/bottega/Bottega_124.jpg",
-              "/snapshots/F25/bottega/Bottega_22.jpg",
               "/snapshots/F25/bottega/Bottega_31.jpg",
               "/snapshots/F25/bottega/Bottega_35.jpg",
               "/snapshots/F25/bottega/Bottega_46.jpg",
@@ -266,18 +85,20 @@
               "/snapshots/F25/bottega/Bottega_97.jpg",
               "/snapshots/F25/bottega/Bottega_99.jpg",
               "/snapshots/S26/bottega/Bottega_108.jpg",
+              "/snapshots/S26/bottega/Bottega_116.jpg",
+              "/snapshots/S26/bottega/Bottega_125.jpg",
               "/snapshots/S26/bottega/Bottega_128.jpg",
               "/snapshots/S26/bottega/Bottega_132.jpg",
               "/snapshots/S26/bottega/Bottega_137.jpg",
               "/snapshots/S26/bottega/Bottega_139.jpg",
               "/snapshots/S26/bottega/Bottega_14.jpg",
+              "/snapshots/S26/bottega/Bottega_142.jpg",
               "/snapshots/S26/bottega/Bottega_159.jpg",
               "/snapshots/S26/bottega/Bottega_32.jpg",
               "/snapshots/S26/bottega/Bottega_36.jpg",
               "/snapshots/S26/bottega/Bottega_37.jpg",
               "/snapshots/S26/bottega/Bottega_38.jpg",
               "/snapshots/S26/bottega/Bottega_40.jpg",
-              "/snapshots/S26/bottega/Bottega_41.jpg",
               "/snapshots/S26/bottega/Bottega_46.jpg",
               "/snapshots/S26/bottega/Bottega_57.jpg",
               "/snapshots/S26/bottega/Bottega_7.jpg",
@@ -294,82 +115,201 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 3,
-            "n_products": 40,
+            "id": 1,
+            "n_products": 31,
             "season_composition": {
-              "F25": 21,
-              "S26": 19
+              "F25": 18,
+              "S26": 13
+            },
+            "dominant_colors": [
+              "#191714",
+              "#302e2e",
+              "#232322"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 401.94,
+              "count": 31
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 280.0,
+                "max": 520.0,
+                "mean": 411.67,
+                "count": 18
+              },
+              "S26": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 388.46,
+                "count": 13
+              }
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_39.jpg",
+              "/snapshots/F25/bottega/Bottega_125.jpg",
+              "/snapshots/S26/bottega/Bottega_42.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_10.jpg",
+              "/snapshots/F25/bottega/Bottega_106.jpg",
+              "/snapshots/F25/bottega/Bottega_113.jpg",
+              "/snapshots/F25/bottega/Bottega_117.jpg",
+              "/snapshots/F25/bottega/Bottega_125.jpg",
+              "/snapshots/F25/bottega/Bottega_127.jpg",
+              "/snapshots/F25/bottega/Bottega_21.jpg",
+              "/snapshots/F25/bottega/Bottega_38.jpg",
+              "/snapshots/F25/bottega/Bottega_39.jpg",
+              "/snapshots/F25/bottega/Bottega_4.jpg",
+              "/snapshots/F25/bottega/Bottega_47.jpg",
+              "/snapshots/F25/bottega/Bottega_50.jpg",
+              "/snapshots/F25/bottega/Bottega_53.jpg",
+              "/snapshots/F25/bottega/Bottega_74.jpg",
+              "/snapshots/F25/bottega/Bottega_79.jpg",
+              "/snapshots/F25/bottega/Bottega_84.jpg",
+              "/snapshots/F25/bottega/Bottega_86.jpg",
+              "/snapshots/F25/bottega/Bottega_96.jpg",
+              "/snapshots/S26/bottega/Bottega_126.jpg",
+              "/snapshots/S26/bottega/Bottega_130.jpg",
+              "/snapshots/S26/bottega/Bottega_149.jpg",
+              "/snapshots/S26/bottega/Bottega_150.jpg",
+              "/snapshots/S26/bottega/Bottega_2.jpg",
+              "/snapshots/S26/bottega/Bottega_28.jpg",
+              "/snapshots/S26/bottega/Bottega_39.jpg",
+              "/snapshots/S26/bottega/Bottega_4.jpg",
+              "/snapshots/S26/bottega/Bottega_42.jpg",
+              "/snapshots/S26/bottega/Bottega_45.jpg",
+              "/snapshots/S26/bottega/Bottega_72.jpg",
+              "/snapshots/S26/bottega/Bottega_85.jpg",
+              "/snapshots/S26/bottega/Bottega_86.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 2,
+            "n_products": 22,
+            "season_composition": {
+              "F25": 13,
+              "S26": 9
+            },
+            "dominant_colors": [
+              "#ca9197",
+              "#a4656c",
+              "#2c1a1e"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 378.18,
+              "count": 22
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 371.54,
+                "count": 13
+              },
+              "S26": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 387.78,
+                "count": 9
+              }
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_108.jpg",
+              "/snapshots/F25/bottega/Bottega_57.jpg",
+              "/snapshots/F25/bottega/Bottega_41.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_103.jpg",
+              "/snapshots/F25/bottega/Bottega_108.jpg",
+              "/snapshots/F25/bottega/Bottega_118.jpg",
+              "/snapshots/F25/bottega/Bottega_2.jpg",
+              "/snapshots/F25/bottega/Bottega_37.jpg",
+              "/snapshots/F25/bottega/Bottega_41.jpg",
+              "/snapshots/F25/bottega/Bottega_57.jpg",
+              "/snapshots/F25/bottega/Bottega_67.jpg",
+              "/snapshots/F25/bottega/Bottega_68.jpg",
+              "/snapshots/F25/bottega/Bottega_88.jpg",
+              "/snapshots/F25/bottega/Bottega_89.jpg",
+              "/snapshots/F25/bottega/Bottega_92.jpg",
+              "/snapshots/F25/bottega/Bottega_95.jpg",
+              "/snapshots/S26/bottega/Bottega_11.jpg",
+              "/snapshots/S26/bottega/Bottega_114.jpg",
+              "/snapshots/S26/bottega/Bottega_151.jpg",
+              "/snapshots/S26/bottega/Bottega_155.jpg",
+              "/snapshots/S26/bottega/Bottega_157.jpg",
+              "/snapshots/S26/bottega/Bottega_3.jpg",
+              "/snapshots/S26/bottega/Bottega_9.jpg",
+              "/snapshots/S26/bottega/Bottega_92.jpg",
+              "/snapshots/S26/bottega/Bottega_96.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 3,
+            "n_products": 22,
+            "season_composition": {
+              "F25": 12,
+              "S26": 10
             },
             "dominant_colors": [
               "#c8a25b",
               "#d4b26d",
-              "#0b0806"
+              "#6d5954"
             ],
             "price_stats": {
               "min": 290.0,
               "max": 650.0,
-              "mean": 441.0,
-              "count": 40
+              "mean": 459.55,
+              "count": 22
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 290.0,
                 "max": 520.0,
-                "mean": 411.9,
-                "count": 21
+                "mean": 429.17,
+                "count": 12
               },
               "S26": {
                 "min": 340.0,
                 "max": 650.0,
-                "mean": 473.16,
-                "count": 19
+                "mean": 496.0,
+                "count": 10
               }
             },
             "images": [
-              "/snapshots/S26/bottega/Bottega_59.jpg",
-              "/snapshots/S26/bottega/Bottega_50.jpg",
-              "/snapshots/F25/bottega/Bottega_26.jpg"
+              "/snapshots/F25/bottega/Bottega_28.jpg",
+              "/snapshots/F25/bottega/Bottega_24.jpg",
+              "/snapshots/S26/bottega/Bottega_50.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_11.jpg",
-              "/snapshots/F25/bottega/Bottega_110.jpg",
               "/snapshots/F25/bottega/Bottega_14.jpg",
               "/snapshots/F25/bottega/Bottega_15.jpg",
-              "/snapshots/F25/bottega/Bottega_17.jpg",
-              "/snapshots/F25/bottega/Bottega_18.jpg",
               "/snapshots/F25/bottega/Bottega_19.jpg",
               "/snapshots/F25/bottega/Bottega_20.jpg",
               "/snapshots/F25/bottega/Bottega_23.jpg",
+              "/snapshots/F25/bottega/Bottega_24.jpg",
               "/snapshots/F25/bottega/Bottega_25.jpg",
               "/snapshots/F25/bottega/Bottega_26.jpg",
               "/snapshots/F25/bottega/Bottega_28.jpg",
-              "/snapshots/F25/bottega/Bottega_3.jpg",
               "/snapshots/F25/bottega/Bottega_30.jpg",
-              "/snapshots/F25/bottega/Bottega_32.jpg",
-              "/snapshots/F25/bottega/Bottega_5.jpg",
               "/snapshots/F25/bottega/Bottega_7.jpg",
-              "/snapshots/F25/bottega/Bottega_70.jpg",
-              "/snapshots/F25/bottega/Bottega_73.jpg",
-              "/snapshots/F25/bottega/Bottega_77.jpg",
-              "/snapshots/F25/bottega/Bottega_9.jpg",
-              "/snapshots/S26/bottega/Bottega_103.jpg",
               "/snapshots/S26/bottega/Bottega_104.jpg",
-              "/snapshots/S26/bottega/Bottega_120.jpg",
               "/snapshots/S26/bottega/Bottega_43.jpg",
-              "/snapshots/S26/bottega/Bottega_48.jpg",
-              "/snapshots/S26/bottega/Bottega_49.jpg",
               "/snapshots/S26/bottega/Bottega_50.jpg",
-              "/snapshots/S26/bottega/Bottega_51.jpg",
-              "/snapshots/S26/bottega/Bottega_52.jpg",
               "/snapshots/S26/bottega/Bottega_54.jpg",
-              "/snapshots/S26/bottega/Bottega_55.jpg",
               "/snapshots/S26/bottega/Bottega_59.jpg",
               "/snapshots/S26/bottega/Bottega_61.jpg",
               "/snapshots/S26/bottega/Bottega_62.jpg",
               "/snapshots/S26/bottega/Bottega_63.jpg",
               "/snapshots/S26/bottega/Bottega_64.jpg",
-              "/snapshots/S26/bottega/Bottega_66.jpg",
-              "/snapshots/S26/bottega/Bottega_67.jpg",
               "/snapshots/S26/bottega/Bottega_69.jpg"
             ],
             "is_new_in_s26": false,
@@ -377,43 +317,42 @@
           },
           {
             "id": 4,
-            "n_products": 25,
+            "n_products": 22,
             "season_composition": {
-              "F25": 11,
-              "S26": 14
+              "F25": 10,
+              "S26": 12
             },
             "dominant_colors": [
               "#0f0e0f",
-              "#180e0c",
-              "#241311"
+              "#2e1e22",
+              "#3c282a"
             ],
             "price_stats": {
               "min": 270.0,
               "max": 520.0,
-              "mean": 371.6,
-              "count": 25
+              "mean": 373.64,
+              "count": 22
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 354.55,
-                "count": 11
+                "mean": 359.0,
+                "count": 10
               },
               "S26": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 385.0,
-                "count": 14
+                "mean": 385.83,
+                "count": 12
               }
             },
             "images": [
-              "/snapshots/F25/bottega/Bottega_52.jpg",
+              "/snapshots/S26/bottega/Bottega_29.jpg",
               "/snapshots/S26/bottega/Bottega_146.jpg",
-              "/snapshots/S26/bottega/Bottega_29.jpg"
+              "/snapshots/F25/bottega/Bottega_52.jpg"
             ],
             "all_images": [
-              "/snapshots/F25/bottega/Bottega_105.jpg",
               "/snapshots/F25/bottega/Bottega_112.jpg",
               "/snapshots/F25/bottega/Bottega_114.jpg",
               "/snapshots/F25/bottega/Bottega_122.jpg",
@@ -425,14 +364,12 @@
               "/snapshots/F25/bottega/Bottega_81.jpg",
               "/snapshots/F25/bottega/Bottega_98.jpg",
               "/snapshots/S26/bottega/Bottega_109.jpg",
-              "/snapshots/S26/bottega/Bottega_138.jpg",
               "/snapshots/S26/bottega/Bottega_141.jpg",
               "/snapshots/S26/bottega/Bottega_146.jpg",
               "/snapshots/S26/bottega/Bottega_148.jpg",
               "/snapshots/S26/bottega/Bottega_153.jpg",
               "/snapshots/S26/bottega/Bottega_18.jpg",
               "/snapshots/S26/bottega/Bottega_29.jpg",
-              "/snapshots/S26/bottega/Bottega_31.jpg",
               "/snapshots/S26/bottega/Bottega_33.jpg",
               "/snapshots/S26/bottega/Bottega_44.jpg",
               "/snapshots/S26/bottega/Bottega_68.jpg",
@@ -444,57 +381,159 @@
           },
           {
             "id": 5,
-            "n_products": 22,
+            "n_products": 19,
+            "season_composition": {
+              "F25": 7,
+              "S26": 12
+            },
+            "dominant_colors": [
+              "#e6dfdb",
+              "#923b24",
+              "#676560"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 450.0,
+              "mean": 383.68,
+              "count": 19
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 270.0,
+                "max": 450.0,
+                "mean": 382.86,
+                "count": 7
+              },
+              "S26": {
+                "min": 270.0,
+                "max": 450.0,
+                "mean": 384.17,
+                "count": 12
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_112.jpg",
+              "/snapshots/F25/bottega/Bottega_43.jpg",
+              "/snapshots/F25/bottega/Bottega_48.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_121.jpg",
+              "/snapshots/F25/bottega/Bottega_33.jpg",
+              "/snapshots/F25/bottega/Bottega_43.jpg",
+              "/snapshots/F25/bottega/Bottega_48.jpg",
+              "/snapshots/F25/bottega/Bottega_58.jpg",
+              "/snapshots/F25/bottega/Bottega_61.jpg",
+              "/snapshots/F25/bottega/Bottega_83.jpg",
+              "/snapshots/S26/bottega/Bottega_107.jpg",
+              "/snapshots/S26/bottega/Bottega_111.jpg",
+              "/snapshots/S26/bottega/Bottega_112.jpg",
+              "/snapshots/S26/bottega/Bottega_113.jpg",
+              "/snapshots/S26/bottega/Bottega_127.jpg",
+              "/snapshots/S26/bottega/Bottega_129.jpg",
+              "/snapshots/S26/bottega/Bottega_152.jpg",
+              "/snapshots/S26/bottega/Bottega_154.jpg",
+              "/snapshots/S26/bottega/Bottega_24.jpg",
+              "/snapshots/S26/bottega/Bottega_74.jpg",
+              "/snapshots/S26/bottega/Bottega_76.jpg",
+              "/snapshots/S26/bottega/Bottega_84.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 6,
+            "n_products": 14,
             "season_composition": {
               "F25": 0,
-              "S26": 22
+              "S26": 14
+            },
+            "dominant_colors": [
+              "#0e0e0e",
+              "#3b3533",
+              "#130d0c"
+            ],
+            "price_stats": {
+              "min": 290.0,
+              "max": 520.0,
+              "mean": 395.0,
+              "count": 14
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 290.0,
+                "max": 520.0,
+                "mean": 395.0,
+                "count": 14
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_102.jpg",
+              "/snapshots/S26/bottega/Bottega_70.jpg",
+              "/snapshots/S26/bottega/Bottega_117.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_101.jpg",
+              "/snapshots/S26/bottega/Bottega_102.jpg",
+              "/snapshots/S26/bottega/Bottega_117.jpg",
+              "/snapshots/S26/bottega/Bottega_119.jpg",
+              "/snapshots/S26/bottega/Bottega_122.jpg",
+              "/snapshots/S26/bottega/Bottega_133.jpg",
+              "/snapshots/S26/bottega/Bottega_15.jpg",
+              "/snapshots/S26/bottega/Bottega_20.jpg",
+              "/snapshots/S26/bottega/Bottega_27.jpg",
+              "/snapshots/S26/bottega/Bottega_5.jpg",
+              "/snapshots/S26/bottega/Bottega_6.jpg",
+              "/snapshots/S26/bottega/Bottega_70.jpg",
+              "/snapshots/S26/bottega/Bottega_90.jpg",
+              "/snapshots/S26/bottega/Bottega_97.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 7,
+            "n_products": 12,
+            "season_composition": {
+              "F25": 0,
+              "S26": 12
             },
             "dominant_colors": [
               "#54311d",
               "#442617",
-              "#171614"
+              "#764f40"
             ],
             "price_stats": {
               "min": 270.0,
               "max": 520.0,
-              "mean": 415.0,
-              "count": 22
+              "mean": 419.17,
+              "count": 12
             },
             "price_stats_by_season": {
               "F25": {},
               "S26": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 415.0,
-                "count": 22
+                "mean": 419.17,
+                "count": 12
               }
             },
             "images": [
-              "/snapshots/S26/bottega/Bottega_26.jpg",
-              "/snapshots/S26/bottega/Bottega_100.jpg",
-              "/snapshots/S26/bottega/Bottega_71.jpg"
+              "/snapshots/S26/bottega/Bottega_12.jpg",
+              "/snapshots/S26/bottega/Bottega_80.jpg",
+              "/snapshots/S26/bottega/Bottega_105.jpg"
             ],
             "all_images": [
               "/snapshots/S26/bottega/Bottega_10.jpg",
-              "/snapshots/S26/bottega/Bottega_100.jpg",
               "/snapshots/S26/bottega/Bottega_105.jpg",
               "/snapshots/S26/bottega/Bottega_12.jpg",
               "/snapshots/S26/bottega/Bottega_124.jpg",
-              "/snapshots/S26/bottega/Bottega_13.jpg",
               "/snapshots/S26/bottega/Bottega_131.jpg",
-              "/snapshots/S26/bottega/Bottega_134.jpg",
+              "/snapshots/S26/bottega/Bottega_136.jpg",
               "/snapshots/S26/bottega/Bottega_143.jpg",
               "/snapshots/S26/bottega/Bottega_156.jpg",
-              "/snapshots/S26/bottega/Bottega_16.jpg",
-              "/snapshots/S26/bottega/Bottega_160.jpg",
-              "/snapshots/S26/bottega/Bottega_162.jpg",
-              "/snapshots/S26/bottega/Bottega_19.jpg",
-              "/snapshots/S26/bottega/Bottega_22.jpg",
               "/snapshots/S26/bottega/Bottega_25.jpg",
-              "/snapshots/S26/bottega/Bottega_26.jpg",
               "/snapshots/S26/bottega/Bottega_30.jpg",
-              "/snapshots/S26/bottega/Bottega_71.jpg",
-              "/snapshots/S26/bottega/Bottega_78.jpg",
               "/snapshots/S26/bottega/Bottega_80.jpg",
               "/snapshots/S26/bottega/Bottega_93.jpg"
             ],
@@ -502,67 +541,7 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 6,
-            "n_products": 18,
-            "season_composition": {
-              "F25": 9,
-              "S26": 9
-            },
-            "dominant_colors": [
-              "#c5af71",
-              "#211f1e",
-              "#ab8a47"
-            ],
-            "price_stats": {
-              "min": 290.0,
-              "max": 530.0,
-              "mean": 412.78,
-              "count": 18
-            },
-            "price_stats_by_season": {
-              "F25": {
-                "min": 370.0,
-                "max": 530.0,
-                "mean": 437.78,
-                "count": 9
-              },
-              "S26": {
-                "min": 290.0,
-                "max": 520.0,
-                "mean": 387.78,
-                "count": 9
-              }
-            },
-            "images": [
-              "/snapshots/F25/bottega/Bottega_59.jpg",
-              "/snapshots/F25/bottega/Bottega_1.jpg",
-              "/snapshots/S26/bottega/Bottega_83.jpg"
-            ],
-            "all_images": [
-              "/snapshots/F25/bottega/Bottega_1.jpg",
-              "/snapshots/F25/bottega/Bottega_34.jpg",
-              "/snapshots/F25/bottega/Bottega_36.jpg",
-              "/snapshots/F25/bottega/Bottega_40.jpg",
-              "/snapshots/F25/bottega/Bottega_45.jpg",
-              "/snapshots/F25/bottega/Bottega_59.jpg",
-              "/snapshots/F25/bottega/Bottega_71.jpg",
-              "/snapshots/F25/bottega/Bottega_82.jpg",
-              "/snapshots/F25/bottega/Bottega_87.jpg",
-              "/snapshots/S26/bottega/Bottega_1.jpg",
-              "/snapshots/S26/bottega/Bottega_115.jpg",
-              "/snapshots/S26/bottega/Bottega_121.jpg",
-              "/snapshots/S26/bottega/Bottega_123.jpg",
-              "/snapshots/S26/bottega/Bottega_140.jpg",
-              "/snapshots/S26/bottega/Bottega_35.jpg",
-              "/snapshots/S26/bottega/Bottega_81.jpg",
-              "/snapshots/S26/bottega/Bottega_83.jpg",
-              "/snapshots/S26/bottega/Bottega_87.jpg"
-            ],
-            "is_new_in_s26": false,
-            "is_discontinued_from_f25": false
-          },
-          {
-            "id": 7,
+            "id": 8,
             "n_products": 12,
             "season_composition": {
               "F25": 5,
@@ -595,8 +574,8 @@
             },
             "images": [
               "/snapshots/S26/bottega/Bottega_47.jpg",
-              "/snapshots/S26/bottega/Bottega_65.jpg",
-              "/snapshots/F25/bottega/Bottega_116.jpg"
+              "/snapshots/F25/bottega/Bottega_13.jpg",
+              "/snapshots/S26/bottega/Bottega_65.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_116.jpg",
@@ -616,7 +595,166 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 8,
+            "id": 9,
+            "n_products": 11,
+            "season_composition": {
+              "F25": 8,
+              "S26": 3
+            },
+            "dominant_colors": [
+              "#0f0c0a",
+              "#54301d",
+              "#180c09"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 410.0,
+              "mean": 360.91,
+              "count": 11
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 270.0,
+                "max": 410.0,
+                "mean": 362.5,
+                "count": 8
+              },
+              "S26": {
+                "min": 270.0,
+                "max": 410.0,
+                "mean": 356.67,
+                "count": 3
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_23.jpg",
+              "/snapshots/F25/bottega/Bottega_55.jpg",
+              "/snapshots/F25/bottega/Bottega_101.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_101.jpg",
+              "/snapshots/F25/bottega/Bottega_102.jpg",
+              "/snapshots/F25/bottega/Bottega_119.jpg",
+              "/snapshots/F25/bottega/Bottega_126.jpg",
+              "/snapshots/F25/bottega/Bottega_55.jpg",
+              "/snapshots/F25/bottega/Bottega_63.jpg",
+              "/snapshots/F25/bottega/Bottega_66.jpg",
+              "/snapshots/F25/bottega/Bottega_69.jpg",
+              "/snapshots/S26/bottega/Bottega_147.jpg",
+              "/snapshots/S26/bottega/Bottega_158.jpg",
+              "/snapshots/S26/bottega/Bottega_23.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 10,
+            "n_products": 11,
+            "season_composition": {
+              "F25": 5,
+              "S26": 6
+            },
+            "dominant_colors": [
+              "#481d1b",
+              "#2c1a1d",
+              "#9f7141"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 480.0,
+              "mean": 383.64,
+              "count": 11
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 330.0,
+                "max": 410.0,
+                "mean": 366.0,
+                "count": 5
+              },
+              "S26": {
+                "min": 270.0,
+                "max": 480.0,
+                "mean": 398.33,
+                "count": 6
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_134.jpg",
+              "/snapshots/F25/bottega/Bottega_17.jpg",
+              "/snapshots/F25/bottega/Bottega_73.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_110.jpg",
+              "/snapshots/F25/bottega/Bottega_17.jpg",
+              "/snapshots/F25/bottega/Bottega_32.jpg",
+              "/snapshots/F25/bottega/Bottega_73.jpg",
+              "/snapshots/F25/bottega/Bottega_77.jpg",
+              "/snapshots/S26/bottega/Bottega_103.jpg",
+              "/snapshots/S26/bottega/Bottega_120.jpg",
+              "/snapshots/S26/bottega/Bottega_134.jpg",
+              "/snapshots/S26/bottega/Bottega_160.jpg",
+              "/snapshots/S26/bottega/Bottega_48.jpg",
+              "/snapshots/S26/bottega/Bottega_51.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 11,
+            "n_products": 11,
+            "season_composition": {
+              "F25": 3,
+              "S26": 8
+            },
+            "dominant_colors": [
+              "#1c191a",
+              "#2b2929",
+              "#c9a770"
+            ],
+            "price_stats": {
+              "min": 340.0,
+              "max": 520.0,
+              "mean": 404.55,
+              "count": 11
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 350.0,
+                "max": 450.0,
+                "mean": 383.33,
+                "count": 3
+              },
+              "S26": {
+                "min": 340.0,
+                "max": 520.0,
+                "mean": 412.5,
+                "count": 8
+              }
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_85.jpg",
+              "/snapshots/S26/bottega/Bottega_144.jpg",
+              "/snapshots/S26/bottega/Bottega_161.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_22.jpg",
+              "/snapshots/F25/bottega/Bottega_72.jpg",
+              "/snapshots/F25/bottega/Bottega_85.jpg",
+              "/snapshots/S26/bottega/Bottega_13.jpg",
+              "/snapshots/S26/bottega/Bottega_144.jpg",
+              "/snapshots/S26/bottega/Bottega_161.jpg",
+              "/snapshots/S26/bottega/Bottega_19.jpg",
+              "/snapshots/S26/bottega/Bottega_21.jpg",
+              "/snapshots/S26/bottega/Bottega_41.jpg",
+              "/snapshots/S26/bottega/Bottega_73.jpg",
+              "/snapshots/S26/bottega/Bottega_78.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 12,
             "n_products": 10,
             "season_composition": {
               "F25": 5,
@@ -668,11 +806,208 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 9,
+            "id": 13,
+            "n_products": 10,
+            "season_composition": {
+              "F25": 5,
+              "S26": 5
+            },
+            "dominant_colors": [
+              "#1c1a18",
+              "#352e2b",
+              "#191313"
+            ],
+            "price_stats": {
+              "min": 330.0,
+              "max": 530.0,
+              "mean": 390.0,
+              "count": 10
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 370.0,
+                "max": 530.0,
+                "mean": 416.0,
+                "count": 5
+              },
+              "S26": {
+                "min": 330.0,
+                "max": 410.0,
+                "mean": 364.0,
+                "count": 5
+              }
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_40.jpg",
+              "/snapshots/S26/bottega/Bottega_140.jpg",
+              "/snapshots/S26/bottega/Bottega_121.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_34.jpg",
+              "/snapshots/F25/bottega/Bottega_40.jpg",
+              "/snapshots/F25/bottega/Bottega_45.jpg",
+              "/snapshots/F25/bottega/Bottega_82.jpg",
+              "/snapshots/F25/bottega/Bottega_87.jpg",
+              "/snapshots/S26/bottega/Bottega_115.jpg",
+              "/snapshots/S26/bottega/Bottega_121.jpg",
+              "/snapshots/S26/bottega/Bottega_140.jpg",
+              "/snapshots/S26/bottega/Bottega_81.jpg",
+              "/snapshots/S26/bottega/Bottega_87.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 14,
+            "n_products": 10,
+            "season_composition": {
+              "F25": 5,
+              "S26": 5
+            },
+            "dominant_colors": [
+              "#0b0806",
+              "#e8dbaa",
+              "#dccc93"
+            ],
+            "price_stats": {
+              "min": 290.0,
+              "max": 520.0,
+              "mean": 446.0,
+              "count": 10
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 290.0,
+                "max": 520.0,
+                "mean": 414.0,
+                "count": 5
+              },
+              "S26": {
+                "min": 410.0,
+                "max": 520.0,
+                "mean": 478.0,
+                "count": 5
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_67.jpg",
+              "/snapshots/S26/bottega/Bottega_49.jpg",
+              "/snapshots/F25/bottega/Bottega_70.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_18.jpg",
+              "/snapshots/F25/bottega/Bottega_3.jpg",
+              "/snapshots/F25/bottega/Bottega_5.jpg",
+              "/snapshots/F25/bottega/Bottega_70.jpg",
+              "/snapshots/F25/bottega/Bottega_9.jpg",
+              "/snapshots/S26/bottega/Bottega_49.jpg",
+              "/snapshots/S26/bottega/Bottega_52.jpg",
+              "/snapshots/S26/bottega/Bottega_55.jpg",
+              "/snapshots/S26/bottega/Bottega_66.jpg",
+              "/snapshots/S26/bottega/Bottega_67.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 15,
             "n_products": 8,
             "season_composition": {
               "F25": 4,
               "S26": 4
+            },
+            "dominant_colors": [
+              "#c5af71",
+              "#211f1e",
+              "#ab8a47"
+            ],
+            "price_stats": {
+              "min": 290.0,
+              "max": 520.0,
+              "mean": 441.25,
+              "count": 8
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 410.0,
+                "max": 520.0,
+                "mean": 465.0,
+                "count": 4
+              },
+              "S26": {
+                "min": 290.0,
+                "max": 520.0,
+                "mean": 417.5,
+                "count": 4
+              }
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_1.jpg",
+              "/snapshots/S26/bottega/Bottega_1.jpg",
+              "/snapshots/F25/bottega/Bottega_59.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_1.jpg",
+              "/snapshots/F25/bottega/Bottega_36.jpg",
+              "/snapshots/F25/bottega/Bottega_59.jpg",
+              "/snapshots/F25/bottega/Bottega_71.jpg",
+              "/snapshots/S26/bottega/Bottega_1.jpg",
+              "/snapshots/S26/bottega/Bottega_123.jpg",
+              "/snapshots/S26/bottega/Bottega_35.jpg",
+              "/snapshots/S26/bottega/Bottega_83.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 16,
+            "n_products": 6,
+            "season_composition": {
+              "F25": 0,
+              "S26": 6
+            },
+            "dominant_colors": [
+              "#171614",
+              "#3c3b3b",
+              "#1e1a16"
+            ],
+            "price_stats": {
+              "min": 340.0,
+              "max": 520.0,
+              "mean": 401.67,
+              "count": 6
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 340.0,
+                "max": 520.0,
+                "mean": 401.67,
+                "count": 6
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_100.jpg",
+              "/snapshots/S26/bottega/Bottega_22.jpg",
+              "/snapshots/S26/bottega/Bottega_26.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_100.jpg",
+              "/snapshots/S26/bottega/Bottega_16.jpg",
+              "/snapshots/S26/bottega/Bottega_162.jpg",
+              "/snapshots/S26/bottega/Bottega_22.jpg",
+              "/snapshots/S26/bottega/Bottega_26.jpg",
+              "/snapshots/S26/bottega/Bottega_71.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 17,
+            "n_products": 4,
+            "season_composition": {
+              "F25": 2,
+              "S26": 2
             },
             "dominant_colors": [
               "#625759",
@@ -682,35 +1017,31 @@
             "price_stats": {
               "min": 340.0,
               "max": 650.0,
-              "mean": 412.5,
-              "count": 8
+              "mean": 422.5,
+              "count": 4
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 340.0,
-                "max": 450.0,
-                "mean": 370.0,
-                "count": 4
+                "max": 340.0,
+                "mean": 340.0,
+                "count": 2
               },
               "S26": {
                 "min": 360.0,
                 "max": 650.0,
-                "mean": 455.0,
-                "count": 4
+                "mean": 505.0,
+                "count": 2
               }
             },
             "images": [
-              "/snapshots/F25/bottega/Bottega_27.jpg",
-              "/snapshots/S26/bottega/Bottega_161.jpg",
-              "/snapshots/F25/bottega/Bottega_29.jpg"
+              "/snapshots/S26/bottega/Bottega_60.jpg",
+              "/snapshots/F25/bottega/Bottega_29.jpg",
+              "/snapshots/F25/bottega/Bottega_27.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_27.jpg",
               "/snapshots/F25/bottega/Bottega_29.jpg",
-              "/snapshots/F25/bottega/Bottega_72.jpg",
-              "/snapshots/F25/bottega/Bottega_85.jpg",
-              "/snapshots/S26/bottega/Bottega_144.jpg",
-              "/snapshots/S26/bottega/Bottega_161.jpg",
               "/snapshots/S26/bottega/Bottega_56.jpg",
               "/snapshots/S26/bottega/Bottega_60.jpg"
             ],
@@ -718,7 +1049,52 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 10,
+            "id": 18,
+            "n_products": 3,
+            "season_composition": {
+              "F25": 1,
+              "S26": 2
+            },
+            "dominant_colors": [
+              "#180e0c",
+              "#241311",
+              "#714137"
+            ],
+            "price_stats": {
+              "min": 310.0,
+              "max": 390.0,
+              "mean": 356.67,
+              "count": 3
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 310.0,
+                "max": 310.0,
+                "mean": 310.0,
+                "count": 1
+              },
+              "S26": {
+                "min": 370.0,
+                "max": 390.0,
+                "mean": 380.0,
+                "count": 2
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_31.jpg",
+              "/snapshots/F25/bottega/Bottega_105.jpg",
+              "/snapshots/S26/bottega/Bottega_138.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_105.jpg",
+              "/snapshots/S26/bottega/Bottega_138.jpg",
+              "/snapshots/S26/bottega/Bottega_31.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 19,
             "n_products": 2,
             "season_composition": {
               "F25": 1,
@@ -750,8 +1126,8 @@
               }
             },
             "images": [
-              "/snapshots/F25/bottega/Bottega_62.jpg",
-              "/snapshots/S26/bottega/Bottega_118.jpg"
+              "/snapshots/S26/bottega/Bottega_118.jpg",
+              "/snapshots/F25/bottega/Bottega_62.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_62.jpg",
@@ -764,139 +1140,104 @@
       },
       "F25": {
         "n_products": 123,
-        "n_clusters": 3,
-        "silhouette_score": 0.1215,
+        "n_clusters": 8,
+        "silhouette_score": 0.1422,
         "silhouettes_by_k": {
-          "3": 0.1215,
-          "4": 0.1089,
-          "5": 0.1049,
-          "6": 0.1062,
-          "7": 0.1106,
-          "8": 0.1194,
-          "9": 0.0964,
-          "10": 0.0915,
-          "11": 0.095,
-          "12": 0.0843
+          "3": 0.1403,
+          "4": 0.1473,
+          "5": 0.1232,
+          "6": 0.1275,
+          "7": 0.1324,
+          "8": 0.1422,
+          "9": 0.1174,
+          "10": 0.1151,
+          "11": 0.1191,
+          "12": 0.1096,
+          "13": 0.1111,
+          "14": 0.122,
+          "15": 0.1259,
+          "16": 0.1206,
+          "17": 0.1205,
+          "18": 0.1159,
+          "19": 0.1204,
+          "20": 0.1253
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 76,
+            "n_products": 33,
             "season_composition": {
-              "F25": 76,
+              "F25": 33,
               "S26": 0
             },
             "dominant_colors": [
-              "#0f0e0f",
               "#0f0c0a",
-              "#c5af71"
+              "#191714",
+              "#302e2e"
             ],
             "price_stats": {
               "min": 270.0,
-              "max": 530.0,
-              "mean": 393.42,
-              "count": 76
+              "max": 520.0,
+              "mean": 389.39,
+              "count": 33
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 270.0,
-                "max": 530.0,
-                "mean": 393.42,
-                "count": 76
+                "max": 520.0,
+                "mean": 389.39,
+                "count": 33
               },
               "S26": {}
             },
             "images": [
-              "/snapshots/F25/bottega/Bottega_51.jpg",
-              "/snapshots/F25/bottega/Bottega_103.jpg",
-              "/snapshots/F25/bottega/Bottega_61.jpg"
+              "/snapshots/F25/bottega/Bottega_47.jpg",
+              "/snapshots/F25/bottega/Bottega_113.jpg",
+              "/snapshots/F25/bottega/Bottega_102.jpg"
             ],
             "all_images": [
-              "/snapshots/F25/bottega/Bottega_1.jpg",
               "/snapshots/F25/bottega/Bottega_10.jpg",
               "/snapshots/F25/bottega/Bottega_101.jpg",
               "/snapshots/F25/bottega/Bottega_102.jpg",
-              "/snapshots/F25/bottega/Bottega_103.jpg",
-              "/snapshots/F25/bottega/Bottega_105.jpg",
               "/snapshots/F25/bottega/Bottega_106.jpg",
               "/snapshots/F25/bottega/Bottega_108.jpg",
-              "/snapshots/F25/bottega/Bottega_112.jpg",
               "/snapshots/F25/bottega/Bottega_113.jpg",
-              "/snapshots/F25/bottega/Bottega_114.jpg",
-              "/snapshots/F25/bottega/Bottega_116.jpg",
               "/snapshots/F25/bottega/Bottega_117.jpg",
-              "/snapshots/F25/bottega/Bottega_118.jpg",
               "/snapshots/F25/bottega/Bottega_121.jpg",
-              "/snapshots/F25/bottega/Bottega_122.jpg",
-              "/snapshots/F25/bottega/Bottega_123.jpg",
               "/snapshots/F25/bottega/Bottega_125.jpg",
               "/snapshots/F25/bottega/Bottega_126.jpg",
               "/snapshots/F25/bottega/Bottega_127.jpg",
-              "/snapshots/F25/bottega/Bottega_13.jpg",
-              "/snapshots/F25/bottega/Bottega_16.jpg",
-              "/snapshots/F25/bottega/Bottega_2.jpg",
               "/snapshots/F25/bottega/Bottega_21.jpg",
-              "/snapshots/F25/bottega/Bottega_27.jpg",
-              "/snapshots/F25/bottega/Bottega_29.jpg",
               "/snapshots/F25/bottega/Bottega_33.jpg",
-              "/snapshots/F25/bottega/Bottega_34.jpg",
-              "/snapshots/F25/bottega/Bottega_35.jpg",
-              "/snapshots/F25/bottega/Bottega_36.jpg",
-              "/snapshots/F25/bottega/Bottega_37.jpg",
               "/snapshots/F25/bottega/Bottega_38.jpg",
               "/snapshots/F25/bottega/Bottega_39.jpg",
               "/snapshots/F25/bottega/Bottega_4.jpg",
-              "/snapshots/F25/bottega/Bottega_40.jpg",
-              "/snapshots/F25/bottega/Bottega_41.jpg",
               "/snapshots/F25/bottega/Bottega_43.jpg",
-              "/snapshots/F25/bottega/Bottega_44.jpg",
-              "/snapshots/F25/bottega/Bottega_45.jpg",
               "/snapshots/F25/bottega/Bottega_47.jpg",
               "/snapshots/F25/bottega/Bottega_48.jpg",
-              "/snapshots/F25/bottega/Bottega_49.jpg",
               "/snapshots/F25/bottega/Bottega_50.jpg",
-              "/snapshots/F25/bottega/Bottega_51.jpg",
-              "/snapshots/F25/bottega/Bottega_52.jpg",
               "/snapshots/F25/bottega/Bottega_53.jpg",
               "/snapshots/F25/bottega/Bottega_55.jpg",
-              "/snapshots/F25/bottega/Bottega_57.jpg",
               "/snapshots/F25/bottega/Bottega_58.jpg",
-              "/snapshots/F25/bottega/Bottega_59.jpg",
               "/snapshots/F25/bottega/Bottega_61.jpg",
-              "/snapshots/F25/bottega/Bottega_62.jpg",
               "/snapshots/F25/bottega/Bottega_63.jpg",
-              "/snapshots/F25/bottega/Bottega_64.jpg",
               "/snapshots/F25/bottega/Bottega_66.jpg",
-              "/snapshots/F25/bottega/Bottega_67.jpg",
-              "/snapshots/F25/bottega/Bottega_68.jpg",
               "/snapshots/F25/bottega/Bottega_69.jpg",
-              "/snapshots/F25/bottega/Bottega_71.jpg",
-              "/snapshots/F25/bottega/Bottega_72.jpg",
               "/snapshots/F25/bottega/Bottega_74.jpg",
               "/snapshots/F25/bottega/Bottega_79.jpg",
-              "/snapshots/F25/bottega/Bottega_8.jpg",
-              "/snapshots/F25/bottega/Bottega_81.jpg",
-              "/snapshots/F25/bottega/Bottega_82.jpg",
               "/snapshots/F25/bottega/Bottega_83.jpg",
               "/snapshots/F25/bottega/Bottega_84.jpg",
-              "/snapshots/F25/bottega/Bottega_85.jpg",
               "/snapshots/F25/bottega/Bottega_86.jpg",
-              "/snapshots/F25/bottega/Bottega_87.jpg",
-              "/snapshots/F25/bottega/Bottega_88.jpg",
-              "/snapshots/F25/bottega/Bottega_89.jpg",
-              "/snapshots/F25/bottega/Bottega_92.jpg",
-              "/snapshots/F25/bottega/Bottega_95.jpg",
-              "/snapshots/F25/bottega/Bottega_96.jpg",
-              "/snapshots/F25/bottega/Bottega_98.jpg"
+              "/snapshots/F25/bottega/Bottega_96.jpg"
             ],
             "is_new_in_s26": false,
             "is_discontinued_from_f25": true
           },
           {
             "id": 1,
-            "n_products": 25,
+            "n_products": 26,
             "season_composition": {
-              "F25": 25,
+              "F25": 26,
               "S26": 0
             },
             "dominant_colors": [
@@ -907,22 +1248,22 @@
             "price_stats": {
               "min": 270.0,
               "max": 520.0,
-              "mean": 372.0,
-              "count": 25
+              "mean": 375.0,
+              "count": 26
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 372.0,
-                "count": 25
+                "mean": 375.0,
+                "count": 26
               },
               "S26": {}
             },
             "images": [
               "/snapshots/F25/bottega/Bottega_65.jpg",
-              "/snapshots/F25/bottega/Bottega_60.jpg",
-              "/snapshots/F25/bottega/Bottega_111.jpg"
+              "/snapshots/F25/bottega/Bottega_111.jpg",
+              "/snapshots/F25/bottega/Bottega_76.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_100.jpg",
@@ -935,6 +1276,7 @@
               "/snapshots/F25/bottega/Bottega_124.jpg",
               "/snapshots/F25/bottega/Bottega_22.jpg",
               "/snapshots/F25/bottega/Bottega_31.jpg",
+              "/snapshots/F25/bottega/Bottega_35.jpg",
               "/snapshots/F25/bottega/Bottega_46.jpg",
               "/snapshots/F25/bottega/Bottega_54.jpg",
               "/snapshots/F25/bottega/Bottega_56.jpg",
@@ -984,7 +1326,7 @@
             "images": [
               "/snapshots/F25/bottega/Bottega_26.jpg",
               "/snapshots/F25/bottega/Bottega_25.jpg",
-              "/snapshots/F25/bottega/Bottega_32.jpg"
+              "/snapshots/F25/bottega/Bottega_18.jpg"
             ],
             "all_images": [
               "/snapshots/F25/bottega/Bottega_11.jpg",
@@ -1012,154 +1354,295 @@
             ],
             "is_new_in_s26": false,
             "is_discontinued_from_f25": true
+          },
+          {
+            "id": 3,
+            "n_products": 15,
+            "season_composition": {
+              "F25": 15,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#0f0e0f",
+              "#180e0c",
+              "#241311"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 378.67,
+              "count": 15
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 378.67,
+                "count": 15
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_81.jpg",
+              "/snapshots/F25/bottega/Bottega_64.jpg",
+              "/snapshots/F25/bottega/Bottega_122.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_105.jpg",
+              "/snapshots/F25/bottega/Bottega_112.jpg",
+              "/snapshots/F25/bottega/Bottega_114.jpg",
+              "/snapshots/F25/bottega/Bottega_116.jpg",
+              "/snapshots/F25/bottega/Bottega_122.jpg",
+              "/snapshots/F25/bottega/Bottega_123.jpg",
+              "/snapshots/F25/bottega/Bottega_13.jpg",
+              "/snapshots/F25/bottega/Bottega_16.jpg",
+              "/snapshots/F25/bottega/Bottega_49.jpg",
+              "/snapshots/F25/bottega/Bottega_51.jpg",
+              "/snapshots/F25/bottega/Bottega_52.jpg",
+              "/snapshots/F25/bottega/Bottega_64.jpg",
+              "/snapshots/F25/bottega/Bottega_8.jpg",
+              "/snapshots/F25/bottega/Bottega_81.jpg",
+              "/snapshots/F25/bottega/Bottega_98.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
+          },
+          {
+            "id": 4,
+            "n_products": 12,
+            "season_composition": {
+              "F25": 12,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#ca9197",
+              "#a4656c",
+              "#111010"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 380.0,
+              "count": 12
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 380.0,
+                "count": 12
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_118.jpg",
+              "/snapshots/F25/bottega/Bottega_57.jpg",
+              "/snapshots/F25/bottega/Bottega_67.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_103.jpg",
+              "/snapshots/F25/bottega/Bottega_118.jpg",
+              "/snapshots/F25/bottega/Bottega_2.jpg",
+              "/snapshots/F25/bottega/Bottega_37.jpg",
+              "/snapshots/F25/bottega/Bottega_41.jpg",
+              "/snapshots/F25/bottega/Bottega_57.jpg",
+              "/snapshots/F25/bottega/Bottega_67.jpg",
+              "/snapshots/F25/bottega/Bottega_68.jpg",
+              "/snapshots/F25/bottega/Bottega_88.jpg",
+              "/snapshots/F25/bottega/Bottega_89.jpg",
+              "/snapshots/F25/bottega/Bottega_92.jpg",
+              "/snapshots/F25/bottega/Bottega_95.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
+          },
+          {
+            "id": 5,
+            "n_products": 9,
+            "season_composition": {
+              "F25": 9,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#c5af71",
+              "#ab8a47",
+              "#1c1a18"
+            ],
+            "price_stats": {
+              "min": 370.0,
+              "max": 530.0,
+              "mean": 437.78,
+              "count": 9
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 370.0,
+                "max": 530.0,
+                "mean": 437.78,
+                "count": 9
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_59.jpg",
+              "/snapshots/F25/bottega/Bottega_1.jpg",
+              "/snapshots/F25/bottega/Bottega_36.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_1.jpg",
+              "/snapshots/F25/bottega/Bottega_34.jpg",
+              "/snapshots/F25/bottega/Bottega_36.jpg",
+              "/snapshots/F25/bottega/Bottega_40.jpg",
+              "/snapshots/F25/bottega/Bottega_45.jpg",
+              "/snapshots/F25/bottega/Bottega_59.jpg",
+              "/snapshots/F25/bottega/Bottega_71.jpg",
+              "/snapshots/F25/bottega/Bottega_82.jpg",
+              "/snapshots/F25/bottega/Bottega_87.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
+          },
+          {
+            "id": 6,
+            "n_products": 4,
+            "season_composition": {
+              "F25": 4,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#625759",
+              "#25201e",
+              "#1a110f"
+            ],
+            "price_stats": {
+              "min": 340.0,
+              "max": 450.0,
+              "mean": 370.0,
+              "count": 4
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 340.0,
+                "max": 450.0,
+                "mean": 370.0,
+                "count": 4
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_27.jpg",
+              "/snapshots/F25/bottega/Bottega_72.jpg",
+              "/snapshots/F25/bottega/Bottega_85.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_27.jpg",
+              "/snapshots/F25/bottega/Bottega_29.jpg",
+              "/snapshots/F25/bottega/Bottega_72.jpg",
+              "/snapshots/F25/bottega/Bottega_85.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
+          },
+          {
+            "id": 7,
+            "n_products": 2,
+            "season_composition": {
+              "F25": 2,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#764f40",
+              "#674335",
+              "#7a4c1b"
+            ],
+            "price_stats": {
+              "min": 420.0,
+              "max": 520.0,
+              "mean": 470.0,
+              "count": 2
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 420.0,
+                "max": 520.0,
+                "mean": 470.0,
+                "count": 2
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/bottega/Bottega_44.jpg",
+              "/snapshots/F25/bottega/Bottega_62.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/bottega/Bottega_44.jpg",
+              "/snapshots/F25/bottega/Bottega_62.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
           }
         ]
       },
       "S26": {
         "n_products": 162,
-        "n_clusters": 5,
-        "silhouette_score": 0.1086,
+        "n_clusters": 12,
+        "silhouette_score": 0.1406,
         "silhouettes_by_k": {
-          "3": 0.1081,
-          "4": 0.0946,
-          "5": 0.1086,
-          "6": 0.0989,
-          "7": 0.1058,
-          "8": 0.1037,
-          "9": 0.1081,
-          "10": 0.0917,
-          "11": 0.095,
-          "12": 0.1015
+          "3": 0.1276,
+          "4": 0.1085,
+          "5": 0.1259,
+          "6": 0.1133,
+          "7": 0.1123,
+          "8": 0.1221,
+          "9": 0.1282,
+          "10": 0.1316,
+          "11": 0.1375,
+          "12": 0.1406,
+          "13": 0.1073,
+          "14": 0.1143,
+          "15": 0.1206,
+          "16": 0.1264,
+          "17": 0.1262,
+          "18": 0.1272,
+          "19": 0.1311,
+          "20": 0.119
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 54,
+            "n_products": 34,
             "season_composition": {
               "F25": 0,
-              "S26": 54
+              "S26": 34
             },
             "dominant_colors": [
-              "#c5af71",
-              "#ab8b48",
-              "#110e0b"
+              "#130d0c",
+              "#251513",
+              "#a46646"
             ],
             "price_stats": {
               "min": 270.0,
               "max": 520.0,
-              "mean": 395.37,
-              "count": 54
+              "mean": 389.71,
+              "count": 34
             },
             "price_stats_by_season": {
               "F25": {},
               "S26": {
                 "min": 270.0,
                 "max": 520.0,
-                "mean": 395.37,
-                "count": 54
+                "mean": 389.71,
+                "count": 34
               }
             },
             "images": [
-              "/snapshots/S26/bottega/Bottega_139.jpg",
-              "/snapshots/S26/bottega/Bottega_87.jpg",
-              "/snapshots/S26/bottega/Bottega_83.jpg"
+              "/snapshots/S26/bottega/Bottega_151.jpg",
+              "/snapshots/S26/bottega/Bottega_4.jpg",
+              "/snapshots/S26/bottega/Bottega_15.jpg"
             ],
             "all_images": [
-              "/snapshots/S26/bottega/Bottega_1.jpg",
-              "/snapshots/S26/bottega/Bottega_106.jpg",
-              "/snapshots/S26/bottega/Bottega_107.jpg",
-              "/snapshots/S26/bottega/Bottega_108.jpg",
-              "/snapshots/S26/bottega/Bottega_111.jpg",
-              "/snapshots/S26/bottega/Bottega_113.jpg",
-              "/snapshots/S26/bottega/Bottega_115.jpg",
-              "/snapshots/S26/bottega/Bottega_116.jpg",
-              "/snapshots/S26/bottega/Bottega_121.jpg",
-              "/snapshots/S26/bottega/Bottega_123.jpg",
-              "/snapshots/S26/bottega/Bottega_125.jpg",
-              "/snapshots/S26/bottega/Bottega_127.jpg",
-              "/snapshots/S26/bottega/Bottega_128.jpg",
-              "/snapshots/S26/bottega/Bottega_129.jpg",
-              "/snapshots/S26/bottega/Bottega_132.jpg",
-              "/snapshots/S26/bottega/Bottega_135.jpg",
-              "/snapshots/S26/bottega/Bottega_137.jpg",
-              "/snapshots/S26/bottega/Bottega_139.jpg",
-              "/snapshots/S26/bottega/Bottega_14.jpg",
-              "/snapshots/S26/bottega/Bottega_140.jpg",
-              "/snapshots/S26/bottega/Bottega_142.jpg",
-              "/snapshots/S26/bottega/Bottega_145.jpg",
-              "/snapshots/S26/bottega/Bottega_152.jpg",
-              "/snapshots/S26/bottega/Bottega_154.jpg",
-              "/snapshots/S26/bottega/Bottega_159.jpg",
-              "/snapshots/S26/bottega/Bottega_23.jpg",
-              "/snapshots/S26/bottega/Bottega_24.jpg",
-              "/snapshots/S26/bottega/Bottega_32.jpg",
-              "/snapshots/S26/bottega/Bottega_35.jpg",
-              "/snapshots/S26/bottega/Bottega_36.jpg",
-              "/snapshots/S26/bottega/Bottega_37.jpg",
-              "/snapshots/S26/bottega/Bottega_38.jpg",
-              "/snapshots/S26/bottega/Bottega_40.jpg",
-              "/snapshots/S26/bottega/Bottega_41.jpg",
-              "/snapshots/S26/bottega/Bottega_46.jpg",
-              "/snapshots/S26/bottega/Bottega_57.jpg",
-              "/snapshots/S26/bottega/Bottega_7.jpg",
-              "/snapshots/S26/bottega/Bottega_73.jpg",
-              "/snapshots/S26/bottega/Bottega_74.jpg",
-              "/snapshots/S26/bottega/Bottega_76.jpg",
-              "/snapshots/S26/bottega/Bottega_77.jpg",
-              "/snapshots/S26/bottega/Bottega_79.jpg",
-              "/snapshots/S26/bottega/Bottega_8.jpg",
-              "/snapshots/S26/bottega/Bottega_81.jpg",
-              "/snapshots/S26/bottega/Bottega_83.jpg",
-              "/snapshots/S26/bottega/Bottega_84.jpg",
-              "/snapshots/S26/bottega/Bottega_87.jpg",
-              "/snapshots/S26/bottega/Bottega_88.jpg",
-              "/snapshots/S26/bottega/Bottega_89.jpg",
-              "/snapshots/S26/bottega/Bottega_91.jpg",
-              "/snapshots/S26/bottega/Bottega_94.jpg",
-              "/snapshots/S26/bottega/Bottega_95.jpg",
-              "/snapshots/S26/bottega/Bottega_98.jpg",
-              "/snapshots/S26/bottega/Bottega_99.jpg"
-            ],
-            "is_new_in_s26": true,
-            "is_discontinued_from_f25": false
-          },
-          {
-            "id": 1,
-            "n_products": 40,
-            "season_composition": {
-              "F25": 0,
-              "S26": 40
-            },
-            "dominant_colors": [
-              "#0e0e0e",
-              "#3b3533",
-              "#130d0c"
-            ],
-            "price_stats": {
-              "min": 270.0,
-              "max": 520.0,
-              "mean": 388.75,
-              "count": 40
-            },
-            "price_stats_by_season": {
-              "F25": {},
-              "S26": {
-                "min": 270.0,
-                "max": 520.0,
-                "mean": 388.75,
-                "count": 40
-              }
-            },
-            "images": [
-              "/snapshots/S26/bottega/Bottega_155.jpg",
-              "/snapshots/S26/bottega/Bottega_5.jpg",
-              "/snapshots/S26/bottega/Bottega_149.jpg"
-            ],
-            "all_images": [
-              "/snapshots/S26/bottega/Bottega_101.jpg",
               "/snapshots/S26/bottega/Bottega_102.jpg",
               "/snapshots/S26/bottega/Bottega_11.jpg",
-              "/snapshots/S26/bottega/Bottega_112.jpg",
               "/snapshots/S26/bottega/Bottega_114.jpg",
               "/snapshots/S26/bottega/Bottega_117.jpg",
               "/snapshots/S26/bottega/Bottega_119.jpg",
@@ -1178,7 +1661,6 @@
               "/snapshots/S26/bottega/Bottega_158.jpg",
               "/snapshots/S26/bottega/Bottega_2.jpg",
               "/snapshots/S26/bottega/Bottega_20.jpg",
-              "/snapshots/S26/bottega/Bottega_27.jpg",
               "/snapshots/S26/bottega/Bottega_28.jpg",
               "/snapshots/S26/bottega/Bottega_3.jpg",
               "/snapshots/S26/bottega/Bottega_39.jpg",
@@ -1187,12 +1669,9 @@
               "/snapshots/S26/bottega/Bottega_45.jpg",
               "/snapshots/S26/bottega/Bottega_5.jpg",
               "/snapshots/S26/bottega/Bottega_6.jpg",
-              "/snapshots/S26/bottega/Bottega_70.jpg",
               "/snapshots/S26/bottega/Bottega_72.jpg",
-              "/snapshots/S26/bottega/Bottega_85.jpg",
               "/snapshots/S26/bottega/Bottega_86.jpg",
               "/snapshots/S26/bottega/Bottega_9.jpg",
-              "/snapshots/S26/bottega/Bottega_90.jpg",
               "/snapshots/S26/bottega/Bottega_92.jpg",
               "/snapshots/S26/bottega/Bottega_96.jpg",
               "/snapshots/S26/bottega/Bottega_97.jpg"
@@ -1201,130 +1680,67 @@
             "is_discontinued_from_f25": false
           },
           {
-            "id": 2,
-            "n_products": 29,
+            "id": 1,
+            "n_products": 23,
             "season_composition": {
               "F25": 0,
-              "S26": 29
+              "S26": 23
             },
             "dominant_colors": [
-              "#54311d",
-              "#442617",
-              "#171614"
+              "#1c191a",
+              "#2b2929",
+              "#dbd3cb"
             ],
             "price_stats": {
-              "min": 270.0,
-              "max": 650.0,
-              "mean": 419.31,
-              "count": 29
-            },
-            "price_stats_by_season": {
-              "F25": {},
-              "S26": {
-                "min": 270.0,
-                "max": 650.0,
-                "mean": 419.31,
-                "count": 29
-              }
-            },
-            "images": [
-              "/snapshots/S26/bottega/Bottega_30.jpg",
-              "/snapshots/S26/bottega/Bottega_25.jpg",
-              "/snapshots/S26/bottega/Bottega_100.jpg"
-            ],
-            "all_images": [
-              "/snapshots/S26/bottega/Bottega_10.jpg",
-              "/snapshots/S26/bottega/Bottega_100.jpg",
-              "/snapshots/S26/bottega/Bottega_105.jpg",
-              "/snapshots/S26/bottega/Bottega_118.jpg",
-              "/snapshots/S26/bottega/Bottega_12.jpg",
-              "/snapshots/S26/bottega/Bottega_124.jpg",
-              "/snapshots/S26/bottega/Bottega_13.jpg",
-              "/snapshots/S26/bottega/Bottega_131.jpg",
-              "/snapshots/S26/bottega/Bottega_134.jpg",
-              "/snapshots/S26/bottega/Bottega_143.jpg",
-              "/snapshots/S26/bottega/Bottega_144.jpg",
-              "/snapshots/S26/bottega/Bottega_146.jpg",
-              "/snapshots/S26/bottega/Bottega_156.jpg",
-              "/snapshots/S26/bottega/Bottega_16.jpg",
-              "/snapshots/S26/bottega/Bottega_160.jpg",
-              "/snapshots/S26/bottega/Bottega_161.jpg",
-              "/snapshots/S26/bottega/Bottega_162.jpg",
-              "/snapshots/S26/bottega/Bottega_19.jpg",
-              "/snapshots/S26/bottega/Bottega_21.jpg",
-              "/snapshots/S26/bottega/Bottega_22.jpg",
-              "/snapshots/S26/bottega/Bottega_25.jpg",
-              "/snapshots/S26/bottega/Bottega_26.jpg",
-              "/snapshots/S26/bottega/Bottega_30.jpg",
-              "/snapshots/S26/bottega/Bottega_56.jpg",
-              "/snapshots/S26/bottega/Bottega_60.jpg",
-              "/snapshots/S26/bottega/Bottega_71.jpg",
-              "/snapshots/S26/bottega/Bottega_78.jpg",
-              "/snapshots/S26/bottega/Bottega_80.jpg",
-              "/snapshots/S26/bottega/Bottega_93.jpg"
-            ],
-            "is_new_in_s26": true,
-            "is_discontinued_from_f25": false
-          },
-          {
-            "id": 3,
-            "n_products": 20,
-            "season_composition": {
-              "F25": 0,
-              "S26": 20
-            },
-            "dominant_colors": [
-              "#6c3c37",
-              "#3a2420",
-              "#4a4647"
-            ],
-            "price_stats": {
-              "min": 270.0,
+              "min": 290.0,
               "max": 520.0,
-              "mean": 389.5,
-              "count": 20
+              "mean": 397.39,
+              "count": 23
             },
             "price_stats_by_season": {
               "F25": {},
               "S26": {
-                "min": 270.0,
+                "min": 290.0,
                 "max": 520.0,
-                "mean": 389.5,
-                "count": 20
+                "mean": 397.39,
+                "count": 23
               }
             },
             "images": [
-              "/snapshots/S26/bottega/Bottega_17.jpg",
-              "/snapshots/S26/bottega/Bottega_47.jpg",
-              "/snapshots/S26/bottega/Bottega_148.jpg"
+              "/snapshots/S26/bottega/Bottega_108.jpg",
+              "/snapshots/S26/bottega/Bottega_125.jpg",
+              "/snapshots/S26/bottega/Bottega_85.jpg"
             ],
             "all_images": [
-              "/snapshots/S26/bottega/Bottega_109.jpg",
-              "/snapshots/S26/bottega/Bottega_110.jpg",
-              "/snapshots/S26/bottega/Bottega_138.jpg",
-              "/snapshots/S26/bottega/Bottega_141.jpg",
-              "/snapshots/S26/bottega/Bottega_148.jpg",
-              "/snapshots/S26/bottega/Bottega_153.jpg",
-              "/snapshots/S26/bottega/Bottega_17.jpg",
-              "/snapshots/S26/bottega/Bottega_18.jpg",
-              "/snapshots/S26/bottega/Bottega_29.jpg",
-              "/snapshots/S26/bottega/Bottega_31.jpg",
-              "/snapshots/S26/bottega/Bottega_33.jpg",
-              "/snapshots/S26/bottega/Bottega_34.jpg",
-              "/snapshots/S26/bottega/Bottega_44.jpg",
-              "/snapshots/S26/bottega/Bottega_47.jpg",
-              "/snapshots/S26/bottega/Bottega_53.jpg",
-              "/snapshots/S26/bottega/Bottega_58.jpg",
-              "/snapshots/S26/bottega/Bottega_65.jpg",
-              "/snapshots/S26/bottega/Bottega_68.jpg",
-              "/snapshots/S26/bottega/Bottega_75.jpg",
-              "/snapshots/S26/bottega/Bottega_82.jpg"
+              "/snapshots/S26/bottega/Bottega_108.jpg",
+              "/snapshots/S26/bottega/Bottega_115.jpg",
+              "/snapshots/S26/bottega/Bottega_121.jpg",
+              "/snapshots/S26/bottega/Bottega_125.jpg",
+              "/snapshots/S26/bottega/Bottega_132.jpg",
+              "/snapshots/S26/bottega/Bottega_139.jpg",
+              "/snapshots/S26/bottega/Bottega_140.jpg",
+              "/snapshots/S26/bottega/Bottega_23.jpg",
+              "/snapshots/S26/bottega/Bottega_36.jpg",
+              "/snapshots/S26/bottega/Bottega_37.jpg",
+              "/snapshots/S26/bottega/Bottega_38.jpg",
+              "/snapshots/S26/bottega/Bottega_40.jpg",
+              "/snapshots/S26/bottega/Bottega_7.jpg",
+              "/snapshots/S26/bottega/Bottega_79.jpg",
+              "/snapshots/S26/bottega/Bottega_8.jpg",
+              "/snapshots/S26/bottega/Bottega_81.jpg",
+              "/snapshots/S26/bottega/Bottega_85.jpg",
+              "/snapshots/S26/bottega/Bottega_87.jpg",
+              "/snapshots/S26/bottega/Bottega_88.jpg",
+              "/snapshots/S26/bottega/Bottega_89.jpg",
+              "/snapshots/S26/bottega/Bottega_94.jpg",
+              "/snapshots/S26/bottega/Bottega_95.jpg",
+              "/snapshots/S26/bottega/Bottega_99.jpg"
             ],
             "is_new_in_s26": true,
             "is_discontinued_from_f25": false
           },
           {
-            "id": 4,
+            "id": 2,
             "n_products": 19,
             "season_composition": {
               "F25": 0,
@@ -1351,8 +1767,8 @@
               }
             },
             "images": [
-              "/snapshots/S26/bottega/Bottega_59.jpg",
               "/snapshots/S26/bottega/Bottega_50.jpg",
+              "/snapshots/S26/bottega/Bottega_59.jpg",
               "/snapshots/S26/bottega/Bottega_103.jpg"
             ],
             "all_images": [
@@ -1378,6 +1794,422 @@
             ],
             "is_new_in_s26": true,
             "is_discontinued_from_f25": false
+          },
+          {
+            "id": 3,
+            "n_products": 19,
+            "season_composition": {
+              "F25": 0,
+              "S26": 19
+            },
+            "dominant_colors": [
+              "#54311d",
+              "#442617",
+              "#0e0e0e"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 419.47,
+              "count": 19
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 419.47,
+                "count": 19
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_80.jpg",
+              "/snapshots/S26/bottega/Bottega_12.jpg",
+              "/snapshots/S26/bottega/Bottega_112.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_10.jpg",
+              "/snapshots/S26/bottega/Bottega_101.jpg",
+              "/snapshots/S26/bottega/Bottega_105.jpg",
+              "/snapshots/S26/bottega/Bottega_112.jpg",
+              "/snapshots/S26/bottega/Bottega_12.jpg",
+              "/snapshots/S26/bottega/Bottega_124.jpg",
+              "/snapshots/S26/bottega/Bottega_131.jpg",
+              "/snapshots/S26/bottega/Bottega_143.jpg",
+              "/snapshots/S26/bottega/Bottega_146.jpg",
+              "/snapshots/S26/bottega/Bottega_156.jpg",
+              "/snapshots/S26/bottega/Bottega_19.jpg",
+              "/snapshots/S26/bottega/Bottega_21.jpg",
+              "/snapshots/S26/bottega/Bottega_25.jpg",
+              "/snapshots/S26/bottega/Bottega_27.jpg",
+              "/snapshots/S26/bottega/Bottega_30.jpg",
+              "/snapshots/S26/bottega/Bottega_70.jpg",
+              "/snapshots/S26/bottega/Bottega_80.jpg",
+              "/snapshots/S26/bottega/Bottega_90.jpg",
+              "/snapshots/S26/bottega/Bottega_93.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 4,
+            "n_products": 17,
+            "season_composition": {
+              "F25": 0,
+              "S26": 17
+            },
+            "dominant_colors": [
+              "#110e0b",
+              "#221f1f",
+              "#181413"
+            ],
+            "price_stats": {
+              "min": 280.0,
+              "max": 520.0,
+              "mean": 391.18,
+              "count": 17
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 280.0,
+                "max": 520.0,
+                "mean": 391.18,
+                "count": 17
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_145.jpg",
+              "/snapshots/S26/bottega/Bottega_46.jpg",
+              "/snapshots/S26/bottega/Bottega_73.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_106.jpg",
+              "/snapshots/S26/bottega/Bottega_116.jpg",
+              "/snapshots/S26/bottega/Bottega_128.jpg",
+              "/snapshots/S26/bottega/Bottega_135.jpg",
+              "/snapshots/S26/bottega/Bottega_137.jpg",
+              "/snapshots/S26/bottega/Bottega_14.jpg",
+              "/snapshots/S26/bottega/Bottega_142.jpg",
+              "/snapshots/S26/bottega/Bottega_145.jpg",
+              "/snapshots/S26/bottega/Bottega_159.jpg",
+              "/snapshots/S26/bottega/Bottega_32.jpg",
+              "/snapshots/S26/bottega/Bottega_41.jpg",
+              "/snapshots/S26/bottega/Bottega_46.jpg",
+              "/snapshots/S26/bottega/Bottega_57.jpg",
+              "/snapshots/S26/bottega/Bottega_73.jpg",
+              "/snapshots/S26/bottega/Bottega_77.jpg",
+              "/snapshots/S26/bottega/Bottega_91.jpg",
+              "/snapshots/S26/bottega/Bottega_98.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 5,
+            "n_products": 15,
+            "season_composition": {
+              "F25": 0,
+              "S26": 15
+            },
+            "dominant_colors": [
+              "#c5af71",
+              "#ab8b48",
+              "#241a18"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 520.0,
+              "mean": 392.67,
+              "count": 15
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 270.0,
+                "max": 520.0,
+                "mean": 392.67,
+                "count": 15
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_123.jpg",
+              "/snapshots/S26/bottega/Bottega_107.jpg",
+              "/snapshots/S26/bottega/Bottega_154.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_1.jpg",
+              "/snapshots/S26/bottega/Bottega_107.jpg",
+              "/snapshots/S26/bottega/Bottega_111.jpg",
+              "/snapshots/S26/bottega/Bottega_113.jpg",
+              "/snapshots/S26/bottega/Bottega_123.jpg",
+              "/snapshots/S26/bottega/Bottega_127.jpg",
+              "/snapshots/S26/bottega/Bottega_129.jpg",
+              "/snapshots/S26/bottega/Bottega_152.jpg",
+              "/snapshots/S26/bottega/Bottega_154.jpg",
+              "/snapshots/S26/bottega/Bottega_24.jpg",
+              "/snapshots/S26/bottega/Bottega_35.jpg",
+              "/snapshots/S26/bottega/Bottega_74.jpg",
+              "/snapshots/S26/bottega/Bottega_76.jpg",
+              "/snapshots/S26/bottega/Bottega_83.jpg",
+              "/snapshots/S26/bottega/Bottega_84.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 6,
+            "n_products": 10,
+            "season_composition": {
+              "F25": 0,
+              "S26": 10
+            },
+            "dominant_colors": [
+              "#6c3c37",
+              "#3a2420",
+              "#4a4647"
+            ],
+            "price_stats": {
+              "min": 290.0,
+              "max": 520.0,
+              "mean": 413.0,
+              "count": 10
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 290.0,
+                "max": 520.0,
+                "mean": 413.0,
+                "count": 10
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_18.jpg",
+              "/snapshots/S26/bottega/Bottega_44.jpg",
+              "/snapshots/S26/bottega/Bottega_110.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_109.jpg",
+              "/snapshots/S26/bottega/Bottega_110.jpg",
+              "/snapshots/S26/bottega/Bottega_17.jpg",
+              "/snapshots/S26/bottega/Bottega_18.jpg",
+              "/snapshots/S26/bottega/Bottega_34.jpg",
+              "/snapshots/S26/bottega/Bottega_44.jpg",
+              "/snapshots/S26/bottega/Bottega_47.jpg",
+              "/snapshots/S26/bottega/Bottega_53.jpg",
+              "/snapshots/S26/bottega/Bottega_58.jpg",
+              "/snapshots/S26/bottega/Bottega_65.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 7,
+            "n_products": 10,
+            "season_composition": {
+              "F25": 0,
+              "S26": 10
+            },
+            "dominant_colors": [
+              "#714137",
+              "#986054",
+              "#141414"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 440.0,
+              "mean": 366.0,
+              "count": 10
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 270.0,
+                "max": 440.0,
+                "mean": 366.0,
+                "count": 10
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_31.jpg",
+              "/snapshots/S26/bottega/Bottega_153.jpg",
+              "/snapshots/S26/bottega/Bottega_148.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_138.jpg",
+              "/snapshots/S26/bottega/Bottega_141.jpg",
+              "/snapshots/S26/bottega/Bottega_148.jpg",
+              "/snapshots/S26/bottega/Bottega_153.jpg",
+              "/snapshots/S26/bottega/Bottega_29.jpg",
+              "/snapshots/S26/bottega/Bottega_31.jpg",
+              "/snapshots/S26/bottega/Bottega_33.jpg",
+              "/snapshots/S26/bottega/Bottega_68.jpg",
+              "/snapshots/S26/bottega/Bottega_75.jpg",
+              "/snapshots/S26/bottega/Bottega_82.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 8,
+            "n_products": 6,
+            "season_composition": {
+              "F25": 0,
+              "S26": 6
+            },
+            "dominant_colors": [
+              "#171614",
+              "#3c3b3b",
+              "#1e1a16"
+            ],
+            "price_stats": {
+              "min": 340.0,
+              "max": 520.0,
+              "mean": 401.67,
+              "count": 6
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 340.0,
+                "max": 520.0,
+                "mean": 401.67,
+                "count": 6
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_22.jpg",
+              "/snapshots/S26/bottega/Bottega_26.jpg",
+              "/snapshots/S26/bottega/Bottega_100.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_100.jpg",
+              "/snapshots/S26/bottega/Bottega_16.jpg",
+              "/snapshots/S26/bottega/Bottega_162.jpg",
+              "/snapshots/S26/bottega/Bottega_22.jpg",
+              "/snapshots/S26/bottega/Bottega_26.jpg",
+              "/snapshots/S26/bottega/Bottega_71.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 9,
+            "n_products": 4,
+            "season_composition": {
+              "F25": 0,
+              "S26": 4
+            },
+            "dominant_colors": [
+              "#c5b883",
+              "#b2a066",
+              "#84837f"
+            ],
+            "price_stats": {
+              "min": 270.0,
+              "max": 480.0,
+              "mean": 395.0,
+              "count": 4
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 270.0,
+                "max": 480.0,
+                "mean": 395.0,
+                "count": 4
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_160.jpg",
+              "/snapshots/S26/bottega/Bottega_78.jpg",
+              "/snapshots/S26/bottega/Bottega_13.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_13.jpg",
+              "/snapshots/S26/bottega/Bottega_134.jpg",
+              "/snapshots/S26/bottega/Bottega_160.jpg",
+              "/snapshots/S26/bottega/Bottega_78.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 10,
+            "n_products": 4,
+            "season_composition": {
+              "F25": 0,
+              "S26": 4
+            },
+            "dominant_colors": [
+              "#272728",
+              "#5c5c58",
+              "#181616"
+            ],
+            "price_stats": {
+              "min": 360.0,
+              "max": 650.0,
+              "mean": 455.0,
+              "count": 4
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 360.0,
+                "max": 650.0,
+                "mean": 455.0,
+                "count": 4
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_161.jpg",
+              "/snapshots/S26/bottega/Bottega_56.jpg",
+              "/snapshots/S26/bottega/Bottega_144.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_144.jpg",
+              "/snapshots/S26/bottega/Bottega_161.jpg",
+              "/snapshots/S26/bottega/Bottega_56.jpg",
+              "/snapshots/S26/bottega/Bottega_60.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 11,
+            "n_products": 1,
+            "season_composition": {
+              "F25": 0,
+              "S26": 1
+            },
+            "dominant_colors": [
+              "#efecdb",
+              "#9b7756"
+            ],
+            "price_stats": {
+              "min": 350.0,
+              "max": 350.0,
+              "mean": 350.0,
+              "count": 1
+            },
+            "price_stats_by_season": {
+              "F25": {},
+              "S26": {
+                "min": 350.0,
+                "max": 350.0,
+                "mean": 350.0,
+                "count": 1
+              }
+            },
+            "images": [
+              "/snapshots/S26/bottega/Bottega_118.jpg"
+            ],
+            "all_images": [
+              "/snapshots/S26/bottega/Bottega_118.jpg"
+            ],
+            "is_new_in_s26": true,
+            "is_discontinued_from_f25": false
           }
         ]
       }
@@ -1385,61 +2217,68 @@
     "Dolce & Gabbana": {
       "joint": {
         "n_products": 275,
-        "n_clusters": 3,
-        "silhouette_score": 0.1616,
+        "n_clusters": 4,
+        "silhouette_score": 0.1323,
         "silhouettes_by_k": {
-          "3": 0.1616,
-          "4": 0.1156,
-          "5": 0.1251,
-          "6": 0.1201,
-          "7": 0.0707,
-          "8": 0.0776,
-          "9": 0.0872,
-          "10": 0.0769,
-          "11": 0.0835,
-          "12": 0.0907
+          "3": 0.1786,
+          "4": 0.1323,
+          "5": 0.1066,
+          "6": 0.1212,
+          "7": 0.1291,
+          "8": 0.1248,
+          "9": 0.1274,
+          "10": 0.0711,
+          "11": 0.0657,
+          "12": 0.0736,
+          "13": 0.0815,
+          "14": 0.0914,
+          "15": 0.0982,
+          "16": 0.106,
+          "17": 0.1102,
+          "18": 0.1162,
+          "19": 0.1226,
+          "20": 0.1299
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 176,
+            "n_products": 158,
             "season_composition": {
-              "F25": 107,
-              "S26": 69
+              "F25": 85,
+              "S26": 73
             },
             "dominant_colors": [
-              "#1a1a19",
               "#100f0d",
+              "#1d1d1d",
               "#a0936c"
             ],
             "price_stats": {
               "min": 220.0,
               "max": 800.0,
-              "mean": 330.39,
-              "count": 176
+              "mean": 325.63,
+              "count": 158
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 220.0,
                 "max": 800.0,
-                "mean": 323.92,
-                "count": 107
+                "mean": 325.47,
+                "count": 85
               },
               "S26": {
                 "min": 220.0,
                 "max": 800.0,
-                "mean": 340.42,
-                "count": 69
+                "mean": 325.81,
+                "count": 73
               }
             },
             "images": [
-              "/snapshots/S26/dg/D&G_113.jpg",
-              "/snapshots/F25/dg/D&G_100.jpg",
-              "/snapshots/S26/dg/D&G_91.jpg"
+              "/snapshots/S26/dg/D&G_25.jpg",
+              "/snapshots/F25/dg/D&G_102.jpg",
+              "/snapshots/S26/dg/D&G_26.jpg"
             ],
             "all_images": [
               "/snapshots/F25/dg/D&G_1.jpg",
-              "/snapshots/F25/dg/D&G_10.jpg",
               "/snapshots/F25/dg/D&G_100.jpg",
               "/snapshots/F25/dg/D&G_101.jpg",
               "/snapshots/F25/dg/D&G_102.jpg",
@@ -1454,13 +2293,9 @@
               "/snapshots/F25/dg/D&G_111.jpg",
               "/snapshots/F25/dg/D&G_112.jpg",
               "/snapshots/F25/dg/D&G_115.jpg",
-              "/snapshots/F25/dg/D&G_116.jpg",
               "/snapshots/F25/dg/D&G_117.jpg",
-              "/snapshots/F25/dg/D&G_119.jpg",
-              "/snapshots/F25/dg/D&G_12.jpg",
               "/snapshots/F25/dg/D&G_120.jpg",
               "/snapshots/F25/dg/D&G_121.jpg",
-              "/snapshots/F25/dg/D&G_122.jpg",
               "/snapshots/F25/dg/D&G_124.jpg",
               "/snapshots/F25/dg/D&G_125.jpg",
               "/snapshots/F25/dg/D&G_126.jpg",
@@ -1476,63 +2311,46 @@
               "/snapshots/F25/dg/D&G_138.jpg",
               "/snapshots/F25/dg/D&G_139.jpg",
               "/snapshots/F25/dg/D&G_14.jpg",
+              "/snapshots/F25/dg/D&G_140.jpg",
               "/snapshots/F25/dg/D&G_141.jpg",
               "/snapshots/F25/dg/D&G_142.jpg",
               "/snapshots/F25/dg/D&G_148.jpg",
-              "/snapshots/F25/dg/D&G_149.jpg",
               "/snapshots/F25/dg/D&G_15.jpg",
-              "/snapshots/F25/dg/D&G_151.jpg",
+              "/snapshots/F25/dg/D&G_150.jpg",
               "/snapshots/F25/dg/D&G_152.jpg",
+              "/snapshots/F25/dg/D&G_159.jpg",
               "/snapshots/F25/dg/D&G_16.jpg",
-              "/snapshots/F25/dg/D&G_17.jpg",
-              "/snapshots/F25/dg/D&G_18.jpg",
+              "/snapshots/F25/dg/D&G_2.jpg",
               "/snapshots/F25/dg/D&G_20.jpg",
-              "/snapshots/F25/dg/D&G_21.jpg",
-              "/snapshots/F25/dg/D&G_22.jpg",
-              "/snapshots/F25/dg/D&G_25.jpg",
               "/snapshots/F25/dg/D&G_26.jpg",
               "/snapshots/F25/dg/D&G_27.jpg",
               "/snapshots/F25/dg/D&G_28.jpg",
-              "/snapshots/F25/dg/D&G_29.jpg",
               "/snapshots/F25/dg/D&G_3.jpg",
               "/snapshots/F25/dg/D&G_30.jpg",
-              "/snapshots/F25/dg/D&G_31.jpg",
               "/snapshots/F25/dg/D&G_32.jpg",
-              "/snapshots/F25/dg/D&G_33.jpg",
-              "/snapshots/F25/dg/D&G_34.jpg",
               "/snapshots/F25/dg/D&G_35.jpg",
               "/snapshots/F25/dg/D&G_36.jpg",
               "/snapshots/F25/dg/D&G_37.jpg",
               "/snapshots/F25/dg/D&G_4.jpg",
-              "/snapshots/F25/dg/D&G_40.jpg",
-              "/snapshots/F25/dg/D&G_41.jpg",
               "/snapshots/F25/dg/D&G_42.jpg",
-              "/snapshots/F25/dg/D&G_44.jpg",
-              "/snapshots/F25/dg/D&G_45.jpg",
               "/snapshots/F25/dg/D&G_46.jpg",
-              "/snapshots/F25/dg/D&G_47.jpg",
-              "/snapshots/F25/dg/D&G_49.jpg",
+              "/snapshots/F25/dg/D&G_5.jpg",
               "/snapshots/F25/dg/D&G_51.jpg",
               "/snapshots/F25/dg/D&G_52.jpg",
-              "/snapshots/F25/dg/D&G_53.jpg",
               "/snapshots/F25/dg/D&G_57.jpg",
               "/snapshots/F25/dg/D&G_6.jpg",
               "/snapshots/F25/dg/D&G_60.jpg",
-              "/snapshots/F25/dg/D&G_61.jpg",
               "/snapshots/F25/dg/D&G_62.jpg",
               "/snapshots/F25/dg/D&G_63.jpg",
               "/snapshots/F25/dg/D&G_68.jpg",
-              "/snapshots/F25/dg/D&G_69.jpg",
               "/snapshots/F25/dg/D&G_7.jpg",
               "/snapshots/F25/dg/D&G_70.jpg",
-              "/snapshots/F25/dg/D&G_71.jpg",
-              "/snapshots/F25/dg/D&G_73.jpg",
-              "/snapshots/F25/dg/D&G_74.jpg",
-              "/snapshots/F25/dg/D&G_76.jpg",
-              "/snapshots/F25/dg/D&G_77.jpg",
               "/snapshots/F25/dg/D&G_78.jpg",
               "/snapshots/F25/dg/D&G_79.jpg",
-              "/snapshots/F25/dg/D&G_8.jpg",
+              "/snapshots/F25/dg/D&G_80.jpg",
+              "/snapshots/F25/dg/D&G_81.jpg",
+              "/snapshots/F25/dg/D&G_82.jpg",
+              "/snapshots/F25/dg/D&G_84.jpg",
               "/snapshots/F25/dg/D&G_85.jpg",
               "/snapshots/F25/dg/D&G_86.jpg",
               "/snapshots/F25/dg/D&G_87.jpg",
@@ -1552,19 +2370,19 @@
               "/snapshots/S26/dg/D&G_107.jpg",
               "/snapshots/S26/dg/D&G_108.jpg",
               "/snapshots/S26/dg/D&G_109.jpg",
-              "/snapshots/S26/dg/D&G_11.jpg",
               "/snapshots/S26/dg/D&G_110.jpg",
-              "/snapshots/S26/dg/D&G_111.jpg",
-              "/snapshots/S26/dg/D&G_112.jpg",
-              "/snapshots/S26/dg/D&G_113.jpg",
               "/snapshots/S26/dg/D&G_114.jpg",
-              "/snapshots/S26/dg/D&G_16.jpg",
+              "/snapshots/S26/dg/D&G_18.jpg",
+              "/snapshots/S26/dg/D&G_23.jpg",
+              "/snapshots/S26/dg/D&G_24.jpg",
               "/snapshots/S26/dg/D&G_25.jpg",
+              "/snapshots/S26/dg/D&G_26.jpg",
               "/snapshots/S26/dg/D&G_27.jpg",
               "/snapshots/S26/dg/D&G_28.jpg",
               "/snapshots/S26/dg/D&G_29.jpg",
               "/snapshots/S26/dg/D&G_3.jpg",
               "/snapshots/S26/dg/D&G_30.jpg",
+              "/snapshots/S26/dg/D&G_31.jpg",
               "/snapshots/S26/dg/D&G_32.jpg",
               "/snapshots/S26/dg/D&G_33.jpg",
               "/snapshots/S26/dg/D&G_34.jpg",
@@ -1576,31 +2394,35 @@
               "/snapshots/S26/dg/D&G_40.jpg",
               "/snapshots/S26/dg/D&G_41.jpg",
               "/snapshots/S26/dg/D&G_42.jpg",
+              "/snapshots/S26/dg/D&G_43.jpg",
+              "/snapshots/S26/dg/D&G_44.jpg",
+              "/snapshots/S26/dg/D&G_45.jpg",
               "/snapshots/S26/dg/D&G_46.jpg",
               "/snapshots/S26/dg/D&G_47.jpg",
               "/snapshots/S26/dg/D&G_48.jpg",
-              "/snapshots/S26/dg/D&G_5.jpg",
+              "/snapshots/S26/dg/D&G_50.jpg",
+              "/snapshots/S26/dg/D&G_52.jpg",
               "/snapshots/S26/dg/D&G_53.jpg",
               "/snapshots/S26/dg/D&G_54.jpg",
               "/snapshots/S26/dg/D&G_55.jpg",
               "/snapshots/S26/dg/D&G_56.jpg",
+              "/snapshots/S26/dg/D&G_58.jpg",
+              "/snapshots/S26/dg/D&G_59.jpg",
               "/snapshots/S26/dg/D&G_6.jpg",
               "/snapshots/S26/dg/D&G_61.jpg",
               "/snapshots/S26/dg/D&G_62.jpg",
               "/snapshots/S26/dg/D&G_63.jpg",
               "/snapshots/S26/dg/D&G_64.jpg",
-              "/snapshots/S26/dg/D&G_65.jpg",
               "/snapshots/S26/dg/D&G_66.jpg",
               "/snapshots/S26/dg/D&G_67.jpg",
               "/snapshots/S26/dg/D&G_68.jpg",
-              "/snapshots/S26/dg/D&G_69.jpg",
               "/snapshots/S26/dg/D&G_7.jpg",
-              "/snapshots/S26/dg/D&G_70.jpg",
-              "/snapshots/S26/dg/D&G_72.jpg",
               "/snapshots/S26/dg/D&G_73.jpg",
+              "/snapshots/S26/dg/D&G_76.jpg",
               "/snapshots/S26/dg/D&G_77.jpg",
               "/snapshots/S26/dg/D&G_78.jpg",
               "/snapshots/S26/dg/D&G_79.jpg",
+              "/snapshots/S26/dg/D&G_81.jpg",
               "/snapshots/S26/dg/D&G_84.jpg",
               "/snapshots/S26/dg/D&G_85.jpg",
               "/snapshots/S26/dg/D&G_86.jpg",
@@ -1620,89 +2442,87 @@
           },
           {
             "id": 1,
-            "n_products": 89,
+            "n_products": 74,
             "season_composition": {
-              "F25": 48,
-              "S26": 41
+              "F25": 46,
+              "S26": 28
             },
             "dominant_colors": [
-              "#1d1d1d",
               "#46464a",
-              "#0c0b0a"
+              "#0c0b0a",
+              "#251f1c"
             ],
             "price_stats": {
               "min": 200.0,
               "max": 850.0,
-              "mean": 346.91,
-              "count": 89
+              "mean": 352.91,
+              "count": 74
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 200.0,
                 "max": 800.0,
-                "mean": 331.35,
-                "count": 48
+                "mean": 327.39,
+                "count": 46
               },
               "S26": {
                 "min": 220.0,
                 "max": 850.0,
-                "mean": 365.12,
-                "count": 41
+                "mean": 394.82,
+                "count": 28
               }
             },
             "images": [
-              "/snapshots/F25/dg/D&G_118.jpg",
+              "/snapshots/F25/dg/D&G_114.jpg",
               "/snapshots/S26/dg/D&G_60.jpg",
-              "/snapshots/F25/dg/D&G_13.jpg"
+              "/snapshots/F25/dg/D&G_123.jpg"
             ],
             "all_images": [
               "/snapshots/F25/dg/D&G_107.jpg",
               "/snapshots/F25/dg/D&G_113.jpg",
               "/snapshots/F25/dg/D&G_114.jpg",
               "/snapshots/F25/dg/D&G_118.jpg",
+              "/snapshots/F25/dg/D&G_12.jpg",
               "/snapshots/F25/dg/D&G_123.jpg",
               "/snapshots/F25/dg/D&G_129.jpg",
               "/snapshots/F25/dg/D&G_13.jpg",
               "/snapshots/F25/dg/D&G_136.jpg",
-              "/snapshots/F25/dg/D&G_140.jpg",
               "/snapshots/F25/dg/D&G_143.jpg",
               "/snapshots/F25/dg/D&G_145.jpg",
               "/snapshots/F25/dg/D&G_146.jpg",
               "/snapshots/F25/dg/D&G_147.jpg",
-              "/snapshots/F25/dg/D&G_150.jpg",
               "/snapshots/F25/dg/D&G_153.jpg",
               "/snapshots/F25/dg/D&G_154.jpg",
               "/snapshots/F25/dg/D&G_155.jpg",
               "/snapshots/F25/dg/D&G_156.jpg",
               "/snapshots/F25/dg/D&G_157.jpg",
               "/snapshots/F25/dg/D&G_158.jpg",
-              "/snapshots/F25/dg/D&G_159.jpg",
               "/snapshots/F25/dg/D&G_160.jpg",
               "/snapshots/F25/dg/D&G_161.jpg",
               "/snapshots/F25/dg/D&G_19.jpg",
-              "/snapshots/F25/dg/D&G_2.jpg",
               "/snapshots/F25/dg/D&G_23.jpg",
               "/snapshots/F25/dg/D&G_24.jpg",
+              "/snapshots/F25/dg/D&G_25.jpg",
+              "/snapshots/F25/dg/D&G_34.jpg",
               "/snapshots/F25/dg/D&G_38.jpg",
               "/snapshots/F25/dg/D&G_39.jpg",
+              "/snapshots/F25/dg/D&G_40.jpg",
+              "/snapshots/F25/dg/D&G_41.jpg",
               "/snapshots/F25/dg/D&G_48.jpg",
-              "/snapshots/F25/dg/D&G_5.jpg",
+              "/snapshots/F25/dg/D&G_49.jpg",
               "/snapshots/F25/dg/D&G_50.jpg",
               "/snapshots/F25/dg/D&G_54.jpg",
               "/snapshots/F25/dg/D&G_55.jpg",
               "/snapshots/F25/dg/D&G_56.jpg",
               "/snapshots/F25/dg/D&G_58.jpg",
               "/snapshots/F25/dg/D&G_59.jpg",
+              "/snapshots/F25/dg/D&G_61.jpg",
               "/snapshots/F25/dg/D&G_64.jpg",
               "/snapshots/F25/dg/D&G_65.jpg",
               "/snapshots/F25/dg/D&G_66.jpg",
               "/snapshots/F25/dg/D&G_67.jpg",
               "/snapshots/F25/dg/D&G_72.jpg",
               "/snapshots/F25/dg/D&G_75.jpg",
-              "/snapshots/F25/dg/D&G_80.jpg",
-              "/snapshots/F25/dg/D&G_81.jpg",
-              "/snapshots/F25/dg/D&G_82.jpg",
-              "/snapshots/F25/dg/D&G_84.jpg",
               "/snapshots/F25/dg/D&G_9.jpg",
               "/snapshots/S26/dg/D&G_103.jpg",
               "/snapshots/S26/dg/D&G_104.jpg",
@@ -1712,36 +2532,23 @@
               "/snapshots/S26/dg/D&G_13.jpg",
               "/snapshots/S26/dg/D&G_14.jpg",
               "/snapshots/S26/dg/D&G_15.jpg",
+              "/snapshots/S26/dg/D&G_16.jpg",
               "/snapshots/S26/dg/D&G_17.jpg",
-              "/snapshots/S26/dg/D&G_18.jpg",
               "/snapshots/S26/dg/D&G_19.jpg",
               "/snapshots/S26/dg/D&G_2.jpg",
               "/snapshots/S26/dg/D&G_20.jpg",
               "/snapshots/S26/dg/D&G_21.jpg",
               "/snapshots/S26/dg/D&G_22.jpg",
-              "/snapshots/S26/dg/D&G_23.jpg",
-              "/snapshots/S26/dg/D&G_24.jpg",
-              "/snapshots/S26/dg/D&G_26.jpg",
-              "/snapshots/S26/dg/D&G_31.jpg",
               "/snapshots/S26/dg/D&G_4.jpg",
-              "/snapshots/S26/dg/D&G_43.jpg",
-              "/snapshots/S26/dg/D&G_44.jpg",
-              "/snapshots/S26/dg/D&G_45.jpg",
               "/snapshots/S26/dg/D&G_49.jpg",
-              "/snapshots/S26/dg/D&G_50.jpg",
               "/snapshots/S26/dg/D&G_51.jpg",
-              "/snapshots/S26/dg/D&G_52.jpg",
               "/snapshots/S26/dg/D&G_57.jpg",
-              "/snapshots/S26/dg/D&G_58.jpg",
-              "/snapshots/S26/dg/D&G_59.jpg",
               "/snapshots/S26/dg/D&G_60.jpg",
               "/snapshots/S26/dg/D&G_71.jpg",
               "/snapshots/S26/dg/D&G_74.jpg",
               "/snapshots/S26/dg/D&G_75.jpg",
-              "/snapshots/S26/dg/D&G_76.jpg",
               "/snapshots/S26/dg/D&G_8.jpg",
               "/snapshots/S26/dg/D&G_80.jpg",
-              "/snapshots/S26/dg/D&G_81.jpg",
               "/snapshots/S26/dg/D&G_82.jpg",
               "/snapshots/S26/dg/D&G_93.jpg",
               "/snapshots/S26/dg/D&G_94.jpg"
@@ -1751,6 +2558,81 @@
           },
           {
             "id": 2,
+            "n_products": 33,
+            "season_composition": {
+              "F25": 24,
+              "S26": 9
+            },
+            "dominant_colors": [
+              "#555555",
+              "#464645",
+              "#8997b6"
+            ],
+            "price_stats": {
+              "min": 240.0,
+              "max": 800.0,
+              "mean": 347.24,
+              "count": 33
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 240.0,
+                "max": 704.0,
+                "mean": 326.62,
+                "count": 24
+              },
+              "S26": {
+                "min": 260.0,
+                "max": 800.0,
+                "mean": 402.22,
+                "count": 9
+              }
+            },
+            "images": [
+              "/snapshots/F25/dg/D&G_122.jpg",
+              "/snapshots/S26/dg/D&G_70.jpg",
+              "/snapshots/S26/dg/D&G_112.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/dg/D&G_10.jpg",
+              "/snapshots/F25/dg/D&G_116.jpg",
+              "/snapshots/F25/dg/D&G_119.jpg",
+              "/snapshots/F25/dg/D&G_122.jpg",
+              "/snapshots/F25/dg/D&G_149.jpg",
+              "/snapshots/F25/dg/D&G_151.jpg",
+              "/snapshots/F25/dg/D&G_17.jpg",
+              "/snapshots/F25/dg/D&G_18.jpg",
+              "/snapshots/F25/dg/D&G_21.jpg",
+              "/snapshots/F25/dg/D&G_22.jpg",
+              "/snapshots/F25/dg/D&G_29.jpg",
+              "/snapshots/F25/dg/D&G_31.jpg",
+              "/snapshots/F25/dg/D&G_33.jpg",
+              "/snapshots/F25/dg/D&G_44.jpg",
+              "/snapshots/F25/dg/D&G_45.jpg",
+              "/snapshots/F25/dg/D&G_47.jpg",
+              "/snapshots/F25/dg/D&G_53.jpg",
+              "/snapshots/F25/dg/D&G_69.jpg",
+              "/snapshots/F25/dg/D&G_71.jpg",
+              "/snapshots/F25/dg/D&G_73.jpg",
+              "/snapshots/F25/dg/D&G_74.jpg",
+              "/snapshots/F25/dg/D&G_76.jpg",
+              "/snapshots/F25/dg/D&G_77.jpg",
+              "/snapshots/F25/dg/D&G_8.jpg",
+              "/snapshots/S26/dg/D&G_11.jpg",
+              "/snapshots/S26/dg/D&G_111.jpg",
+              "/snapshots/S26/dg/D&G_112.jpg",
+              "/snapshots/S26/dg/D&G_113.jpg",
+              "/snapshots/S26/dg/D&G_5.jpg",
+              "/snapshots/S26/dg/D&G_65.jpg",
+              "/snapshots/S26/dg/D&G_69.jpg",
+              "/snapshots/S26/dg/D&G_70.jpg",
+              "/snapshots/S26/dg/D&G_72.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": false
+          },
+          {
+            "id": 3,
             "n_products": 10,
             "season_composition": {
               "F25": 6,
@@ -1805,26 +2687,34 @@
       },
       "F25": {
         "n_products": 161,
-        "n_clusters": 3,
-        "silhouette_score": 0.1568,
+        "n_clusters": 4,
+        "silhouette_score": 0.136,
         "silhouettes_by_k": {
-          "3": 0.1568,
-          "4": 0.1488,
-          "5": 0.0966,
-          "6": 0.1104,
-          "7": 0.1172,
-          "8": 0.123,
-          "9": 0.0813,
-          "10": 0.0865,
-          "11": 0.0918,
-          "12": 0.088
+          "3": 0.1707,
+          "4": 0.136,
+          "5": 0.1329,
+          "6": 0.1333,
+          "7": 0.0713,
+          "8": 0.081,
+          "9": 0.0912,
+          "10": 0.098,
+          "11": 0.1049,
+          "12": 0.1116,
+          "13": 0.1126,
+          "14": 0.1167,
+          "15": 0.1093,
+          "16": 0.1097,
+          "17": 0.103,
+          "18": 0.1076,
+          "19": 0.0958,
+          "20": 0.0987
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 112,
+            "n_products": 91,
             "season_composition": {
-              "F25": 112,
+              "F25": 91,
               "S26": 0
             },
             "dominant_colors": [
@@ -1835,22 +2725,22 @@
             "price_stats": {
               "min": 220.0,
               "max": 800.0,
-              "mean": 327.85,
-              "count": 112
+              "mean": 327.19,
+              "count": 91
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 220.0,
                 "max": 800.0,
-                "mean": 327.85,
-                "count": 112
+                "mean": 327.19,
+                "count": 91
               },
               "S26": {}
             },
             "images": [
-              "/snapshots/F25/dg/D&G_101.jpg",
-              "/snapshots/F25/dg/D&G_85.jpg",
-              "/snapshots/F25/dg/D&G_96.jpg"
+              "/snapshots/F25/dg/D&G_102.jpg",
+              "/snapshots/F25/dg/D&G_96.jpg",
+              "/snapshots/F25/dg/D&G_78.jpg"
             ],
             "all_images": [
               "/snapshots/F25/dg/D&G_1.jpg",
@@ -1871,10 +2761,8 @@
               "/snapshots/F25/dg/D&G_116.jpg",
               "/snapshots/F25/dg/D&G_117.jpg",
               "/snapshots/F25/dg/D&G_119.jpg",
-              "/snapshots/F25/dg/D&G_12.jpg",
               "/snapshots/F25/dg/D&G_120.jpg",
               "/snapshots/F25/dg/D&G_121.jpg",
-              "/snapshots/F25/dg/D&G_122.jpg",
               "/snapshots/F25/dg/D&G_124.jpg",
               "/snapshots/F25/dg/D&G_125.jpg",
               "/snapshots/F25/dg/D&G_126.jpg",
@@ -1890,6 +2778,7 @@
               "/snapshots/F25/dg/D&G_138.jpg",
               "/snapshots/F25/dg/D&G_139.jpg",
               "/snapshots/F25/dg/D&G_14.jpg",
+              "/snapshots/F25/dg/D&G_140.jpg",
               "/snapshots/F25/dg/D&G_141.jpg",
               "/snapshots/F25/dg/D&G_142.jpg",
               "/snapshots/F25/dg/D&G_148.jpg",
@@ -1900,55 +2789,35 @@
               "/snapshots/F25/dg/D&G_158.jpg",
               "/snapshots/F25/dg/D&G_159.jpg",
               "/snapshots/F25/dg/D&G_16.jpg",
-              "/snapshots/F25/dg/D&G_17.jpg",
-              "/snapshots/F25/dg/D&G_18.jpg",
+              "/snapshots/F25/dg/D&G_2.jpg",
               "/snapshots/F25/dg/D&G_20.jpg",
-              "/snapshots/F25/dg/D&G_21.jpg",
-              "/snapshots/F25/dg/D&G_22.jpg",
-              "/snapshots/F25/dg/D&G_25.jpg",
               "/snapshots/F25/dg/D&G_26.jpg",
               "/snapshots/F25/dg/D&G_27.jpg",
               "/snapshots/F25/dg/D&G_28.jpg",
               "/snapshots/F25/dg/D&G_29.jpg",
               "/snapshots/F25/dg/D&G_3.jpg",
-              "/snapshots/F25/dg/D&G_31.jpg",
               "/snapshots/F25/dg/D&G_32.jpg",
-              "/snapshots/F25/dg/D&G_34.jpg",
               "/snapshots/F25/dg/D&G_35.jpg",
               "/snapshots/F25/dg/D&G_36.jpg",
               "/snapshots/F25/dg/D&G_37.jpg",
               "/snapshots/F25/dg/D&G_4.jpg",
-              "/snapshots/F25/dg/D&G_40.jpg",
-              "/snapshots/F25/dg/D&G_41.jpg",
               "/snapshots/F25/dg/D&G_42.jpg",
-              "/snapshots/F25/dg/D&G_44.jpg",
-              "/snapshots/F25/dg/D&G_45.jpg",
               "/snapshots/F25/dg/D&G_46.jpg",
               "/snapshots/F25/dg/D&G_47.jpg",
+              "/snapshots/F25/dg/D&G_49.jpg",
               "/snapshots/F25/dg/D&G_5.jpg",
               "/snapshots/F25/dg/D&G_51.jpg",
               "/snapshots/F25/dg/D&G_52.jpg",
-              "/snapshots/F25/dg/D&G_53.jpg",
-              "/snapshots/F25/dg/D&G_54.jpg",
-              "/snapshots/F25/dg/D&G_55.jpg",
               "/snapshots/F25/dg/D&G_57.jpg",
               "/snapshots/F25/dg/D&G_6.jpg",
               "/snapshots/F25/dg/D&G_60.jpg",
-              "/snapshots/F25/dg/D&G_61.jpg",
               "/snapshots/F25/dg/D&G_62.jpg",
               "/snapshots/F25/dg/D&G_63.jpg",
               "/snapshots/F25/dg/D&G_68.jpg",
-              "/snapshots/F25/dg/D&G_69.jpg",
-              "/snapshots/F25/dg/D&G_7.jpg",
               "/snapshots/F25/dg/D&G_70.jpg",
-              "/snapshots/F25/dg/D&G_71.jpg",
-              "/snapshots/F25/dg/D&G_73.jpg",
               "/snapshots/F25/dg/D&G_74.jpg",
-              "/snapshots/F25/dg/D&G_76.jpg",
-              "/snapshots/F25/dg/D&G_77.jpg",
               "/snapshots/F25/dg/D&G_78.jpg",
               "/snapshots/F25/dg/D&G_79.jpg",
-              "/snapshots/F25/dg/D&G_8.jpg",
               "/snapshots/F25/dg/D&G_80.jpg",
               "/snapshots/F25/dg/D&G_81.jpg",
               "/snapshots/F25/dg/D&G_82.jpg",
@@ -1971,9 +2840,9 @@
           },
           {
             "id": 1,
-            "n_products": 43,
+            "n_products": 40,
             "season_composition": {
-              "F25": 43,
+              "F25": 40,
               "S26": 0
             },
             "dominant_colors": [
@@ -1984,22 +2853,22 @@
             "price_stats": {
               "min": 200.0,
               "max": 800.0,
-              "mean": 321.98,
-              "count": 43
+              "mean": 324.38,
+              "count": 40
             },
             "price_stats_by_season": {
               "F25": {
                 "min": 200.0,
                 "max": 800.0,
-                "mean": 321.98,
-                "count": 43
+                "mean": 324.38,
+                "count": 40
               },
               "S26": {}
             },
             "images": [
-              "/snapshots/F25/dg/D&G_114.jpg",
-              "/snapshots/F25/dg/D&G_129.jpg",
-              "/snapshots/F25/dg/D&G_2.jpg"
+              "/snapshots/F25/dg/D&G_113.jpg",
+              "/snapshots/F25/dg/D&G_123.jpg",
+              "/snapshots/F25/dg/D&G_19.jpg"
             ],
             "all_images": [
               "/snapshots/F25/dg/D&G_10.jpg",
@@ -2011,7 +2880,6 @@
               "/snapshots/F25/dg/D&G_129.jpg",
               "/snapshots/F25/dg/D&G_13.jpg",
               "/snapshots/F25/dg/D&G_136.jpg",
-              "/snapshots/F25/dg/D&G_140.jpg",
               "/snapshots/F25/dg/D&G_143.jpg",
               "/snapshots/F25/dg/D&G_145.jpg",
               "/snapshots/F25/dg/D&G_146.jpg",
@@ -2025,7 +2893,6 @@
               "/snapshots/F25/dg/D&G_160.jpg",
               "/snapshots/F25/dg/D&G_161.jpg",
               "/snapshots/F25/dg/D&G_19.jpg",
-              "/snapshots/F25/dg/D&G_2.jpg",
               "/snapshots/F25/dg/D&G_23.jpg",
               "/snapshots/F25/dg/D&G_24.jpg",
               "/snapshots/F25/dg/D&G_30.jpg",
@@ -2033,7 +2900,6 @@
               "/snapshots/F25/dg/D&G_38.jpg",
               "/snapshots/F25/dg/D&G_39.jpg",
               "/snapshots/F25/dg/D&G_48.jpg",
-              "/snapshots/F25/dg/D&G_49.jpg",
               "/snapshots/F25/dg/D&G_50.jpg",
               "/snapshots/F25/dg/D&G_56.jpg",
               "/snapshots/F25/dg/D&G_58.jpg",
@@ -2051,6 +2917,67 @@
           },
           {
             "id": 2,
+            "n_products": 24,
+            "season_composition": {
+              "F25": 24,
+              "S26": 0
+            },
+            "dominant_colors": [
+              "#5c5753",
+              "#68635f",
+              "#3d4632"
+            ],
+            "price_stats": {
+              "min": 240.0,
+              "max": 475.0,
+              "mean": 325.62,
+              "count": 24
+            },
+            "price_stats_by_season": {
+              "F25": {
+                "min": 240.0,
+                "max": 475.0,
+                "mean": 325.62,
+                "count": 24
+              },
+              "S26": {}
+            },
+            "images": [
+              "/snapshots/F25/dg/D&G_21.jpg",
+              "/snapshots/F25/dg/D&G_18.jpg",
+              "/snapshots/F25/dg/D&G_34.jpg"
+            ],
+            "all_images": [
+              "/snapshots/F25/dg/D&G_12.jpg",
+              "/snapshots/F25/dg/D&G_122.jpg",
+              "/snapshots/F25/dg/D&G_17.jpg",
+              "/snapshots/F25/dg/D&G_18.jpg",
+              "/snapshots/F25/dg/D&G_21.jpg",
+              "/snapshots/F25/dg/D&G_22.jpg",
+              "/snapshots/F25/dg/D&G_25.jpg",
+              "/snapshots/F25/dg/D&G_31.jpg",
+              "/snapshots/F25/dg/D&G_34.jpg",
+              "/snapshots/F25/dg/D&G_40.jpg",
+              "/snapshots/F25/dg/D&G_41.jpg",
+              "/snapshots/F25/dg/D&G_44.jpg",
+              "/snapshots/F25/dg/D&G_45.jpg",
+              "/snapshots/F25/dg/D&G_53.jpg",
+              "/snapshots/F25/dg/D&G_54.jpg",
+              "/snapshots/F25/dg/D&G_55.jpg",
+              "/snapshots/F25/dg/D&G_61.jpg",
+              "/snapshots/F25/dg/D&G_69.jpg",
+              "/snapshots/F25/dg/D&G_7.jpg",
+              "/snapshots/F25/dg/D&G_71.jpg",
+              "/snapshots/F25/dg/D&G_73.jpg",
+              "/snapshots/F25/dg/D&G_76.jpg",
+              "/snapshots/F25/dg/D&G_77.jpg",
+              "/snapshots/F25/dg/D&G_8.jpg"
+            ],
+            "is_new_in_s26": false,
+            "is_discontinued_from_f25": true
+          },
+          {
+            "id": 3,
             "n_products": 6,
             "season_composition": {
               "F25": 6,
@@ -2097,26 +3024,34 @@
       "S26": {
         "n_products": 114,
         "n_clusters": 4,
-        "silhouette_score": 0.1707,
+        "silhouette_score": 0.1834,
         "silhouettes_by_k": {
-          "3": 0.1575,
-          "4": 0.1707,
-          "5": 0.0851,
-          "6": 0.0873,
-          "7": 0.0945,
-          "8": 0.0703,
-          "9": 0.0753,
-          "10": 0.0848,
-          "11": 0.0883,
-          "12": 0.0901
+          "3": 0.1737,
+          "4": 0.1834,
+          "5": 0.0915,
+          "6": 0.0945,
+          "7": 0.1022,
+          "8": 0.0735,
+          "9": 0.0794,
+          "10": 0.0894,
+          "11": 0.0968,
+          "12": 0.1007,
+          "13": 0.1027,
+          "14": 0.1053,
+          "15": 0.1078,
+          "16": 0.1119,
+          "17": 0.1173,
+          "18": 0.1238,
+          "19": 0.1315,
+          "20": 0.1316
         },
         "clusters": [
           {
             "id": 0,
-            "n_products": 69,
+            "n_products": 70,
             "season_composition": {
               "F25": 0,
-              "S26": 69
+              "S26": 70
             },
             "dominant_colors": [
               "#2f2f2f",
@@ -2126,16 +3061,16 @@
             "price_stats": {
               "min": 220.0,
               "max": 800.0,
-              "mean": 335.49,
-              "count": 69
+              "mean": 337.49,
+              "count": 70
             },
             "price_stats_by_season": {
               "F25": {},
               "S26": {
                 "min": 220.0,
                 "max": 800.0,
-                "mean": 335.49,
-                "count": 69
+                "mean": 337.49,
+                "count": 70
               }
             },
             "images": [
@@ -2204,6 +3139,7 @@
               "/snapshots/S26/dg/D&G_85.jpg",
               "/snapshots/S26/dg/D&G_86.jpg",
               "/snapshots/S26/dg/D&G_88.jpg",
+              "/snapshots/S26/dg/D&G_89.jpg",
               "/snapshots/S26/dg/D&G_9.jpg",
               "/snapshots/S26/dg/D&G_90.jpg",
               "/snapshots/S26/dg/D&G_91.jpg",
@@ -2333,10 +3269,10 @@
           },
           {
             "id": 3,
-            "n_products": 5,
+            "n_products": 4,
             "season_composition": {
               "F25": 0,
-              "S26": 5
+              "S26": 4
             },
             "dominant_colors": [
               "#fec385",
@@ -2346,29 +3282,28 @@
             "price_stats": {
               "min": 315.0,
               "max": 490.0,
-              "mean": 404.0,
-              "count": 5
+              "mean": 386.25,
+              "count": 4
             },
             "price_stats_by_season": {
               "F25": {},
               "S26": {
                 "min": 315.0,
                 "max": 490.0,
-                "mean": 404.0,
-                "count": 5
+                "mean": 386.25,
+                "count": 4
               }
             },
             "images": [
               "/snapshots/S26/dg/D&G_83.jpg",
-              "/snapshots/S26/dg/D&G_89.jpg",
-              "/snapshots/S26/dg/D&G_10.jpg"
+              "/snapshots/S26/dg/D&G_10.jpg",
+              "/snapshots/S26/dg/D&G_87.jpg"
             ],
             "all_images": [
               "/snapshots/S26/dg/D&G_10.jpg",
               "/snapshots/S26/dg/D&G_36.jpg",
               "/snapshots/S26/dg/D&G_83.jpg",
-              "/snapshots/S26/dg/D&G_87.jpg",
-              "/snapshots/S26/dg/D&G_89.jpg"
+              "/snapshots/S26/dg/D&G_87.jpg"
             ],
             "is_new_in_s26": true,
             "is_discontinued_from_f25": false

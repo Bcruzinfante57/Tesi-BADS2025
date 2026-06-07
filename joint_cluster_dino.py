@@ -55,7 +55,42 @@ BRANDS = {
 }
 
 K_MIN = 3
-K_MAX = 12
+K_MAX = 20  # widened to match the thesis pipeline's range (was 12, then 20)
+PCA_DIMS = 50
+THESIS_RULE_THRESHOLD = 0.95  # follows Main pipeline final.py:553 (score / best_score > 0.95)
+
+
+def thesis_rule_select_k(silhouettes_by_k: dict[int, float]) -> int:
+    """Replicates the thesis's find_optimal_k_agglomerative selection:
+
+      1. Sort (k, silhouette) descending by silhouette.
+      2. Iterate the sorted list; the FIRST entry whose k > 4 AND
+         silhouette / best_silhouette > 0.95 wins.
+      3. Default to the silhouette argmax if no entry qualifies.
+      4. Return max(4, chosen_k) — minimum 4 clusters per the thesis.
+
+    The intent is "pick the most granular k whose silhouette is still
+    within 95% of the absolute best". For brands whose silhouette curve
+    is roughly flat across k (Bottega, Cartier on DINO), this lets the
+    rule reach k=10+. For brands with sharp silhouette peak at low k
+    (D&G), it correctly stays at the peak.
+    """
+    scores_list = sorted(silhouettes_by_k.items(), key=lambda kv: -kv[1])
+    if not scores_list:
+        return 4
+    best_score = scores_list[0][1]
+    chosen = scores_list[0][0]
+    for k_val, score in scores_list:
+        if k_val > 4 and score / best_score > THESIS_RULE_THRESHOLD:
+            chosen = k_val
+            break
+    return max(4, chosen)
+
+
+def pca_t(X: torch.Tensor, k: int) -> torch.Tensor:
+    """Torch low-rank PCA to k dims."""
+    _, _, V = torch.pca_lowrank(X.float(), q=k, niter=4)
+    return X @ V
 
 BUNDLE_V2 = json.loads((REPO_ROOT / "snapshots/cluster_data_v2.json").read_text())
 
@@ -184,27 +219,38 @@ def price_summary(arr: list[float]) -> dict:
 # Cluster one slice — joint / F25-only / S26-only
 # ─────────────────────────────────────────────────────────────────────────────
 
-def cluster_set(label: str, emb: torch.Tensor, prods: list[dict], slug: str,
+def cluster_set(label: str, emb_raw: torch.Tensor, prods: list[dict], slug: str,
                 k_min: int, k_max: int) -> dict:
-    n = emb.shape[0]
+    n = emb_raw.shape[0]
     if n < 4:
         print(f"  [{label}] only {n} products — skipping")
         return {"n_products": n, "n_clusters": 0, "silhouette_score": -1.0,
                 "silhouettes_by_k": {}, "clusters": []}
 
+    # PCA(50) preprocessing — matches the thesis pipeline. Without it,
+    # silhouette is mechanically suppressed by curse-of-dimensionality on
+    # 768-d unit vectors, and the thesis rule's 95% threshold catches fewer
+    # k values (so we'd lose the granular clusters the editorial display needs).
+    emb = pca_t(emb_raw, PCA_DIMS) if n > PCA_DIMS else emb_raw
+
     t0 = time.time()
     merge_history, cluster_members = ward_full_t(emb)
     ward_secs = time.time() - t0
 
-    best_k, best_silh = -1, -1.0
     silhouettes: dict[int, float] = {}
     for k in range(k_min, min(k_max, n - 1) + 1):
         lbl = cut_tree_t(merge_history, cluster_members, n, k)
         s = silhouette_t(emb, lbl)
         silhouettes[k] = round(s, 4)
-        if s > best_silh:
-            best_silh, best_k = s, k
-    print(f"  [{label}] n={n} Ward {ward_secs:.1f}s, best k={best_k} silhouette={best_silh:.4f}")
+
+    # Thesis-style k selection — see thesis_rule_select_k()
+    best_k = thesis_rule_select_k(silhouettes)
+    best_silh = silhouettes[best_k]
+    silh_argmax_k = max(silhouettes, key=lambda k: silhouettes[k])
+    silh_argmax = silhouettes[silh_argmax_k]
+    print(f"  [{label}] n={n} Ward {ward_secs:.1f}s  "
+          f"argmax k={silh_argmax_k} silh={silh_argmax:.4f}  "
+          f"thesis-rule k={best_k} silh={best_silh:.4f}")
 
     final_lbl = cut_tree_t(merge_history, cluster_members, n, best_k).tolist()
     season_to_dir = {"F25": f"snapshots/F25/{slug}", "S26": f"snapshots/S26/{slug}"}
