@@ -47,6 +47,8 @@ BRANDS = {
         "s26_pt_dino": "DINO_Bottega_Veneta_S26_n162.pt",
         "f25_pt_mae":  "MAE_Bottega_Veneta_F25_n123.pt",
         "s26_pt_mae":  "MAE_Bottega_Veneta_S26_n162.pt",
+        "f25_pt_fclip": "FashionCLIP_Bottega_Veneta_F25_n123.pt",
+        "s26_pt_fclip": "FashionCLIP_Bottega_Veneta_S26_n162.pt",
         # Legacy filenames (the original joint_cluster_dino run wrote here without the prefix)
         "f25_pt_legacy_dino": "Bottega_Veneta_F25_n123.pt",
         "s26_pt_legacy_dino": "Bottega_Veneta_S26_n162.pt",
@@ -57,13 +59,15 @@ BRANDS = {
         "s26_pt_dino": "DINO_Dolce_and_Gabbana_S26_n114.pt",
         "f25_pt_mae":  "MAE_Dolce_and_Gabbana_F25_n161.pt",
         "s26_pt_mae":  "MAE_Dolce_and_Gabbana_S26_n114.pt",
+        "f25_pt_fclip": "FashionCLIP_Dolce_and_Gabbana_F25_n161.pt",
+        "s26_pt_fclip": "FashionCLIP_Dolce_and_Gabbana_S26_n114.pt",
         "f25_pt_legacy_dino": "Dolce_and_Gabbana_F25_n161.pt",
         "s26_pt_legacy_dino": "Dolce_and_Gabbana_S26_n114.pt",
         "slug": "dg",
     },
 }
 
-BACKBONES = ["DINO", "MAE"]
+BACKBONES = ["DINO", "MAE", "FashionCLIP"]
 
 K_MIN = 3
 K_MAX = 20  # matches thesis pipeline range
@@ -220,6 +224,9 @@ def load_brand_products(brand: str, backbone: str) -> tuple[torch.Tensor, list[d
     elif backbone == "MAE":
         f25_path = EMBED_DIR / cfg["f25_pt_mae"]
         s26_path = EMBED_DIR / cfg["s26_pt_mae"]
+    elif backbone == "FashionCLIP":
+        f25_path = EMBED_DIR / cfg["f25_pt_fclip"]
+        s26_path = EMBED_DIR / cfg["s26_pt_fclip"]
     else:
         raise ValueError(backbone)
     f25_emb = torch.load(f25_path, map_location="cpu")
