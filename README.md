@@ -51,12 +51,70 @@ The remaining Outputs (Cluster Maps for Fendi, YSL, Prada, Dolce & Gabbana) can 
 
 [Insert Link Here to a Google Drive or external repository with all images]
 
+---
+
+# Post-Thesis Extensions
+
+The thesis closed with a static F25 snapshot. After defense, the project was extended into a continuous, deployable competitive-intelligence pipeline. Four extensions are now in production.
+
+## 1. Cross-Season Catalog Comparison (F25 ↔ S26)
+
+A Spring/Summer 26 snapshot was collected from the same brands using the same scraping and preprocessing pipeline (Bottega Veneta n=162, D&G n=114). For each maison, the F25 and S26 catalogues are now compared on three axes:
+
+- **Persistence / Novelty**: cosine similarity matching between embedded products across seasons. Products whose best match scores above a threshold are flagged as *persisted*; the rest are S26 novelties. Catalog renewal rate is reported per brand.
+- **Price evolution**: KDE distributions of log-price overlaid per season to surface positioning shifts.
+- **Palette delta**: per-product palettes are aggregated and the set of colours new in S26 (and lost from F25) is computed.
+
+## 2. Multi-Backbone Embedding Comparison
+
+Two additional backbones were benchmarked alongside the thesis ViT-MAE:
+
+| Backbone     | Training              | Output | Best for                              |
+|--------------|-----------------------|--------|---------------------------------------|
+| ViT-MAE      | Pixel reconstruction  | 768-d  | Clustering (replicates thesis output) |
+| ViT-DINO     | Self-distillation     | 768-d  | Cross-season product matching         |
+| FashionCLIP  | Image-text (Farfetch) | 512-d  | Fashion-domain discrimination         |
+
+MAE features collapse for instance discrimination (best-match cos sim ≈ 0.997 even between visually distinct products) — exactly what makes them strong for aesthetic-family clustering but unsuitable for cross-season matching. DINO and FashionCLIP produce wider spreads suitable for matching, with FashionCLIP additionally capturing fashion-domain semantics (silhouette, material, brand-specific motifs) from its pretraining on ~800K Farfetch image-text pairs.
+
+The three backbones are exposed as a toggle in the frontend, so partitions can be compared side by side per maison and per season.
+
+## 3. Zero-Shot Silhouette Classification via FashionCLIP
+
+The unsupervised clusters serve their scientific purpose but require interpretation. A supervised-by-text classification pipeline was built on top of FashionCLIP to produce semantically named groupings without any labelling effort:
+
+1. **Taxonomy of 15 eyewear silhouettes**: cat-eye, aviator, square, rectangular, round, oval, hexagonal, octagonal, shield, mask, butterfly, browline, navigator, oversized, rimless.
+2. Each label is encoded as a text prompt via FashionCLIP's text encoder, placing it in the same 512-d joint embedding space as the product image features.
+3. Per product, cos sim is computed against all 15 prompts and the argmax is assigned as the silhouette label.
+4. Products with top-1 softmax confidence < 0.30 are routed to an **`experimental`** bucket — the model's own "I don't know" signal, which doubles as a candidate-hit surface (low confidence often coincides with editorial innovation, since visually unusual products don't fit any single named silhouette cleanly).
+
+This is mathematically equivalent to K-Means with k=15 and **labelled, pre-computed centroids** — the text embeddings replace the data-discovered cluster means of unsupervised clustering.
+
+Hand validation across twelve random products confirmed correct silhouette assignment in eleven cases; the remaining product was correctly classified by frame shape but visually dominated by a floral embellishment — a separate decoration axis outside the silhouette taxonomy.
+
+## 4. Production Deployment — Conan Insight Hub
+
+All extensions are exposed through a public landing-page front-end at [conan-insight-hub](https://github.com/Bcruzinfante57/conan-insight-hub), built with TanStack Start + Tailwind + Framer Motion and deployed via Lovable. Three sections consume live JSON exports from this repo:
+
+- **Style Mix**: silhouette buckets per maison × season, with all-colour dots beneath each card (every unique palette bucket present in the cluster, sized by share-pct). Δ vs F25 is highlighted per silhouette.
+- **Time Series**: F25 → S26 magazine-style spread, with the thesis-aligned F25 + MAE clusters preserved verbatim and DINO / MAE / FashionCLIP toggleable for Joint and S26 views.
+- **Price KDE**: log-price density curves per brand per season, highlighting positioning drift.
+
+The frontend is i18n-aware (Spanish, English, Italian).
+
+---
+
 Future Work
-Data Expansion: Expand the dataset to include additional brands (e.g., Giorgio Armani, Gucci) to enhance embedding robustness.
 
-Dashboard Deployment: Deploy the clustering model into an interactive web dashboard (using Dash or Streamlit) to allow dynamic exploration by brand, price range, and aesthetic dimension.
+Data Expansion: complete S26 coverage for the four remaining brands (Cartier, Fendi, Prada, YSL); incorporate additional houses (Giorgio Armani, Gucci) to broaden embedding robustness.
 
-Cross-Category Modeling: Extend the methodology to create cross-category upselling recommendations (e.g., suggesting jewelry visually similar to eyewear).
+K-Means Auto-Naming via FashionCLIP Centroids: combine the granularity of unsupervised clustering with the legibility of named labels. Run K-Means at k=15–25 on FashionCLIP image embeddings to discover sub-style variants (multiple cat-eye sub-lines distinguished by material or colour, for instance), then label each centroid by computing cos sim against the same 15 text prompts used in Section 3. Centroids below the confidence threshold are auto-labelled `experimental`. This unifies unsupervised structure discovery with semantic naming.
+
+Threshold Calibration for FashionCLIP Matching: the matching threshold (currently 0.92, tuned for DINO) needs recalibration for FashionCLIP's tighter distribution (≈ 0.85), driven by valley detection on the cross-season best-match histogram.
+
+Composite Novelty Score: rank "most disruptive" products per drop by combining visual novelty (1 − best cos sim vs own F25), colour novelty, price outlier, and intra-season rarity into a single score. Surfaces the products an editorial buyer should look at first.
+
+Cross-Category Modeling: extend the methodology to cross-category upselling recommendations (e.g., suggesting jewelry visually similar to eyewear via shared FashionCLIP embeddings).
 
 License
 [Specify your license here, e.g., MIT License or specify "Proprietary - Research Use Only"]
