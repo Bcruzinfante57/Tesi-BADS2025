@@ -1,0 +1,3704 @@
+{
+  "Bottega Veneta": {
+    "F25": {
+      "cat-eye": [
+        {
+          "filename": "Bottega_32.jpg",
+          "style": "cat-eye",
+          "confidence": 0.8773,
+          "raw_cos": 0.3361,
+          "top3": [
+            [
+              "cat-eye",
+              0.8773
+            ],
+            [
+              "butterfly",
+              0.0805
+            ],
+            [
+              "oval",
+              0.0201
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_57.jpg",
+          "style": "cat-eye",
+          "confidence": 0.7114,
+          "raw_cos": 0.3234,
+          "top3": [
+            [
+              "cat-eye",
+              0.7114
+            ],
+            [
+              "butterfly",
+              0.1675
+            ],
+            [
+              "oval",
+              0.0689
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_60.jpg",
+          "style": "cat-eye",
+          "confidence": 0.374,
+          "raw_cos": 0.3229,
+          "top3": [
+            [
+              "cat-eye",
+              0.374
+            ],
+            [
+              "butterfly",
+              0.3687
+            ],
+            [
+              "oval",
+              0.0975
+            ]
+          ]
+        }
+      ],
+      "aviator": [
+        {
+          "filename": "Bottega_54.jpg",
+          "style": "aviator",
+          "confidence": 0.9463,
+          "raw_cos": 0.3162,
+          "top3": [
+            [
+              "aviator",
+              0.9463
+            ],
+            [
+              "navigator",
+              0.0163
+            ],
+            [
+              "oversized",
+              0.0152
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_7.jpg",
+          "style": "aviator",
+          "confidence": 0.9264,
+          "raw_cos": 0.3138,
+          "top3": [
+            [
+              "aviator",
+              0.9264
+            ],
+            [
+              "oversized",
+              0.0223
+            ],
+            [
+              "butterfly",
+              0.0218
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_68.jpg",
+          "style": "aviator",
+          "confidence": 0.8958,
+          "raw_cos": 0.3228,
+          "top3": [
+            [
+              "aviator",
+              0.8958
+            ],
+            [
+              "shield",
+              0.0331
+            ],
+            [
+              "oversized",
+              0.0266
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_74.jpg",
+          "style": "aviator",
+          "confidence": 0.8666,
+          "raw_cos": 0.3321,
+          "top3": [
+            [
+              "aviator",
+              0.8666
+            ],
+            [
+              "butterfly",
+              0.0237
+            ],
+            [
+              "hexagonal",
+              0.023
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_16.jpg",
+          "style": "aviator",
+          "confidence": 0.6624,
+          "raw_cos": 0.2891,
+          "top3": [
+            [
+              "aviator",
+              0.6624
+            ],
+            [
+              "butterfly",
+              0.1349
+            ],
+            [
+              "oversized",
+              0.0688
+            ]
+          ]
+        }
+      ],
+      "square": [
+        {
+          "filename": "Bottega_83.jpg",
+          "style": "square",
+          "confidence": 0.7503,
+          "raw_cos": 0.3315,
+          "top3": [
+            [
+              "square",
+              0.7503
+            ],
+            [
+              "rectangular",
+              0.1632
+            ],
+            [
+              "butterfly",
+              0.0246
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_125.jpg",
+          "style": "square",
+          "confidence": 0.7475,
+          "raw_cos": 0.3304,
+          "top3": [
+            [
+              "square",
+              0.7475
+            ],
+            [
+              "rectangular",
+              0.0796
+            ],
+            [
+              "butterfly",
+              0.0733
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_89.jpg",
+          "style": "square",
+          "confidence": 0.7474,
+          "raw_cos": 0.3495,
+          "top3": [
+            [
+              "square",
+              0.7474
+            ],
+            [
+              "rectangular",
+              0.1287
+            ],
+            [
+              "butterfly",
+              0.0562
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_127.jpg",
+          "style": "square",
+          "confidence": 0.725,
+          "raw_cos": 0.3266,
+          "top3": [
+            [
+              "square",
+              0.725
+            ],
+            [
+              "rectangular",
+              0.2084
+            ],
+            [
+              "navigator",
+              0.0359
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_104.jpg",
+          "style": "square",
+          "confidence": 0.712,
+          "raw_cos": 0.3089,
+          "top3": [
+            [
+              "square",
+              0.712
+            ],
+            [
+              "rectangular",
+              0.1768
+            ],
+            [
+              "butterfly",
+              0.0479
+            ]
+          ]
+        }
+      ],
+      "rectangular": [
+        {
+          "filename": "Bottega_62.jpg",
+          "style": "rectangular",
+          "confidence": 0.6024,
+          "raw_cos": 0.3344,
+          "top3": [
+            [
+              "rectangular",
+              0.6024
+            ],
+            [
+              "square",
+              0.2399
+            ],
+            [
+              "butterfly",
+              0.0487
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_36.jpg",
+          "style": "rectangular",
+          "confidence": 0.5636,
+          "raw_cos": 0.3433,
+          "top3": [
+            [
+              "rectangular",
+              0.5636
+            ],
+            [
+              "square",
+              0.4103
+            ],
+            [
+              "hexagonal",
+              0.006
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_87.jpg",
+          "style": "rectangular",
+          "confidence": 0.4828,
+          "raw_cos": 0.3289,
+          "top3": [
+            [
+              "rectangular",
+              0.4828
+            ],
+            [
+              "square",
+              0.3568
+            ],
+            [
+              "oversized",
+              0.0647
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_24.jpg",
+          "style": "rectangular",
+          "confidence": 0.3362,
+          "raw_cos": 0.3222,
+          "top3": [
+            [
+              "rectangular",
+              0.3362
+            ],
+            [
+              "shield",
+              0.2646
+            ],
+            [
+              "square",
+              0.11
+            ]
+          ]
+        }
+      ],
+      "round": [
+        {
+          "filename": "Bottega_98.jpg",
+          "style": "round",
+          "confidence": 0.8904,
+          "raw_cos": 0.345,
+          "top3": [
+            [
+              "round",
+              0.8904
+            ],
+            [
+              "oval",
+              0.0753
+            ],
+            [
+              "octagonal",
+              0.0147
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_49.jpg",
+          "style": "round",
+          "confidence": 0.8603,
+          "raw_cos": 0.3132,
+          "top3": [
+            [
+              "round",
+              0.8603
+            ],
+            [
+              "oval",
+              0.0806
+            ],
+            [
+              "octagonal",
+              0.0212
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_20.jpg",
+          "style": "round",
+          "confidence": 0.8329,
+          "raw_cos": 0.3273,
+          "top3": [
+            [
+              "round",
+              0.8329
+            ],
+            [
+              "square",
+              0.0639
+            ],
+            [
+              "oval",
+              0.0344
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_88.jpg",
+          "style": "round",
+          "confidence": 0.8181,
+          "raw_cos": 0.3241,
+          "top3": [
+            [
+              "round",
+              0.8181
+            ],
+            [
+              "oval",
+              0.0944
+            ],
+            [
+              "octagonal",
+              0.0371
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_45.jpg",
+          "style": "round",
+          "confidence": 0.7842,
+          "raw_cos": 0.326,
+          "top3": [
+            [
+              "round",
+              0.7842
+            ],
+            [
+              "oval",
+              0.1635
+            ],
+            [
+              "octagonal",
+              0.0301
+            ]
+          ]
+        }
+      ],
+      "oval": [
+        {
+          "filename": "Bottega_39.jpg",
+          "style": "oval",
+          "confidence": 0.8938,
+          "raw_cos": 0.3456,
+          "top3": [
+            [
+              "oval",
+              0.8938
+            ],
+            [
+              "round",
+              0.0609
+            ],
+            [
+              "butterfly",
+              0.0156
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_11.jpg",
+          "style": "oval",
+          "confidence": 0.7874,
+          "raw_cos": 0.3406,
+          "top3": [
+            [
+              "oval",
+              0.7874
+            ],
+            [
+              "round",
+              0.1318
+            ],
+            [
+              "butterfly",
+              0.0318
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_67.jpg",
+          "style": "oval",
+          "confidence": 0.786,
+          "raw_cos": 0.3443,
+          "top3": [
+            [
+              "oval",
+              0.786
+            ],
+            [
+              "round",
+              0.1553
+            ],
+            [
+              "octagonal",
+              0.0206
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_33.jpg",
+          "style": "oval",
+          "confidence": 0.7574,
+          "raw_cos": 0.3485,
+          "top3": [
+            [
+              "oval",
+              0.7574
+            ],
+            [
+              "round",
+              0.1557
+            ],
+            [
+              "octagonal",
+              0.0271
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_48.jpg",
+          "style": "oval",
+          "confidence": 0.7362,
+          "raw_cos": 0.3319,
+          "top3": [
+            [
+              "oval",
+              0.7362
+            ],
+            [
+              "butterfly",
+              0.1272
+            ],
+            [
+              "round",
+              0.066
+            ]
+          ]
+        }
+      ],
+      "hexagonal": [
+        {
+          "filename": "Bottega_90.jpg",
+          "style": "hexagonal",
+          "confidence": 0.5205,
+          "raw_cos": 0.3511,
+          "top3": [
+            [
+              "hexagonal",
+              0.5205
+            ],
+            [
+              "octagonal",
+              0.4203
+            ],
+            [
+              "round",
+              0.0237
+            ]
+          ]
+        }
+      ],
+      "octagonal": [
+        {
+          "filename": "Bottega_56.jpg",
+          "style": "octagonal",
+          "confidence": 0.3956,
+          "raw_cos": 0.3283,
+          "top3": [
+            [
+              "octagonal",
+              0.3956
+            ],
+            [
+              "round",
+              0.2892
+            ],
+            [
+              "hexagonal",
+              0.1611
+            ]
+          ]
+        }
+      ],
+      "shield": [
+        {
+          "filename": "Bottega_10.jpg",
+          "style": "shield",
+          "confidence": 0.6199,
+          "raw_cos": 0.3392,
+          "top3": [
+            [
+              "shield",
+              0.6199
+            ],
+            [
+              "mask",
+              0.271
+            ],
+            [
+              "oversized",
+              0.0694
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_70.jpg",
+          "style": "shield",
+          "confidence": 0.35,
+          "raw_cos": 0.3336,
+          "top3": [
+            [
+              "shield",
+              0.35
+            ],
+            [
+              "square",
+              0.2562
+            ],
+            [
+              "rectangular",
+              0.2489
+            ]
+          ]
+        }
+      ],
+      "mask": [],
+      "butterfly": [
+        {
+          "filename": "Bottega_40.jpg",
+          "style": "butterfly",
+          "confidence": 0.8575,
+          "raw_cos": 0.3157,
+          "top3": [
+            [
+              "butterfly",
+              0.8575
+            ],
+            [
+              "hexagonal",
+              0.0538
+            ],
+            [
+              "oversized",
+              0.0388
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_21.jpg",
+          "style": "butterfly",
+          "confidence": 0.7577,
+          "raw_cos": 0.3064,
+          "top3": [
+            [
+              "butterfly",
+              0.7577
+            ],
+            [
+              "oval",
+              0.0927
+            ],
+            [
+              "oversized",
+              0.0606
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_31.jpg",
+          "style": "butterfly",
+          "confidence": 0.7403,
+          "raw_cos": 0.3145,
+          "top3": [
+            [
+              "butterfly",
+              0.7403
+            ],
+            [
+              "oversized",
+              0.2103
+            ],
+            [
+              "oval",
+              0.0283
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_23.jpg",
+          "style": "butterfly",
+          "confidence": 0.739,
+          "raw_cos": 0.3223,
+          "top3": [
+            [
+              "butterfly",
+              0.739
+            ],
+            [
+              "oval",
+              0.1387
+            ],
+            [
+              "square",
+              0.0312
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_18.jpg",
+          "style": "butterfly",
+          "confidence": 0.6989,
+          "raw_cos": 0.3205,
+          "top3": [
+            [
+              "butterfly",
+              0.6989
+            ],
+            [
+              "oversized",
+              0.1526
+            ],
+            [
+              "hexagonal",
+              0.0379
+            ]
+          ]
+        }
+      ],
+      "browline": [],
+      "navigator": [
+        {
+          "filename": "Bottega_84.jpg",
+          "style": "navigator",
+          "confidence": 0.9512,
+          "raw_cos": 0.3718,
+          "top3": [
+            [
+              "navigator",
+              0.9512
+            ],
+            [
+              "square",
+              0.0231
+            ],
+            [
+              "rectangular",
+              0.0119
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_17.jpg",
+          "style": "navigator",
+          "confidence": 0.9508,
+          "raw_cos": 0.3567,
+          "top3": [
+            [
+              "navigator",
+              0.9508
+            ],
+            [
+              "rectangular",
+              0.0118
+            ],
+            [
+              "square",
+              0.011
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_27.jpg",
+          "style": "navigator",
+          "confidence": 0.7467,
+          "raw_cos": 0.3489,
+          "top3": [
+            [
+              "navigator",
+              0.7467
+            ],
+            [
+              "hexagonal",
+              0.0969
+            ],
+            [
+              "square",
+              0.0368
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_71.jpg",
+          "style": "navigator",
+          "confidence": 0.7149,
+          "raw_cos": 0.3395,
+          "top3": [
+            [
+              "navigator",
+              0.7149
+            ],
+            [
+              "square",
+              0.1276
+            ],
+            [
+              "rectangular",
+              0.0506
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_86.jpg",
+          "style": "navigator",
+          "confidence": 0.4304,
+          "raw_cos": 0.3234,
+          "top3": [
+            [
+              "navigator",
+              0.4304
+            ],
+            [
+              "browline",
+              0.1645
+            ],
+            [
+              "square",
+              0.1608
+            ]
+          ]
+        }
+      ],
+      "oversized": [
+        {
+          "filename": "Bottega_99.jpg",
+          "style": "oversized",
+          "confidence": 0.5761,
+          "raw_cos": 0.3544,
+          "top3": [
+            [
+              "oversized",
+              0.5761
+            ],
+            [
+              "square",
+              0.253
+            ],
+            [
+              "navigator",
+              0.071
+            ]
+          ]
+        }
+      ],
+      "rimless": [],
+      "experimental": [
+        {
+          "filename": "Bottega_8.jpg",
+          "style": "experimental",
+          "confidence": 0.2395,
+          "raw_cos": 0.3196,
+          "top3": [
+            [
+              "oversized",
+              0.2395
+            ],
+            [
+              "hexagonal",
+              0.1822
+            ],
+            [
+              "rectangular",
+              0.1528
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_52.jpg",
+          "style": "experimental",
+          "confidence": 0.2396,
+          "raw_cos": 0.3171,
+          "top3": [
+            [
+              "butterfly",
+              0.2396
+            ],
+            [
+              "oversized",
+              0.2213
+            ],
+            [
+              "square",
+              0.1788
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_46.jpg",
+          "style": "experimental",
+          "confidence": 0.255,
+          "raw_cos": 0.3243,
+          "top3": [
+            [
+              "rectangular",
+              0.255
+            ],
+            [
+              "square",
+              0.2064
+            ],
+            [
+              "butterfly",
+              0.1727
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_94.jpg",
+          "style": "experimental",
+          "confidence": 0.2556,
+          "raw_cos": 0.3078,
+          "top3": [
+            [
+              "butterfly",
+              0.2556
+            ],
+            [
+              "oval",
+              0.2005
+            ],
+            [
+              "oversized",
+              0.164
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_122.jpg",
+          "style": "experimental",
+          "confidence": 0.2683,
+          "raw_cos": 0.3003,
+          "top3": [
+            [
+              "butterfly",
+              0.2683
+            ],
+            [
+              "round",
+              0.2588
+            ],
+            [
+              "oval",
+              0.1879
+            ]
+          ]
+        }
+      ]
+    },
+    "S26": {
+      "cat-eye": [
+        {
+          "filename": "Bottega_107.jpg",
+          "style": "cat-eye",
+          "confidence": 0.8241,
+          "raw_cos": 0.3393,
+          "top3": [
+            [
+              "cat-eye",
+              0.8241
+            ],
+            [
+              "butterfly",
+              0.1154
+            ],
+            [
+              "oval",
+              0.0323
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_36.jpg",
+          "style": "cat-eye",
+          "confidence": 0.7059,
+          "raw_cos": 0.3347,
+          "top3": [
+            [
+              "cat-eye",
+              0.7059
+            ],
+            [
+              "browline",
+              0.1698
+            ],
+            [
+              "butterfly",
+              0.0713
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_129.jpg",
+          "style": "cat-eye",
+          "confidence": 0.6831,
+          "raw_cos": 0.2873,
+          "top3": [
+            [
+              "cat-eye",
+              0.6831
+            ],
+            [
+              "oval",
+              0.1106
+            ],
+            [
+              "butterfly",
+              0.1091
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_73.jpg",
+          "style": "cat-eye",
+          "confidence": 0.5382,
+          "raw_cos": 0.3317,
+          "top3": [
+            [
+              "cat-eye",
+              0.5382
+            ],
+            [
+              "butterfly",
+              0.4089
+            ],
+            [
+              "oversized",
+              0.0373
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_24.jpg",
+          "style": "cat-eye",
+          "confidence": 0.5161,
+          "raw_cos": 0.3268,
+          "top3": [
+            [
+              "cat-eye",
+              0.5161
+            ],
+            [
+              "butterfly",
+              0.3616
+            ],
+            [
+              "oval",
+              0.0811
+            ]
+          ]
+        }
+      ],
+      "aviator": [
+        {
+          "filename": "Bottega_34.jpg",
+          "style": "aviator",
+          "confidence": 0.9791,
+          "raw_cos": 0.3282,
+          "top3": [
+            [
+              "aviator",
+              0.9791
+            ],
+            [
+              "oversized",
+              0.0068
+            ],
+            [
+              "shield",
+              0.0058
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_110.jpg",
+          "style": "aviator",
+          "confidence": 0.8839,
+          "raw_cos": 0.3286,
+          "top3": [
+            [
+              "aviator",
+              0.8839
+            ],
+            [
+              "shield",
+              0.0422
+            ],
+            [
+              "oversized",
+              0.0272
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_127.jpg",
+          "style": "aviator",
+          "confidence": 0.8515,
+          "raw_cos": 0.3321,
+          "top3": [
+            [
+              "aviator",
+              0.8515
+            ],
+            [
+              "oval",
+              0.046
+            ],
+            [
+              "hexagonal",
+              0.0318
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_56.jpg",
+          "style": "aviator",
+          "confidence": 0.8255,
+          "raw_cos": 0.3086,
+          "top3": [
+            [
+              "aviator",
+              0.8255
+            ],
+            [
+              "shield",
+              0.0681
+            ],
+            [
+              "butterfly",
+              0.0372
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_15.jpg",
+          "style": "aviator",
+          "confidence": 0.8233,
+          "raw_cos": 0.3165,
+          "top3": [
+            [
+              "aviator",
+              0.8233
+            ],
+            [
+              "oversized",
+              0.0836
+            ],
+            [
+              "butterfly",
+              0.0603
+            ]
+          ]
+        }
+      ],
+      "square": [
+        {
+          "filename": "Bottega_155.jpg",
+          "style": "square",
+          "confidence": 0.7234,
+          "raw_cos": 0.3264,
+          "top3": [
+            [
+              "square",
+              0.7234
+            ],
+            [
+              "rectangular",
+              0.0924
+            ],
+            [
+              "oversized",
+              0.0808
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_143.jpg",
+          "style": "square",
+          "confidence": 0.7224,
+          "raw_cos": 0.3348,
+          "top3": [
+            [
+              "square",
+              0.7224
+            ],
+            [
+              "rectangular",
+              0.226
+            ],
+            [
+              "oversized",
+              0.0313
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_46.jpg",
+          "style": "square",
+          "confidence": 0.7221,
+          "raw_cos": 0.3196,
+          "top3": [
+            [
+              "square",
+              0.7221
+            ],
+            [
+              "rectangular",
+              0.2166
+            ],
+            [
+              "oversized",
+              0.0199
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_137.jpg",
+          "style": "square",
+          "confidence": 0.7121,
+          "raw_cos": 0.2908,
+          "top3": [
+            [
+              "square",
+              0.7121
+            ],
+            [
+              "rectangular",
+              0.1856
+            ],
+            [
+              "butterfly",
+              0.0322
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_141.jpg",
+          "style": "square",
+          "confidence": 0.7007,
+          "raw_cos": 0.3279,
+          "top3": [
+            [
+              "square",
+              0.7007
+            ],
+            [
+              "rectangular",
+              0.2099
+            ],
+            [
+              "oversized",
+              0.022
+            ]
+          ]
+        }
+      ],
+      "rectangular": [
+        {
+          "filename": "Bottega_35.jpg",
+          "style": "rectangular",
+          "confidence": 0.5436,
+          "raw_cos": 0.343,
+          "top3": [
+            [
+              "rectangular",
+              0.5436
+            ],
+            [
+              "square",
+              0.4223
+            ],
+            [
+              "shield",
+              0.0083
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_108.jpg",
+          "style": "rectangular",
+          "confidence": 0.5112,
+          "raw_cos": 0.3414,
+          "top3": [
+            [
+              "rectangular",
+              0.5112
+            ],
+            [
+              "square",
+              0.2878
+            ],
+            [
+              "butterfly",
+              0.0758
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_98.jpg",
+          "style": "rectangular",
+          "confidence": 0.4515,
+          "raw_cos": 0.3274,
+          "top3": [
+            [
+              "rectangular",
+              0.4515
+            ],
+            [
+              "square",
+              0.3778
+            ],
+            [
+              "butterfly",
+              0.0734
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_16.jpg",
+          "style": "rectangular",
+          "confidence": 0.3051,
+          "raw_cos": 0.3136,
+          "top3": [
+            [
+              "rectangular",
+              0.3051
+            ],
+            [
+              "square",
+              0.2793
+            ],
+            [
+              "oversized",
+              0.236
+            ]
+          ]
+        }
+      ],
+      "round": [
+        {
+          "filename": "Bottega_159.jpg",
+          "style": "round",
+          "confidence": 0.7012,
+          "raw_cos": 0.3099,
+          "top3": [
+            [
+              "round",
+              0.7012
+            ],
+            [
+              "oval",
+              0.1413
+            ],
+            [
+              "octagonal",
+              0.0946
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_88.jpg",
+          "style": "round",
+          "confidence": 0.699,
+          "raw_cos": 0.3213,
+          "top3": [
+            [
+              "round",
+              0.699
+            ],
+            [
+              "square",
+              0.0853
+            ],
+            [
+              "oval",
+              0.0697
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_113.jpg",
+          "style": "round",
+          "confidence": 0.6342,
+          "raw_cos": 0.316,
+          "top3": [
+            [
+              "round",
+              0.6342
+            ],
+            [
+              "oval",
+              0.233
+            ],
+            [
+              "octagonal",
+              0.0393
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_150.jpg",
+          "style": "round",
+          "confidence": 0.6213,
+          "raw_cos": 0.3093,
+          "top3": [
+            [
+              "round",
+              0.6213
+            ],
+            [
+              "oval",
+              0.1903
+            ],
+            [
+              "hexagonal",
+              0.0828
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_139.jpg",
+          "style": "round",
+          "confidence": 0.6151,
+          "raw_cos": 0.3215,
+          "top3": [
+            [
+              "round",
+              0.6151
+            ],
+            [
+              "butterfly",
+              0.1328
+            ],
+            [
+              "oval",
+              0.1015
+            ]
+          ]
+        }
+      ],
+      "oval": [
+        {
+          "filename": "Bottega_48.jpg",
+          "style": "oval",
+          "confidence": 0.8606,
+          "raw_cos": 0.3489,
+          "top3": [
+            [
+              "oval",
+              0.8606
+            ],
+            [
+              "round",
+              0.0954
+            ],
+            [
+              "oversized",
+              0.0105
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_47.jpg",
+          "style": "oval",
+          "confidence": 0.8325,
+          "raw_cos": 0.3376,
+          "top3": [
+            [
+              "oval",
+              0.8325
+            ],
+            [
+              "butterfly",
+              0.0375
+            ],
+            [
+              "cat-eye",
+              0.0372
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_74.jpg",
+          "style": "oval",
+          "confidence": 0.8129,
+          "raw_cos": 0.353,
+          "top3": [
+            [
+              "oval",
+              0.8129
+            ],
+            [
+              "round",
+              0.0983
+            ],
+            [
+              "butterfly",
+              0.0249
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_83.jpg",
+          "style": "oval",
+          "confidence": 0.765,
+          "raw_cos": 0.341,
+          "top3": [
+            [
+              "oval",
+              0.765
+            ],
+            [
+              "round",
+              0.1605
+            ],
+            [
+              "butterfly",
+              0.0217
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_21.jpg",
+          "style": "oval",
+          "confidence": 0.7237,
+          "raw_cos": 0.3361,
+          "top3": [
+            [
+              "oval",
+              0.7237
+            ],
+            [
+              "round",
+              0.19
+            ],
+            [
+              "octagonal",
+              0.0374
+            ]
+          ]
+        }
+      ],
+      "hexagonal": [
+        {
+          "filename": "Bottega_5.jpg",
+          "style": "hexagonal",
+          "confidence": 0.8271,
+          "raw_cos": 0.3842,
+          "top3": [
+            [
+              "hexagonal",
+              0.8271
+            ],
+            [
+              "octagonal",
+              0.1725
+            ],
+            [
+              "navigator",
+              0.0001
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_58.jpg",
+          "style": "hexagonal",
+          "confidence": 0.6639,
+          "raw_cos": 0.3488,
+          "top3": [
+            [
+              "hexagonal",
+              0.6639
+            ],
+            [
+              "octagonal",
+              0.1913
+            ],
+            [
+              "rectangular",
+              0.0575
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_104.jpg",
+          "style": "hexagonal",
+          "confidence": 0.6255,
+          "raw_cos": 0.3848,
+          "top3": [
+            [
+              "hexagonal",
+              0.6255
+            ],
+            [
+              "octagonal",
+              0.3742
+            ],
+            [
+              "navigator",
+              0.0001
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_64.jpg",
+          "style": "hexagonal",
+          "confidence": 0.5772,
+          "raw_cos": 0.3347,
+          "top3": [
+            [
+              "hexagonal",
+              0.5772
+            ],
+            [
+              "butterfly",
+              0.1229
+            ],
+            [
+              "octagonal",
+              0.0964
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_115.jpg",
+          "style": "hexagonal",
+          "confidence": 0.4247,
+          "raw_cos": 0.3287,
+          "top3": [
+            [
+              "hexagonal",
+              0.4247
+            ],
+            [
+              "rectangular",
+              0.1943
+            ],
+            [
+              "octagonal",
+              0.1673
+            ]
+          ]
+        }
+      ],
+      "octagonal": [
+        {
+          "filename": "Bottega_37.jpg",
+          "style": "octagonal",
+          "confidence": 0.3535,
+          "raw_cos": 0.3286,
+          "top3": [
+            [
+              "octagonal",
+              0.3535
+            ],
+            [
+              "hexagonal",
+              0.3022
+            ],
+            [
+              "oval",
+              0.1902
+            ]
+          ]
+        }
+      ],
+      "shield": [
+        {
+          "filename": "Bottega_4.jpg",
+          "style": "shield",
+          "confidence": 0.8143,
+          "raw_cos": 0.3503,
+          "top3": [
+            [
+              "shield",
+              0.8143
+            ],
+            [
+              "mask",
+              0.0926
+            ],
+            [
+              "oversized",
+              0.0817
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_69.jpg",
+          "style": "shield",
+          "confidence": 0.6452,
+          "raw_cos": 0.3349,
+          "top3": [
+            [
+              "shield",
+              0.6452
+            ],
+            [
+              "mask",
+              0.1568
+            ],
+            [
+              "oversized",
+              0.094
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_62.jpg",
+          "style": "shield",
+          "confidence": 0.5951,
+          "raw_cos": 0.3379,
+          "top3": [
+            [
+              "shield",
+              0.5951
+            ],
+            [
+              "mask",
+              0.3109
+            ],
+            [
+              "oversized",
+              0.0784
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_161.jpg",
+          "style": "shield",
+          "confidence": 0.5018,
+          "raw_cos": 0.323,
+          "top3": [
+            [
+              "shield",
+              0.5018
+            ],
+            [
+              "cat-eye",
+              0.2331
+            ],
+            [
+              "butterfly",
+              0.1053
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_33.jpg",
+          "style": "shield",
+          "confidence": 0.5018,
+          "raw_cos": 0.323,
+          "top3": [
+            [
+              "shield",
+              0.5018
+            ],
+            [
+              "cat-eye",
+              0.2331
+            ],
+            [
+              "butterfly",
+              0.1053
+            ]
+          ]
+        }
+      ],
+      "mask": [],
+      "butterfly": [
+        {
+          "filename": "Bottega_57.jpg",
+          "style": "butterfly",
+          "confidence": 0.7259,
+          "raw_cos": 0.3096,
+          "top3": [
+            [
+              "butterfly",
+              0.7259
+            ],
+            [
+              "aviator",
+              0.0877
+            ],
+            [
+              "oval",
+              0.0698
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_52.jpg",
+          "style": "butterfly",
+          "confidence": 0.7235,
+          "raw_cos": 0.3324,
+          "top3": [
+            [
+              "butterfly",
+              0.7235
+            ],
+            [
+              "oval",
+              0.0757
+            ],
+            [
+              "square",
+              0.0584
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_11.jpg",
+          "style": "butterfly",
+          "confidence": 0.6494,
+          "raw_cos": 0.3265,
+          "top3": [
+            [
+              "butterfly",
+              0.6494
+            ],
+            [
+              "cat-eye",
+              0.2641
+            ],
+            [
+              "oval",
+              0.0357
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_59.jpg",
+          "style": "butterfly",
+          "confidence": 0.6404,
+          "raw_cos": 0.3162,
+          "top3": [
+            [
+              "butterfly",
+              0.6404
+            ],
+            [
+              "hexagonal",
+              0.1799
+            ],
+            [
+              "octagonal",
+              0.0675
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_49.jpg",
+          "style": "butterfly",
+          "confidence": 0.618,
+          "raw_cos": 0.3285,
+          "top3": [
+            [
+              "butterfly",
+              0.618
+            ],
+            [
+              "square",
+              0.1352
+            ],
+            [
+              "oversized",
+              0.0803
+            ]
+          ]
+        }
+      ],
+      "browline": [
+        {
+          "filename": "Bottega_149.jpg",
+          "style": "browline",
+          "confidence": 0.4759,
+          "raw_cos": 0.3046,
+          "top3": [
+            [
+              "browline",
+              0.4759
+            ],
+            [
+              "square",
+              0.3077
+            ],
+            [
+              "rectangular",
+              0.078
+            ]
+          ]
+        }
+      ],
+      "navigator": [
+        {
+          "filename": "Bottega_41.jpg",
+          "style": "navigator",
+          "confidence": 0.6824,
+          "raw_cos": 0.3356,
+          "top3": [
+            [
+              "navigator",
+              0.6824
+            ],
+            [
+              "hexagonal",
+              0.0646
+            ],
+            [
+              "square",
+              0.0587
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_23.jpg",
+          "style": "navigator",
+          "confidence": 0.5255,
+          "raw_cos": 0.3399,
+          "top3": [
+            [
+              "navigator",
+              0.5255
+            ],
+            [
+              "rectangular",
+              0.2482
+            ],
+            [
+              "square",
+              0.1287
+            ]
+          ]
+        }
+      ],
+      "oversized": [
+        {
+          "filename": "Bottega_43.jpg",
+          "style": "oversized",
+          "confidence": 0.4955,
+          "raw_cos": 0.3162,
+          "top3": [
+            [
+              "oversized",
+              0.4955
+            ],
+            [
+              "shield",
+              0.2445
+            ],
+            [
+              "mask",
+              0.1845
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_133.jpg",
+          "style": "oversized",
+          "confidence": 0.4568,
+          "raw_cos": 0.3388,
+          "top3": [
+            [
+              "oversized",
+              0.4568
+            ],
+            [
+              "square",
+              0.343
+            ],
+            [
+              "navigator",
+              0.0816
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_53.jpg",
+          "style": "oversized",
+          "confidence": 0.4478,
+          "raw_cos": 0.3025,
+          "top3": [
+            [
+              "oversized",
+              0.4478
+            ],
+            [
+              "aviator",
+              0.3053
+            ],
+            [
+              "butterfly",
+              0.1497
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_77.jpg",
+          "style": "oversized",
+          "confidence": 0.4269,
+          "raw_cos": 0.3231,
+          "top3": [
+            [
+              "oversized",
+              0.4269
+            ],
+            [
+              "hexagonal",
+              0.1822
+            ],
+            [
+              "shield",
+              0.1076
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_87.jpg",
+          "style": "oversized",
+          "confidence": 0.4157,
+          "raw_cos": 0.3316,
+          "top3": [
+            [
+              "oversized",
+              0.4157
+            ],
+            [
+              "butterfly",
+              0.2709
+            ],
+            [
+              "square",
+              0.2125
+            ]
+          ]
+        }
+      ],
+      "rimless": [],
+      "experimental": [
+        {
+          "filename": "Bottega_138.jpg",
+          "style": "experimental",
+          "confidence": 0.1976,
+          "raw_cos": 0.3056,
+          "top3": [
+            [
+              "oval",
+              0.1976
+            ],
+            [
+              "hexagonal",
+              0.1923
+            ],
+            [
+              "oversized",
+              0.1573
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_106.jpg",
+          "style": "experimental",
+          "confidence": 0.2455,
+          "raw_cos": 0.3105,
+          "top3": [
+            [
+              "square",
+              0.2455
+            ],
+            [
+              "butterfly",
+              0.2184
+            ],
+            [
+              "oval",
+              0.2055
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_6.jpg",
+          "style": "experimental",
+          "confidence": 0.2553,
+          "raw_cos": 0.3227,
+          "top3": [
+            [
+              "oversized",
+              0.2553
+            ],
+            [
+              "square",
+              0.1983
+            ],
+            [
+              "hexagonal",
+              0.1842
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_2.jpg",
+          "style": "experimental",
+          "confidence": 0.2679,
+          "raw_cos": 0.3056,
+          "top3": [
+            [
+              "butterfly",
+              0.2679
+            ],
+            [
+              "hexagonal",
+              0.2622
+            ],
+            [
+              "oversized",
+              0.1348
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_38.jpg",
+          "style": "experimental",
+          "confidence": 0.2705,
+          "raw_cos": 0.3255,
+          "top3": [
+            [
+              "rectangular",
+              0.2705
+            ],
+            [
+              "navigator",
+              0.2439
+            ],
+            [
+              "hexagonal",
+              0.2173
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "Dolce & Gabbana": {
+    "F25": {
+      "cat-eye": [],
+      "aviator": [
+        {
+          "filename": "D&G_150.jpg",
+          "style": "aviator",
+          "confidence": 0.8778,
+          "raw_cos": 0.3129,
+          "top3": [
+            [
+              "aviator",
+              0.8778
+            ],
+            [
+              "navigator",
+              0.0801
+            ],
+            [
+              "oversized",
+              0.0252
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_94.jpg",
+          "style": "aviator",
+          "confidence": 0.4771,
+          "raw_cos": 0.3076,
+          "top3": [
+            [
+              "aviator",
+              0.4771
+            ],
+            [
+              "navigator",
+              0.3122
+            ],
+            [
+              "shield",
+              0.093
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_143.jpg",
+          "style": "aviator",
+          "confidence": 0.4223,
+          "raw_cos": 0.3061,
+          "top3": [
+            [
+              "aviator",
+              0.4223
+            ],
+            [
+              "shield",
+              0.2082
+            ],
+            [
+              "hexagonal",
+              0.1207
+            ]
+          ]
+        }
+      ],
+      "square": [
+        {
+          "filename": "D&G_16.jpg",
+          "style": "square",
+          "confidence": 0.6309,
+          "raw_cos": 0.3247,
+          "top3": [
+            [
+              "square",
+              0.6309
+            ],
+            [
+              "rectangular",
+              0.2397
+            ],
+            [
+              "butterfly",
+              0.0314
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_49.jpg",
+          "style": "square",
+          "confidence": 0.6301,
+          "raw_cos": 0.3351,
+          "top3": [
+            [
+              "square",
+              0.6301
+            ],
+            [
+              "rectangular",
+              0.2229
+            ],
+            [
+              "hexagonal",
+              0.0698
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_156.jpg",
+          "style": "square",
+          "confidence": 0.5898,
+          "raw_cos": 0.3204,
+          "top3": [
+            [
+              "square",
+              0.5898
+            ],
+            [
+              "rectangular",
+              0.2721
+            ],
+            [
+              "navigator",
+              0.1034
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_50.jpg",
+          "style": "square",
+          "confidence": 0.5807,
+          "raw_cos": 0.3218,
+          "top3": [
+            [
+              "square",
+              0.5807
+            ],
+            [
+              "rectangular",
+              0.2218
+            ],
+            [
+              "butterfly",
+              0.0792
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_113.jpg",
+          "style": "square",
+          "confidence": 0.5094,
+          "raw_cos": 0.3212,
+          "top3": [
+            [
+              "square",
+              0.5094
+            ],
+            [
+              "rectangular",
+              0.3008
+            ],
+            [
+              "shield",
+              0.0765
+            ]
+          ]
+        }
+      ],
+      "rectangular": [
+        {
+          "filename": "D&G_117.jpg",
+          "style": "rectangular",
+          "confidence": 0.7972,
+          "raw_cos": 0.3365,
+          "top3": [
+            [
+              "rectangular",
+              0.7972
+            ],
+            [
+              "square",
+              0.153
+            ],
+            [
+              "navigator",
+              0.0304
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_160.jpg",
+          "style": "rectangular",
+          "confidence": 0.7637,
+          "raw_cos": 0.3329,
+          "top3": [
+            [
+              "rectangular",
+              0.7637
+            ],
+            [
+              "square",
+              0.2025
+            ],
+            [
+              "shield",
+              0.0078
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_82.jpg",
+          "style": "rectangular",
+          "confidence": 0.728,
+          "raw_cos": 0.3419,
+          "top3": [
+            [
+              "rectangular",
+              0.728
+            ],
+            [
+              "square",
+              0.2123
+            ],
+            [
+              "shield",
+              0.0277
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_105.jpg",
+          "style": "rectangular",
+          "confidence": 0.7273,
+          "raw_cos": 0.3318,
+          "top3": [
+            [
+              "rectangular",
+              0.7273
+            ],
+            [
+              "square",
+              0.2205
+            ],
+            [
+              "oversized",
+              0.0142
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_106.jpg",
+          "style": "rectangular",
+          "confidence": 0.7173,
+          "raw_cos": 0.3474,
+          "top3": [
+            [
+              "rectangular",
+              0.7173
+            ],
+            [
+              "square",
+              0.205
+            ],
+            [
+              "navigator",
+              0.0539
+            ]
+          ]
+        }
+      ],
+      "round": [
+        {
+          "filename": "D&G_148.jpg",
+          "style": "round",
+          "confidence": 0.5631,
+          "raw_cos": 0.3087,
+          "top3": [
+            [
+              "round",
+              0.5631
+            ],
+            [
+              "oval",
+              0.1807
+            ],
+            [
+              "octagonal",
+              0.073
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_147.jpg",
+          "style": "round",
+          "confidence": 0.5111,
+          "raw_cos": 0.3072,
+          "top3": [
+            [
+              "round",
+              0.5111
+            ],
+            [
+              "oval",
+              0.1502
+            ],
+            [
+              "aviator",
+              0.1097
+            ]
+          ]
+        }
+      ],
+      "oval": [],
+      "hexagonal": [
+        {
+          "filename": "D&G_151.jpg",
+          "style": "hexagonal",
+          "confidence": 0.679,
+          "raw_cos": 0.364,
+          "top3": [
+            [
+              "hexagonal",
+              0.679
+            ],
+            [
+              "navigator",
+              0.1998
+            ],
+            [
+              "octagonal",
+              0.1006
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_132.jpg",
+          "style": "hexagonal",
+          "confidence": 0.6789,
+          "raw_cos": 0.3548,
+          "top3": [
+            [
+              "hexagonal",
+              0.6789
+            ],
+            [
+              "octagonal",
+              0.1784
+            ],
+            [
+              "navigator",
+              0.1163
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_119.jpg",
+          "style": "hexagonal",
+          "confidence": 0.4493,
+          "raw_cos": 0.3256,
+          "top3": [
+            [
+              "hexagonal",
+              0.4493
+            ],
+            [
+              "octagonal",
+              0.1907
+            ],
+            [
+              "navigator",
+              0.1799
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_152.jpg",
+          "style": "hexagonal",
+          "confidence": 0.3845,
+          "raw_cos": 0.3562,
+          "top3": [
+            [
+              "hexagonal",
+              0.3845
+            ],
+            [
+              "navigator",
+              0.2889
+            ],
+            [
+              "octagonal",
+              0.272
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_96.jpg",
+          "style": "hexagonal",
+          "confidence": 0.3013,
+          "raw_cos": 0.3019,
+          "top3": [
+            [
+              "hexagonal",
+              0.3013
+            ],
+            [
+              "shield",
+              0.1255
+            ],
+            [
+              "butterfly",
+              0.1123
+            ]
+          ]
+        }
+      ],
+      "octagonal": [],
+      "shield": [
+        {
+          "filename": "D&G_85.jpg",
+          "style": "shield",
+          "confidence": 0.9886,
+          "raw_cos": 0.3695,
+          "top3": [
+            [
+              "shield",
+              0.9886
+            ],
+            [
+              "rimless",
+              0.0038
+            ],
+            [
+              "mask",
+              0.0026
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_86.jpg",
+          "style": "shield",
+          "confidence": 0.9809,
+          "raw_cos": 0.364,
+          "top3": [
+            [
+              "shield",
+              0.9809
+            ],
+            [
+              "mask",
+              0.007
+            ],
+            [
+              "rimless",
+              0.0047
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_2.jpg",
+          "style": "shield",
+          "confidence": 0.9505,
+          "raw_cos": 0.3564,
+          "top3": [
+            [
+              "shield",
+              0.9505
+            ],
+            [
+              "oversized",
+              0.0341
+            ],
+            [
+              "navigator",
+              0.0045
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_88.jpg",
+          "style": "shield",
+          "confidence": 0.9308,
+          "raw_cos": 0.3562,
+          "top3": [
+            [
+              "shield",
+              0.9308
+            ],
+            [
+              "rectangular",
+              0.0221
+            ],
+            [
+              "square",
+              0.0173
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_84.jpg",
+          "style": "shield",
+          "confidence": 0.9218,
+          "raw_cos": 0.358,
+          "top3": [
+            [
+              "shield",
+              0.9218
+            ],
+            [
+              "oversized",
+              0.0336
+            ],
+            [
+              "navigator",
+              0.0165
+            ]
+          ]
+        }
+      ],
+      "mask": [],
+      "butterfly": [
+        {
+          "filename": "D&G_34.jpg",
+          "style": "butterfly",
+          "confidence": 0.364,
+          "raw_cos": 0.2912,
+          "top3": [
+            [
+              "butterfly",
+              0.364
+            ],
+            [
+              "square",
+              0.152
+            ],
+            [
+              "oversized",
+              0.138
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_136.jpg",
+          "style": "butterfly",
+          "confidence": 0.3214,
+          "raw_cos": 0.3156,
+          "top3": [
+            [
+              "butterfly",
+              0.3214
+            ],
+            [
+              "square",
+              0.2577
+            ],
+            [
+              "rectangular",
+              0.1979
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_35.jpg",
+          "style": "butterfly",
+          "confidence": 0.3015,
+          "raw_cos": 0.3122,
+          "top3": [
+            [
+              "butterfly",
+              0.3015
+            ],
+            [
+              "rectangular",
+              0.1901
+            ],
+            [
+              "oversized",
+              0.17
+            ]
+          ]
+        }
+      ],
+      "browline": [
+        {
+          "filename": "D&G_29.jpg",
+          "style": "browline",
+          "confidence": 0.7333,
+          "raw_cos": 0.341,
+          "top3": [
+            [
+              "browline",
+              0.7333
+            ],
+            [
+              "square",
+              0.0948
+            ],
+            [
+              "rectangular",
+              0.0719
+            ]
+          ]
+        }
+      ],
+      "navigator": [
+        {
+          "filename": "D&G_141.jpg",
+          "style": "navigator",
+          "confidence": 0.985,
+          "raw_cos": 0.3626,
+          "top3": [
+            [
+              "navigator",
+              0.985
+            ],
+            [
+              "rectangular",
+              0.0044
+            ],
+            [
+              "square",
+              0.0041
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_6.jpg",
+          "style": "navigator",
+          "confidence": 0.9608,
+          "raw_cos": 0.3613,
+          "top3": [
+            [
+              "navigator",
+              0.9608
+            ],
+            [
+              "hexagonal",
+              0.0112
+            ],
+            [
+              "rectangular",
+              0.0081
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_153.jpg",
+          "style": "navigator",
+          "confidence": 0.9433,
+          "raw_cos": 0.3481,
+          "top3": [
+            [
+              "navigator",
+              0.9433
+            ],
+            [
+              "square",
+              0.0188
+            ],
+            [
+              "aviator",
+              0.0154
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_123.jpg",
+          "style": "navigator",
+          "confidence": 0.9337,
+          "raw_cos": 0.3509,
+          "top3": [
+            [
+              "navigator",
+              0.9337
+            ],
+            [
+              "square",
+              0.0329
+            ],
+            [
+              "rectangular",
+              0.0229
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_125.jpg",
+          "style": "navigator",
+          "confidence": 0.9277,
+          "raw_cos": 0.3324,
+          "top3": [
+            [
+              "navigator",
+              0.9277
+            ],
+            [
+              "aviator",
+              0.0396
+            ],
+            [
+              "square",
+              0.0119
+            ]
+          ]
+        }
+      ],
+      "oversized": [],
+      "rimless": [],
+      "experimental": [
+        {
+          "filename": "D&G_142.jpg",
+          "style": "experimental",
+          "confidence": 0.2299,
+          "raw_cos": 0.3101,
+          "top3": [
+            [
+              "hexagonal",
+              0.2299
+            ],
+            [
+              "aviator",
+              0.2196
+            ],
+            [
+              "octagonal",
+              0.1595
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_33.jpg",
+          "style": "experimental",
+          "confidence": 0.2354,
+          "raw_cos": 0.3194,
+          "top3": [
+            [
+              "rectangular",
+              0.2354
+            ],
+            [
+              "butterfly",
+              0.1807
+            ],
+            [
+              "hexagonal",
+              0.1479
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_22.jpg",
+          "style": "experimental",
+          "confidence": 0.2645,
+          "raw_cos": 0.2944,
+          "top3": [
+            [
+              "navigator",
+              0.2645
+            ],
+            [
+              "oversized",
+              0.2476
+            ],
+            [
+              "rectangular",
+              0.2154
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_45.jpg",
+          "style": "experimental",
+          "confidence": 0.2913,
+          "raw_cos": 0.3051,
+          "top3": [
+            [
+              "hexagonal",
+              0.2913
+            ],
+            [
+              "navigator",
+              0.2817
+            ],
+            [
+              "octagonal",
+              0.1866
+            ]
+          ]
+        }
+      ]
+    },
+    "S26": {
+      "cat-eye": [],
+      "aviator": [
+        {
+          "filename": "D&G_8.jpg",
+          "style": "aviator",
+          "confidence": 0.9474,
+          "raw_cos": 0.2993,
+          "top3": [
+            [
+              "aviator",
+              0.9474
+            ],
+            [
+              "shield",
+              0.0235
+            ],
+            [
+              "butterfly",
+              0.0128
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_15.jpg",
+          "style": "aviator",
+          "confidence": 0.899,
+          "raw_cos": 0.3054,
+          "top3": [
+            [
+              "aviator",
+              0.899
+            ],
+            [
+              "butterfly",
+              0.0463
+            ],
+            [
+              "shield",
+              0.0305
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_9.jpg",
+          "style": "aviator",
+          "confidence": 0.8978,
+          "raw_cos": 0.305,
+          "top3": [
+            [
+              "aviator",
+              0.8978
+            ],
+            [
+              "shield",
+              0.0313
+            ],
+            [
+              "navigator",
+              0.0206
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_10.jpg",
+          "style": "aviator",
+          "confidence": 0.8194,
+          "raw_cos": 0.3109,
+          "top3": [
+            [
+              "aviator",
+              0.8194
+            ],
+            [
+              "shield",
+              0.0771
+            ],
+            [
+              "navigator",
+              0.0608
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_13.jpg",
+          "style": "aviator",
+          "confidence": 0.8065,
+          "raw_cos": 0.299,
+          "top3": [
+            [
+              "aviator",
+              0.8065
+            ],
+            [
+              "butterfly",
+              0.0583
+            ],
+            [
+              "shield",
+              0.054
+            ]
+          ]
+        }
+      ],
+      "square": [
+        {
+          "filename": "D&G_49.jpg",
+          "style": "square",
+          "confidence": 0.5558,
+          "raw_cos": 0.3193,
+          "top3": [
+            [
+              "square",
+              0.5558
+            ],
+            [
+              "rectangular",
+              0.1755
+            ],
+            [
+              "navigator",
+              0.1582
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_96.jpg",
+          "style": "square",
+          "confidence": 0.5089,
+          "raw_cos": 0.3201,
+          "top3": [
+            [
+              "square",
+              0.5089
+            ],
+            [
+              "rectangular",
+              0.3031
+            ],
+            [
+              "shield",
+              0.0751
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_103.jpg",
+          "style": "square",
+          "confidence": 0.4705,
+          "raw_cos": 0.3231,
+          "top3": [
+            [
+              "square",
+              0.4705
+            ],
+            [
+              "rectangular",
+              0.4549
+            ],
+            [
+              "navigator",
+              0.0291
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_104.jpg",
+          "style": "square",
+          "confidence": 0.4576,
+          "raw_cos": 0.3137,
+          "top3": [
+            [
+              "square",
+              0.4576
+            ],
+            [
+              "rectangular",
+              0.4567
+            ],
+            [
+              "navigator",
+              0.0321
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_97.jpg",
+          "style": "square",
+          "confidence": 0.444,
+          "raw_cos": 0.3282,
+          "top3": [
+            [
+              "square",
+              0.444
+            ],
+            [
+              "rectangular",
+              0.3181
+            ],
+            [
+              "oversized",
+              0.0844
+            ]
+          ]
+        }
+      ],
+      "rectangular": [
+        {
+          "filename": "D&G_88.jpg",
+          "style": "rectangular",
+          "confidence": 0.5471,
+          "raw_cos": 0.3302,
+          "top3": [
+            [
+              "rectangular",
+              0.5471
+            ],
+            [
+              "square",
+              0.3078
+            ],
+            [
+              "navigator",
+              0.0957
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_72.jpg",
+          "style": "rectangular",
+          "confidence": 0.5389,
+          "raw_cos": 0.3265,
+          "top3": [
+            [
+              "rectangular",
+              0.5389
+            ],
+            [
+              "square",
+              0.2207
+            ],
+            [
+              "navigator",
+              0.1683
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_71.jpg",
+          "style": "rectangular",
+          "confidence": 0.5201,
+          "raw_cos": 0.3311,
+          "top3": [
+            [
+              "rectangular",
+              0.5201
+            ],
+            [
+              "square",
+              0.2496
+            ],
+            [
+              "navigator",
+              0.1558
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_93.jpg",
+          "style": "rectangular",
+          "confidence": 0.5108,
+          "raw_cos": 0.3349,
+          "top3": [
+            [
+              "rectangular",
+              0.5108
+            ],
+            [
+              "shield",
+              0.2172
+            ],
+            [
+              "square",
+              0.1698
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_86.jpg",
+          "style": "rectangular",
+          "confidence": 0.4424,
+          "raw_cos": 0.3401,
+          "top3": [
+            [
+              "rectangular",
+              0.4424
+            ],
+            [
+              "square",
+              0.3909
+            ],
+            [
+              "navigator",
+              0.0991
+            ]
+          ]
+        }
+      ],
+      "round": [
+        {
+          "filename": "D&G_111.jpg",
+          "style": "round",
+          "confidence": 0.5842,
+          "raw_cos": 0.308,
+          "top3": [
+            [
+              "round",
+              0.5842
+            ],
+            [
+              "oval",
+              0.1652
+            ],
+            [
+              "octagonal",
+              0.0796
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_110.jpg",
+          "style": "round",
+          "confidence": 0.5106,
+          "raw_cos": 0.3079,
+          "top3": [
+            [
+              "round",
+              0.5106
+            ],
+            [
+              "oval",
+              0.1422
+            ],
+            [
+              "aviator",
+              0.1083
+            ]
+          ]
+        }
+      ],
+      "oval": [],
+      "hexagonal": [
+        {
+          "filename": "D&G_105.jpg",
+          "style": "hexagonal",
+          "confidence": 0.6755,
+          "raw_cos": 0.3561,
+          "top3": [
+            [
+              "hexagonal",
+              0.6755
+            ],
+            [
+              "octagonal",
+              0.1874
+            ],
+            [
+              "navigator",
+              0.1133
+            ]
+          ]
+        }
+      ],
+      "octagonal": [],
+      "shield": [
+        {
+          "filename": "D&G_59.jpg",
+          "style": "shield",
+          "confidence": 0.9442,
+          "raw_cos": 0.3558,
+          "top3": [
+            [
+              "shield",
+              0.9442
+            ],
+            [
+              "oversized",
+              0.0404
+            ],
+            [
+              "mask",
+              0.0049
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_68.jpg",
+          "style": "shield",
+          "confidence": 0.7948,
+          "raw_cos": 0.3548,
+          "top3": [
+            [
+              "shield",
+              0.7948
+            ],
+            [
+              "oversized",
+              0.134
+            ],
+            [
+              "rectangular",
+              0.0205
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_29.jpg",
+          "style": "shield",
+          "confidence": 0.7585,
+          "raw_cos": 0.3289,
+          "top3": [
+            [
+              "shield",
+              0.7585
+            ],
+            [
+              "mask",
+              0.0899
+            ],
+            [
+              "oversized",
+              0.0558
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_108.jpg",
+          "style": "shield",
+          "confidence": 0.7189,
+          "raw_cos": 0.3381,
+          "top3": [
+            [
+              "shield",
+              0.7189
+            ],
+            [
+              "mask",
+              0.1375
+            ],
+            [
+              "rectangular",
+              0.056
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_45.jpg",
+          "style": "shield",
+          "confidence": 0.672,
+          "raw_cos": 0.3341,
+          "top3": [
+            [
+              "shield",
+              0.672
+            ],
+            [
+              "navigator",
+              0.1329
+            ],
+            [
+              "oversized",
+              0.0965
+            ]
+          ]
+        }
+      ],
+      "mask": [],
+      "butterfly": [
+        {
+          "filename": "D&G_74.jpg",
+          "style": "butterfly",
+          "confidence": 0.3745,
+          "raw_cos": 0.2932,
+          "top3": [
+            [
+              "butterfly",
+              0.3745
+            ],
+            [
+              "square",
+              0.1522
+            ],
+            [
+              "oversized",
+              0.1447
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_106.jpg",
+          "style": "butterfly",
+          "confidence": 0.3301,
+          "raw_cos": 0.3161,
+          "top3": [
+            [
+              "butterfly",
+              0.3301
+            ],
+            [
+              "square",
+              0.2683
+            ],
+            [
+              "rectangular",
+              0.1791
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_75.jpg",
+          "style": "butterfly",
+          "confidence": 0.3279,
+          "raw_cos": 0.3134,
+          "top3": [
+            [
+              "butterfly",
+              0.3279
+            ],
+            [
+              "rectangular",
+              0.182
+            ],
+            [
+              "oversized",
+              0.179
+            ]
+          ]
+        }
+      ],
+      "browline": [],
+      "navigator": [
+        {
+          "filename": "D&G_19.jpg",
+          "style": "navigator",
+          "confidence": 0.9598,
+          "raw_cos": 0.3635,
+          "top3": [
+            [
+              "navigator",
+              0.9598
+            ],
+            [
+              "rectangular",
+              0.0108
+            ],
+            [
+              "shield",
+              0.0085
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_20.jpg",
+          "style": "navigator",
+          "confidence": 0.9556,
+          "raw_cos": 0.3509,
+          "top3": [
+            [
+              "navigator",
+              0.9556
+            ],
+            [
+              "rectangular",
+              0.021
+            ],
+            [
+              "square",
+              0.0182
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_62.jpg",
+          "style": "navigator",
+          "confidence": 0.9537,
+          "raw_cos": 0.3611,
+          "top3": [
+            [
+              "navigator",
+              0.9537
+            ],
+            [
+              "hexagonal",
+              0.0143
+            ],
+            [
+              "rectangular",
+              0.0089
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_22.jpg",
+          "style": "navigator",
+          "confidence": 0.9518,
+          "raw_cos": 0.3565,
+          "top3": [
+            [
+              "navigator",
+              0.9518
+            ],
+            [
+              "rectangular",
+              0.0209
+            ],
+            [
+              "square",
+              0.0142
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_112.jpg",
+          "style": "navigator",
+          "confidence": 0.9448,
+          "raw_cos": 0.3469,
+          "top3": [
+            [
+              "navigator",
+              0.9448
+            ],
+            [
+              "square",
+              0.0181
+            ],
+            [
+              "aviator",
+              0.0156
+            ]
+          ]
+        }
+      ],
+      "oversized": [],
+      "rimless": [],
+      "experimental": [
+        {
+          "filename": "D&G_73.jpg",
+          "style": "experimental",
+          "confidence": 0.1938,
+          "raw_cos": 0.3198,
+          "top3": [
+            [
+              "rectangular",
+              0.1938
+            ],
+            [
+              "hexagonal",
+              0.1822
+            ],
+            [
+              "butterfly",
+              0.1765
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_27.jpg",
+          "style": "experimental",
+          "confidence": 0.2185,
+          "raw_cos": 0.3186,
+          "top3": [
+            [
+              "hexagonal",
+              0.2185
+            ],
+            [
+              "square",
+              0.1672
+            ],
+            [
+              "oversized",
+              0.1617
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_60.jpg",
+          "style": "experimental",
+          "confidence": 0.2611,
+          "raw_cos": 0.2921,
+          "top3": [
+            [
+              "oversized",
+              0.2611
+            ],
+            [
+              "navigator",
+              0.2402
+            ],
+            [
+              "rectangular",
+              0.2191
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_24.jpg",
+          "style": "experimental",
+          "confidence": 0.2696,
+          "raw_cos": 0.3233,
+          "top3": [
+            [
+              "navigator",
+              0.2696
+            ],
+            [
+              "oversized",
+              0.2559
+            ],
+            [
+              "rectangular",
+              0.1321
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_84.jpg",
+          "style": "experimental",
+          "confidence": 0.2823,
+          "raw_cos": 0.325,
+          "top3": [
+            [
+              "rectangular",
+              0.2823
+            ],
+            [
+              "navigator",
+              0.2692
+            ],
+            [
+              "shield",
+              0.2314
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}
