@@ -40,6 +40,7 @@ Run from this directory with the base python (no transformers needed):
     /opt/anaconda3/bin/python style_clusters_with_colors.py
 """
 
+import hashlib
 import json
 from collections import Counter
 from pathlib import Path
@@ -79,6 +80,30 @@ def load_palettes(brand_label: str, season: str) -> dict[str, list]:
                 for c in palette if c["coverage"] >= MIN_COLOR_COVERAGE]
         out[fname] = kept
     return out
+
+
+def build_duplicate_map(brand: str, season: str) -> set[str]:
+    """Returns a set of filenames that are byte-duplicates of an earlier file
+    (in alphabetical order) within the same (brand, season). The scraper
+    occasionally saved the same product photo under two SKU-style names —
+    Bottega_161 ≡ Bottega_33 and Bottega_162 ≡ Bottega_42 in S26 — and
+    those shouldn't repeat in the cluster's product grid.
+    """
+    if season == "S26":
+        brand_dir = "snapshots/S26/raw/bottega" if "Bottega" in brand else "snapshots/S26/raw/dg"
+        folder = Path("/Users/benja/Tesi-BADS2025") / brand_dir
+    else:
+        brand_dir = "images_bottega" if "Bottega" in brand else "images_D&G"
+        folder = Path("/Users/benja/Tesi-BADS2025") / brand_dir
+    seen_hashes: dict[str, str] = {}
+    drop: set[str] = set()
+    for p in sorted(folder.glob("*.jpg")):
+        h = hashlib.md5(p.read_bytes()).hexdigest()
+        if h in seen_hashes:
+            drop.add(p.name)
+        else:
+            seen_hashes[h] = p.name
+    return drop
 
 
 def build_image_url_map(brand: str, season: str) -> dict[str, str]:
@@ -135,9 +160,12 @@ def aggregate_cluster_colors(products: list[str], palettes: dict[str, list]) -> 
 
 
 def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
-    palettes = load_palettes(brand, season)
-    url_map  = build_image_url_map(brand, season)
-    products = assignments[brand][season]
+    palettes  = load_palettes(brand, season)
+    url_map   = build_image_url_map(brand, season)
+    drop_set  = build_duplicate_map(brand, season)
+    # Drop byte-duplicate filenames from the product list before counting,
+    # picking a hero, or aggregating colours.
+    products  = [p for p in assignments[brand][season] if p["filename"] not in drop_set]
 
     # Hero pick rules:
     #   • Named silhouettes: highest top-1 softmax confidence — the most

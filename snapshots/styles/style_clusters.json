@@ -1512,12 +1512,12 @@
       ]
     },
     "S26": {
-      "n_total": 162,
+      "n_total": 160,
       "clusters": [
         {
           "style": "square",
           "count": 28,
-          "share_pct": 17.3,
+          "share_pct": 17.5,
           "hero_filename": "Bottega_155.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_155.jpg",
           "hero_confidence": 0.7598,
@@ -1790,7 +1790,7 @@
         {
           "style": "oval",
           "count": 27,
-          "share_pct": 16.7,
+          "share_pct": 16.9,
           "hero_filename": "Bottega_48.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_48.jpg",
           "hero_confidence": 0.8697,
@@ -2063,7 +2063,7 @@
         {
           "style": "round",
           "count": 16,
-          "share_pct": 9.9,
+          "share_pct": 10.0,
           "hero_filename": "Bottega_88.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_88.jpg",
           "hero_confidence": 0.7122,
@@ -2234,7 +2234,7 @@
         {
           "style": "cat-eye",
           "count": 15,
-          "share_pct": 9.3,
+          "share_pct": 9.4,
           "hero_filename": "Bottega_107.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_107.jpg",
           "hero_confidence": 0.9317,
@@ -2405,7 +2405,7 @@
         {
           "style": "aviator",
           "count": 14,
-          "share_pct": 8.6,
+          "share_pct": 8.8,
           "hero_filename": "Bottega_110.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_110.jpg",
           "hero_confidence": 0.8955,
@@ -2570,7 +2570,7 @@
         {
           "style": "hexagonal",
           "count": 11,
-          "share_pct": 6.8,
+          "share_pct": 6.9,
           "hero_filename": "Bottega_58.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_58.jpg",
           "hero_confidence": 0.6739,
@@ -2705,7 +2705,7 @@
         {
           "style": "oversized",
           "count": 11,
-          "share_pct": 6.8,
+          "share_pct": 6.9,
           "hero_filename": "Bottega_87.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_87.jpg",
           "hero_confidence": 0.5701,
@@ -2851,8 +2851,8 @@
         },
         {
           "style": "shield",
-          "count": 9,
-          "share_pct": 5.6,
+          "count": 8,
+          "share_pct": 5.0,
           "hero_filename": "Bottega_4.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_4.jpg",
           "hero_confidence": 0.8151,
@@ -2879,12 +2879,6 @@
             {
               "filename": "Bottega_161.jpg",
               "url": "/snapshots/S26/bottega/Bottega_161.jpg",
-              "confidence": 0.5609,
-              "rarity": 0.2264
-            },
-            {
-              "filename": "Bottega_33.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_33.jpg",
               "confidence": 0.5609,
               "rarity": 0.2264
             },
@@ -2917,72 +2911,72 @@
             {
               "hex": "#171614",
               "name": "black",
-              "count": 7,
-              "share_pct": 77.8
+              "count": 6,
+              "share_pct": 75.0
             },
             {
               "hex": "#3c3b3b",
               "name": "dark_grey",
-              "count": 7,
-              "share_pct": 77.8
+              "count": 6,
+              "share_pct": 75.0
             },
             {
               "hex": "#a0a19f",
               "name": "grey",
               "count": 3,
-              "share_pct": 33.3
+              "share_pct": 37.5
             },
             {
               "hex": "#e8c78b",
               "name": "peach",
               "count": 2,
-              "share_pct": 22.2
-            },
-            {
-              "hex": "#207f74",
-              "name": "turquoise",
-              "count": 2,
-              "share_pct": 22.2
+              "share_pct": 25.0
             },
             {
               "hex": "#8d1f1d",
               "name": "red",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
             },
             {
               "hex": "#6f201d",
               "name": "burgundy",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
             },
             {
               "hex": "#e09d87",
               "name": "pink",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
+            },
+            {
+              "hex": "#207f74",
+              "name": "turquoise",
+              "count": 1,
+              "share_pct": 12.5
             },
             {
               "hex": "#baa45a",
               "name": "yellow",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
             },
             {
               "hex": "#a28a48",
               "name": "tortoise",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
             },
             {
               "hex": "#3f2e13",
               "name": "brown",
               "count": 1,
-              "share_pct": 11.1
+              "share_pct": 12.5
             }
           ],
           "signature": false,
-          "delta_vs_F25": 6
+          "delta_vs_F25": 5
         },
         {
           "style": "rectangular",
@@ -3048,57 +3042,6 @@
           "delta_vs_F25": -2
         },
         {
-          "style": "mask",
-          "count": 2,
-          "share_pct": 1.2,
-          "hero_filename": "Bottega_162.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_162.jpg",
-          "hero_confidence": 0.3218,
-          "hero_rarity": 0.2276,
-          "products": [
-            {
-              "filename": "Bottega_162.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_162.jpg",
-              "confidence": 0.3218,
-              "rarity": 0.2276
-            },
-            {
-              "filename": "Bottega_42.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_42.jpg",
-              "confidence": 0.3218,
-              "rarity": 0.2276
-            }
-          ],
-          "colors": [
-            {
-              "hex": "#c8c5bc",
-              "name": "light_grey",
-              "count": 2,
-              "share_pct": 100.0
-            },
-            {
-              "hex": "#c4aa89",
-              "name": "orange",
-              "count": 2,
-              "share_pct": 100.0
-            },
-            {
-              "hex": "#ccbfab",
-              "name": "peach",
-              "count": 2,
-              "share_pct": 100.0
-            },
-            {
-              "hex": "#9a7f64",
-              "name": "tortoise",
-              "count": 1,
-              "share_pct": 50.0
-            }
-          ],
-          "signature": false,
-          "delta_vs_F25": 2
-        },
-        {
           "style": "navigator",
           "count": 2,
           "share_pct": 1.2,
@@ -3156,6 +3099,51 @@
           "delta_vs_F25": -2
         },
         {
+          "style": "mask",
+          "count": 1,
+          "share_pct": 0.6,
+          "hero_filename": "Bottega_162.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_162.jpg",
+          "hero_confidence": 0.3218,
+          "hero_rarity": 0.2276,
+          "products": [
+            {
+              "filename": "Bottega_162.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_162.jpg",
+              "confidence": 0.3218,
+              "rarity": 0.2276
+            }
+          ],
+          "colors": [
+            {
+              "hex": "#c8c5bc",
+              "name": "light_grey",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#c4aa89",
+              "name": "orange",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#9a7f64",
+              "name": "tortoise",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#ccbfab",
+              "name": "peach",
+              "count": 1,
+              "share_pct": 100.0
+            }
+          ],
+          "signature": false,
+          "delta_vs_F25": 1
+        },
+        {
           "style": "octagonal",
           "count": 1,
           "share_pct": 0.6,
@@ -3197,7 +3185,7 @@
         {
           "style": "signature",
           "count": 23,
-          "share_pct": 14.2,
+          "share_pct": 14.4,
           "hero_filename": "Bottega_59.jpg",
           "hero_url": "/snapshots/S26/bottega/Bottega_59.jpg",
           "hero_confidence": 0.5004,
