@@ -50,6 +50,12 @@ PALETTES_F25  = REPO_ROOT / "palettes_all_brands_v2.json"
 PALETTES_S26  = REPO_ROOT / "palettes_S26.json"
 OUT_FILE      = REPO_ROOT / "snapshots" / "styles" / "style_clusters.json"
 
+# Where the frontend serves images from. Scanned at build time to translate
+# a bare filename ("Bottega_107.jpg") into a real URL the browser can load
+# (e.g. "/brands/bottega_veneta/7/Bottega_107.jpg"). F25 images are nested
+# under the thesis cluster id; S26 are flat.
+FRONTEND_PUBLIC = Path("/Users/benja/conan-insight-hub/public")
+
 # Per-product palette covers ALL colors at >= this fraction of the image.
 # Below this we consider it noise (e.g., shadows, background bleed).
 MIN_COLOR_COVERAGE = 0.05
@@ -73,6 +79,29 @@ def load_palettes(brand_label: str, season: str) -> dict[str, list]:
                 for c in palette if c["coverage"] >= MIN_COLOR_COVERAGE]
         out[fname] = kept
     return out
+
+
+def build_image_url_map(brand: str, season: str) -> dict[str, str]:
+    """Returns {filename → public URL path} by scanning the frontend's public/ tree.
+
+    Conventions inferred from existing layout:
+      F25 Bottega → public/brands/bottega_veneta/<thesis-cluster-id>/<file>
+      F25 D&G    → public/brands/dolce_and_gabbana/<thesis-cluster-id>/<file>
+      S26 Bottega → public/snapshots/S26/bottega/<file>
+      S26 D&G    → public/snapshots/S26/dg/<file>
+    """
+    if season == "S26":
+        brand_dir = "bottega" if "Bottega" in brand else "dg"
+        folder = FRONTEND_PUBLIC / "snapshots" / "S26" / brand_dir
+        return {p.name: f"/snapshots/S26/{brand_dir}/{p.name}" for p in folder.glob("*.jpg")}
+    # F25 — walk all cluster subfolders
+    brand_dir = "bottega_veneta" if "Bottega" in brand else "dolce_and_gabbana"
+    root = FRONTEND_PUBLIC / "brands" / brand_dir
+    url_map = {}
+    for p in root.rglob("*.jpg"):
+        rel = p.relative_to(FRONTEND_PUBLIC)
+        url_map[p.name] = "/" + str(rel).replace("\\", "/")
+    return url_map
 
 
 def aggregate_cluster_colors(products: list[str], palettes: dict[str, list]) -> list[dict]:
@@ -107,22 +136,46 @@ def aggregate_cluster_colors(products: list[str], palettes: dict[str, list]) -> 
 
 def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
     palettes = load_palettes(brand, season)
+    url_map  = build_image_url_map(brand, season)
     products = assignments[brand][season]
 
-    by_style: dict[str, list[str]] = {}
+    # Per-style: list of {filename, confidence}.  Confidence is FashionCLIP's
+    # top-1 softmax probability, so the most-confident member of each cluster
+    # is the most "textbook" example of that silhouette — the right hero
+    # image. For "experimental" we flip and pick the LEAST confident, because
+    # those are the most editorially interesting outliers.
+    by_style: dict[str, list[dict]] = {}
     for prod in products:
-        by_style.setdefault(prod["style"], []).append(prod["filename"])
+        by_style.setdefault(prod["style"], []).append(prod)
 
     n_total = len(products)
     clusters = []
-    for style, fnames in by_style.items():
+    for style, prods in by_style.items():
+        experimental = style == "experimental"
+        sorted_prods = sorted(
+            prods,
+            key=lambda p: p["confidence"],
+            reverse=not experimental,
+        )
+        hero = sorted_prods[0]
+        product_rows = [
+            {
+                "filename":   p["filename"],
+                "url":        url_map.get(p["filename"], ""),
+                "confidence": p["confidence"],
+            }
+            for p in sorted_prods
+        ]
         clusters.append({
-            "style":         style,
-            "count":         len(fnames),
-            "share_pct":     round(len(fnames) / n_total * 100, 1),
-            "products":      sorted(fnames),
-            "colors":        aggregate_cluster_colors(fnames, palettes),
-            "experimental":  style == "experimental",
+            "style":           style,
+            "count":           len(prods),
+            "share_pct":       round(len(prods) / n_total * 100, 1),
+            "hero_filename":   hero["filename"],
+            "hero_url":        url_map.get(hero["filename"], ""),
+            "hero_confidence": hero["confidence"],
+            "products":        product_rows,
+            "colors":          aggregate_cluster_colors([p["filename"] for p in prods], palettes),
+            "experimental":    experimental,
         })
     # Sort by count desc, but pin "experimental" to the end so the editorial
     # reading is "main styles first, then weird ones".
