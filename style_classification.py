@@ -34,10 +34,17 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_ID = "patrickjohncyh/fashion-clip"
 DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
 
-# Eyewear style taxonomy — 15 buckets. Key = label for the frontend,
-# value = FashionCLIP prompt. We split "geometric" into hexagonal/octagonal
-# (the model can distinguish them) and add butterfly/browline/mask/navigator
-# for luxury-eyewear vocabulary that's editorially distinct.
+# Eyewear style taxonomy. Key = label for the frontend, value = FashionCLIP
+# prompt. We split "geometric" into hexagonal/octagonal (the model can
+# distinguish them) and add browline/mask/navigator for luxury-eyewear
+# vocabulary that's editorially distinct.
+#
+# "butterfly" was tried but didn't survive a visual audit — FashionCLIP
+# uses it as a soft attractor for "wide feminine shapes that aren't strictly
+# cat-eye or oval", so the resulting bucket mixes heart-shaped, oversized
+# rounded, and brand-unique pieces. Removing it sends genuine wide-rounded
+# pieces to oval/oversized and unique pieces to the experimental bucket —
+# editorially cleaner.
 STYLE_PROMPTS = {
     "cat-eye":      "cat eye sunglasses",
     "aviator":      "aviator sunglasses",
@@ -49,18 +56,34 @@ STYLE_PROMPTS = {
     "octagonal":    "octagonal frame sunglasses",
     "shield":       "shield wraparound sunglasses",
     "mask":         "single lens visor mask sunglasses",
-    "butterfly":    "butterfly frame sunglasses",
     "browline":     "browline clubmaster sunglasses",
     "navigator":    "navigator rounded square sunglasses",
     "oversized":    "oversized sunglasses",
     "rimless":      "rimless metal sunglasses",
 }
 
-# Below this top-1 softmax confidence, the product is marked as
-# "experimental" — i.e., the model is not sure it belongs to any of
-# the named buckets, which is exactly the "weird ones cluster" the user
-# wants to surface separately.
-EXPERIMENTAL_CONF_THRESHOLD = 0.30
+# A product goes to the "signature" bucket — the maison's distinctive
+# pieces, things only this house would make — if ANY of these are true:
+#
+#   1. top-1 softmax confidence < SIGNATURE_CONF_THRESHOLD: the silhouette
+#      classifier has no strong opinion at all, so the product doesn't fit
+#      any named silhouette template cleanly.
+#   2. top1 – top2 < SIGNATURE_MARGIN_THRESHOLD: a technical tie between
+#      two silhouettes, i.e. a cross-style hybrid.
+#   3. intra-season rarity (1 – mean cos sim against own brand·season
+#      catalogue) above the per-catalogue P{RARITY_PERCENTILE} cutoff: the
+#      product looks unlike anything else THIS maison is shipping this
+#      season. This is the rule that catches Bottega's heart-shaped pieces
+#      and floral-embellished frames — silhouette-wise they look like
+#      "oversized" or "hexagonal" to FashionCLIP, but they are visually
+#      isolated within Bottega's own catalogue, which is exactly what
+#      "exclusive to the maison" means editorially.
+#
+# Together rules 1 + 2 catch ambiguous classifications; rule 3 catches
+# brand-signature pieces the silhouette taxonomy can't see.
+SIGNATURE_CONF_THRESHOLD   = 0.20  # below 3× random baseline (1/14 ≈ 0.07)
+SIGNATURE_MARGIN_THRESHOLD = 0.05  # virtual tie between top-1 and top-2
+RARITY_PERCENTILE          = 0.93  # top ~7% most visually isolated
 
 # (brand_label, season_label, fashionclip_embed_filename, image_folder)
 SOURCES = [
@@ -83,6 +106,20 @@ def encode_text(model, processor, prompts: list[str]) -> torch.Tensor:
     pooled = text_out.pooler_output
     feats = model.text_projection(pooled)
     return feats.detach().cpu()
+
+
+def intra_season_rarity(img_emb_l2: torch.Tensor) -> torch.Tensor:
+    """1 - average cos sim against every OTHER product in the same season.
+
+    img_emb_l2 must already be L2-normalised, shape (N, D). The output is
+    shape (N,): higher values mean the product is visually further from
+    everything else in its own catalogue — i.e., a brand-signature outlier.
+    """
+    sims = img_emb_l2 @ img_emb_l2.T  # (N, N)
+    n = sims.shape[0]
+    mask = ~torch.eye(n, dtype=torch.bool)
+    mean_sim = (sims * mask).sum(dim=1) / mask.sum(dim=1)
+    return 1.0 - mean_sim
 
 
 def main():
@@ -115,21 +152,42 @@ def main():
 
         top_vals, top_idx = probs.topk(3, dim=1)
 
+        # Intra-season rarity: how visually distant is each product from the
+        # rest of its OWN brand·season catalogue. Top 10% by this score get
+        # promoted to "signature" regardless of how confidently the silhouette
+        # classifier wanted to label them.
+        rarity      = intra_season_rarity(img_emb)
+        rarity_cut  = rarity.quantile(RARITY_PERCENTILE).item()
+
         products = []
         for i, p in enumerate(img_paths):
             top3 = [(style_keys[j], round(top_vals[i, k].item(), 4))
                     for k, j in enumerate(top_idx[i].tolist())]
-            assigned = top3[0][0] if top3[0][1] >= EXPERIMENTAL_CONF_THRESHOLD else "experimental"
+            top1_conf = top3[0][1]
+            top2_conf = top3[1][1] if len(top3) > 1 else 0.0
+            margin    = top1_conf - top2_conf
+            rare_i    = rarity[i].item()
+
+            low_conf     = top1_conf < SIGNATURE_CONF_THRESHOLD
+            tied         = margin    < SIGNATURE_MARGIN_THRESHOLD
+            isolated     = rare_i    > rarity_cut
+
+            if low_conf or tied or isolated:
+                assigned = "signature"
+            else:
+                assigned = top3[0][0]
+
             products.append({
                 "filename":   p.name,
                 "style":      assigned,
                 "confidence": top3[0][1],
                 "raw_cos":    round(sims[i, top_idx[i, 0]].item(), 4),
+                "rarity":     round(rare_i, 4),
                 "top3":       top3,
             })
         assignments.setdefault(brand, {})[season] = products
 
-        counts = {k: 0 for k in style_keys + ["experimental"]}
+        counts = {k: 0 for k in style_keys + ["signature"]}
         for prod in products:
             counts[prod["style"]] += 1
         n = len(products)
@@ -146,7 +204,7 @@ def main():
 
     print()
     # S26 vs F25 absolute count delta per brand
-    all_buckets = style_keys + ["experimental"]
+    all_buckets = style_keys + ["signature"]
     for brand in aggregates:
         if "F25" in aggregates[brand] and "S26" in aggregates[brand]:
             f25 = aggregates[brand]["F25"]["by_style"]
@@ -158,19 +216,20 @@ def main():
                   + "  ".join(f"{k}{v:+d}" for k, v in growth if v))
 
     # Validation aid — top-5 most confident assignments per style, per
-    # (brand, season). Eyeball this to confirm prompts are sensible.
-    # Experimental gets LOWEST-confidence members instead (they're the
-    # actual ambiguous cases — most editorially interesting).
+    # (brand, season). Eyeball this to confirm prompts are sensible. The
+    # "signature" bucket is sorted by rarity (most isolated first) since
+    # that is what makes them editorially interesting — the most distinctive
+    # member of the maison's signature appears first.
     validation: dict = {}
     for brand in assignments:
         validation[brand] = {}
         for season in assignments[brand]:
-            per_style = {k: [] for k in style_keys + ["experimental"]}
+            per_style = {k: [] for k in style_keys + ["signature"]}
             for prod in assignments[brand][season]:
                 per_style[prod["style"]].append(prod)
             for style, prods in per_style.items():
-                if style == "experimental":
-                    prods.sort(key=lambda x: x["confidence"])
+                if style == "signature":
+                    prods.sort(key=lambda x: x.get("rarity", 0), reverse=True)
                 else:
                     prods.sort(key=lambda x: x["confidence"], reverse=True)
                 per_style[style] = prods[:5]

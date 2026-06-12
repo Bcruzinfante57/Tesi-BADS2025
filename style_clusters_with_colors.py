@@ -139,11 +139,12 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
     url_map  = build_image_url_map(brand, season)
     products = assignments[brand][season]
 
-    # Per-style: list of {filename, confidence}.  Confidence is FashionCLIP's
-    # top-1 softmax probability, so the most-confident member of each cluster
-    # is the most "textbook" example of that silhouette — the right hero
-    # image. For "experimental" we flip and pick the LEAST confident, because
-    # those are the most editorially interesting outliers.
+    # Hero pick rules:
+    #   • Named silhouettes: highest top-1 softmax confidence — the most
+    #     "textbook" example of the silhouette.
+    #   • Signature bucket: highest intra-season rarity — the product
+    #     least similar to anything else in the maison's own catalogue,
+    #     i.e., the boldest editorial signature.
     by_style: dict[str, list[dict]] = {}
     for prod in products:
         by_style.setdefault(prod["style"], []).append(prod)
@@ -151,18 +152,18 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
     n_total = len(products)
     clusters = []
     for style, prods in by_style.items():
-        experimental = style == "experimental"
-        sorted_prods = sorted(
-            prods,
-            key=lambda p: p["confidence"],
-            reverse=not experimental,
-        )
+        is_signature = style == "signature"
+        if is_signature:
+            sorted_prods = sorted(prods, key=lambda p: p.get("rarity", 0), reverse=True)
+        else:
+            sorted_prods = sorted(prods, key=lambda p: p["confidence"], reverse=True)
         hero = sorted_prods[0]
         product_rows = [
             {
                 "filename":   p["filename"],
                 "url":        url_map.get(p["filename"], ""),
                 "confidence": p["confidence"],
+                "rarity":     p.get("rarity", 0),
             }
             for p in sorted_prods
         ]
@@ -173,13 +174,15 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
             "hero_filename":   hero["filename"],
             "hero_url":        url_map.get(hero["filename"], ""),
             "hero_confidence": hero["confidence"],
+            "hero_rarity":     hero.get("rarity", 0),
             "products":        product_rows,
             "colors":          aggregate_cluster_colors([p["filename"] for p in prods], palettes),
-            "experimental":    experimental,
+            "signature":       is_signature,
         })
-    # Sort by count desc, but pin "experimental" to the end so the editorial
-    # reading is "main styles first, then weird ones".
-    clusters.sort(key=lambda c: (c["experimental"], -c["count"]))
+    # Sort by count desc; pin "signature" to the end so the editorial
+    # reading is "main silhouettes first, then the maison's distinctive
+    # pieces as a closing showcase".
+    clusters.sort(key=lambda c: (c["signature"], -c["count"]))
     return clusters
 
 
