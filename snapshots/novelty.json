@@ -1,0 +1,4248 @@
+{
+  "Bottega Veneta": {
+    "matching": {
+      "new_threshold": 0.8472,
+      "discontinued_threshold": 0.8847,
+      "threshold_method": "per-brand p20 of best-match cos sim",
+      "n_f25": 123,
+      "n_s26": 160,
+      "n_new": 32,
+      "n_hit": 8,
+      "n_discontinued": 25
+    },
+    "new_products": [
+      {
+        "filename": "Bottega_118.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_118.jpg",
+        "novelty_score": 0.2329,
+        "best_match_filename": "Bottega_82.jpg",
+        "best_match_url": "/brands/bottega_veneta/7/Bottega_82.jpg",
+        "best_match_cos": 0.7671,
+        "intra_season_rarity": 0.2769,
+        "hit_score": 0.2505,
+        "is_hit": true,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#efecdb",
+            "name": "white",
+            "coverage": 0.3484
+          },
+          {
+            "hex": "#9b7756",
+            "name": "tortoise",
+            "coverage": 0.0956
+          },
+          {
+            "hex": "#8c6948",
+            "name": "tortoise",
+            "coverage": 0.0953
+          },
+          {
+            "hex": "#7b5836",
+            "name": "tortoise",
+            "coverage": 0.0825
+          },
+          {
+            "hex": "#dbdbd5",
+            "name": "light_grey",
+            "coverage": 0.0779
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_162.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_162.jpg",
+        "novelty_score": 0.2277,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.7723,
+        "intra_season_rarity": 0.2296,
+        "hit_score": 0.2284,
+        "is_hit": true,
+        "style": "mask",
+        "colors": [
+          {
+            "hex": "#c8c5bc",
+            "name": "light_grey",
+            "coverage": 0.4873
+          },
+          {
+            "hex": "#c4aa89",
+            "name": "orange",
+            "coverage": 0.0885
+          },
+          {
+            "hex": "#b3997b",
+            "name": "orange",
+            "coverage": 0.079
+          },
+          {
+            "hex": "#baa890",
+            "name": "orange",
+            "coverage": 0.0776
+          },
+          {
+            "hex": "#9a7f64",
+            "name": "tortoise",
+            "coverage": 0.074
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_122.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_122.jpg",
+        "novelty_score": 0.2186,
+        "best_match_filename": "Bottega_94.jpg",
+        "best_match_url": "/brands/bottega_veneta/9/Bottega_94.jpg",
+        "best_match_cos": 0.7814,
+        "intra_season_rarity": 0.2427,
+        "hit_score": 0.2283,
+        "is_hit": true,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#8d1f1d",
+            "name": "red",
+            "coverage": 0.126
+          },
+          {
+            "hex": "#a51519",
+            "name": "red",
+            "coverage": 0.1119
+          },
+          {
+            "hex": "#6f201d",
+            "name": "burgundy",
+            "coverage": 0.1064
+          },
+          {
+            "hex": "#b24132",
+            "name": "red",
+            "coverage": 0.1028
+          },
+          {
+            "hex": "#e8c78b",
+            "name": "peach",
+            "coverage": 0.1026
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_70.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_70.jpg",
+        "novelty_score": 0.2135,
+        "best_match_filename": "Bottega_92.jpg",
+        "best_match_url": "/brands/bottega_veneta/5/Bottega_92.jpg",
+        "best_match_cos": 0.7865,
+        "intra_season_rarity": 0.2522,
+        "hit_score": 0.229,
+        "is_hit": true,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#44090f",
+            "name": "burgundy",
+            "coverage": 0.1638
+          },
+          {
+            "hex": "#30080a",
+            "name": "black",
+            "coverage": 0.1625
+          },
+          {
+            "hex": "#210708",
+            "name": "black",
+            "coverage": 0.1053
+          },
+          {
+            "hex": "#590710",
+            "name": "burgundy",
+            "coverage": 0.1038
+          },
+          {
+            "hex": "#bb9194",
+            "name": "pink",
+            "coverage": 0.0913
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_140.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_140.jpg",
+        "novelty_score": 0.2111,
+        "best_match_filename": "Bottega_110.jpg",
+        "best_match_url": "/brands/bottega_veneta/9/Bottega_110.jpg",
+        "best_match_cos": 0.7889,
+        "intra_season_rarity": 0.2873,
+        "hit_score": 0.2416,
+        "is_hit": true,
+        "style": "signature",
+        "colors": [
+          {
+            "hex": "#1c4e3c",
+            "name": "turquoise",
+            "coverage": 0.1423
+          },
+          {
+            "hex": "#1d5d45",
+            "name": "turquoise",
+            "coverage": 0.1309
+          },
+          {
+            "hex": "#cecfcc",
+            "name": "light_grey",
+            "coverage": 0.1243
+          },
+          {
+            "hex": "#617e74",
+            "name": "turquoise",
+            "coverage": 0.1029
+          },
+          {
+            "hex": "#aeb4b0",
+            "name": "light_grey",
+            "coverage": 0.0922
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_161.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_161.jpg",
+        "novelty_score": 0.2103,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.7897,
+        "intra_season_rarity": 0.2284,
+        "hit_score": 0.2175,
+        "is_hit": true,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#181616",
+            "name": "black",
+            "coverage": 0.2519
+          },
+          {
+            "hex": "#242624",
+            "name": "dark_grey",
+            "coverage": 0.1244
+          },
+          {
+            "hex": "#207f74",
+            "name": "turquoise",
+            "coverage": 0.1224
+          },
+          {
+            "hex": "#2c473e",
+            "name": "turquoise",
+            "coverage": 0.0972
+          },
+          {
+            "hex": "#469c8c",
+            "name": "turquoise",
+            "coverage": 0.0795
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_121.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_121.jpg",
+        "novelty_score": 0.2083,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.7917,
+        "intra_season_rarity": 0.2476,
+        "hit_score": 0.224,
+        "is_hit": true,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#b5c9bf",
+            "name": "light_grey",
+            "coverage": 0.1536
+          },
+          {
+            "hex": "#dce4dc",
+            "name": "white",
+            "coverage": 0.1331
+          },
+          {
+            "hex": "#a5bbad",
+            "name": "light_grey",
+            "coverage": 0.1161
+          },
+          {
+            "hex": "#91b9b1",
+            "name": "turquoise",
+            "coverage": 0.1033
+          },
+          {
+            "hex": "#618574",
+            "name": "turquoise",
+            "coverage": 0.1001
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_5.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_5.jpg",
+        "novelty_score": 0.1747,
+        "best_match_filename": "Bottega_90.jpg",
+        "best_match_url": "/brands/bottega_veneta/3/Bottega_90.jpg",
+        "best_match_cos": 0.8253,
+        "intra_season_rarity": 0.2687,
+        "hit_score": 0.2123,
+        "is_hit": true,
+        "style": "hexagonal",
+        "colors": [
+          {
+            "hex": "#cab36d",
+            "name": "yellow",
+            "coverage": 0.2483
+          },
+          {
+            "hex": "#a27f34",
+            "name": "tortoise",
+            "coverage": 0.1978
+          },
+          {
+            "hex": "#906d2b",
+            "name": "tortoise",
+            "coverage": 0.14
+          },
+          {
+            "hex": "#b3974d",
+            "name": "orange",
+            "coverage": 0.1161
+          },
+          {
+            "hex": "#59451f",
+            "name": "brown",
+            "coverage": 0.0569
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_81.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_81.jpg",
+        "novelty_score": 0.2016,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.7984,
+        "intra_season_rarity": 0.2086,
+        "hit_score": 0.2044,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#d1bfb7",
+            "name": "peach",
+            "coverage": 0.1591
+          },
+          {
+            "hex": "#230f0b",
+            "name": "black",
+            "coverage": 0.1128
+          },
+          {
+            "hex": "#c6b0a4",
+            "name": "orange",
+            "coverage": 0.1103
+          },
+          {
+            "hex": "#36140c",
+            "name": "burgundy",
+            "coverage": 0.1075
+          },
+          {
+            "hex": "#522418",
+            "name": "burgundy",
+            "coverage": 0.095
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_80.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_80.jpg",
+        "novelty_score": 0.1908,
+        "best_match_filename": "Bottega_64.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_64.jpg",
+        "best_match_cos": 0.8092,
+        "intra_season_rarity": 0.2279,
+        "hit_score": 0.2056,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#541f1c",
+            "name": "burgundy",
+            "coverage": 0.1695
+          },
+          {
+            "hex": "#b7a39a",
+            "name": "orange",
+            "coverage": 0.1312
+          },
+          {
+            "hex": "#2b1511",
+            "name": "black",
+            "coverage": 0.1101
+          },
+          {
+            "hex": "#431d17",
+            "name": "burgundy",
+            "coverage": 0.11
+          },
+          {
+            "hex": "#c9b9ac",
+            "name": "peach",
+            "coverage": 0.0999
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_43.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_43.jpg",
+        "novelty_score": 0.187,
+        "best_match_filename": "Bottega_24.jpg",
+        "best_match_url": "/brands/bottega_veneta/9/Bottega_24.jpg",
+        "best_match_cos": 0.813,
+        "intra_season_rarity": 0.2446,
+        "hit_score": 0.21,
+        "is_hit": false,
+        "style": "oversized",
+        "colors": [
+          {
+            "hex": "#e8d9c9",
+            "name": "peach",
+            "coverage": 0.1614
+          },
+          {
+            "hex": "#e2b89b",
+            "name": "peach",
+            "coverage": 0.1329
+          },
+          {
+            "hex": "#401c14",
+            "name": "burgundy",
+            "coverage": 0.1308
+          },
+          {
+            "hex": "#5a2214",
+            "name": "burgundy",
+            "coverage": 0.121
+          },
+          {
+            "hex": "#86331b",
+            "name": "red",
+            "coverage": 0.0983
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_115.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_115.jpg",
+        "novelty_score": 0.1842,
+        "best_match_filename": "Bottega_62.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_62.jpg",
+        "best_match_cos": 0.8158,
+        "intra_season_rarity": 0.2308,
+        "hit_score": 0.2028,
+        "is_hit": false,
+        "style": "hexagonal",
+        "colors": [
+          {
+            "hex": "#dbd3cb",
+            "name": "light_grey",
+            "coverage": 0.1241
+          },
+          {
+            "hex": "#39180f",
+            "name": "burgundy",
+            "coverage": 0.1187
+          },
+          {
+            "hex": "#6c3827",
+            "name": "burgundy",
+            "coverage": 0.1053
+          },
+          {
+            "hex": "#4f2518",
+            "name": "burgundy",
+            "coverage": 0.098
+          },
+          {
+            "hex": "#d0b39d",
+            "name": "orange",
+            "coverage": 0.0834
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_14.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_14.jpg",
+        "novelty_score": 0.1836,
+        "best_match_filename": "Bottega_33.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_33.jpg",
+        "best_match_cos": 0.8164,
+        "intra_season_rarity": 0.2194,
+        "hit_score": 0.1979,
+        "is_hit": false,
+        "style": "round",
+        "colors": [
+          {
+            "hex": "#a58e45",
+            "name": "gold",
+            "coverage": 0.2711
+          },
+          {
+            "hex": "#2f210c",
+            "name": "black",
+            "coverage": 0.1562
+          },
+          {
+            "hex": "#423111",
+            "name": "brown",
+            "coverage": 0.1369
+          },
+          {
+            "hex": "#634806",
+            "name": "brown",
+            "coverage": 0.1172
+          },
+          {
+            "hex": "#21180f",
+            "name": "black",
+            "coverage": 0.0923
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_109.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_109.jpg",
+        "novelty_score": 0.18,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.82,
+        "intra_season_rarity": 0.2075,
+        "hit_score": 0.191,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#6c3c37",
+            "name": "red",
+            "coverage": 0.3195
+          },
+          {
+            "hex": "#3a2420",
+            "name": "burgundy",
+            "coverage": 0.2218
+          },
+          {
+            "hex": "#2a1a17",
+            "name": "dark_grey",
+            "coverage": 0.1319
+          },
+          {
+            "hex": "#54342d",
+            "name": "burgundy",
+            "coverage": 0.0906
+          },
+          {
+            "hex": "#734c43",
+            "name": "red",
+            "coverage": 0.0766
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_99.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_99.jpg",
+        "novelty_score": 0.1771,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8229,
+        "intra_season_rarity": 0.2151,
+        "hit_score": 0.1923,
+        "is_hit": false,
+        "style": "signature",
+        "colors": [
+          {
+            "hex": "#a28177",
+            "name": "red",
+            "coverage": 0.1635
+          },
+          {
+            "hex": "#b69c8d",
+            "name": "orange",
+            "coverage": 0.1311
+          },
+          {
+            "hex": "#cbb9aa",
+            "name": "peach",
+            "coverage": 0.1291
+          },
+          {
+            "hex": "#593e34",
+            "name": "burgundy",
+            "coverage": 0.1225
+          },
+          {
+            "hex": "#472f26",
+            "name": "burgundy",
+            "coverage": 0.1208
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_18.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_18.jpg",
+        "novelty_score": 0.1763,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8237,
+        "intra_season_rarity": 0.2151,
+        "hit_score": 0.1918,
+        "is_hit": false,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#c0c2b4",
+            "name": "light_grey",
+            "coverage": 0.153
+          },
+          {
+            "hex": "#808765",
+            "name": "green",
+            "coverage": 0.1409
+          },
+          {
+            "hex": "#d9d3c5",
+            "name": "light_grey",
+            "coverage": 0.1168
+          },
+          {
+            "hex": "#d9ded7",
+            "name": "white",
+            "coverage": 0.0895
+          },
+          {
+            "hex": "#b4b0a0",
+            "name": "light_grey",
+            "coverage": 0.0801
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_75.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_75.jpg",
+        "novelty_score": 0.1744,
+        "best_match_filename": "Bottega_70.jpg",
+        "best_match_url": "/brands/bottega_veneta/7/Bottega_70.jpg",
+        "best_match_cos": 0.8256,
+        "intra_season_rarity": 0.2124,
+        "hit_score": 0.1896,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#120c0b",
+            "name": "black",
+            "coverage": 0.6596
+          },
+          {
+            "hex": "#1e1816",
+            "name": "dark_grey",
+            "coverage": 0.1753
+          },
+          {
+            "hex": "#6f6a64",
+            "name": "grey",
+            "coverage": 0.0665
+          },
+          {
+            "hex": "#2f2c29",
+            "name": "dark_grey",
+            "coverage": 0.0343
+          },
+          {
+            "hex": "#3f3c39",
+            "name": "dark_grey",
+            "coverage": 0.0226
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_62.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_62.jpg",
+        "novelty_score": 0.1738,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.8262,
+        "intra_season_rarity": 0.2319,
+        "hit_score": 0.1971,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#100d0d",
+            "name": "black",
+            "coverage": 0.6785
+          },
+          {
+            "hex": "#29241f",
+            "name": "dark_grey",
+            "coverage": 0.1048
+          },
+          {
+            "hex": "#d3cbb6",
+            "name": "peach",
+            "coverage": 0.0499
+          },
+          {
+            "hex": "#c1b19a",
+            "name": "orange",
+            "coverage": 0.0394
+          },
+          {
+            "hex": "#413d38",
+            "name": "dark_grey",
+            "coverage": 0.0302
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_47.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_47.jpg",
+        "novelty_score": 0.1731,
+        "best_match_filename": "Bottega_98.jpg",
+        "best_match_url": "/brands/bottega_veneta/11/Bottega_98.jpg",
+        "best_match_cos": 0.8269,
+        "intra_season_rarity": 0.2211,
+        "hit_score": 0.1923,
+        "is_hit": false,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#0d0908",
+            "name": "black",
+            "coverage": 0.7613
+          },
+          {
+            "hex": "#1f1c1a",
+            "name": "dark_grey",
+            "coverage": 0.0989
+          },
+          {
+            "hex": "#2d2a28",
+            "name": "dark_grey",
+            "coverage": 0.0332
+          },
+          {
+            "hex": "#464342",
+            "name": "dark_grey",
+            "coverage": 0.028
+          },
+          {
+            "hex": "#393634",
+            "name": "dark_grey",
+            "coverage": 0.0259
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_112.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_112.jpg",
+        "novelty_score": 0.1704,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8296,
+        "intra_season_rarity": 0.2485,
+        "hit_score": 0.2016,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#ceb4b7",
+            "name": "pink",
+            "coverage": 0.2598
+          },
+          {
+            "hex": "#733a39",
+            "name": "red",
+            "coverage": 0.153
+          },
+          {
+            "hex": "#884848",
+            "name": "red",
+            "coverage": 0.1327
+          },
+          {
+            "hex": "#ddd2d2",
+            "name": "light_grey",
+            "coverage": 0.1258
+          },
+          {
+            "hex": "#d5c3c4",
+            "name": "light_grey",
+            "coverage": 0.1024
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_125.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_125.jpg",
+        "novelty_score": 0.1683,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8317,
+        "intra_season_rarity": 0.2391,
+        "hit_score": 0.1966,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#cb4a07",
+            "name": "tortoise",
+            "coverage": 0.183
+          },
+          {
+            "hex": "#bb461d",
+            "name": "red",
+            "coverage": 0.1251
+          },
+          {
+            "hex": "#ce926a",
+            "name": "orange",
+            "coverage": 0.1077
+          },
+          {
+            "hex": "#9a2d18",
+            "name": "red",
+            "coverage": 0.1045
+          },
+          {
+            "hex": "#ddad81",
+            "name": "orange",
+            "coverage": 0.0894
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_24.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_24.jpg",
+        "novelty_score": 0.1668,
+        "best_match_filename": "Bottega_82.jpg",
+        "best_match_url": "/brands/bottega_veneta/7/Bottega_82.jpg",
+        "best_match_cos": 0.8332,
+        "intra_season_rarity": 0.2418,
+        "hit_score": 0.1968,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#1b1716",
+            "name": "black",
+            "coverage": 0.3429
+          },
+          {
+            "hex": "#949491",
+            "name": "grey",
+            "coverage": 0.0988
+          },
+          {
+            "hex": "#a4a5a2",
+            "name": "grey",
+            "coverage": 0.0903
+          },
+          {
+            "hex": "#83827f",
+            "name": "grey",
+            "coverage": 0.0798
+          },
+          {
+            "hex": "#2a2726",
+            "name": "dark_grey",
+            "coverage": 0.0793
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_23.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_23.jpg",
+        "novelty_score": 0.1653,
+        "best_match_filename": "Bottega_17.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_17.jpg",
+        "best_match_cos": 0.8347,
+        "intra_season_rarity": 0.2402,
+        "hit_score": 0.1952,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#ceb867",
+            "name": "yellow",
+            "coverage": 0.2264
+          },
+          {
+            "hex": "#d8c67f",
+            "name": "yellow",
+            "coverage": 0.1557
+          },
+          {
+            "hex": "#c0a44c",
+            "name": "yellow",
+            "coverage": 0.137
+          },
+          {
+            "hex": "#57442a",
+            "name": "brown",
+            "coverage": 0.1049
+          },
+          {
+            "hex": "#e2d69a",
+            "name": "yellow",
+            "coverage": 0.0786
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_78.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_78.jpg",
+        "novelty_score": 0.1643,
+        "best_match_filename": "Bottega_17.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_17.jpg",
+        "best_match_cos": 0.8357,
+        "intra_season_rarity": 0.2385,
+        "hit_score": 0.194,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#baa45a",
+            "name": "yellow",
+            "coverage": 0.313
+          },
+          {
+            "hex": "#c6b472",
+            "name": "yellow",
+            "coverage": 0.1475
+          },
+          {
+            "hex": "#dcd099",
+            "name": "yellow",
+            "coverage": 0.122
+          },
+          {
+            "hex": "#cec085",
+            "name": "yellow",
+            "coverage": 0.0945
+          },
+          {
+            "hex": "#a28a48",
+            "name": "tortoise",
+            "coverage": 0.0738
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_36.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_36.jpg",
+        "novelty_score": 0.1641,
+        "best_match_filename": "Bottega_57.jpg",
+        "best_match_url": "/brands/bottega_veneta/5/Bottega_57.jpg",
+        "best_match_cos": 0.8359,
+        "intra_season_rarity": 0.2262,
+        "hit_score": 0.189,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#412a20",
+            "name": "brown",
+            "coverage": 0.2525
+          },
+          {
+            "hex": "#2c1f1b",
+            "name": "dark_grey",
+            "coverage": 0.2237
+          },
+          {
+            "hex": "#583a29",
+            "name": "brown",
+            "coverage": 0.1279
+          },
+          {
+            "hex": "#d4b178",
+            "name": "orange",
+            "coverage": 0.0609
+          },
+          {
+            "hex": "#7c5c42",
+            "name": "tortoise",
+            "coverage": 0.0601
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_22.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_22.jpg",
+        "novelty_score": 0.1632,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8368,
+        "intra_season_rarity": 0.2193,
+        "hit_score": 0.1856,
+        "is_hit": false,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#efead5",
+            "name": "yellow",
+            "coverage": 0.2379
+          },
+          {
+            "hex": "#d0c4b1",
+            "name": "peach",
+            "coverage": 0.1735
+          },
+          {
+            "hex": "#e2ddd6",
+            "name": "white",
+            "coverage": 0.1186
+          },
+          {
+            "hex": "#97734c",
+            "name": "tortoise",
+            "coverage": 0.0952
+          },
+          {
+            "hex": "#c0ae97",
+            "name": "orange",
+            "coverage": 0.0936
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_69.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_69.jpg",
+        "novelty_score": 0.1632,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.8368,
+        "intra_season_rarity": 0.235,
+        "hit_score": 0.192,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#201d19",
+            "name": "dark_grey",
+            "coverage": 0.418
+          },
+          {
+            "hex": "#2f3132",
+            "name": "dark_grey",
+            "coverage": 0.1498
+          },
+          {
+            "hex": "#3f4243",
+            "name": "dark_grey",
+            "coverage": 0.1113
+          },
+          {
+            "hex": "#110b09",
+            "name": "black",
+            "coverage": 0.0885
+          },
+          {
+            "hex": "#a0a19f",
+            "name": "grey",
+            "coverage": 0.0596
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_129.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_129.jpg",
+        "novelty_score": 0.1619,
+        "best_match_filename": "Bottega_43.jpg",
+        "best_match_url": "/brands/bottega_veneta/2/Bottega_43.jpg",
+        "best_match_cos": 0.8381,
+        "intra_season_rarity": 0.2698,
+        "hit_score": 0.2051,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#261e1b",
+            "name": "dark_grey",
+            "coverage": 0.2264
+          },
+          {
+            "hex": "#36302f",
+            "name": "dark_grey",
+            "coverage": 0.1133
+          },
+          {
+            "hex": "#bfbcb5",
+            "name": "light_grey",
+            "coverage": 0.0937
+          },
+          {
+            "hex": "#4b3023",
+            "name": "brown",
+            "coverage": 0.0864
+          },
+          {
+            "hex": "#7d746b",
+            "name": "grey",
+            "coverage": 0.0818
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_11.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_11.jpg",
+        "novelty_score": 0.1602,
+        "best_match_filename": "Bottega_12.jpg",
+        "best_match_url": "/brands/bottega_veneta/12/Bottega_12.jpg",
+        "best_match_cos": 0.8398,
+        "intra_season_rarity": 0.2218,
+        "hit_score": 0.1848,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#a46646",
+            "name": "tortoise",
+            "coverage": 0.1209
+          },
+          {
+            "hex": "#8d5236",
+            "name": "tortoise",
+            "coverage": 0.1206
+          },
+          {
+            "hex": "#b47d5d",
+            "name": "orange",
+            "coverage": 0.116
+          },
+          {
+            "hex": "#d3b59f",
+            "name": "peach",
+            "coverage": 0.0902
+          },
+          {
+            "hex": "#ce9770",
+            "name": "orange",
+            "coverage": 0.089
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_116.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_116.jpg",
+        "novelty_score": 0.1564,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.8436,
+        "intra_season_rarity": 0.2349,
+        "hit_score": 0.1878,
+        "is_hit": false,
+        "style": "hexagonal",
+        "colors": [
+          {
+            "hex": "#181413",
+            "name": "black",
+            "coverage": 0.6031
+          },
+          {
+            "hex": "#271f1b",
+            "name": "dark_grey",
+            "coverage": 0.1422
+          },
+          {
+            "hex": "#696661",
+            "name": "dark_grey",
+            "coverage": 0.1223
+          },
+          {
+            "hex": "#262625",
+            "name": "dark_grey",
+            "coverage": 0.049
+          },
+          {
+            "hex": "#585551",
+            "name": "dark_grey",
+            "coverage": 0.0461
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_91.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_91.jpg",
+        "novelty_score": 0.1553,
+        "best_match_filename": "Bottega_1.jpg",
+        "best_match_url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+        "best_match_cos": 0.8447,
+        "intra_season_rarity": 0.2401,
+        "hit_score": 0.1892,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#654a3c",
+            "name": "brown",
+            "coverage": 0.212
+          },
+          {
+            "hex": "#1b2812",
+            "name": "dark_grey",
+            "coverage": 0.1564
+          },
+          {
+            "hex": "#32261e",
+            "name": "dark_grey",
+            "coverage": 0.1141
+          },
+          {
+            "hex": "#b1a698",
+            "name": "grey",
+            "coverage": 0.1128
+          },
+          {
+            "hex": "#49392e",
+            "name": "brown",
+            "coverage": 0.109
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_107.jpg",
+        "url": "/snapshots/S26/bottega/Bottega_107.jpg",
+        "novelty_score": 0.1541,
+        "best_match_filename": "Bottega_60.jpg",
+        "best_match_url": "/brands/bottega_veneta/5/Bottega_60.jpg",
+        "best_match_cos": 0.8459,
+        "intra_season_rarity": 0.2204,
+        "hit_score": 0.1806,
+        "is_hit": false,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#241a18",
+            "name": "dark_grey",
+            "coverage": 0.2676
+          },
+          {
+            "hex": "#1b1b1b",
+            "name": "dark_grey",
+            "coverage": 0.1976
+          },
+          {
+            "hex": "#382a27",
+            "name": "dark_grey",
+            "coverage": 0.1359
+          },
+          {
+            "hex": "#4d3a38",
+            "name": "dark_grey",
+            "coverage": 0.1123
+          },
+          {
+            "hex": "#2b2b2a",
+            "name": "dark_grey",
+            "coverage": 0.0883
+          }
+        ]
+      }
+    ],
+    "discontinued_products": [
+      {
+        "filename": "Bottega_75.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_75.jpg",
+        "discontinuation_score": 0.1867,
+        "best_match_filename": "Bottega_135.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_135.jpg",
+        "best_match_cos": 0.8133,
+        "intra_season_rarity": 0.2459,
+        "style": "round",
+        "colors": [
+          {
+            "hex": "#9d5751",
+            "name": "red",
+            "coverage": 0.2759
+          },
+          {
+            "hex": "#ccb6b0",
+            "name": "pink",
+            "coverage": 0.1505
+          },
+          {
+            "hex": "#5f2e29",
+            "name": "burgundy",
+            "coverage": 0.0957
+          },
+          {
+            "hex": "#74352f",
+            "name": "red",
+            "coverage": 0.0836
+          },
+          {
+            "hex": "#4a241e",
+            "name": "burgundy",
+            "coverage": 0.083
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_92.jpg",
+        "url": "/brands/bottega_veneta/5/Bottega_92.jpg",
+        "discontinuation_score": 0.1861,
+        "best_match_filename": "Bottega_109.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_109.jpg",
+        "best_match_cos": 0.8139,
+        "intra_season_rarity": 0.2284,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#b66e5c",
+            "name": "red",
+            "coverage": 0.2011
+          },
+          {
+            "hex": "#7a3a31",
+            "name": "red",
+            "coverage": 0.1658
+          },
+          {
+            "hex": "#9a5446",
+            "name": "red",
+            "coverage": 0.1222
+          },
+          {
+            "hex": "#401012",
+            "name": "burgundy",
+            "coverage": 0.0886
+          },
+          {
+            "hex": "#5c2a26",
+            "name": "burgundy",
+            "coverage": 0.0866
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_31.jpg",
+        "url": "/brands/bottega_veneta/3/Bottega_31.jpg",
+        "discontinuation_score": 0.1815,
+        "best_match_filename": "Bottega_85.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_85.jpg",
+        "best_match_cos": 0.8185,
+        "intra_season_rarity": 0.2461,
+        "style": "oversized",
+        "colors": [
+          {
+            "hex": "#120d0d",
+            "name": "black",
+            "coverage": 0.3769
+          },
+          {
+            "hex": "#674130",
+            "name": "brown",
+            "coverage": 0.1313
+          },
+          {
+            "hex": "#4d2c21",
+            "name": "burgundy",
+            "coverage": 0.1182
+          },
+          {
+            "hex": "#291712",
+            "name": "dark_grey",
+            "coverage": 0.0875
+          },
+          {
+            "hex": "#282423",
+            "name": "dark_grey",
+            "coverage": 0.0857
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_81.jpg",
+        "url": "/brands/bottega_veneta/8/Bottega_81.jpg",
+        "discontinuation_score": 0.1676,
+        "best_match_filename": "Bottega_74.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_74.jpg",
+        "best_match_cos": 0.8324,
+        "intra_season_rarity": 0.2412,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#b5bab9",
+            "name": "light_grey",
+            "coverage": 0.5417
+          },
+          {
+            "hex": "#c9cfcf",
+            "name": "light_grey",
+            "coverage": 0.2893
+          },
+          {
+            "hex": "#bcb6a7",
+            "name": "light_grey",
+            "coverage": 0.0587
+          },
+          {
+            "hex": "#d2cec1",
+            "name": "light_grey",
+            "coverage": 0.0471
+          },
+          {
+            "hex": "#a3a199",
+            "name": "grey",
+            "coverage": 0.0412
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_114.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_114.jpg",
+        "discontinuation_score": 0.1574,
+        "best_match_filename": "Bottega_144.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_144.jpg",
+        "best_match_cos": 0.8426,
+        "intra_season_rarity": 0.2618,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#4f1b20",
+            "name": "burgundy",
+            "coverage": 0.2801
+          },
+          {
+            "hex": "#631e24",
+            "name": "burgundy",
+            "coverage": 0.1814
+          },
+          {
+            "hex": "#492426",
+            "name": "burgundy",
+            "coverage": 0.1265
+          },
+          {
+            "hex": "#311e1f",
+            "name": "dark_grey",
+            "coverage": 0.0984
+          },
+          {
+            "hex": "#612a2e",
+            "name": "burgundy",
+            "coverage": 0.0946
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_86.jpg",
+        "url": "/brands/bottega_veneta/5/Bottega_86.jpg",
+        "discontinuation_score": 0.157,
+        "best_match_filename": "Bottega_105.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_105.jpg",
+        "best_match_cos": 0.843,
+        "intra_season_rarity": 0.2191,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#785136",
+            "name": "tortoise",
+            "coverage": 0.3024
+          },
+          {
+            "hex": "#8e603f",
+            "name": "tortoise",
+            "coverage": 0.1249
+          },
+          {
+            "hex": "#b28357",
+            "name": "orange",
+            "coverage": 0.1014
+          },
+          {
+            "hex": "#5c3221",
+            "name": "burgundy",
+            "coverage": 0.0881
+          },
+          {
+            "hex": "#65412e",
+            "name": "brown",
+            "coverage": 0.088
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_72.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_72.jpg",
+        "discontinuation_score": 0.152,
+        "best_match_filename": "Bottega_71.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_71.jpg",
+        "best_match_cos": 0.848,
+        "intra_season_rarity": 0.2084,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#c9a770",
+            "name": "orange",
+            "coverage": 0.2644
+          },
+          {
+            "hex": "#956f3f",
+            "name": "tortoise",
+            "coverage": 0.11
+          },
+          {
+            "hex": "#77512a",
+            "name": "brown",
+            "coverage": 0.0873
+          },
+          {
+            "hex": "#d9d4bb",
+            "name": "yellow",
+            "coverage": 0.0873
+          },
+          {
+            "hex": "#b28035",
+            "name": "tortoise",
+            "coverage": 0.0815
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_48.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_48.jpg",
+        "discontinuation_score": 0.1515,
+        "best_match_filename": "Bottega_144.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_144.jpg",
+        "best_match_cos": 0.8485,
+        "intra_season_rarity": 0.2022,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#232221",
+            "name": "dark_grey",
+            "coverage": 0.4627
+          },
+          {
+            "hex": "#797b66",
+            "name": "grey",
+            "coverage": 0.1636
+          },
+          {
+            "hex": "#6d6e5a",
+            "name": "dark_grey",
+            "coverage": 0.0828
+          },
+          {
+            "hex": "#5c5d4e",
+            "name": "dark_grey",
+            "coverage": 0.0779
+          },
+          {
+            "hex": "#505045",
+            "name": "dark_grey",
+            "coverage": 0.0756
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_84.jpg",
+        "url": "/brands/bottega_veneta/4/Bottega_84.jpg",
+        "discontinuation_score": 0.1489,
+        "best_match_filename": "Bottega_134.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_134.jpg",
+        "best_match_cos": 0.8511,
+        "intra_season_rarity": 0.2304,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#6c6564",
+            "name": "grey",
+            "coverage": 0.6325
+          },
+          {
+            "hex": "#5d5656",
+            "name": "dark_grey",
+            "coverage": 0.2636
+          },
+          {
+            "hex": "#504a49",
+            "name": "dark_grey",
+            "coverage": 0.0676
+          },
+          {
+            "hex": "#423d3d",
+            "name": "dark_grey",
+            "coverage": 0.0362
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_79.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_79.jpg",
+        "discontinuation_score": 0.1482,
+        "best_match_filename": "Bottega_135.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_135.jpg",
+        "best_match_cos": 0.8518,
+        "intra_season_rarity": 0.2259,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#e0ccba",
+            "name": "peach",
+            "coverage": 0.2785
+          },
+          {
+            "hex": "#b06950",
+            "name": "red",
+            "coverage": 0.2196
+          },
+          {
+            "hex": "#ccb098",
+            "name": "orange",
+            "coverage": 0.0909
+          },
+          {
+            "hex": "#99543e",
+            "name": "red",
+            "coverage": 0.0741
+          },
+          {
+            "hex": "#6b3829",
+            "name": "burgundy",
+            "coverage": 0.0729
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_57.jpg",
+        "url": "/brands/bottega_veneta/5/Bottega_57.jpg",
+        "discontinuation_score": 0.1424,
+        "best_match_filename": "Bottega_136.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_136.jpg",
+        "best_match_cos": 0.8576,
+        "intra_season_rarity": 0.2036,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#160f0c",
+            "name": "black",
+            "coverage": 0.2218
+          },
+          {
+            "hex": "#987a3b",
+            "name": "tortoise",
+            "coverage": 0.1248
+          },
+          {
+            "hex": "#c9af68",
+            "name": "orange",
+            "coverage": 0.1131
+          },
+          {
+            "hex": "#82662f",
+            "name": "tortoise",
+            "coverage": 0.1091
+          },
+          {
+            "hex": "#29150b",
+            "name": "black",
+            "coverage": 0.1084
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_71.jpg",
+        "url": "/brands/bottega_veneta/5/Bottega_71.jpg",
+        "discontinuation_score": 0.1417,
+        "best_match_filename": "Bottega_20.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_20.jpg",
+        "best_match_cos": 0.8583,
+        "intra_season_rarity": 0.1936,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#1d181d",
+            "name": "dark_grey",
+            "coverage": 0.2309
+          },
+          {
+            "hex": "#574948",
+            "name": "dark_grey",
+            "coverage": 0.2253
+          },
+          {
+            "hex": "#463b3a",
+            "name": "dark_grey",
+            "coverage": 0.1578
+          },
+          {
+            "hex": "#342a2a",
+            "name": "dark_grey",
+            "coverage": 0.129
+          },
+          {
+            "hex": "#6c5b55",
+            "name": "dark_grey",
+            "coverage": 0.1285
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_10.jpg",
+        "url": "/brands/bottega_veneta/2/Bottega_10.jpg",
+        "discontinuation_score": 0.1368,
+        "best_match_filename": "Bottega_100.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_100.jpg",
+        "best_match_cos": 0.8632,
+        "intra_season_rarity": 0.252,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#191714",
+            "name": "black",
+            "coverage": 0.7743
+          },
+          {
+            "hex": "#302e2e",
+            "name": "dark_grey",
+            "coverage": 0.1314
+          },
+          {
+            "hex": "#5c5150",
+            "name": "dark_grey",
+            "coverage": 0.0603
+          },
+          {
+            "hex": "#474444",
+            "name": "dark_grey",
+            "coverage": 0.034
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_98.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_98.jpg",
+        "discontinuation_score": 0.1361,
+        "best_match_filename": "Bottega_119.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_119.jpg",
+        "best_match_cos": 0.8639,
+        "intra_season_rarity": 0.211,
+        "style": "round",
+        "colors": [
+          {
+            "hex": "#151314",
+            "name": "black",
+            "coverage": 0.307
+          },
+          {
+            "hex": "#76786d",
+            "name": "grey",
+            "coverage": 0.2419
+          },
+          {
+            "hex": "#3d3c38",
+            "name": "dark_grey",
+            "coverage": 0.1797
+          },
+          {
+            "hex": "#292826",
+            "name": "dark_grey",
+            "coverage": 0.1721
+          },
+          {
+            "hex": "#5e5d61",
+            "name": "dark_grey",
+            "coverage": 0.0531
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_62.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_62.jpg",
+        "discontinuation_score": 0.1349,
+        "best_match_filename": "Bottega_128.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_128.jpg",
+        "best_match_cos": 0.8651,
+        "intra_season_rarity": 0.2277,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#7a4c1b",
+            "name": "brown",
+            "coverage": 0.1849
+          },
+          {
+            "hex": "#603611",
+            "name": "brown",
+            "coverage": 0.1384
+          },
+          {
+            "hex": "#8e6532",
+            "name": "tortoise",
+            "coverage": 0.1373
+          },
+          {
+            "hex": "#b27d2a",
+            "name": "tortoise",
+            "coverage": 0.1155
+          },
+          {
+            "hex": "#d4c094",
+            "name": "orange",
+            "coverage": 0.1015
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_45.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_45.jpg",
+        "discontinuation_score": 0.1336,
+        "best_match_filename": "Bottega_113.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_113.jpg",
+        "best_match_cos": 0.8664,
+        "intra_season_rarity": 0.206,
+        "style": "round",
+        "colors": [
+          {
+            "hex": "#231e19",
+            "name": "dark_grey",
+            "coverage": 0.2676
+          },
+          {
+            "hex": "#ad8e55",
+            "name": "orange",
+            "coverage": 0.2111
+          },
+          {
+            "hex": "#5a4324",
+            "name": "brown",
+            "coverage": 0.1205
+          },
+          {
+            "hex": "#46413f",
+            "name": "dark_grey",
+            "coverage": 0.0712
+          },
+          {
+            "hex": "#453220",
+            "name": "brown",
+            "coverage": 0.0681
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_37.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_37.jpg",
+        "discontinuation_score": 0.1316,
+        "best_match_filename": "Bottega_20.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_20.jpg",
+        "best_match_cos": 0.8684,
+        "intra_season_rarity": 0.2293,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#685a58",
+            "name": "dark_grey",
+            "coverage": 0.4956
+          },
+          {
+            "hex": "#110f0f",
+            "name": "black",
+            "coverage": 0.1871
+          },
+          {
+            "hex": "#524846",
+            "name": "dark_grey",
+            "coverage": 0.1251
+          },
+          {
+            "hex": "#241c1a",
+            "name": "dark_grey",
+            "coverage": 0.0588
+          },
+          {
+            "hex": "#3a3230",
+            "name": "dark_grey",
+            "coverage": 0.0526
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_101.jpg",
+        "url": "/brands/bottega_veneta/1/Bottega_101.jpg",
+        "discontinuation_score": 0.1295,
+        "best_match_filename": "Bottega_10.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_10.jpg",
+        "best_match_cos": 0.8705,
+        "intra_season_rarity": 0.2482,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#54301d",
+            "name": "brown",
+            "coverage": 0.1841
+          },
+          {
+            "hex": "#180c09",
+            "name": "black",
+            "coverage": 0.1739
+          },
+          {
+            "hex": "#442617",
+            "name": "brown",
+            "coverage": 0.1655
+          },
+          {
+            "hex": "#381e13",
+            "name": "burgundy",
+            "coverage": 0.1285
+          },
+          {
+            "hex": "#673c25",
+            "name": "brown",
+            "coverage": 0.1134
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_35.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_35.jpg",
+        "discontinuation_score": 0.1255,
+        "best_match_filename": "Bottega_74.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_74.jpg",
+        "best_match_cos": 0.8745,
+        "intra_season_rarity": 0.2204,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#2b2723",
+            "name": "dark_grey",
+            "coverage": 0.2424
+          },
+          {
+            "hex": "#5a5559",
+            "name": "dark_grey",
+            "coverage": 0.1101
+          },
+          {
+            "hex": "#a8a5a3",
+            "name": "grey",
+            "coverage": 0.1003
+          },
+          {
+            "hex": "#716c69",
+            "name": "grey",
+            "coverage": 0.0866
+          },
+          {
+            "hex": "#615d58",
+            "name": "dark_grey",
+            "coverage": 0.0834
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_11.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_11.jpg",
+        "discontinuation_score": 0.1237,
+        "best_match_filename": "Bottega_83.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_83.jpg",
+        "best_match_cos": 0.8763,
+        "intra_season_rarity": 0.2219,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#6d5954",
+            "name": "dark_grey",
+            "coverage": 0.2037
+          },
+          {
+            "hex": "#29211b",
+            "name": "dark_grey",
+            "coverage": 0.1965
+          },
+          {
+            "hex": "#42352f",
+            "name": "dark_grey",
+            "coverage": 0.1723
+          },
+          {
+            "hex": "#37271f",
+            "name": "dark_grey",
+            "coverage": 0.1231
+          },
+          {
+            "hex": "#5a4b42",
+            "name": "dark_grey",
+            "coverage": 0.0727
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_7.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_7.jpg",
+        "discontinuation_score": 0.123,
+        "best_match_filename": "Bottega_56.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_56.jpg",
+        "best_match_cos": 0.877,
+        "intra_season_rarity": 0.2763,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#d4b7a4",
+            "name": "peach",
+            "coverage": 0.3771
+          },
+          {
+            "hex": "#a0735c",
+            "name": "tortoise",
+            "coverage": 0.141
+          },
+          {
+            "hex": "#b59077",
+            "name": "orange",
+            "coverage": 0.0881
+          },
+          {
+            "hex": "#8a5c42",
+            "name": "tortoise",
+            "coverage": 0.088
+          },
+          {
+            "hex": "#734228",
+            "name": "brown",
+            "coverage": 0.0704
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_60.jpg",
+        "url": "/brands/bottega_veneta/5/Bottega_60.jpg",
+        "discontinuation_score": 0.1227,
+        "best_match_filename": "Bottega_52.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_52.jpg",
+        "best_match_cos": 0.8773,
+        "intra_season_rarity": 0.1817,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#110e12",
+            "name": "black",
+            "coverage": 0.3042
+          },
+          {
+            "hex": "#635253",
+            "name": "dark_grey",
+            "coverage": 0.1668
+          },
+          {
+            "hex": "#2e2628",
+            "name": "dark_grey",
+            "coverage": 0.1053
+          },
+          {
+            "hex": "#3c3234",
+            "name": "dark_grey",
+            "coverage": 0.1033
+          },
+          {
+            "hex": "#725c5b",
+            "name": "grey",
+            "coverage": 0.1024
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_32.jpg",
+        "url": "/brands/bottega_veneta/2/Bottega_32.jpg",
+        "discontinuation_score": 0.1201,
+        "best_match_filename": "Bottega_45.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_45.jpg",
+        "best_match_cos": 0.8799,
+        "intra_season_rarity": 0.2118,
+        "style": "cat-eye",
+        "colors": [
+          {
+            "hex": "#111010",
+            "name": "black",
+            "coverage": 0.3426
+          },
+          {
+            "hex": "#413938",
+            "name": "dark_grey",
+            "coverage": 0.2601
+          },
+          {
+            "hex": "#5f5352",
+            "name": "dark_grey",
+            "coverage": 0.132
+          },
+          {
+            "hex": "#4c4545",
+            "name": "dark_grey",
+            "coverage": 0.1086
+          },
+          {
+            "hex": "#59595b",
+            "name": "dark_grey",
+            "coverage": 0.0596
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_58.jpg",
+        "url": "/brands/bottega_veneta/12/Bottega_58.jpg",
+        "discontinuation_score": 0.1166,
+        "best_match_filename": "Bottega_96.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_96.jpg",
+        "best_match_cos": 0.8834,
+        "intra_season_rarity": 0.2397,
+        "style": "oval",
+        "colors": [
+          {
+            "hex": "#778e6f",
+            "name": "green",
+            "coverage": 0.3288
+          },
+          {
+            "hex": "#6c8060",
+            "name": "green",
+            "coverage": 0.2811
+          },
+          {
+            "hex": "#5c694b",
+            "name": "green",
+            "coverage": 0.0913
+          },
+          {
+            "hex": "#403f2a",
+            "name": "dark_grey",
+            "coverage": 0.0546
+          },
+          {
+            "hex": "#545133",
+            "name": "gold",
+            "coverage": 0.051
+          }
+        ]
+      },
+      {
+        "filename": "Bottega_34.jpg",
+        "url": "/brands/bottega_veneta/11/Bottega_34.jpg",
+        "discontinuation_score": 0.1155,
+        "best_match_filename": "Bottega_95.jpg",
+        "best_match_url": "/snapshots/S26/bottega/Bottega_95.jpg",
+        "best_match_cos": 0.8845,
+        "intra_season_rarity": 0.1999,
+        "style": "round",
+        "colors": [
+          {
+            "hex": "#1c1a18",
+            "name": "dark_grey",
+            "coverage": 0.4501
+          },
+          {
+            "hex": "#352e2b",
+            "name": "dark_grey",
+            "coverage": 0.2467
+          },
+          {
+            "hex": "#554a48",
+            "name": "dark_grey",
+            "coverage": 0.1961
+          },
+          {
+            "hex": "#424141",
+            "name": "dark_grey",
+            "coverage": 0.0538
+          },
+          {
+            "hex": "#262625",
+            "name": "dark_grey",
+            "coverage": 0.0534
+          }
+        ]
+      }
+    ]
+  },
+  "Dolce & Gabbana": {
+    "matching": {
+      "new_threshold": 0.9133,
+      "discontinued_threshold": 0.9118,
+      "threshold_method": "per-brand p20 of best-match cos sim",
+      "n_f25": 161,
+      "n_s26": 114,
+      "n_new": 23,
+      "n_hit": 6,
+      "n_discontinued": 32
+    },
+    "new_products": [
+      {
+        "filename": "D&G_14.jpg",
+        "url": "/snapshots/S26/dg/D&G_14.jpg",
+        "novelty_score": 0.1579,
+        "best_match_filename": "D&G_94.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
+        "best_match_cos": 0.8421,
+        "intra_season_rarity": 0.2786,
+        "hit_score": 0.2062,
+        "is_hit": true,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#fec0c3",
+            "name": "pink",
+            "coverage": 0.5536
+          },
+          {
+            "hex": "#fcadb3",
+            "name": "pink",
+            "coverage": 0.1381
+          },
+          {
+            "hex": "#fca2a8",
+            "name": "pink",
+            "coverage": 0.0858
+          },
+          {
+            "hex": "#e0ccb8",
+            "name": "peach",
+            "coverage": 0.041
+          },
+          {
+            "hex": "#e2a27f",
+            "name": "orange",
+            "coverage": 0.0337
+          }
+        ]
+      },
+      {
+        "filename": "D&G_9.jpg",
+        "url": "/snapshots/S26/dg/D&G_9.jpg",
+        "novelty_score": 0.1451,
+        "best_match_filename": "D&G_150.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
+        "best_match_cos": 0.8549,
+        "intra_season_rarity": 0.2846,
+        "hit_score": 0.2009,
+        "is_hit": true,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#b9e598",
+            "name": "green",
+            "coverage": 0.1476
+          },
+          {
+            "hex": "#b8e4a9",
+            "name": "green",
+            "coverage": 0.1398
+          },
+          {
+            "hex": "#98e395",
+            "name": "green",
+            "coverage": 0.1289
+          },
+          {
+            "hex": "#b2e2b6",
+            "name": "green",
+            "coverage": 0.1279
+          },
+          {
+            "hex": "#b6e0c4",
+            "name": "green",
+            "coverage": 0.1244
+          }
+        ]
+      },
+      {
+        "filename": "D&G_31.jpg",
+        "url": "/snapshots/S26/dg/D&G_31.jpg",
+        "novelty_score": 0.1429,
+        "best_match_filename": "D&G_1.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_1.jpg",
+        "best_match_cos": 0.8571,
+        "intra_season_rarity": 0.2809,
+        "hit_score": 0.1981,
+        "is_hit": true,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#e39795",
+            "name": "pink",
+            "coverage": 0.5854
+          },
+          {
+            "hex": "#522c27",
+            "name": "burgundy",
+            "coverage": 0.0734
+          },
+          {
+            "hex": "#281613",
+            "name": "dark_grey",
+            "coverage": 0.0587
+          },
+          {
+            "hex": "#70443e",
+            "name": "red",
+            "coverage": 0.0587
+          },
+          {
+            "hex": "#493b38",
+            "name": "dark_grey",
+            "coverage": 0.0551
+          }
+        ]
+      },
+      {
+        "filename": "D&G_30.jpg",
+        "url": "/snapshots/S26/dg/D&G_30.jpg",
+        "novelty_score": 0.1239,
+        "best_match_filename": "D&G_1.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_1.jpg",
+        "best_match_cos": 0.8761,
+        "intra_season_rarity": 0.2579,
+        "hit_score": 0.1775,
+        "is_hit": true,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#a28175",
+            "name": "red",
+            "coverage": 0.603
+          },
+          {
+            "hex": "#302925",
+            "name": "dark_grey",
+            "coverage": 0.1315
+          },
+          {
+            "hex": "#201c18",
+            "name": "dark_grey",
+            "coverage": 0.088
+          },
+          {
+            "hex": "#403731",
+            "name": "dark_grey",
+            "coverage": 0.0806
+          },
+          {
+            "hex": "#5a4b43",
+            "name": "dark_grey",
+            "coverage": 0.052
+          }
+        ]
+      },
+      {
+        "filename": "D&G_15.jpg",
+        "url": "/snapshots/S26/dg/D&G_15.jpg",
+        "novelty_score": 0.1209,
+        "best_match_filename": "D&G_64.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/0/D&G_64.jpg",
+        "best_match_cos": 0.8791,
+        "intra_season_rarity": 0.2579,
+        "hit_score": 0.1757,
+        "is_hit": true,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#f9e179",
+            "name": "yellow",
+            "coverage": 0.2517
+          },
+          {
+            "hex": "#faeaa3",
+            "name": "yellow",
+            "coverage": 0.2134
+          },
+          {
+            "hex": "#fae794",
+            "name": "yellow",
+            "coverage": 0.1796
+          },
+          {
+            "hex": "#f9e385",
+            "name": "yellow",
+            "coverage": 0.1686
+          },
+          {
+            "hex": "#dfc0aa",
+            "name": "peach",
+            "coverage": 0.0641
+          }
+        ]
+      },
+      {
+        "filename": "D&G_8.jpg",
+        "url": "/snapshots/S26/dg/D&G_8.jpg",
+        "novelty_score": 0.0933,
+        "best_match_filename": "D&G_150.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
+        "best_match_cos": 0.9067,
+        "intra_season_rarity": 0.3022,
+        "hit_score": 0.1768,
+        "is_hit": true,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#d69c81",
+            "name": "orange",
+            "coverage": 0.3721
+          },
+          {
+            "hex": "#e6ae90",
+            "name": "peach",
+            "coverage": 0.3091
+          },
+          {
+            "hex": "#cb8d73",
+            "name": "red",
+            "coverage": 0.1231
+          },
+          {
+            "hex": "#fbc8a7",
+            "name": "peach",
+            "coverage": 0.0944
+          },
+          {
+            "hex": "#e6bea7",
+            "name": "peach",
+            "coverage": 0.046
+          }
+        ]
+      },
+      {
+        "filename": "D&G_52.jpg",
+        "url": "/snapshots/S26/dg/D&G_52.jpg",
+        "novelty_score": 0.1155,
+        "best_match_filename": "D&G_14.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_14.jpg",
+        "best_match_cos": 0.8845,
+        "intra_season_rarity": 0.1987,
+        "hit_score": 0.1488,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#6f6968",
+            "name": "grey",
+            "coverage": 0.157
+          },
+          {
+            "hex": "#49423f",
+            "name": "dark_grey",
+            "coverage": 0.1404
+          },
+          {
+            "hex": "#c0c0ba",
+            "name": "light_grey",
+            "coverage": 0.1397
+          },
+          {
+            "hex": "#adaea8",
+            "name": "light_grey",
+            "coverage": 0.1033
+          },
+          {
+            "hex": "#9a9b96",
+            "name": "grey",
+            "coverage": 0.0946
+          }
+        ]
+      },
+      {
+        "filename": "D&G_36.jpg",
+        "url": "/snapshots/S26/dg/D&G_36.jpg",
+        "novelty_score": 0.1145,
+        "best_match_filename": "D&G_55.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_55.jpg",
+        "best_match_cos": 0.8855,
+        "intra_season_rarity": 0.2324,
+        "hit_score": 0.1617,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#86654f",
+            "name": "tortoise",
+            "coverage": 0.7681
+          },
+          {
+            "hex": "#231c16",
+            "name": "dark_grey",
+            "coverage": 0.0406
+          },
+          {
+            "hex": "#5e4836",
+            "name": "brown",
+            "coverage": 0.0342
+          },
+          {
+            "hex": "#705843",
+            "name": "tortoise",
+            "coverage": 0.033
+          },
+          {
+            "hex": "#ceb998",
+            "name": "orange",
+            "coverage": 0.0283
+          }
+        ]
+      },
+      {
+        "filename": "D&G_47.jpg",
+        "url": "/snapshots/S26/dg/D&G_47.jpg",
+        "novelty_score": 0.1127,
+        "best_match_filename": "D&G_157.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_157.jpg",
+        "best_match_cos": 0.8873,
+        "intra_season_rarity": 0.1848,
+        "hit_score": 0.1415,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#978677",
+            "name": "orange",
+            "coverage": 0.4492
+          },
+          {
+            "hex": "#cec3b4",
+            "name": "peach",
+            "coverage": 0.2009
+          },
+          {
+            "hex": "#897869",
+            "name": "tortoise",
+            "coverage": 0.0859
+          },
+          {
+            "hex": "#dfd6ca",
+            "name": "light_grey",
+            "coverage": 0.0815
+          },
+          {
+            "hex": "#eee7dd",
+            "name": "white",
+            "coverage": 0.0543
+          }
+        ]
+      },
+      {
+        "filename": "D&G_40.jpg",
+        "url": "/snapshots/S26/dg/D&G_40.jpg",
+        "novelty_score": 0.1125,
+        "best_match_filename": "D&G_73.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/2/D&G_73.jpg",
+        "best_match_cos": 0.8875,
+        "intra_season_rarity": 0.1995,
+        "hit_score": 0.1473,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#5387b6",
+            "name": "blue",
+            "coverage": 0.6
+          },
+          {
+            "hex": "#8facc7",
+            "name": "blue",
+            "coverage": 0.0971
+          },
+          {
+            "hex": "#9dbbd9",
+            "name": "blue",
+            "coverage": 0.072
+          },
+          {
+            "hex": "#48505d",
+            "name": "dark_grey",
+            "coverage": 0.0517
+          },
+          {
+            "hex": "#486583",
+            "name": "blue",
+            "coverage": 0.0376
+          }
+        ]
+      },
+      {
+        "filename": "D&G_6.jpg",
+        "url": "/snapshots/S26/dg/D&G_6.jpg",
+        "novelty_score": 0.1095,
+        "best_match_filename": "D&G_94.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
+        "best_match_cos": 0.8905,
+        "intra_season_rarity": 0.2416,
+        "hit_score": 0.1624,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#909580",
+            "name": "grey",
+            "coverage": 0.4019
+          },
+          {
+            "hex": "#707560",
+            "name": "grey",
+            "coverage": 0.2385
+          },
+          {
+            "hex": "#7d826d",
+            "name": "grey",
+            "coverage": 0.172
+          },
+          {
+            "hex": "#d3a37f",
+            "name": "orange",
+            "coverage": 0.0326
+          },
+          {
+            "hex": "#d9b793",
+            "name": "orange",
+            "coverage": 0.0317
+          }
+        ]
+      },
+      {
+        "filename": "D&G_5.jpg",
+        "url": "/snapshots/S26/dg/D&G_5.jpg",
+        "novelty_score": 0.1091,
+        "best_match_filename": "D&G_94.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
+        "best_match_cos": 0.8909,
+        "intra_season_rarity": 0.2502,
+        "hit_score": 0.1656,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#80a0af",
+            "name": "blue",
+            "coverage": 0.1739
+          },
+          {
+            "hex": "#90afbd",
+            "name": "blue",
+            "coverage": 0.1715
+          },
+          {
+            "hex": "#7091a1",
+            "name": "blue",
+            "coverage": 0.1674
+          },
+          {
+            "hex": "#a3bfca",
+            "name": "blue",
+            "coverage": 0.1343
+          },
+          {
+            "hex": "#5b7d8e",
+            "name": "blue",
+            "coverage": 0.0971
+          }
+        ]
+      },
+      {
+        "filename": "D&G_109.jpg",
+        "url": "/snapshots/S26/dg/D&G_109.jpg",
+        "novelty_score": 0.1069,
+        "best_match_filename": "D&G_109.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_109.jpg",
+        "best_match_cos": 0.8931,
+        "intra_season_rarity": 0.2211,
+        "hit_score": 0.1526,
+        "is_hit": false,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#a5a6aa",
+            "name": "light_grey",
+            "coverage": 0.2479
+          },
+          {
+            "hex": "#95969a",
+            "name": "grey",
+            "coverage": 0.2349
+          },
+          {
+            "hex": "#797a7f",
+            "name": "grey",
+            "coverage": 0.1858
+          },
+          {
+            "hex": "#616166",
+            "name": "dark_grey",
+            "coverage": 0.0831
+          },
+          {
+            "hex": "#87888d",
+            "name": "grey",
+            "coverage": 0.082
+          }
+        ]
+      },
+      {
+        "filename": "D&G_12.jpg",
+        "url": "/snapshots/S26/dg/D&G_12.jpg",
+        "novelty_score": 0.1069,
+        "best_match_filename": "D&G_94.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
+        "best_match_cos": 0.8931,
+        "intra_season_rarity": 0.2439,
+        "hit_score": 0.1617,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#bacce5",
+            "name": "blue",
+            "coverage": 0.7718
+          },
+          {
+            "hex": "#9ea3aa",
+            "name": "grey",
+            "coverage": 0.0409
+          },
+          {
+            "hex": "#d8ab96",
+            "name": "orange",
+            "coverage": 0.0349
+          },
+          {
+            "hex": "#a8b4c5",
+            "name": "blue",
+            "coverage": 0.0338
+          },
+          {
+            "hex": "#d0c2b2",
+            "name": "peach",
+            "coverage": 0.0285
+          }
+        ]
+      },
+      {
+        "filename": "D&G_17.jpg",
+        "url": "/snapshots/S26/dg/D&G_17.jpg",
+        "novelty_score": 0.1066,
+        "best_match_filename": "D&G_161.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_161.jpg",
+        "best_match_cos": 0.8934,
+        "intra_season_rarity": 0.1847,
+        "hit_score": 0.1379,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#786461",
+            "name": "grey",
+            "coverage": 0.6385
+          },
+          {
+            "hex": "#918982",
+            "name": "grey",
+            "coverage": 0.0758
+          },
+          {
+            "hex": "#6a5956",
+            "name": "dark_grey",
+            "coverage": 0.0598
+          },
+          {
+            "hex": "#554b47",
+            "name": "dark_grey",
+            "coverage": 0.0532
+          },
+          {
+            "hex": "#a09993",
+            "name": "grey",
+            "coverage": 0.0464
+          }
+        ]
+      },
+      {
+        "filename": "D&G_41.jpg",
+        "url": "/snapshots/S26/dg/D&G_41.jpg",
+        "novelty_score": 0.1047,
+        "best_match_filename": "D&G_51.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_51.jpg",
+        "best_match_cos": 0.8953,
+        "intra_season_rarity": 0.2077,
+        "hit_score": 0.1459,
+        "is_hit": false,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#666b51",
+            "name": "green",
+            "coverage": 0.592
+          },
+          {
+            "hex": "#eca41f",
+            "name": "orange",
+            "coverage": 0.0702
+          },
+          {
+            "hex": "#f3bc4b",
+            "name": "orange",
+            "coverage": 0.0668
+          },
+          {
+            "hex": "#544b32",
+            "name": "brown",
+            "coverage": 0.0442
+          },
+          {
+            "hex": "#392516",
+            "name": "brown",
+            "coverage": 0.0437
+          }
+        ]
+      },
+      {
+        "filename": "D&G_13.jpg",
+        "url": "/snapshots/S26/dg/D&G_13.jpg",
+        "novelty_score": 0.1034,
+        "best_match_filename": "D&G_91.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/2/D&G_91.jpg",
+        "best_match_cos": 0.8966,
+        "intra_season_rarity": 0.2517,
+        "hit_score": 0.1627,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#927645",
+            "name": "tortoise",
+            "coverage": 0.7644
+          },
+          {
+            "hex": "#846c44",
+            "name": "tortoise",
+            "coverage": 0.0386
+          },
+          {
+            "hex": "#725c3c",
+            "name": "tortoise",
+            "coverage": 0.0376
+          },
+          {
+            "hex": "#dfad8d",
+            "name": "orange",
+            "coverage": 0.0315
+          },
+          {
+            "hex": "#e7e4df",
+            "name": "white",
+            "coverage": 0.0283
+          }
+        ]
+      },
+      {
+        "filename": "D&G_11.jpg",
+        "url": "/snapshots/S26/dg/D&G_11.jpg",
+        "novelty_score": 0.1013,
+        "best_match_filename": "D&G_94.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
+        "best_match_cos": 0.8987,
+        "intra_season_rarity": 0.2424,
+        "hit_score": 0.1578,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#747862",
+            "name": "grey",
+            "coverage": 0.5723
+          },
+          {
+            "hex": "#82866e",
+            "name": "grey",
+            "coverage": 0.2147
+          },
+          {
+            "hex": "#535345",
+            "name": "dark_grey",
+            "coverage": 0.0362
+          },
+          {
+            "hex": "#c6b098",
+            "name": "orange",
+            "coverage": 0.0307
+          },
+          {
+            "hex": "#d9a782",
+            "name": "orange",
+            "coverage": 0.0304
+          }
+        ]
+      },
+      {
+        "filename": "D&G_7.jpg",
+        "url": "/snapshots/S26/dg/D&G_7.jpg",
+        "novelty_score": 0.0975,
+        "best_match_filename": "D&G_91.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/2/D&G_91.jpg",
+        "best_match_cos": 0.9025,
+        "intra_season_rarity": 0.2466,
+        "hit_score": 0.1571,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#866c41",
+            "name": "tortoise",
+            "coverage": 0.2933
+          },
+          {
+            "hex": "#94794d",
+            "name": "tortoise",
+            "coverage": 0.1957
+          },
+          {
+            "hex": "#b49763",
+            "name": "orange",
+            "coverage": 0.1562
+          },
+          {
+            "hex": "#a38757",
+            "name": "tortoise",
+            "coverage": 0.151
+          },
+          {
+            "hex": "#d5bb98",
+            "name": "orange",
+            "coverage": 0.0479
+          }
+        ]
+      },
+      {
+        "filename": "D&G_53.jpg",
+        "url": "/snapshots/S26/dg/D&G_53.jpg",
+        "novelty_score": 0.0944,
+        "best_match_filename": "D&G_13.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_13.jpg",
+        "best_match_cos": 0.9056,
+        "intra_season_rarity": 0.1982,
+        "hit_score": 0.1359,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#513c35",
+            "name": "burgundy",
+            "coverage": 0.1577
+          },
+          {
+            "hex": "#887657",
+            "name": "tortoise",
+            "coverage": 0.156
+          },
+          {
+            "hex": "#f3c899",
+            "name": "peach",
+            "coverage": 0.1518
+          },
+          {
+            "hex": "#d4b286",
+            "name": "orange",
+            "coverage": 0.1191
+          },
+          {
+            "hex": "#9d8764",
+            "name": "orange",
+            "coverage": 0.1178
+          }
+        ]
+      },
+      {
+        "filename": "D&G_114.jpg",
+        "url": "/snapshots/S26/dg/D&G_114.jpg",
+        "novelty_score": 0.094,
+        "best_match_filename": "D&G_122.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_122.jpg",
+        "best_match_cos": 0.906,
+        "intra_season_rarity": 0.1994,
+        "hit_score": 0.1362,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#a6ac86",
+            "name": "yellow",
+            "coverage": 0.578
+          },
+          {
+            "hex": "#403b31",
+            "name": "dark_grey",
+            "coverage": 0.0574
+          },
+          {
+            "hex": "#25231c",
+            "name": "dark_grey",
+            "coverage": 0.054
+          },
+          {
+            "hex": "#949272",
+            "name": "yellow",
+            "coverage": 0.053
+          },
+          {
+            "hex": "#756e51",
+            "name": "gold",
+            "coverage": 0.0449
+          }
+        ]
+      },
+      {
+        "filename": "D&G_23.jpg",
+        "url": "/snapshots/S26/dg/D&G_23.jpg",
+        "novelty_score": 0.0934,
+        "best_match_filename": "D&G_96.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/3/D&G_96.jpg",
+        "best_match_cos": 0.9066,
+        "intra_season_rarity": 0.1844,
+        "hit_score": 0.1298,
+        "is_hit": false,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#a6683c",
+            "name": "tortoise",
+            "coverage": 0.5773
+          },
+          {
+            "hex": "#8e592e",
+            "name": "tortoise",
+            "coverage": 0.0661
+          },
+          {
+            "hex": "#51341f",
+            "name": "brown",
+            "coverage": 0.0495
+          },
+          {
+            "hex": "#6f4724",
+            "name": "brown",
+            "coverage": 0.0491
+          },
+          {
+            "hex": "#2c1c14",
+            "name": "dark_grey",
+            "coverage": 0.0451
+          }
+        ]
+      },
+      {
+        "filename": "D&G_10.jpg",
+        "url": "/snapshots/S26/dg/D&G_10.jpg",
+        "novelty_score": 0.087,
+        "best_match_filename": "D&G_91.jpg",
+        "best_match_url": "/brands/dolce_and_gabbana/2/D&G_91.jpg",
+        "best_match_cos": 0.913,
+        "intra_season_rarity": 0.2302,
+        "hit_score": 0.1443,
+        "is_hit": false,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#fec385",
+            "name": "peach",
+            "coverage": 0.5067
+          },
+          {
+            "hex": "#fdad63",
+            "name": "orange",
+            "coverage": 0.1503
+          },
+          {
+            "hex": "#fdb570",
+            "name": "orange",
+            "coverage": 0.1368
+          },
+          {
+            "hex": "#b68d6d",
+            "name": "orange",
+            "coverage": 0.0413
+          },
+          {
+            "hex": "#c79f83",
+            "name": "orange",
+            "coverage": 0.04
+          }
+        ]
+      }
+    ],
+    "discontinued_products": [
+      {
+        "filename": "D&G_107.jpg",
+        "url": "/brands/dolce_and_gabbana/0/D&G_107.jpg",
+        "discontinuation_score": 0.2069,
+        "best_match_filename": "D&G_103.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_103.jpg",
+        "best_match_cos": 0.7931,
+        "intra_season_rarity": 0.2871,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#c6ada8",
+            "name": "pink",
+            "coverage": 0.5149
+          },
+          {
+            "hex": "#f0849b",
+            "name": "pink",
+            "coverage": 0.3044
+          },
+          {
+            "hex": "#e9768b",
+            "name": "pink",
+            "coverage": 0.0591
+          },
+          {
+            "hex": "#bc9994",
+            "name": "pink",
+            "coverage": 0.0525
+          },
+          {
+            "hex": "#e98fa0",
+            "name": "pink",
+            "coverage": 0.0312
+          }
+        ]
+      },
+      {
+        "filename": "D&G_95.jpg",
+        "url": "/brands/dolce_and_gabbana/0/D&G_95.jpg",
+        "discontinuation_score": 0.1738,
+        "best_match_filename": "D&G_17.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_17.jpg",
+        "best_match_cos": 0.8262,
+        "intra_season_rarity": 0.2881,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#e9bbc9",
+            "name": "pink",
+            "coverage": 0.9113
+          },
+          {
+            "hex": "#c89da6",
+            "name": "pink",
+            "coverage": 0.0431
+          },
+          {
+            "hex": "#e5c5ce",
+            "name": "pink",
+            "coverage": 0.0276
+          },
+          {
+            "hex": "#caadb2",
+            "name": "pink",
+            "coverage": 0.0179
+          }
+        ]
+      },
+      {
+        "filename": "D&G_85.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_85.jpg",
+        "discontinuation_score": 0.1521,
+        "best_match_filename": "D&G_59.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_59.jpg",
+        "best_match_cos": 0.8479,
+        "intra_season_rarity": 0.2449,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#6e83a1",
+            "name": "blue",
+            "coverage": 0.801
+          },
+          {
+            "hex": "#141419",
+            "name": "black",
+            "coverage": 0.0424
+          },
+          {
+            "hex": "#292a34",
+            "name": "dark_grey",
+            "coverage": 0.0346
+          },
+          {
+            "hex": "#59647a",
+            "name": "blue",
+            "coverage": 0.0313
+          },
+          {
+            "hex": "#a7a4a3",
+            "name": "grey",
+            "coverage": 0.026
+          }
+        ]
+      },
+      {
+        "filename": "D&G_29.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_29.jpg",
+        "discontinuation_score": 0.1476,
+        "best_match_filename": "D&G_69.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_69.jpg",
+        "best_match_cos": 0.8524,
+        "intra_season_rarity": 0.2262,
+        "style": "browline",
+        "colors": [
+          {
+            "hex": "#556048",
+            "name": "dark_grey",
+            "coverage": 0.6224
+          },
+          {
+            "hex": "#231f1c",
+            "name": "dark_grey",
+            "coverage": 0.2021
+          },
+          {
+            "hex": "#424637",
+            "name": "dark_grey",
+            "coverage": 0.0496
+          },
+          {
+            "hex": "#292921",
+            "name": "dark_grey",
+            "coverage": 0.0382
+          },
+          {
+            "hex": "#393a30",
+            "name": "dark_grey",
+            "coverage": 0.0366
+          }
+        ]
+      },
+      {
+        "filename": "D&G_139.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_139.jpg",
+        "discontinuation_score": 0.1465,
+        "best_match_filename": "D&G_55.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_55.jpg",
+        "best_match_cos": 0.8535,
+        "intra_season_rarity": 0.2179,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#9d6f3f",
+            "name": "tortoise",
+            "coverage": 0.2438
+          },
+          {
+            "hex": "#2f2d2d",
+            "name": "dark_grey",
+            "coverage": 0.206
+          },
+          {
+            "hex": "#a87a44",
+            "name": "tortoise",
+            "coverage": 0.1623
+          },
+          {
+            "hex": "#b4864a",
+            "name": "tortoise",
+            "coverage": 0.118
+          },
+          {
+            "hex": "#ca9955",
+            "name": "orange",
+            "coverage": 0.0609
+          }
+        ]
+      },
+      {
+        "filename": "D&G_106.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_106.jpg",
+        "discontinuation_score": 0.1435,
+        "best_match_filename": "D&G_113.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_113.jpg",
+        "best_match_cos": 0.8565,
+        "intra_season_rarity": 0.2266,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#e4e4e4",
+            "name": "white",
+            "coverage": 0.3733
+          },
+          {
+            "hex": "#575757",
+            "name": "dark_grey",
+            "coverage": 0.3319
+          },
+          {
+            "hex": "#636363",
+            "name": "dark_grey",
+            "coverage": 0.2346
+          },
+          {
+            "hex": "#d1d1cf",
+            "name": "light_grey",
+            "coverage": 0.0347
+          },
+          {
+            "hex": "#c1bfbd",
+            "name": "light_grey",
+            "coverage": 0.0256
+          }
+        ]
+      },
+      {
+        "filename": "D&G_82.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_82.jpg",
+        "discontinuation_score": 0.1419,
+        "best_match_filename": "D&G_113.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_113.jpg",
+        "best_match_cos": 0.8581,
+        "intra_season_rarity": 0.2349,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#635e5d",
+            "name": "dark_grey",
+            "coverage": 0.7305
+          },
+          {
+            "hex": "#dadbda",
+            "name": "white",
+            "coverage": 0.1429
+          },
+          {
+            "hex": "#47423f",
+            "name": "dark_grey",
+            "coverage": 0.0724
+          },
+          {
+            "hex": "#544f4d",
+            "name": "dark_grey",
+            "coverage": 0.0543
+          }
+        ]
+      },
+      {
+        "filename": "D&G_127.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_127.jpg",
+        "discontinuation_score": 0.1408,
+        "best_match_filename": "D&G_114.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_114.jpg",
+        "best_match_cos": 0.8592,
+        "intra_season_rarity": 0.2448,
+        "style": "signature",
+        "colors": [
+          {
+            "hex": "#424f33",
+            "name": "dark_green",
+            "coverage": 0.4886
+          },
+          {
+            "hex": "#31302f",
+            "name": "dark_grey",
+            "coverage": 0.1985
+          },
+          {
+            "hex": "#c8b273",
+            "name": "orange",
+            "coverage": 0.0553
+          },
+          {
+            "hex": "#434240",
+            "name": "dark_grey",
+            "coverage": 0.0407
+          },
+          {
+            "hex": "#24261c",
+            "name": "dark_grey",
+            "coverage": 0.0391
+          }
+        ]
+      },
+      {
+        "filename": "D&G_87.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_87.jpg",
+        "discontinuation_score": 0.1399,
+        "best_match_filename": "D&G_61.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_61.jpg",
+        "best_match_cos": 0.8601,
+        "intra_season_rarity": 0.2178,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#4c5740",
+            "name": "dark_grey",
+            "coverage": 0.5188
+          },
+          {
+            "hex": "#26231e",
+            "name": "dark_grey",
+            "coverage": 0.1275
+          },
+          {
+            "hex": "#181813",
+            "name": "black",
+            "coverage": 0.0748
+          },
+          {
+            "hex": "#322d1d",
+            "name": "dark_grey",
+            "coverage": 0.0488
+          },
+          {
+            "hex": "#3f4035",
+            "name": "dark_grey",
+            "coverage": 0.0474
+          }
+        ]
+      },
+      {
+        "filename": "D&G_158.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_158.jpg",
+        "discontinuation_score": 0.1319,
+        "best_match_filename": "D&G_73.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_73.jpg",
+        "best_match_cos": 0.8681,
+        "intra_season_rarity": 0.2278,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#494a4c",
+            "name": "dark_grey",
+            "coverage": 0.5414
+          },
+          {
+            "hex": "#cacaca",
+            "name": "light_grey",
+            "coverage": 0.4308
+          },
+          {
+            "hex": "#bcbcbc",
+            "name": "light_grey",
+            "coverage": 0.0279
+          }
+        ]
+      },
+      {
+        "filename": "D&G_86.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_86.jpg",
+        "discontinuation_score": 0.1298,
+        "best_match_filename": "D&G_17.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_17.jpg",
+        "best_match_cos": 0.8702,
+        "intra_season_rarity": 0.2519,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#b6b6b8",
+            "name": "light_grey",
+            "coverage": 0.8277
+          },
+          {
+            "hex": "#a2a09e",
+            "name": "grey",
+            "coverage": 0.0489
+          },
+          {
+            "hex": "#8e8a86",
+            "name": "grey",
+            "coverage": 0.0341
+          },
+          {
+            "hex": "#7a7772",
+            "name": "grey",
+            "coverage": 0.026
+          },
+          {
+            "hex": "#e0dfde",
+            "name": "white",
+            "coverage": 0.0227
+          }
+        ]
+      },
+      {
+        "filename": "D&G_117.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_117.jpg",
+        "discontinuation_score": 0.1269,
+        "best_match_filename": "D&G_96.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_96.jpg",
+        "best_match_cos": 0.8731,
+        "intra_season_rarity": 0.2128,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#757472",
+            "name": "grey",
+            "coverage": 0.486
+          },
+          {
+            "hex": "#2b2b2b",
+            "name": "dark_grey",
+            "coverage": 0.2787
+          },
+          {
+            "hex": "#5c5b5b",
+            "name": "dark_grey",
+            "coverage": 0.0506
+          },
+          {
+            "hex": "#1c1b1b",
+            "name": "dark_grey",
+            "coverage": 0.0457
+          },
+          {
+            "hex": "#3f3f3f",
+            "name": "dark_grey",
+            "coverage": 0.0401
+          }
+        ]
+      },
+      {
+        "filename": "D&G_52.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_52.jpg",
+        "discontinuation_score": 0.1172,
+        "best_match_filename": "D&G_3.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_3.jpg",
+        "best_match_cos": 0.8828,
+        "intra_season_rarity": 0.219,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#919b97",
+            "name": "grey",
+            "coverage": 0.5122
+          },
+          {
+            "hex": "#743a46",
+            "name": "red",
+            "coverage": 0.2344
+          },
+          {
+            "hex": "#843947",
+            "name": "red",
+            "coverage": 0.0888
+          },
+          {
+            "hex": "#52484d",
+            "name": "dark_grey",
+            "coverage": 0.0595
+          },
+          {
+            "hex": "#9f3344",
+            "name": "red",
+            "coverage": 0.0373
+          }
+        ]
+      },
+      {
+        "filename": "D&G_159.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_159.jpg",
+        "discontinuation_score": 0.1157,
+        "best_match_filename": "D&G_73.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_73.jpg",
+        "best_match_cos": 0.8843,
+        "intra_season_rarity": 0.213,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#48494a",
+            "name": "dark_grey",
+            "coverage": 0.4739
+          },
+          {
+            "hex": "#907f70",
+            "name": "orange",
+            "coverage": 0.3331
+          },
+          {
+            "hex": "#2c2b28",
+            "name": "dark_grey",
+            "coverage": 0.0503
+          },
+          {
+            "hex": "#9d9186",
+            "name": "grey",
+            "coverage": 0.047
+          },
+          {
+            "hex": "#7e7064",
+            "name": "tortoise",
+            "coverage": 0.0466
+          }
+        ]
+      },
+      {
+        "filename": "D&G_156.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_156.jpg",
+        "discontinuation_score": 0.1152,
+        "best_match_filename": "D&G_113.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_113.jpg",
+        "best_match_cos": 0.8848,
+        "intra_season_rarity": 0.2454,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#56555a",
+            "name": "dark_grey",
+            "coverage": 0.4832
+          },
+          {
+            "hex": "#67676a",
+            "name": "grey",
+            "coverage": 0.3244
+          },
+          {
+            "hex": "#7c7c7e",
+            "name": "grey",
+            "coverage": 0.1179
+          },
+          {
+            "hex": "#d3d3d5",
+            "name": "light_grey",
+            "coverage": 0.043
+          },
+          {
+            "hex": "#474649",
+            "name": "dark_grey",
+            "coverage": 0.0316
+          }
+        ]
+      },
+      {
+        "filename": "D&G_26.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_26.jpg",
+        "discontinuation_score": 0.1142,
+        "best_match_filename": "D&G_88.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_88.jpg",
+        "best_match_cos": 0.8858,
+        "intra_season_rarity": 0.1994,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#6e4e35",
+            "name": "brown",
+            "coverage": 0.6079
+          },
+          {
+            "hex": "#27211b",
+            "name": "dark_grey",
+            "coverage": 0.0914
+          },
+          {
+            "hex": "#372e27",
+            "name": "dark_grey",
+            "coverage": 0.0745
+          },
+          {
+            "hex": "#5c422d",
+            "name": "brown",
+            "coverage": 0.0725
+          },
+          {
+            "hex": "#443223",
+            "name": "brown",
+            "coverage": 0.0502
+          }
+        ]
+      },
+      {
+        "filename": "D&G_84.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_84.jpg",
+        "discontinuation_score": 0.1098,
+        "best_match_filename": "D&G_68.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_68.jpg",
+        "best_match_cos": 0.8902,
+        "intra_season_rarity": 0.2219,
+        "style": "shield",
+        "colors": [
+          {
+            "hex": "#3f3f41",
+            "name": "dark_grey",
+            "coverage": 0.8716
+          },
+          {
+            "hex": "#0b0b09",
+            "name": "black",
+            "coverage": 0.0861
+          },
+          {
+            "hex": "#22211f",
+            "name": "dark_grey",
+            "coverage": 0.0222
+          },
+          {
+            "hex": "#333230",
+            "name": "dark_grey",
+            "coverage": 0.0202
+          }
+        ]
+      },
+      {
+        "filename": "D&G_142.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_142.jpg",
+        "discontinuation_score": 0.1092,
+        "best_match_filename": "D&G_91.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_91.jpg",
+        "best_match_cos": 0.8908,
+        "intra_season_rarity": 0.2138,
+        "style": "signature",
+        "colors": [
+          {
+            "hex": "#524c4c",
+            "name": "dark_grey",
+            "coverage": 0.7621
+          },
+          {
+            "hex": "#44413e",
+            "name": "dark_grey",
+            "coverage": 0.0479
+          },
+          {
+            "hex": "#524a3e",
+            "name": "dark_grey",
+            "coverage": 0.0379
+          },
+          {
+            "hex": "#3e362c",
+            "name": "dark_grey",
+            "coverage": 0.0318
+          },
+          {
+            "hex": "#5f5542",
+            "name": "brown",
+            "coverage": 0.0273
+          }
+        ]
+      },
+      {
+        "filename": "D&G_36.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_36.jpg",
+        "discontinuation_score": 0.1057,
+        "best_match_filename": "D&G_75.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_75.jpg",
+        "best_match_cos": 0.8943,
+        "intra_season_rarity": 0.2102,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#a8bac2",
+            "name": "blue",
+            "coverage": 0.4864
+          },
+          {
+            "hex": "#622717",
+            "name": "burgundy",
+            "coverage": 0.0791
+          },
+          {
+            "hex": "#53281d",
+            "name": "burgundy",
+            "coverage": 0.072
+          },
+          {
+            "hex": "#3e2b26",
+            "name": "dark_grey",
+            "coverage": 0.0683
+          },
+          {
+            "hex": "#7a2e14",
+            "name": "burgundy",
+            "coverage": 0.068
+          }
+        ]
+      },
+      {
+        "filename": "D&G_149.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_149.jpg",
+        "discontinuation_score": 0.1039,
+        "best_match_filename": "D&G_101.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_101.jpg",
+        "best_match_cos": 0.8961,
+        "intra_season_rarity": 0.252,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#6b5f58",
+            "name": "dark_grey",
+            "coverage": 0.5306
+          },
+          {
+            "hex": "#857c74",
+            "name": "grey",
+            "coverage": 0.1426
+          },
+          {
+            "hex": "#bdb2a9",
+            "name": "light_grey",
+            "coverage": 0.1295
+          },
+          {
+            "hex": "#9c938b",
+            "name": "grey",
+            "coverage": 0.1156
+          },
+          {
+            "hex": "#afa49b",
+            "name": "grey",
+            "coverage": 0.0531
+          }
+        ]
+      },
+      {
+        "filename": "D&G_20.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_20.jpg",
+        "discontinuation_score": 0.1013,
+        "best_match_filename": "D&G_113.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_113.jpg",
+        "best_match_cos": 0.8987,
+        "intra_season_rarity": 0.2019,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#616161",
+            "name": "dark_grey",
+            "coverage": 0.4631
+          },
+          {
+            "hex": "#dfdfdf",
+            "name": "white",
+            "coverage": 0.2967
+          },
+          {
+            "hex": "#707070",
+            "name": "grey",
+            "coverage": 0.072
+          },
+          {
+            "hex": "#cfcfce",
+            "name": "light_grey",
+            "coverage": 0.0528
+          },
+          {
+            "hex": "#c1c0bf",
+            "name": "light_grey",
+            "coverage": 0.036
+          }
+        ]
+      },
+      {
+        "filename": "D&G_125.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_125.jpg",
+        "discontinuation_score": 0.0983,
+        "best_match_filename": "D&G_112.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_112.jpg",
+        "best_match_cos": 0.9017,
+        "intra_season_rarity": 0.2085,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#8a967c",
+            "name": "green",
+            "coverage": 0.2425
+          },
+          {
+            "hex": "#a2ae97",
+            "name": "grey",
+            "coverage": 0.2371
+          },
+          {
+            "hex": "#697858",
+            "name": "green",
+            "coverage": 0.1871
+          },
+          {
+            "hex": "#768567",
+            "name": "green",
+            "coverage": 0.1421
+          },
+          {
+            "hex": "#363330",
+            "name": "dark_grey",
+            "coverage": 0.0585
+          }
+        ]
+      },
+      {
+        "filename": "D&G_115.jpg",
+        "url": "/brands/dolce_and_gabbana/1/D&G_115.jpg",
+        "discontinuation_score": 0.098,
+        "best_match_filename": "D&G_97.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_97.jpg",
+        "best_match_cos": 0.902,
+        "intra_season_rarity": 0.2139,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#575350",
+            "name": "dark_grey",
+            "coverage": 0.6625
+          },
+          {
+            "hex": "#dfdfdf",
+            "name": "white",
+            "coverage": 0.2937
+          },
+          {
+            "hex": "#45413e",
+            "name": "dark_grey",
+            "coverage": 0.026
+          },
+          {
+            "hex": "#676462",
+            "name": "dark_grey",
+            "coverage": 0.0178
+          }
+        ]
+      },
+      {
+        "filename": "D&G_47.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_47.jpg",
+        "discontinuation_score": 0.097,
+        "best_match_filename": "D&G_79.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_79.jpg",
+        "best_match_cos": 0.903,
+        "intra_season_rarity": 0.2004,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#848a94",
+            "name": "grey",
+            "coverage": 0.6022
+          },
+          {
+            "hex": "#322e2d",
+            "name": "dark_grey",
+            "coverage": 0.0779
+          },
+          {
+            "hex": "#403a39",
+            "name": "dark_grey",
+            "coverage": 0.0743
+          },
+          {
+            "hex": "#4f4743",
+            "name": "dark_grey",
+            "coverage": 0.0618
+          },
+          {
+            "hex": "#211f20",
+            "name": "dark_grey",
+            "coverage": 0.0587
+          }
+        ]
+      },
+      {
+        "filename": "D&G_160.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_160.jpg",
+        "discontinuation_score": 0.0964,
+        "best_match_filename": "D&G_97.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_97.jpg",
+        "best_match_cos": 0.9036,
+        "intra_season_rarity": 0.2227,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#4f4e4e",
+            "name": "dark_grey",
+            "coverage": 0.5055
+          },
+          {
+            "hex": "#212121",
+            "name": "dark_grey",
+            "coverage": 0.3904
+          },
+          {
+            "hex": "#353435",
+            "name": "dark_grey",
+            "coverage": 0.0646
+          },
+          {
+            "hex": "#6e6e6e",
+            "name": "grey",
+            "coverage": 0.0205
+          },
+          {
+            "hex": "#5c5c5c",
+            "name": "dark_grey",
+            "coverage": 0.019
+          }
+        ]
+      },
+      {
+        "filename": "D&G_138.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_138.jpg",
+        "discontinuation_score": 0.0943,
+        "best_match_filename": "D&G_54.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_54.jpg",
+        "best_match_cos": 0.9057,
+        "intra_season_rarity": 0.195,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#565455",
+            "name": "dark_grey",
+            "coverage": 0.5925
+          },
+          {
+            "hex": "#202020",
+            "name": "dark_grey",
+            "coverage": 0.2821
+          },
+          {
+            "hex": "#131212",
+            "name": "black",
+            "coverage": 0.0339
+          },
+          {
+            "hex": "#494747",
+            "name": "dark_grey",
+            "coverage": 0.0326
+          },
+          {
+            "hex": "#2d2c2b",
+            "name": "dark_grey",
+            "coverage": 0.0226
+          }
+        ]
+      },
+      {
+        "filename": "D&G_150.jpg",
+        "url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
+        "discontinuation_score": 0.0933,
+        "best_match_filename": "D&G_8.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_8.jpg",
+        "best_match_cos": 0.9067,
+        "intra_season_rarity": 0.3149,
+        "style": "aviator",
+        "colors": [
+          {
+            "hex": "#d89f8c",
+            "name": "pink",
+            "coverage": 0.1511
+          },
+          {
+            "hex": "#c1876c",
+            "name": "orange",
+            "coverage": 0.1301
+          },
+          {
+            "hex": "#e7c9bd",
+            "name": "pink",
+            "coverage": 0.1121
+          },
+          {
+            "hex": "#daaa99",
+            "name": "pink",
+            "coverage": 0.1048
+          },
+          {
+            "hex": "#cc917d",
+            "name": "red",
+            "coverage": 0.0933
+          }
+        ]
+      },
+      {
+        "filename": "D&G_51.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_51.jpg",
+        "discontinuation_score": 0.0928,
+        "best_match_filename": "D&G_33.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_33.jpg",
+        "best_match_cos": 0.9072,
+        "intra_season_rarity": 0.2161,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#aec0cb",
+            "name": "blue",
+            "coverage": 0.3907
+          },
+          {
+            "hex": "#9eafb7",
+            "name": "light_grey",
+            "coverage": 0.1837
+          },
+          {
+            "hex": "#d7995d",
+            "name": "orange",
+            "coverage": 0.0679
+          },
+          {
+            "hex": "#b74e1c",
+            "name": "tortoise",
+            "coverage": 0.059
+          },
+          {
+            "hex": "#9b502d",
+            "name": "tortoise",
+            "coverage": 0.0587
+          }
+        ]
+      },
+      {
+        "filename": "D&G_83.jpg",
+        "url": "/brands/dolce_and_gabbana/2/D&G_83.jpg",
+        "discontinuation_score": 0.0912,
+        "best_match_filename": "D&G_76.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_76.jpg",
+        "best_match_cos": 0.9088,
+        "intra_season_rarity": 0.1847,
+        "style": "navigator",
+        "colors": [
+          {
+            "hex": "#2a2927",
+            "name": "dark_grey",
+            "coverage": 0.5459
+          },
+          {
+            "hex": "#3c3b39",
+            "name": "dark_grey",
+            "coverage": 0.0914
+          },
+          {
+            "hex": "#696662",
+            "name": "dark_grey",
+            "coverage": 0.0684
+          },
+          {
+            "hex": "#4f4e4c",
+            "name": "dark_grey",
+            "coverage": 0.0612
+          },
+          {
+            "hex": "#939290",
+            "name": "grey",
+            "coverage": 0.0549
+          }
+        ]
+      },
+      {
+        "filename": "D&G_124.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_124.jpg",
+        "discontinuation_score": 0.0897,
+        "best_match_filename": "D&G_54.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_54.jpg",
+        "best_match_cos": 0.9103,
+        "intra_season_rarity": 0.1963,
+        "style": "rectangular",
+        "colors": [
+          {
+            "hex": "#7c7c7e",
+            "name": "grey",
+            "coverage": 0.4485
+          },
+          {
+            "hex": "#242424",
+            "name": "dark_grey",
+            "coverage": 0.3185
+          },
+          {
+            "hex": "#171717",
+            "name": "black",
+            "coverage": 0.0895
+          },
+          {
+            "hex": "#313131",
+            "name": "dark_grey",
+            "coverage": 0.0384
+          },
+          {
+            "hex": "#6e6e6f",
+            "name": "grey",
+            "coverage": 0.0337
+          }
+        ]
+      },
+      {
+        "filename": "D&G_62.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_62.jpg",
+        "discontinuation_score": 0.0885,
+        "best_match_filename": "D&G_92.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_92.jpg",
+        "best_match_cos": 0.9115,
+        "intra_season_rarity": 0.2039,
+        "style": "signature",
+        "colors": [
+          {
+            "hex": "#93886a",
+            "name": "tortoise",
+            "coverage": 0.5187
+          },
+          {
+            "hex": "#57473a",
+            "name": "brown",
+            "coverage": 0.0992
+          },
+          {
+            "hex": "#675542",
+            "name": "tortoise",
+            "coverage": 0.0816
+          },
+          {
+            "hex": "#453d35",
+            "name": "dark_grey",
+            "coverage": 0.0776
+          },
+          {
+            "hex": "#46352c",
+            "name": "brown",
+            "coverage": 0.0568
+          }
+        ]
+      },
+      {
+        "filename": "D&G_50.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_50.jpg",
+        "discontinuation_score": 0.0884,
+        "best_match_filename": "D&G_88.jpg",
+        "best_match_url": "/snapshots/S26/dg/D&G_88.jpg",
+        "best_match_cos": 0.9116,
+        "intra_season_rarity": 0.2004,
+        "style": "square",
+        "colors": [
+          {
+            "hex": "#6c6454",
+            "name": "dark_grey",
+            "coverage": 0.4721
+          },
+          {
+            "hex": "#2b2520",
+            "name": "dark_grey",
+            "coverage": 0.2664
+          },
+          {
+            "hex": "#392e25",
+            "name": "dark_grey",
+            "coverage": 0.073
+          },
+          {
+            "hex": "#574f45",
+            "name": "dark_grey",
+            "coverage": 0.0489
+          },
+          {
+            "hex": "#4a392a",
+            "name": "brown",
+            "coverage": 0.0464
+          }
+        ]
+      }
+    ]
+  }
+}
