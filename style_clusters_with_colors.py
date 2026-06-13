@@ -45,11 +45,27 @@ import json
 from collections import Counter
 from pathlib import Path
 
+import torch
+
 REPO_ROOT = Path(__file__).parent
 STYLES_FILE   = REPO_ROOT / "snapshots" / "styles" / "style_assignments.json"
 PALETTES_F25  = REPO_ROOT / "palettes_all_brands_v2.json"
 PALETTES_S26  = REPO_ROOT / "palettes_S26.json"
+EMBED_DIR     = REPO_ROOT / "snapshots" / "embeddings"
 OUT_FILE      = REPO_ROOT / "snapshots" / "styles" / "style_clusters.json"
+
+# FashionCLIP embeddings, keyed by (brand, season). Used for the L2 sub-
+# clustering pass inside each silhouette.
+FCLIP_EMBED_FILES = {
+    ("Bottega Veneta",  "F25"): "FashionCLIP_Bottega_Veneta_F25_n123.pt",
+    ("Bottega Veneta",  "S26"): "FashionCLIP_Bottega_Veneta_S26_n162.pt",
+    ("Dolce & Gabbana", "F25"): "FashionCLIP_Dolce_and_Gabbana_F25_n161.pt",
+    ("Dolce & Gabbana", "S26"): "FashionCLIP_Dolce_and_Gabbana_S26_n114.pt",
+}
+
+# Silhouettes below this size are kept as a single flat group (no L2
+# sub-clustering — too few products to split meaningfully).
+SUB_CLUSTER_MIN = 6
 
 # Where the frontend serves images from. Scanned at build time to translate
 # a bare filename ("Bottega_107.jpg") into a real URL the browser can load
@@ -129,6 +145,108 @@ def build_image_url_map(brand: str, season: str) -> dict[str, str]:
     return url_map
 
 
+@torch.no_grad()
+def kmeans_torch(X: torch.Tensor, k: int, n_iter: int = 30, seed: int = 42
+                 ) -> tuple[torch.Tensor, torch.Tensor]:
+    """Spherical KMeans on L2-normalised embeddings — assignment by cos sim,
+    centroids re-normalised every iteration. Returns (labels, centroids).
+    Deterministic for a given seed.
+    """
+    n, d = X.shape
+    if k >= n:
+        return torch.arange(n) % k, X[:k].clone()
+
+    g = torch.Generator().manual_seed(seed)
+    init_idx = torch.randperm(n, generator=g)[:k]
+    centroids = X[init_idx].clone()
+
+    labels = torch.full((n,), -1, dtype=torch.long)
+    for _ in range(n_iter):
+        sims = X @ centroids.T              # (n, k)
+        new_labels = sims.argmax(dim=1)
+        if torch.equal(new_labels, labels):
+            break
+        labels = new_labels
+        for c in range(k):
+            mask = labels == c
+            if mask.sum() == 0:
+                continue
+            v = X[mask].mean(dim=0)
+            centroids[c] = v / v.norm().clamp_min(1e-12)
+    return labels, centroids
+
+
+def pick_subk(n: int) -> int:
+    """Per-silhouette k for the L2 sub-clustering pass. Capped at 4 so
+    modal sections stay readable; off for clusters with fewer than
+    SUB_CLUSTER_MIN products."""
+    if n < SUB_CLUSTER_MIN: return 1
+    if n < 13:              return 2
+    if n < 19:              return 3
+    return 4
+
+
+def build_subclusters(cluster_products: list[dict],
+                      img_emb_l2: torch.Tensor,
+                      filename_to_idx: dict[str, int],
+                      palettes: dict[str, list],
+                      ) -> list[dict] | None:
+    """For a single silhouette cluster, run spherical KMeans on its members'
+    FashionCLIP embeddings and return a list of sub-cluster summaries:
+    hero, count, top colours, members. Returns None when the cluster is
+    too small or its members aren't all in the embedding index.
+    """
+    n = len(cluster_products)
+    k = pick_subk(n)
+    if k <= 1:
+        return None
+
+    # Map cluster products → embedding indices (skip any filename we don't
+    # have an embedding for — shouldn't happen with dedup but be safe).
+    keep_rows: list[tuple[int, dict]] = []
+    for p in cluster_products:
+        idx = filename_to_idx.get(p["filename"])
+        if idx is not None:
+            keep_rows.append((idx, p))
+    if len(keep_rows) < SUB_CLUSTER_MIN:
+        return None
+
+    indices = torch.tensor([r[0] for r in keep_rows])
+    members = [r[1] for r in keep_rows]
+    sub_emb = img_emb_l2[indices]
+    labels, centroids = kmeans_torch(sub_emb, k)
+
+    sub_clusters: list[dict] = []
+    for sub_id in range(k):
+        mask = labels == sub_id
+        if mask.sum() == 0:
+            continue                                # very rare edge case
+        sub_members = [members[i] for i, m in enumerate(mask.tolist()) if m]
+        sub_member_emb = sub_emb[mask]
+        # Hero = member with highest cos sim to its centroid.
+        sims = sub_member_emb @ centroids[sub_id]
+        hero_member_idx = int(sims.argmax().item())
+        hero = sub_members[hero_member_idx]
+        # Top colours within the sub-cluster
+        sub_colors = aggregate_cluster_colors(
+            [m["filename"] for m in sub_members], palettes,
+        )
+        sub_clusters.append({
+            "id":              sub_id,
+            "count":           len(sub_members),
+            "hero_filename":   hero["filename"],
+            "hero_url":        hero.get("url", ""),
+            "hero_confidence": hero["confidence"],
+            "products":        sub_members,
+            "colors":          sub_colors,
+            "color_summary":   " + ".join(c["name"] for c in sub_colors[:2]),
+        })
+    # Largest sub-cluster first, so the modal opens with the dominant
+    # variant.
+    sub_clusters.sort(key=lambda s: -s["count"])
+    return sub_clusters
+
+
 def aggregate_cluster_colors(products: list[str], palettes: dict[str, list]) -> list[dict]:
     """Return one row per unique (hex bucket) across cluster products, sorted
     by frequency. Two products with the same color bucket count as 2."""
@@ -167,6 +285,24 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
     # picking a hero, or aggregating colours.
     products  = [p for p in assignments[brand][season] if p["filename"] not in drop_set]
 
+    # FashionCLIP embeddings + filename → row index, for the L2 sub-clustering
+    # pass below. The .pt files are saved in the same alphabetical order as
+    # sorted(folder.glob("*.jpg")), so we recreate that mapping here.
+    emb_name = FCLIP_EMBED_FILES.get((brand, season))
+    img_emb_l2: torch.Tensor | None = None
+    filename_to_idx: dict[str, int] = {}
+    if emb_name is not None:
+        emb_path = EMBED_DIR / emb_name
+        if emb_path.exists():
+            raw = torch.load(emb_path, map_location="cpu")
+            img_emb_l2 = raw / raw.norm(dim=1, keepdim=True).clamp_min(1e-12)
+            folder = ("snapshots/S26/raw/bottega" if season == "S26" and "Bottega" in brand
+                      else "snapshots/S26/raw/dg" if season == "S26"
+                      else "images_bottega" if "Bottega" in brand
+                      else "images_D&G")
+            for i, p in enumerate(sorted((REPO_ROOT / folder).glob("*.jpg"))):
+                filename_to_idx[p.name] = i
+
     # Hero pick rules:
     #   • Named silhouettes: highest top-1 softmax confidence — the most
     #     "textbook" example of the silhouette.
@@ -195,6 +331,13 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
             }
             for p in sorted_prods
         ]
+        # Sub-cluster non-signature silhouettes via spherical KMeans on the
+        # FashionCLIP embeddings. The signature bucket is intentionally
+        # left flat because its members already have nothing in common.
+        sub_clusters = None
+        if not is_signature and img_emb_l2 is not None and len(product_rows) >= SUB_CLUSTER_MIN:
+            sub_clusters = build_subclusters(product_rows, img_emb_l2, filename_to_idx, palettes)
+
         clusters.append({
             "style":           style,
             "count":           len(prods),
@@ -206,6 +349,7 @@ def build_clusters(assignments: dict, brand: str, season: str) -> list[dict]:
             "products":        product_rows,
             "colors":          aggregate_cluster_colors([p["filename"] for p in prods], palettes),
             "signature":       is_signature,
+            "sub_clusters":    sub_clusters,
         })
     # Sort by count desc; pin "signature" to the end so the editorial
     # reading is "main silhouettes first, then the maison's distinctive
