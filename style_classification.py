@@ -84,6 +84,13 @@ STYLE_PROMPTS = {
 SIGNATURE_CONF_THRESHOLD   = 0.20  # below 3× random baseline (1/14 ≈ 0.07)
 SIGNATURE_MARGIN_THRESHOLD = 0.05  # virtual tie between top-1 and top-2
 RARITY_PERCENTILE          = 0.93  # top ~7% most visually isolated
+# Rarity is treated as a SECONDARY signal — it only redirects a product
+# to "signature" if the silhouette classifier is also unsure (top-1 below
+# this cutoff). Above it, a confidently labelled aviator stays an aviator
+# regardless of how rare its colourway is. Without this gate the rarity
+# rule was pulling obvious aviators / cat-eyes / hexagonals into signature
+# because their colour was uncommon — editorially wrong.
+RARITY_CONF_GATE           = 0.50
 
 # (brand_label, season_label, fashionclip_embed_filename, image_folder)
 SOURCES = [
@@ -170,7 +177,11 @@ def main():
 
             low_conf     = top1_conf < SIGNATURE_CONF_THRESHOLD
             tied         = margin    < SIGNATURE_MARGIN_THRESHOLD
-            isolated     = rare_i    > rarity_cut
+            # Rarity-driven signature: visually isolated AND silhouette
+            # classifier not confident. The conf-gate prevents confidently
+            # labelled aviators / cat-eyes from getting pulled into
+            # signature just because their colourway is unusual.
+            isolated     = rare_i > rarity_cut and top1_conf < RARITY_CONF_GATE
 
             if low_conf or tied or isolated:
                 assigned = "signature"

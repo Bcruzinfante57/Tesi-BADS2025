@@ -591,7 +591,7 @@
       },
       {
         "filename": "Bottega_126.jpg",
-        "style": "signature",
+        "style": "square",
         "confidence": 0.5131,
         "raw_cos": 0.3128,
         "rarity": 0.2689,
@@ -696,7 +696,7 @@
       },
       {
         "filename": "Bottega_16.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.7656,
         "raw_cos": 0.2891,
         "rarity": 0.2846,
@@ -948,7 +948,7 @@
       },
       {
         "filename": "Bottega_27.jpg",
-        "style": "signature",
+        "style": "navigator",
         "confidence": 0.7505,
         "raw_cos": 0.3489,
         "rarity": 0.2705,
@@ -1200,7 +1200,7 @@
       },
       {
         "filename": "Bottega_38.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.5973,
         "raw_cos": 0.3057,
         "rarity": 0.2677,
@@ -1557,7 +1557,7 @@
       },
       {
         "filename": "Bottega_54.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.9497,
         "raw_cos": 0.3162,
         "rarity": 0.2973,
@@ -1788,7 +1788,7 @@
       },
       {
         "filename": "Bottega_64.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.5134,
         "raw_cos": 0.3076,
         "rarity": 0.2674,
@@ -1914,7 +1914,7 @@
       },
       {
         "filename": "Bottega_7.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.947,
         "raw_cos": 0.3138,
         "rarity": 0.2763,
@@ -2714,7 +2714,7 @@
       },
       {
         "filename": "Bottega_104.jpg",
-        "style": "signature",
+        "style": "hexagonal",
         "confidence": 0.6255,
         "raw_cos": 0.3848,
         "rarity": 0.2892,
@@ -3029,7 +3029,7 @@
       },
       {
         "filename": "Bottega_118.jpg",
-        "style": "signature",
+        "style": "cat-eye",
         "confidence": 0.7351,
         "raw_cos": 0.3194,
         "rarity": 0.276,
@@ -3281,7 +3281,7 @@
       },
       {
         "filename": "Bottega_129.jpg",
-        "style": "signature",
+        "style": "cat-eye",
         "confidence": 0.7668,
         "raw_cos": 0.2873,
         "rarity": 0.2695,
@@ -3323,7 +3323,7 @@
       },
       {
         "filename": "Bottega_130.jpg",
-        "style": "signature",
+        "style": "round",
         "confidence": 0.5007,
         "raw_cos": 0.3239,
         "rarity": 0.2688,
@@ -3743,7 +3743,7 @@
       },
       {
         "filename": "Bottega_149.jpg",
-        "style": "signature",
+        "style": "browline",
         "confidence": 0.5068,
         "raw_cos": 0.3046,
         "rarity": 0.2841,
@@ -3764,7 +3764,7 @@
       },
       {
         "filename": "Bottega_15.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.8761,
         "raw_cos": 0.3165,
         "rarity": 0.2725,
@@ -4478,7 +4478,7 @@
       },
       {
         "filename": "Bottega_34.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.9806,
         "raw_cos": 0.3282,
         "rarity": 0.3072,
@@ -4835,7 +4835,7 @@
       },
       {
         "filename": "Bottega_5.jpg",
-        "style": "signature",
+        "style": "hexagonal",
         "confidence": 0.8271,
         "raw_cos": 0.3842,
         "rarity": 0.2689,
@@ -4982,7 +4982,7 @@
       },
       {
         "filename": "Bottega_56.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.8574,
         "raw_cos": 0.3086,
         "rarity": 0.2898,
@@ -5045,7 +5045,7 @@
       },
       {
         "filename": "Bottega_59.jpg",
-        "style": "signature",
+        "style": "hexagonal",
         "confidence": 0.5004,
         "raw_cos": 0.3035,
         "rarity": 0.3153,
@@ -6183,7 +6183,7 @@
       },
       {
         "filename": "D&G_107.jpg",
-        "style": "signature",
+        "style": "rectangular",
         "confidence": 0.5958,
         "raw_cos": 0.309,
         "rarity": 0.2871,
@@ -6960,7 +6960,7 @@
       },
       {
         "filename": "D&G_140.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.7276,
         "raw_cos": 0.3384,
         "rarity": 0.2559,
@@ -7149,7 +7149,7 @@
       },
       {
         "filename": "D&G_149.jpg",
-        "style": "signature",
+        "style": "navigator",
         "confidence": 0.5683,
         "raw_cos": 0.3197,
         "rarity": 0.252,
@@ -7191,7 +7191,7 @@
       },
       {
         "filename": "D&G_150.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.8835,
         "raw_cos": 0.3129,
         "rarity": 0.3149,
@@ -7317,7 +7317,7 @@
       },
       {
         "filename": "D&G_156.jpg",
-        "style": "signature",
+        "style": "square",
         "confidence": 0.5926,
         "raw_cos": 0.3204,
         "rarity": 0.2454,
@@ -7716,7 +7716,7 @@
       },
       {
         "filename": "D&G_28.jpg",
-        "style": "signature",
+        "style": "navigator",
         "confidence": 0.7932,
         "raw_cos": 0.3042,
         "rarity": 0.2699,
@@ -9039,7 +9039,7 @@
       },
       {
         "filename": "D&G_85.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.9904,
         "raw_cos": 0.3695,
         "rarity": 0.2449,
@@ -9060,7 +9060,7 @@
       },
       {
         "filename": "D&G_86.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.9839,
         "raw_cos": 0.364,
         "rarity": 0.2519,
@@ -9270,7 +9270,7 @@
       },
       {
         "filename": "D&G_95.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.9237,
         "raw_cos": 0.3481,
         "rarity": 0.2881,
@@ -9587,7 +9587,7 @@
       },
       {
         "filename": "D&G_108.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.7224,
         "raw_cos": 0.3381,
         "rarity": 0.264,
@@ -9797,7 +9797,7 @@
       },
       {
         "filename": "D&G_14.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.8231,
         "raw_cos": 0.2926,
         "rarity": 0.2786,
@@ -10196,7 +10196,7 @@
       },
       {
         "filename": "D&G_31.jpg",
-        "style": "signature",
+        "style": "shield",
         "confidence": 0.5583,
         "raw_cos": 0.3087,
         "rarity": 0.2809,
@@ -11099,7 +11099,7 @@
       },
       {
         "filename": "D&G_70.jpg",
-        "style": "signature",
+        "style": "navigator",
         "confidence": 0.826,
         "raw_cos": 0.3057,
         "rarity": 0.2705,
@@ -11309,7 +11309,7 @@
       },
       {
         "filename": "D&G_8.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.9597,
         "raw_cos": 0.2993,
         "rarity": 0.3022,
@@ -11540,7 +11540,7 @@
       },
       {
         "filename": "D&G_9.jpg",
-        "style": "signature",
+        "style": "aviator",
         "confidence": 0.9131,
         "raw_cos": 0.305,
         "rarity": 0.2846,

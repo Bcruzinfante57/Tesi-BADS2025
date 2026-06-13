@@ -110,6 +110,48 @@
       ],
       "aviator": [
         {
+          "filename": "Bottega_54.jpg",
+          "style": "aviator",
+          "confidence": 0.9497,
+          "raw_cos": 0.3162,
+          "rarity": 0.2973,
+          "top3": [
+            [
+              "aviator",
+              0.9497
+            ],
+            [
+              "navigator",
+              0.0164
+            ],
+            [
+              "oversized",
+              0.0152
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_7.jpg",
+          "style": "aviator",
+          "confidence": 0.947,
+          "raw_cos": 0.3138,
+          "rarity": 0.2763,
+          "top3": [
+            [
+              "aviator",
+              0.947
+            ],
+            [
+              "oversized",
+              0.0228
+            ],
+            [
+              "navigator",
+              0.0136
+            ]
+          ]
+        },
+        {
           "filename": "Bottega_68.jpg",
           "style": "aviator",
           "confidence": 0.9047,
@@ -152,65 +194,23 @@
           ]
         },
         {
-          "filename": "Bottega_1.jpg",
+          "filename": "Bottega_16.jpg",
           "style": "aviator",
-          "confidence": 0.6111,
-          "raw_cos": 0.3022,
-          "rarity": 0.2646,
+          "confidence": 0.7656,
+          "raw_cos": 0.2891,
+          "rarity": 0.2846,
           "top3": [
             [
               "aviator",
-              0.6111
+              0.7656
             ],
             [
               "oversized",
-              0.1756
+              0.0795
             ],
             [
               "shield",
-              0.15
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_4.jpg",
-          "style": "aviator",
-          "confidence": 0.5804,
-          "raw_cos": 0.2997,
-          "rarity": 0.2227,
-          "top3": [
-            [
-              "aviator",
-              0.5804
-            ],
-            [
-              "oversized",
-              0.2334
-            ],
-            [
-              "shield",
-              0.0956
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_6.jpg",
-          "style": "aviator",
-          "confidence": 0.5654,
-          "raw_cos": 0.2924,
-          "rarity": 0.2481,
-          "top3": [
-            [
-              "aviator",
-              0.5654
-            ],
-            [
-              "oversized",
-              0.2043
-            ],
-            [
-              "shield",
-              0.1029
+              0.0793
             ]
           ]
         }
@@ -800,6 +800,27 @@
           ]
         },
         {
+          "filename": "Bottega_27.jpg",
+          "style": "navigator",
+          "confidence": 0.7505,
+          "raw_cos": 0.3489,
+          "rarity": 0.2705,
+          "top3": [
+            [
+              "navigator",
+              0.7505
+            ],
+            [
+              "hexagonal",
+              0.0974
+            ],
+            [
+              "square",
+              0.037
+            ]
+          ]
+        },
+        {
           "filename": "Bottega_71.jpg",
           "style": "navigator",
           "confidence": 0.7175,
@@ -973,86 +994,86 @@
           ]
         },
         {
-          "filename": "Bottega_54.jpg",
+          "filename": "Bottega_5.jpg",
           "style": "signature",
-          "confidence": 0.9497,
-          "raw_cos": 0.3162,
-          "rarity": 0.2973,
+          "confidence": 0.3914,
+          "raw_cos": 0.3151,
+          "rarity": 0.2669,
           "top3": [
             [
-              "aviator",
-              0.9497
+              "navigator",
+              0.3914
             ],
             [
-              "navigator",
-              0.0164
+              "aviator",
+              0.3483
             ],
             [
               "oversized",
-              0.0152
+              0.1627
             ]
           ]
         },
         {
-          "filename": "Bottega_16.jpg",
+          "filename": "Bottega_26.jpg",
           "style": "signature",
-          "confidence": 0.7656,
-          "raw_cos": 0.2891,
-          "rarity": 0.2846,
+          "confidence": 0.3845,
+          "raw_cos": 0.3253,
+          "rarity": 0.2465,
           "top3": [
             [
-              "aviator",
-              0.7656
+              "cat-eye",
+              0.3845
             ],
             [
-              "oversized",
-              0.0795
+              "oval",
+              0.3554
             ],
             [
-              "shield",
-              0.0793
+              "round",
+              0.0809
             ]
           ]
         },
         {
-          "filename": "Bottega_7.jpg",
+          "filename": "Bottega_111.jpg",
           "style": "signature",
-          "confidence": 0.947,
-          "raw_cos": 0.3138,
-          "rarity": 0.2763,
+          "confidence": 0.3135,
+          "raw_cos": 0.2929,
+          "rarity": 0.2273,
           "top3": [
             [
-              "aviator",
-              0.947
+              "oval",
+              0.3135
+            ],
+            [
+              "cat-eye",
+              0.2842
             ],
             [
               "oversized",
-              0.0228
-            ],
-            [
-              "navigator",
-              0.0136
+              0.1515
             ]
           ]
         },
         {
-          "filename": "Bottega_27.jpg",
+          "filename": "Bottega_44.jpg",
           "style": "signature",
-          "confidence": 0.7505,
-          "raw_cos": 0.3489,
-          "rarity": 0.2705,
+          "confidence": 0.2967,
+          "raw_cos": 0.3114,
+          "rarity": 0.2221,
           "top3": [
             [
-              "navigator",
-              0.7505
+              "browline",
+              0.2967
             ],
             [
-              "hexagonal",
-              0.0974
+              "round",
+              0.2569
             ],
             [
-              "square",
-              0.037
+              "oval",
+              0.1579
             ]
           ]
         }
@@ -1168,6 +1189,27 @@
       ],
       "aviator": [
         {
+          "filename": "Bottega_34.jpg",
+          "style": "aviator",
+          "confidence": 0.9806,
+          "raw_cos": 0.3282,
+          "rarity": 0.3072,
+          "top3": [
+            [
+              "aviator",
+              0.9806
+            ],
+            [
+              "oversized",
+              0.0068
+            ],
+            [
+              "shield",
+              0.0058
+            ]
+          ]
+        },
+        {
           "filename": "Bottega_110.jpg",
           "style": "aviator",
           "confidence": 0.8955,
@@ -1185,6 +1227,27 @@
             [
               "oversized",
               0.0276
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_15.jpg",
+          "style": "aviator",
+          "confidence": 0.8761,
+          "raw_cos": 0.3165,
+          "rarity": 0.2725,
+          "top3": [
+            [
+              "aviator",
+              0.8761
+            ],
+            [
+              "oversized",
+              0.089
+            ],
+            [
+              "shield",
+              0.0126
             ]
           ]
         },
@@ -1210,65 +1273,23 @@
           ]
         },
         {
-          "filename": "Bottega_91.jpg",
+          "filename": "Bottega_56.jpg",
           "style": "aviator",
-          "confidence": 0.711,
-          "raw_cos": 0.3128,
-          "rarity": 0.2395,
+          "confidence": 0.8574,
+          "raw_cos": 0.3086,
+          "rarity": 0.2898,
           "top3": [
             [
               "aviator",
-              0.711
-            ],
-            [
-              "oversized",
-              0.1511
+              0.8574
             ],
             [
               "shield",
-              0.1087
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_9.jpg",
-          "style": "aviator",
-          "confidence": 0.6739,
-          "raw_cos": 0.3129,
-          "rarity": 0.2206,
-          "top3": [
-            [
-              "aviator",
-              0.6739
+              0.0708
             ],
             [
-              "oversized",
-              0.143
-            ],
-            [
-              "shield",
-              0.0992
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_13.jpg",
-          "style": "aviator",
-          "confidence": 0.6528,
-          "raw_cos": 0.3155,
-          "rarity": 0.2585,
-          "top3": [
-            [
-              "aviator",
-              0.6528
-            ],
-            [
-              "oversized",
-              0.1326
-            ],
-            [
-              "shield",
-              0.1176
+              "rimless",
+              0.0218
             ]
           ]
         }
@@ -1661,6 +1682,27 @@
       ],
       "hexagonal": [
         {
+          "filename": "Bottega_5.jpg",
+          "style": "hexagonal",
+          "confidence": 0.8271,
+          "raw_cos": 0.3842,
+          "rarity": 0.2689,
+          "top3": [
+            [
+              "hexagonal",
+              0.8271
+            ],
+            [
+              "octagonal",
+              0.1725
+            ],
+            [
+              "navigator",
+              0.0001
+            ]
+          ]
+        },
+        {
           "filename": "Bottega_58.jpg",
           "style": "hexagonal",
           "confidence": 0.6739,
@@ -1703,65 +1745,44 @@
           ]
         },
         {
-          "filename": "Bottega_115.jpg",
+          "filename": "Bottega_104.jpg",
           "style": "hexagonal",
-          "confidence": 0.4569,
-          "raw_cos": 0.3287,
-          "rarity": 0.2306,
+          "confidence": 0.6255,
+          "raw_cos": 0.3848,
+          "rarity": 0.2892,
           "top3": [
             [
               "hexagonal",
-              0.4569
-            ],
-            [
-              "rectangular",
-              0.209
+              0.6255
             ],
             [
               "octagonal",
-              0.18
+              0.3742
+            ],
+            [
+              "navigator",
+              0.0001
             ]
           ]
         },
         {
-          "filename": "Bottega_8.jpg",
+          "filename": "Bottega_59.jpg",
           "style": "hexagonal",
-          "confidence": 0.4353,
-          "raw_cos": 0.3235,
-          "rarity": 0.2005,
+          "confidence": 0.5004,
+          "raw_cos": 0.3035,
+          "rarity": 0.3153,
           "top3": [
             [
               "hexagonal",
-              0.4353
+              0.5004
+            ],
+            [
+              "octagonal",
+              0.1878
             ],
             [
               "oversized",
-              0.2366
-            ],
-            [
-              "rectangular",
-              0.1046
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_82.jpg",
-          "style": "hexagonal",
-          "confidence": 0.3963,
-          "raw_cos": 0.3208,
-          "rarity": 0.2194,
-          "top3": [
-            [
-              "hexagonal",
-              0.3963
-            ],
-            [
-              "rectangular",
-              0.2362
-            ],
-            [
-              "square",
-              0.2349
+              0.1432
             ]
           ]
         }
@@ -1940,7 +1961,29 @@
           ]
         }
       ],
-      "browline": [],
+      "browline": [
+        {
+          "filename": "Bottega_149.jpg",
+          "style": "browline",
+          "confidence": 0.5068,
+          "raw_cos": 0.3046,
+          "rarity": 0.2841,
+          "top3": [
+            [
+              "browline",
+              0.5068
+            ],
+            [
+              "square",
+              0.3277
+            ],
+            [
+              "rectangular",
+              0.0831
+            ]
+          ]
+        }
+      ],
       "navigator": [
         {
           "filename": "Bottega_41.jpg",
@@ -2095,90 +2138,6 @@
       "rimless": [],
       "signature": [
         {
-          "filename": "Bottega_59.jpg",
-          "style": "signature",
-          "confidence": 0.5004,
-          "raw_cos": 0.3035,
-          "rarity": 0.3153,
-          "top3": [
-            [
-              "hexagonal",
-              0.5004
-            ],
-            [
-              "octagonal",
-              0.1878
-            ],
-            [
-              "oversized",
-              0.1432
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_34.jpg",
-          "style": "signature",
-          "confidence": 0.9806,
-          "raw_cos": 0.3282,
-          "rarity": 0.3072,
-          "top3": [
-            [
-              "aviator",
-              0.9806
-            ],
-            [
-              "oversized",
-              0.0068
-            ],
-            [
-              "shield",
-              0.0058
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_56.jpg",
-          "style": "signature",
-          "confidence": 0.8574,
-          "raw_cos": 0.3086,
-          "rarity": 0.2898,
-          "top3": [
-            [
-              "aviator",
-              0.8574
-            ],
-            [
-              "shield",
-              0.0708
-            ],
-            [
-              "rimless",
-              0.0218
-            ]
-          ]
-        },
-        {
-          "filename": "Bottega_104.jpg",
-          "style": "signature",
-          "confidence": 0.6255,
-          "raw_cos": 0.3848,
-          "rarity": 0.2892,
-          "top3": [
-            [
-              "hexagonal",
-              0.6255
-            ],
-            [
-              "octagonal",
-              0.3742
-            ],
-            [
-              "navigator",
-              0.0001
-            ]
-          ]
-        },
-        {
           "filename": "Bottega_140.jpg",
           "style": "signature",
           "confidence": 0.4029,
@@ -2198,6 +2157,90 @@
               0.0881
             ]
           ]
+        },
+        {
+          "filename": "Bottega_29.jpg",
+          "style": "signature",
+          "confidence": 0.4193,
+          "raw_cos": 0.3388,
+          "rarity": 0.2762,
+          "top3": [
+            [
+              "hexagonal",
+              0.4193
+            ],
+            [
+              "navigator",
+              0.3202
+            ],
+            [
+              "shield",
+              0.0807
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_38.jpg",
+          "style": "signature",
+          "confidence": 0.2708,
+          "raw_cos": 0.3255,
+          "rarity": 0.2517,
+          "top3": [
+            [
+              "rectangular",
+              0.2708
+            ],
+            [
+              "navigator",
+              0.2442
+            ],
+            [
+              "hexagonal",
+              0.2176
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_105.jpg",
+          "style": "signature",
+          "confidence": 0.2913,
+          "raw_cos": 0.3132,
+          "rarity": 0.2348,
+          "top3": [
+            [
+              "round",
+              0.2913
+            ],
+            [
+              "oval",
+              0.2821
+            ],
+            [
+              "aviator",
+              0.165
+            ]
+          ]
+        },
+        {
+          "filename": "Bottega_54.jpg",
+          "style": "signature",
+          "confidence": 0.3683,
+          "raw_cos": 0.3043,
+          "rarity": 0.2314,
+          "top3": [
+            [
+              "shield",
+              0.3683
+            ],
+            [
+              "aviator",
+              0.3573
+            ],
+            [
+              "oversized",
+              0.2152
+            ]
+          ]
         }
       ]
     }
@@ -2206,6 +2249,27 @@
     "F25": {
       "cat-eye": [],
       "aviator": [
+        {
+          "filename": "D&G_150.jpg",
+          "style": "aviator",
+          "confidence": 0.8835,
+          "raw_cos": 0.3129,
+          "rarity": 0.3149,
+          "top3": [
+            [
+              "aviator",
+              0.8835
+            ],
+            [
+              "navigator",
+              0.0806
+            ],
+            [
+              "oversized",
+              0.0254
+            ]
+          ]
+        },
         {
           "filename": "D&G_94.jpg",
           "style": "aviator",
@@ -2314,6 +2378,27 @@
           ]
         },
         {
+          "filename": "D&G_156.jpg",
+          "style": "square",
+          "confidence": 0.5926,
+          "raw_cos": 0.3204,
+          "rarity": 0.2454,
+          "top3": [
+            [
+              "square",
+              0.5926
+            ],
+            [
+              "rectangular",
+              0.2733
+            ],
+            [
+              "navigator",
+              0.1039
+            ]
+          ]
+        },
+        {
           "filename": "D&G_126.jpg",
           "style": "square",
           "confidence": 0.5181,
@@ -2331,27 +2416,6 @@
             [
               "hexagonal",
               0.0552
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_113.jpg",
-          "style": "square",
-          "confidence": 0.5137,
-          "raw_cos": 0.3212,
-          "rarity": 0.1577,
-          "top3": [
-            [
-              "square",
-              0.5137
-            ],
-            [
-              "rectangular",
-              0.3033
-            ],
-            [
-              "shield",
-              0.0771
             ]
           ]
         }
@@ -2618,6 +2682,48 @@
       "octagonal": [],
       "shield": [
         {
+          "filename": "D&G_85.jpg",
+          "style": "shield",
+          "confidence": 0.9904,
+          "raw_cos": 0.3695,
+          "rarity": 0.2449,
+          "top3": [
+            [
+              "shield",
+              0.9904
+            ],
+            [
+              "rimless",
+              0.0038
+            ],
+            [
+              "mask",
+              0.0026
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_86.jpg",
+          "style": "shield",
+          "confidence": 0.9839,
+          "raw_cos": 0.364,
+          "rarity": 0.2519,
+          "top3": [
+            [
+              "shield",
+              0.9839
+            ],
+            [
+              "mask",
+              0.007
+            ],
+            [
+              "rimless",
+              0.0047
+            ]
+          ]
+        },
+        {
           "filename": "D&G_2.jpg",
           "style": "shield",
           "confidence": 0.9515,
@@ -2677,48 +2783,6 @@
             [
               "navigator",
               0.0166
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_76.jpg",
-          "style": "shield",
-          "confidence": 0.8389,
-          "raw_cos": 0.329,
-          "rarity": 0.2067,
-          "top3": [
-            [
-              "shield",
-              0.8389
-            ],
-            [
-              "aviator",
-              0.135
-            ],
-            [
-              "oversized",
-              0.0099
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_18.jpg",
-          "style": "shield",
-          "confidence": 0.7952,
-          "raw_cos": 0.3535,
-          "rarity": 0.2216,
-          "top3": [
-            [
-              "shield",
-              0.7952
-            ],
-            [
-              "oversized",
-              0.1162
-            ],
-            [
-              "navigator",
-              0.0336
             ]
           ]
         }
@@ -2900,65 +2964,65 @@
           ]
         },
         {
-          "filename": "D&G_150.jpg",
+          "filename": "D&G_127.jpg",
           "style": "signature",
-          "confidence": 0.8835,
-          "raw_cos": 0.3129,
-          "rarity": 0.3149,
+          "confidence": 0.4401,
+          "raw_cos": 0.3087,
+          "rarity": 0.2448,
           "top3": [
-            [
-              "aviator",
-              0.8835
-            ],
-            [
-              "navigator",
-              0.0806
-            ],
-            [
-              "oversized",
-              0.0254
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_95.jpg",
-          "style": "signature",
-          "confidence": 0.9237,
-          "raw_cos": 0.3481,
-          "rarity": 0.2881,
-          "top3": [
-            [
-              "shield",
-              0.9237
-            ],
-            [
-              "oversized",
-              0.0267
-            ],
-            [
-              "rimless",
-              0.0238
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_107.jpg",
-          "style": "signature",
-          "confidence": 0.5958,
-          "raw_cos": 0.309,
-          "rarity": 0.2871,
-          "top3": [
-            [
-              "rectangular",
-              0.5958
-            ],
             [
               "square",
-              0.3431
+              0.4401
+            ],
+            [
+              "rectangular",
+              0.2275
+            ],
+            [
+              "hexagonal",
+              0.2204
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_34.jpg",
+          "style": "signature",
+          "confidence": 0.239,
+          "raw_cos": 0.2824,
+          "rarity": 0.2253,
+          "top3": [
+            [
+              "square",
+              0.239
             ],
             [
               "oversized",
-              0.0275
+              0.2169
+            ],
+            [
+              "rectangular",
+              0.2107
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_142.jpg",
+          "style": "signature",
+          "confidence": 0.2457,
+          "raw_cos": 0.3101,
+          "rarity": 0.2138,
+          "top3": [
+            [
+              "hexagonal",
+              0.2457
+            ],
+            [
+              "aviator",
+              0.2347
+            ],
+            [
+              "octagonal",
+              0.1705
             ]
           ]
         }
@@ -2967,6 +3031,27 @@
     "S26": {
       "cat-eye": [],
       "aviator": [
+        {
+          "filename": "D&G_8.jpg",
+          "style": "aviator",
+          "confidence": 0.9597,
+          "raw_cos": 0.2993,
+          "rarity": 0.3022,
+          "top3": [
+            [
+              "aviator",
+              0.9597
+            ],
+            [
+              "shield",
+              0.0238
+            ],
+            [
+              "navigator",
+              0.0048
+            ]
+          ]
+        },
         {
           "filename": "D&G_15.jpg",
           "style": "aviator",
@@ -2985,6 +3070,27 @@
             [
               "navigator",
               0.0094
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_9.jpg",
+          "style": "aviator",
+          "confidence": 0.9131,
+          "raw_cos": 0.305,
+          "rarity": 0.2846,
+          "top3": [
+            [
+              "aviator",
+              0.9131
+            ],
+            [
+              "shield",
+              0.0319
+            ],
+            [
+              "navigator",
+              0.0209
             ]
           ]
         },
@@ -3027,48 +3133,6 @@
             [
               "navigator",
               0.0626
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_12.jpg",
-          "style": "aviator",
-          "confidence": 0.8305,
-          "raw_cos": 0.3019,
-          "rarity": 0.2439,
-          "top3": [
-            [
-              "aviator",
-              0.8305
-            ],
-            [
-              "navigator",
-              0.0836
-            ],
-            [
-              "shield",
-              0.0624
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_7.jpg",
-          "style": "aviator",
-          "confidence": 0.824,
-          "raw_cos": 0.303,
-          "rarity": 0.2466,
-          "top3": [
-            [
-              "aviator",
-              0.824
-            ],
-            [
-              "navigator",
-              0.0981
-            ],
-            [
-              "shield",
-              0.0271
             ]
           ]
         }
@@ -3442,6 +3506,27 @@
           ]
         },
         {
+          "filename": "D&G_108.jpg",
+          "style": "shield",
+          "confidence": 0.7224,
+          "raw_cos": 0.3381,
+          "rarity": 0.264,
+          "top3": [
+            [
+              "shield",
+              0.7224
+            ],
+            [
+              "mask",
+              0.1382
+            ],
+            [
+              "rectangular",
+              0.0563
+            ]
+          ]
+        },
+        {
           "filename": "D&G_45.jpg",
           "style": "shield",
           "confidence": 0.6759,
@@ -3459,27 +3544,6 @@
             [
               "oversized",
               0.0971
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_102.jpg",
-          "style": "shield",
-          "confidence": 0.6752,
-          "raw_cos": 0.3358,
-          "rarity": 0.1859,
-          "top3": [
-            [
-              "shield",
-              0.6752
-            ],
-            [
-              "navigator",
-              0.1405
-            ],
-            [
-              "rectangular",
-              0.0509
             ]
           ]
         }
@@ -3639,65 +3703,65 @@
           ]
         },
         {
-          "filename": "D&G_8.jpg",
+          "filename": "D&G_74.jpg",
           "style": "signature",
-          "confidence": 0.9597,
-          "raw_cos": 0.2993,
-          "rarity": 0.3022,
+          "confidence": 0.2434,
+          "raw_cos": 0.2842,
+          "rarity": 0.2371,
           "top3": [
             [
-              "aviator",
-              0.9597
-            ],
-            [
-              "shield",
-              0.0238
-            ],
-            [
-              "navigator",
-              0.0048
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_9.jpg",
-          "style": "signature",
-          "confidence": 0.9131,
-          "raw_cos": 0.305,
-          "rarity": 0.2846,
-          "top3": [
-            [
-              "aviator",
-              0.9131
-            ],
-            [
-              "shield",
-              0.0319
-            ],
-            [
-              "navigator",
-              0.0209
-            ]
-          ]
-        },
-        {
-          "filename": "D&G_31.jpg",
-          "style": "signature",
-          "confidence": 0.5583,
-          "raw_cos": 0.3087,
-          "rarity": 0.2809,
-          "top3": [
-            [
-              "shield",
-              0.5583
+              "square",
+              0.2434
             ],
             [
               "oversized",
-              0.2986
+              0.2313
             ],
             [
+              "rectangular",
+              0.193
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_76.jpg",
+          "style": "signature",
+          "confidence": 0.3138,
+          "raw_cos": 0.3113,
+          "rarity": 0.2157,
+          "top3": [
+            [
               "navigator",
-              0.0485
+              0.3138
+            ],
+            [
+              "rectangular",
+              0.3101
+            ],
+            [
+              "square",
+              0.2918
+            ]
+          ]
+        },
+        {
+          "filename": "D&G_75.jpg",
+          "style": "signature",
+          "confidence": 0.2708,
+          "raw_cos": 0.3075,
+          "rarity": 0.2146,
+          "top3": [
+            [
+              "rectangular",
+              0.2708
+            ],
+            [
+              "oversized",
+              0.2663
+            ],
+            [
+              "square",
+              0.144
             ]
           ]
         }

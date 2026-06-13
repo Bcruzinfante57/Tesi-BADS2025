@@ -5,8 +5,8 @@
       "clusters": [
         {
           "style": "square",
-          "count": 28,
-          "share_pct": 22.8,
+          "count": 29,
+          "share_pct": 23.6,
           "hero_filename": "Bottega_125.jpg",
           "hero_url": "/brands/bottega_veneta/2/Bottega_125.jpg",
           "hero_confidence": 0.8066,
@@ -151,6 +151,12 @@
               "rarity": 0.2066
             },
             {
+              "filename": "Bottega_126.jpg",
+              "url": "/brands/bottega_veneta/8/Bottega_126.jpg",
+              "confidence": 0.5131,
+              "rarity": 0.2689
+            },
+            {
               "filename": "Bottega_97.jpg",
               "url": "/brands/bottega_veneta/1/Bottega_97.jpg",
               "confidence": 0.4945,
@@ -186,73 +192,73 @@
               "hex": "#2d1f1f",
               "name": "dark_grey",
               "count": 25,
-              "share_pct": 89.3
+              "share_pct": 86.2
             },
             {
               "hex": "#0f0c0a",
               "name": "black",
               "count": 19,
-              "share_pct": 67.9
+              "share_pct": 65.5
             },
             {
               "hex": "#725d5d",
               "name": "grey",
-              "count": 10,
-              "share_pct": 35.7
+              "count": 11,
+              "share_pct": 37.9
             },
             {
               "hex": "#381e13",
               "name": "burgundy",
               "count": 9,
-              "share_pct": 32.1
+              "share_pct": 31.0
             },
             {
               "hex": "#c4c3c2",
               "name": "light_grey",
-              "count": 6,
-              "share_pct": 21.4
+              "count": 7,
+              "share_pct": 24.1
             },
             {
               "hex": "#54301d",
               "name": "brown",
               "count": 3,
-              "share_pct": 10.7
+              "share_pct": 10.3
+            },
+            {
+              "hex": "#a8c8d2",
+              "name": "blue",
+              "count": 3,
+              "share_pct": 10.3
             },
             {
               "hex": "#8a2d1b",
               "name": "red",
               "count": 2,
-              "share_pct": 7.1
+              "share_pct": 6.9
             },
             {
               "hex": "#b16a3c",
               "name": "tortoise",
               "count": 2,
-              "share_pct": 7.1
+              "share_pct": 6.9
             },
             {
-              "hex": "#a8c8d2",
-              "name": "blue",
+              "hex": "#dee2e2",
+              "name": "white",
               "count": 2,
-              "share_pct": 7.1
+              "share_pct": 6.9
             },
             {
               "hex": "#e4bb71",
               "name": "orange",
               "count": 1,
-              "share_pct": 3.6
-            },
-            {
-              "hex": "#dee2e2",
-              "name": "white",
-              "count": 1,
-              "share_pct": 3.6
+              "share_pct": 3.4
             },
             {
               "hex": "#193c78",
               "name": "navy",
               "count": 1,
-              "share_pct": 3.6
+              "share_pct": 3.4
             }
           ],
           "signature": false
@@ -706,6 +712,170 @@
           "signature": false
         },
         {
+          "style": "aviator",
+          "count": 12,
+          "share_pct": 9.8,
+          "hero_filename": "Bottega_54.jpg",
+          "hero_url": "/brands/bottega_veneta/4/Bottega_54.jpg",
+          "hero_confidence": 0.9497,
+          "hero_rarity": 0.2973,
+          "products": [
+            {
+              "filename": "Bottega_54.jpg",
+              "url": "/brands/bottega_veneta/4/Bottega_54.jpg",
+              "confidence": 0.9497,
+              "rarity": 0.2973
+            },
+            {
+              "filename": "Bottega_7.jpg",
+              "url": "/brands/bottega_veneta/12/Bottega_7.jpg",
+              "confidence": 0.947,
+              "rarity": 0.2763
+            },
+            {
+              "filename": "Bottega_68.jpg",
+              "url": "/brands/bottega_veneta/4/Bottega_68.jpg",
+              "confidence": 0.9047,
+              "rarity": 0.2637
+            },
+            {
+              "filename": "Bottega_74.jpg",
+              "url": "/brands/bottega_veneta/8/Bottega_74.jpg",
+              "confidence": 0.8876,
+              "rarity": 0.2572
+            },
+            {
+              "filename": "Bottega_16.jpg",
+              "url": "/brands/bottega_veneta/6/Bottega_16.jpg",
+              "confidence": 0.7656,
+              "rarity": 0.2846
+            },
+            {
+              "filename": "Bottega_1.jpg",
+              "url": "/brands/bottega_veneta/6/Bottega_1.jpg",
+              "confidence": 0.6111,
+              "rarity": 0.2646
+            },
+            {
+              "filename": "Bottega_38.jpg",
+              "url": "/brands/bottega_veneta/6/Bottega_38.jpg",
+              "confidence": 0.5973,
+              "rarity": 0.2677
+            },
+            {
+              "filename": "Bottega_4.jpg",
+              "url": "/brands/bottega_veneta/5/Bottega_4.jpg",
+              "confidence": 0.5804,
+              "rarity": 0.2227
+            },
+            {
+              "filename": "Bottega_6.jpg",
+              "url": "/brands/bottega_veneta/6/Bottega_6.jpg",
+              "confidence": 0.5654,
+              "rarity": 0.2481
+            },
+            {
+              "filename": "Bottega_64.jpg",
+              "url": "/brands/bottega_veneta/6/Bottega_64.jpg",
+              "confidence": 0.5134,
+              "rarity": 0.2674
+            },
+            {
+              "filename": "Bottega_37.jpg",
+              "url": "/brands/bottega_veneta/11/Bottega_37.jpg",
+              "confidence": 0.5003,
+              "rarity": 0.2293
+            },
+            {
+              "filename": "Bottega_28.jpg",
+              "url": "/brands/bottega_veneta/3/Bottega_28.jpg",
+              "confidence": 0.4472,
+              "rarity": 0.2088
+            }
+          ],
+          "colors": [
+            {
+              "hex": "#2c2727",
+              "name": "dark_grey",
+              "count": 9,
+              "share_pct": 75.0
+            },
+            {
+              "hex": "#1c1514",
+              "name": "black",
+              "count": 5,
+              "share_pct": 41.7
+            },
+            {
+              "hex": "#c5af71",
+              "name": "orange",
+              "count": 4,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#ab8a47",
+              "name": "tortoise",
+              "count": 4,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#866e70",
+              "name": "grey",
+              "count": 4,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#58483d",
+              "name": "brown",
+              "count": 2,
+              "share_pct": 16.7
+            },
+            {
+              "hex": "#a1c6d1",
+              "name": "blue",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#657b56",
+              "name": "green",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#3d482d",
+              "name": "dark_green",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#816057",
+              "name": "red",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#553d39",
+              "name": "burgundy",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#d4b7a4",
+              "name": "peach",
+              "count": 1,
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#b2b6b8",
+              "name": "light_grey",
+              "count": 1,
+              "share_pct": 8.3
+            }
+          ],
+          "signature": false
+        },
+        {
           "style": "cat-eye",
           "count": 8,
           "share_pct": 6.5,
@@ -932,93 +1102,87 @@
           "signature": false
         },
         {
-          "style": "aviator",
-          "count": 7,
-          "share_pct": 5.7,
-          "hero_filename": "Bottega_68.jpg",
-          "hero_url": "/brands/bottega_veneta/4/Bottega_68.jpg",
-          "hero_confidence": 0.9047,
-          "hero_rarity": 0.2637,
+          "style": "navigator",
+          "count": 5,
+          "share_pct": 4.1,
+          "hero_filename": "Bottega_84.jpg",
+          "hero_url": "/brands/bottega_veneta/4/Bottega_84.jpg",
+          "hero_confidence": 0.9523,
+          "hero_rarity": 0.2304,
           "products": [
             {
-              "filename": "Bottega_68.jpg",
-              "url": "/brands/bottega_veneta/4/Bottega_68.jpg",
-              "confidence": 0.9047,
-              "rarity": 0.2637
+              "filename": "Bottega_84.jpg",
+              "url": "/brands/bottega_veneta/4/Bottega_84.jpg",
+              "confidence": 0.9523,
+              "rarity": 0.2304
             },
             {
-              "filename": "Bottega_74.jpg",
-              "url": "/brands/bottega_veneta/8/Bottega_74.jpg",
-              "confidence": 0.8876,
-              "rarity": 0.2572
+              "filename": "Bottega_17.jpg",
+              "url": "/brands/bottega_veneta/12/Bottega_17.jpg",
+              "confidence": 0.9517,
+              "rarity": 0.2648
             },
             {
-              "filename": "Bottega_1.jpg",
-              "url": "/brands/bottega_veneta/6/Bottega_1.jpg",
-              "confidence": 0.6111,
-              "rarity": 0.2646
+              "filename": "Bottega_27.jpg",
+              "url": "/brands/bottega_veneta/4/Bottega_27.jpg",
+              "confidence": 0.7505,
+              "rarity": 0.2705
             },
             {
-              "filename": "Bottega_4.jpg",
-              "url": "/brands/bottega_veneta/5/Bottega_4.jpg",
-              "confidence": 0.5804,
-              "rarity": 0.2227
+              "filename": "Bottega_71.jpg",
+              "url": "/brands/bottega_veneta/5/Bottega_71.jpg",
+              "confidence": 0.7175,
+              "rarity": 0.1936
             },
             {
-              "filename": "Bottega_6.jpg",
-              "url": "/brands/bottega_veneta/6/Bottega_6.jpg",
-              "confidence": 0.5654,
-              "rarity": 0.2481
-            },
-            {
-              "filename": "Bottega_37.jpg",
-              "url": "/brands/bottega_veneta/11/Bottega_37.jpg",
-              "confidence": 0.5003,
-              "rarity": 0.2293
-            },
-            {
-              "filename": "Bottega_28.jpg",
-              "url": "/brands/bottega_veneta/3/Bottega_28.jpg",
-              "confidence": 0.4472,
-              "rarity": 0.2088
+              "filename": "Bottega_86.jpg",
+              "url": "/brands/bottega_veneta/5/Bottega_86.jpg",
+              "confidence": 0.4314,
+              "rarity": 0.2191
             }
           ],
           "colors": [
             {
-              "hex": "#2c2727",
+              "hex": "#625759",
               "name": "dark_grey",
-              "count": 5,
-              "share_pct": 71.4
-            },
-            {
-              "hex": "#1c1514",
-              "name": "black",
-              "count": 4,
-              "share_pct": 57.1
-            },
-            {
-              "hex": "#866e70",
-              "name": "grey",
               "count": 3,
-              "share_pct": 42.9
+              "share_pct": 60.0
             },
             {
-              "hex": "#c5af71",
-              "name": "orange",
-              "count": 2,
-              "share_pct": 28.6
-            },
-            {
-              "hex": "#ab8a47",
+              "hex": "#9f7141",
               "name": "tortoise",
               "count": 2,
-              "share_pct": 28.6
+              "share_pct": 40.0
             },
             {
-              "hex": "#b2b6b8",
-              "name": "light_grey",
+              "hex": "#c4a36c",
+              "name": "orange",
+              "count": 2,
+              "share_pct": 40.0
+            },
+            {
+              "hex": "#3e2518",
+              "name": "brown",
+              "count": 2,
+              "share_pct": 40.0
+            },
+            {
+              "hex": "#6c6564",
+              "name": "grey",
               "count": 1,
-              "share_pct": 14.3
+              "share_pct": 20.0
+            },
+            {
+              "hex": "#5c3221",
+              "name": "burgundy",
+              "count": 1,
+              "share_pct": 20.0
+            },
+            {
+              "hex": "#813e25",
+              "name": "red",
+              "count": 1,
+              "share_pct": 20.0
             }
           ],
           "signature": false
@@ -1111,86 +1275,6 @@
               "name": "orange",
               "count": 1,
               "share_pct": 20.0
-            }
-          ],
-          "signature": false
-        },
-        {
-          "style": "navigator",
-          "count": 4,
-          "share_pct": 3.3,
-          "hero_filename": "Bottega_84.jpg",
-          "hero_url": "/brands/bottega_veneta/4/Bottega_84.jpg",
-          "hero_confidence": 0.9523,
-          "hero_rarity": 0.2304,
-          "products": [
-            {
-              "filename": "Bottega_84.jpg",
-              "url": "/brands/bottega_veneta/4/Bottega_84.jpg",
-              "confidence": 0.9523,
-              "rarity": 0.2304
-            },
-            {
-              "filename": "Bottega_17.jpg",
-              "url": "/brands/bottega_veneta/12/Bottega_17.jpg",
-              "confidence": 0.9517,
-              "rarity": 0.2648
-            },
-            {
-              "filename": "Bottega_71.jpg",
-              "url": "/brands/bottega_veneta/5/Bottega_71.jpg",
-              "confidence": 0.7175,
-              "rarity": 0.1936
-            },
-            {
-              "filename": "Bottega_86.jpg",
-              "url": "/brands/bottega_veneta/5/Bottega_86.jpg",
-              "confidence": 0.4314,
-              "rarity": 0.2191
-            }
-          ],
-          "colors": [
-            {
-              "hex": "#9f7141",
-              "name": "tortoise",
-              "count": 2,
-              "share_pct": 50.0
-            },
-            {
-              "hex": "#c4a36c",
-              "name": "orange",
-              "count": 2,
-              "share_pct": 50.0
-            },
-            {
-              "hex": "#3e2518",
-              "name": "brown",
-              "count": 2,
-              "share_pct": 50.0
-            },
-            {
-              "hex": "#1d181d",
-              "name": "dark_grey",
-              "count": 2,
-              "share_pct": 50.0
-            },
-            {
-              "hex": "#6c6564",
-              "name": "grey",
-              "count": 1,
-              "share_pct": 25.0
-            },
-            {
-              "hex": "#5c3221",
-              "name": "burgundy",
-              "count": 1,
-              "share_pct": 25.0
-            },
-            {
-              "hex": "#813e25",
-              "name": "red",
-              "count": 1,
-              "share_pct": 25.0
             }
           ],
           "signature": false
@@ -1323,8 +1407,8 @@
         },
         {
           "style": "signature",
-          "count": 14,
-          "share_pct": 11.4,
+          "count": 7,
+          "share_pct": 5.7,
           "hero_filename": "Bottega_40.jpg",
           "hero_url": "/brands/bottega_veneta/0/Bottega_40.jpg",
           "hero_confidence": 0.3777,
@@ -1335,48 +1419,6 @@
               "url": "/brands/bottega_veneta/0/Bottega_40.jpg",
               "confidence": 0.3777,
               "rarity": 0.3394
-            },
-            {
-              "filename": "Bottega_54.jpg",
-              "url": "/brands/bottega_veneta/4/Bottega_54.jpg",
-              "confidence": 0.9497,
-              "rarity": 0.2973
-            },
-            {
-              "filename": "Bottega_16.jpg",
-              "url": "/brands/bottega_veneta/6/Bottega_16.jpg",
-              "confidence": 0.7656,
-              "rarity": 0.2846
-            },
-            {
-              "filename": "Bottega_7.jpg",
-              "url": "/brands/bottega_veneta/12/Bottega_7.jpg",
-              "confidence": 0.947,
-              "rarity": 0.2763
-            },
-            {
-              "filename": "Bottega_27.jpg",
-              "url": "/brands/bottega_veneta/4/Bottega_27.jpg",
-              "confidence": 0.7505,
-              "rarity": 0.2705
-            },
-            {
-              "filename": "Bottega_126.jpg",
-              "url": "/brands/bottega_veneta/8/Bottega_126.jpg",
-              "confidence": 0.5131,
-              "rarity": 0.2689
-            },
-            {
-              "filename": "Bottega_38.jpg",
-              "url": "/brands/bottega_veneta/6/Bottega_38.jpg",
-              "confidence": 0.5973,
-              "rarity": 0.2677
-            },
-            {
-              "filename": "Bottega_64.jpg",
-              "url": "/brands/bottega_veneta/6/Bottega_64.jpg",
-              "confidence": 0.5134,
-              "rarity": 0.2674
             },
             {
               "filename": "Bottega_5.jpg",
@@ -1417,94 +1459,58 @@
           ],
           "colors": [
             {
-              "hex": "#2f1e22",
-              "name": "dark_grey",
-              "count": 8,
+              "hex": "#391c1e",
+              "name": "burgundy",
+              "count": 4,
               "share_pct": 57.1
             },
             {
               "hex": "#583a20",
               "name": "brown",
-              "count": 6,
-              "share_pct": 42.9
-            },
-            {
-              "hex": "#391c1e",
-              "name": "burgundy",
-              "count": 5,
-              "share_pct": 35.7
-            },
-            {
-              "hex": "#907049",
-              "name": "tortoise",
-              "count": 5,
-              "share_pct": 35.7
+              "count": 4,
+              "share_pct": 57.1
             },
             {
               "hex": "#191313",
               "name": "black",
-              "count": 5,
-              "share_pct": 35.7
+              "count": 4,
+              "share_pct": 57.1
+            },
+            {
+              "hex": "#2f1e22",
+              "name": "dark_grey",
+              "count": 3,
+              "share_pct": 42.9
             },
             {
               "hex": "#6c443b",
               "name": "red",
-              "count": 4,
-              "share_pct": 28.6
+              "count": 3,
+              "share_pct": 42.9
+            },
+            {
+              "hex": "#907049",
+              "name": "tortoise",
+              "count": 3,
+              "share_pct": 42.9
             },
             {
               "hex": "#755e5c",
               "name": "grey",
-              "count": 3,
-              "share_pct": 21.4
+              "count": 1,
+              "share_pct": 14.3
             },
             {
               "hex": "#d7c094",
               "name": "orange",
-              "count": 3,
-              "share_pct": 21.4
-            },
-            {
-              "hex": "#b6d0d8",
-              "name": "blue",
-              "count": 2,
+              "count": 1,
               "share_pct": 14.3
-            },
-            {
-              "hex": "#ccd1d2",
-              "name": "light_grey",
-              "count": 1,
-              "share_pct": 7.1
-            },
-            {
-              "hex": "#dfe3e3",
-              "name": "white",
-              "count": 1,
-              "share_pct": 7.1
             },
             {
               "hex": "#c4b782",
               "name": "yellow",
               "count": 1,
-              "share_pct": 7.1
-            },
-            {
-              "hex": "#657b56",
-              "name": "green",
-              "count": 1,
-              "share_pct": 7.1
-            },
-            {
-              "hex": "#3d482d",
-              "name": "dark_green",
-              "count": 1,
-              "share_pct": 7.1
-            },
-            {
-              "hex": "#d4b7a4",
-              "name": "peach",
-              "count": 1,
-              "share_pct": 7.1
+              "share_pct": 14.3
             }
           ],
           "signature": true
@@ -1785,7 +1791,7 @@
             }
           ],
           "signature": false,
-          "delta_vs_F25": 0
+          "delta_vs_F25": -1
         },
         {
           "style": "oval",
@@ -2061,356 +2067,20 @@
           "delta_vs_F25": 5
         },
         {
-          "style": "round",
-          "count": 16,
-          "share_pct": 10.0,
-          "hero_filename": "Bottega_88.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_88.jpg",
-          "hero_confidence": 0.7122,
-          "hero_rarity": 0.2076,
-          "products": [
-            {
-              "filename": "Bottega_88.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_88.jpg",
-              "confidence": 0.7122,
-              "rarity": 0.2076
-            },
-            {
-              "filename": "Bottega_139.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_139.jpg",
-              "confidence": 0.7093,
-              "rarity": 0.2026
-            },
-            {
-              "filename": "Bottega_159.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_159.jpg",
-              "confidence": 0.7075,
-              "rarity": 0.2288
-            },
-            {
-              "filename": "Bottega_113.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_113.jpg",
-              "confidence": 0.6443,
-              "rarity": 0.2279
-            },
-            {
-              "filename": "Bottega_150.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_150.jpg",
-              "confidence": 0.634,
-              "rarity": 0.2191
-            },
-            {
-              "filename": "Bottega_142.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_142.jpg",
-              "confidence": 0.5782,
-              "rarity": 0.2507
-            },
-            {
-              "filename": "Bottega_145.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_145.jpg",
-              "confidence": 0.5767,
-              "rarity": 0.2137
-            },
-            {
-              "filename": "Bottega_148.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_148.jpg",
-              "confidence": 0.5525,
-              "rarity": 0.2572
-            },
-            {
-              "filename": "Bottega_158.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_158.jpg",
-              "confidence": 0.5432,
-              "rarity": 0.2575
-            },
-            {
-              "filename": "Bottega_136.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_136.jpg",
-              "confidence": 0.5396,
-              "rarity": 0.208
-            },
-            {
-              "filename": "Bottega_119.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_119.jpg",
-              "confidence": 0.5155,
-              "rarity": 0.2161
-            },
-            {
-              "filename": "Bottega_134.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_134.jpg",
-              "confidence": 0.4936,
-              "rarity": 0.2361
-            },
-            {
-              "filename": "Bottega_14.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_14.jpg",
-              "confidence": 0.4793,
-              "rarity": 0.2189
-            },
-            {
-              "filename": "Bottega_31.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_31.jpg",
-              "confidence": 0.4135,
-              "rarity": 0.2612
-            },
-            {
-              "filename": "Bottega_131.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_131.jpg",
-              "confidence": 0.4035,
-              "rarity": 0.2332
-            },
-            {
-              "filename": "Bottega_154.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_154.jpg",
-              "confidence": 0.3034,
-              "rarity": 0.2235
-            }
-          ],
-          "colors": [
-            {
-              "hex": "#211f1e",
-              "name": "dark_grey",
-              "count": 12,
-              "share_pct": 75.0
-            },
-            {
-              "hex": "#7b6d66",
-              "name": "grey",
-              "count": 8,
-              "share_pct": 50.0
-            },
-            {
-              "hex": "#1d1511",
-              "name": "black",
-              "count": 7,
-              "share_pct": 43.8
-            },
-            {
-              "hex": "#331b0f",
-              "name": "brown",
-              "count": 5,
-              "share_pct": 31.2
-            },
-            {
-              "hex": "#b2b3ad",
-              "name": "light_grey",
-              "count": 4,
-              "share_pct": 25.0
-            },
-            {
-              "hex": "#43221a",
-              "name": "burgundy",
-              "count": 3,
-              "share_pct": 18.8
-            },
-            {
-              "hex": "#aa8d45",
-              "name": "tortoise",
-              "count": 2,
-              "share_pct": 12.5
-            },
-            {
-              "hex": "#d9c98f",
-              "name": "yellow",
-              "count": 1,
-              "share_pct": 6.2
-            },
-            {
-              "hex": "#a58e45",
-              "name": "gold",
-              "count": 1,
-              "share_pct": 6.2
-            },
-            {
-              "hex": "#deded8",
-              "name": "white",
-              "count": 1,
-              "share_pct": 6.2
-            }
-          ],
-          "signature": false,
-          "delta_vs_F25": -6
-        },
-        {
-          "style": "cat-eye",
-          "count": 15,
-          "share_pct": 9.4,
-          "hero_filename": "Bottega_107.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_107.jpg",
-          "hero_confidence": 0.9317,
-          "hero_rarity": 0.2197,
-          "products": [
-            {
-              "filename": "Bottega_107.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_107.jpg",
-              "confidence": 0.9317,
-              "rarity": 0.2197
-            },
-            {
-              "filename": "Bottega_73.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_73.jpg",
-              "confidence": 0.9104,
-              "rarity": 0.2245
-            },
-            {
-              "filename": "Bottega_125.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_125.jpg",
-              "confidence": 0.8316,
-              "rarity": 0.2382
-            },
-            {
-              "filename": "Bottega_24.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_24.jpg",
-              "confidence": 0.8084,
-              "rarity": 0.241
-            },
-            {
-              "filename": "Bottega_109.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_109.jpg",
-              "confidence": 0.8016,
-              "rarity": 0.2072
-            },
-            {
-              "filename": "Bottega_36.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_36.jpg",
-              "confidence": 0.7601,
-              "rarity": 0.2256
-            },
-            {
-              "filename": "Bottega_11.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_11.jpg",
-              "confidence": 0.7531,
-              "rarity": 0.2213
-            },
-            {
-              "filename": "Bottega_90.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_90.jpg",
-              "confidence": 0.7338,
-              "rarity": 0.2197
-            },
-            {
-              "filename": "Bottega_112.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_112.jpg",
-              "confidence": 0.7226,
-              "rarity": 0.2475
-            },
-            {
-              "filename": "Bottega_44.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_44.jpg",
-              "confidence": 0.6691,
-              "rarity": 0.2114
-            },
-            {
-              "filename": "Bottega_86.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_86.jpg",
-              "confidence": 0.6564,
-              "rarity": 0.2039
-            },
-            {
-              "filename": "Bottega_97.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_97.jpg",
-              "confidence": 0.6354,
-              "rarity": 0.2403
-            },
-            {
-              "filename": "Bottega_71.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_71.jpg",
-              "confidence": 0.6114,
-              "rarity": 0.2106
-            },
-            {
-              "filename": "Bottega_45.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_45.jpg",
-              "confidence": 0.5163,
-              "rarity": 0.2099
-            },
-            {
-              "filename": "Bottega_160.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_160.jpg",
-              "confidence": 0.4306,
-              "rarity": 0.226
-            }
-          ],
-          "colors": [
-            {
-              "hex": "#241a18",
-              "name": "dark_grey",
-              "count": 11,
-              "share_pct": 73.3
-            },
-            {
-              "hex": "#3a2420",
-              "name": "burgundy",
-              "count": 7,
-              "share_pct": 46.7
-            },
-            {
-              "hex": "#71422d",
-              "name": "brown",
-              "count": 6,
-              "share_pct": 40.0
-            },
-            {
-              "hex": "#6c3c37",
-              "name": "red",
-              "count": 5,
-              "share_pct": 33.3
-            },
-            {
-              "hex": "#a46646",
-              "name": "tortoise",
-              "count": 5,
-              "share_pct": 33.3
-            },
-            {
-              "hex": "#1b1716",
-              "name": "black",
-              "count": 5,
-              "share_pct": 33.3
-            },
-            {
-              "hex": "#b47d5d",
-              "name": "orange",
-              "count": 4,
-              "share_pct": 26.7
-            },
-            {
-              "hex": "#ddd2d2",
-              "name": "light_grey",
-              "count": 3,
-              "share_pct": 20.0
-            },
-            {
-              "hex": "#949491",
-              "name": "grey",
-              "count": 3,
-              "share_pct": 20.0
-            },
-            {
-              "hex": "#d3b59f",
-              "name": "peach",
-              "count": 2,
-              "share_pct": 13.3
-            },
-            {
-              "hex": "#ceb4b7",
-              "name": "pink",
-              "count": 1,
-              "share_pct": 6.7
-            }
-          ],
-          "signature": false,
-          "delta_vs_F25": 7
-        },
-        {
           "style": "aviator",
-          "count": 14,
-          "share_pct": 8.8,
-          "hero_filename": "Bottega_110.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_110.jpg",
-          "hero_confidence": 0.8955,
-          "hero_rarity": 0.2488,
+          "count": 17,
+          "share_pct": 10.6,
+          "hero_filename": "Bottega_34.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_34.jpg",
+          "hero_confidence": 0.9806,
+          "hero_rarity": 0.3072,
           "products": [
+            {
+              "filename": "Bottega_34.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_34.jpg",
+              "confidence": 0.9806,
+              "rarity": 0.3072
+            },
             {
               "filename": "Bottega_110.jpg",
               "url": "/snapshots/S26/bottega/Bottega_110.jpg",
@@ -2418,10 +2088,22 @@
               "rarity": 0.2488
             },
             {
+              "filename": "Bottega_15.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_15.jpg",
+              "confidence": 0.8761,
+              "rarity": 0.2725
+            },
+            {
               "filename": "Bottega_127.jpg",
               "url": "/snapshots/S26/bottega/Bottega_127.jpg",
               "confidence": 0.8621,
               "rarity": 0.2571
+            },
+            {
+              "filename": "Bottega_56.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_56.jpg",
+              "confidence": 0.8574,
+              "rarity": 0.2898
             },
             {
               "filename": "Bottega_91.jpg",
@@ -2500,82 +2182,484 @@
             {
               "hex": "#413d3e",
               "name": "dark_grey",
-              "count": 8,
-              "share_pct": 57.1
-            },
-            {
-              "hex": "#ab8b48",
-              "name": "tortoise",
-              "count": 7,
-              "share_pct": 50.0
+              "count": 9,
+              "share_pct": 52.9
             },
             {
               "hex": "#c5af71",
               "name": "orange",
-              "count": 6,
-              "share_pct": 42.9
+              "count": 8,
+              "share_pct": 47.1
+            },
+            {
+              "hex": "#ab8b48",
+              "name": "tortoise",
+              "count": 8,
+              "share_pct": 47.1
             },
             {
               "hex": "#181515",
               "name": "black",
-              "count": 6,
-              "share_pct": 42.9
+              "count": 7,
+              "share_pct": 41.2
+            },
+            {
+              "hex": "#3e290f",
+              "name": "brown",
+              "count": 7,
+              "share_pct": 41.2
             },
             {
               "hex": "#858280",
               "name": "grey",
               "count": 5,
-              "share_pct": 35.7
+              "share_pct": 29.4
             },
             {
-              "hex": "#3e290f",
-              "name": "brown",
-              "count": 5,
-              "share_pct": 35.7
+              "hex": "#b1b5b8",
+              "name": "light_grey",
+              "count": 4,
+              "share_pct": 23.5
             },
             {
               "hex": "#3f1b0f",
               "name": "burgundy",
               "count": 4,
-              "share_pct": 28.6
+              "share_pct": 23.5
+            },
+            {
+              "hex": "#d4b99d",
+              "name": "peach",
+              "count": 3,
+              "share_pct": 17.6
             },
             {
               "hex": "#816057",
               "name": "red",
               "count": 3,
-              "share_pct": 21.4
+              "share_pct": 17.6
             },
             {
               "hex": "#c5b883",
               "name": "yellow",
               "count": 2,
-              "share_pct": 14.3
+              "share_pct": 11.8
             },
             {
-              "hex": "#c9b9ac",
-              "name": "peach",
-              "count": 2,
-              "share_pct": 14.3
-            },
-            {
-              "hex": "#b1b5b8",
-              "name": "light_grey",
+              "hex": "#3a5627",
+              "name": "dark_green",
               "count": 1,
-              "share_pct": 7.1
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#a6c192",
+              "name": "green",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#2e2811",
+              "name": "gold",
+              "count": 1,
+              "share_pct": 5.9
             }
           ],
           "signature": false,
-          "delta_vs_F25": 7
+          "delta_vs_F25": 5
+        },
+        {
+          "style": "cat-eye",
+          "count": 17,
+          "share_pct": 10.6,
+          "hero_filename": "Bottega_107.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_107.jpg",
+          "hero_confidence": 0.9317,
+          "hero_rarity": 0.2197,
+          "products": [
+            {
+              "filename": "Bottega_107.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_107.jpg",
+              "confidence": 0.9317,
+              "rarity": 0.2197
+            },
+            {
+              "filename": "Bottega_73.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_73.jpg",
+              "confidence": 0.9104,
+              "rarity": 0.2245
+            },
+            {
+              "filename": "Bottega_125.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_125.jpg",
+              "confidence": 0.8316,
+              "rarity": 0.2382
+            },
+            {
+              "filename": "Bottega_24.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_24.jpg",
+              "confidence": 0.8084,
+              "rarity": 0.241
+            },
+            {
+              "filename": "Bottega_109.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_109.jpg",
+              "confidence": 0.8016,
+              "rarity": 0.2072
+            },
+            {
+              "filename": "Bottega_129.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_129.jpg",
+              "confidence": 0.7668,
+              "rarity": 0.2695
+            },
+            {
+              "filename": "Bottega_36.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_36.jpg",
+              "confidence": 0.7601,
+              "rarity": 0.2256
+            },
+            {
+              "filename": "Bottega_11.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_11.jpg",
+              "confidence": 0.7531,
+              "rarity": 0.2213
+            },
+            {
+              "filename": "Bottega_118.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_118.jpg",
+              "confidence": 0.7351,
+              "rarity": 0.276
+            },
+            {
+              "filename": "Bottega_90.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_90.jpg",
+              "confidence": 0.7338,
+              "rarity": 0.2197
+            },
+            {
+              "filename": "Bottega_112.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_112.jpg",
+              "confidence": 0.7226,
+              "rarity": 0.2475
+            },
+            {
+              "filename": "Bottega_44.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_44.jpg",
+              "confidence": 0.6691,
+              "rarity": 0.2114
+            },
+            {
+              "filename": "Bottega_86.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_86.jpg",
+              "confidence": 0.6564,
+              "rarity": 0.2039
+            },
+            {
+              "filename": "Bottega_97.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_97.jpg",
+              "confidence": 0.6354,
+              "rarity": 0.2403
+            },
+            {
+              "filename": "Bottega_71.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_71.jpg",
+              "confidence": 0.6114,
+              "rarity": 0.2106
+            },
+            {
+              "filename": "Bottega_45.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_45.jpg",
+              "confidence": 0.5163,
+              "rarity": 0.2099
+            },
+            {
+              "filename": "Bottega_160.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_160.jpg",
+              "confidence": 0.4306,
+              "rarity": 0.226
+            }
+          ],
+          "colors": [
+            {
+              "hex": "#241a18",
+              "name": "dark_grey",
+              "count": 12,
+              "share_pct": 70.6
+            },
+            {
+              "hex": "#3a2420",
+              "name": "burgundy",
+              "count": 7,
+              "share_pct": 41.2
+            },
+            {
+              "hex": "#71422d",
+              "name": "brown",
+              "count": 7,
+              "share_pct": 41.2
+            },
+            {
+              "hex": "#a46646",
+              "name": "tortoise",
+              "count": 6,
+              "share_pct": 35.3
+            },
+            {
+              "hex": "#b47d5d",
+              "name": "orange",
+              "count": 6,
+              "share_pct": 35.3
+            },
+            {
+              "hex": "#6c3c37",
+              "name": "red",
+              "count": 5,
+              "share_pct": 29.4
+            },
+            {
+              "hex": "#ddd2d2",
+              "name": "light_grey",
+              "count": 5,
+              "share_pct": 29.4
+            },
+            {
+              "hex": "#1b1716",
+              "name": "black",
+              "count": 5,
+              "share_pct": 29.4
+            },
+            {
+              "hex": "#7d746b",
+              "name": "grey",
+              "count": 4,
+              "share_pct": 23.5
+            },
+            {
+              "hex": "#d3b59f",
+              "name": "peach",
+              "count": 2,
+              "share_pct": 11.8
+            },
+            {
+              "hex": "#ceb4b7",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#efecdb",
+              "name": "white",
+              "count": 1,
+              "share_pct": 5.9
+            }
+          ],
+          "signature": false,
+          "delta_vs_F25": 9
+        },
+        {
+          "style": "round",
+          "count": 17,
+          "share_pct": 10.6,
+          "hero_filename": "Bottega_88.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_88.jpg",
+          "hero_confidence": 0.7122,
+          "hero_rarity": 0.2076,
+          "products": [
+            {
+              "filename": "Bottega_88.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_88.jpg",
+              "confidence": 0.7122,
+              "rarity": 0.2076
+            },
+            {
+              "filename": "Bottega_139.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_139.jpg",
+              "confidence": 0.7093,
+              "rarity": 0.2026
+            },
+            {
+              "filename": "Bottega_159.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_159.jpg",
+              "confidence": 0.7075,
+              "rarity": 0.2288
+            },
+            {
+              "filename": "Bottega_113.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_113.jpg",
+              "confidence": 0.6443,
+              "rarity": 0.2279
+            },
+            {
+              "filename": "Bottega_150.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_150.jpg",
+              "confidence": 0.634,
+              "rarity": 0.2191
+            },
+            {
+              "filename": "Bottega_142.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_142.jpg",
+              "confidence": 0.5782,
+              "rarity": 0.2507
+            },
+            {
+              "filename": "Bottega_145.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_145.jpg",
+              "confidence": 0.5767,
+              "rarity": 0.2137
+            },
+            {
+              "filename": "Bottega_148.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_148.jpg",
+              "confidence": 0.5525,
+              "rarity": 0.2572
+            },
+            {
+              "filename": "Bottega_158.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_158.jpg",
+              "confidence": 0.5432,
+              "rarity": 0.2575
+            },
+            {
+              "filename": "Bottega_136.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_136.jpg",
+              "confidence": 0.5396,
+              "rarity": 0.208
+            },
+            {
+              "filename": "Bottega_119.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_119.jpg",
+              "confidence": 0.5155,
+              "rarity": 0.2161
+            },
+            {
+              "filename": "Bottega_130.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_130.jpg",
+              "confidence": 0.5007,
+              "rarity": 0.2688
+            },
+            {
+              "filename": "Bottega_134.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_134.jpg",
+              "confidence": 0.4936,
+              "rarity": 0.2361
+            },
+            {
+              "filename": "Bottega_14.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_14.jpg",
+              "confidence": 0.4793,
+              "rarity": 0.2189
+            },
+            {
+              "filename": "Bottega_31.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_31.jpg",
+              "confidence": 0.4135,
+              "rarity": 0.2612
+            },
+            {
+              "filename": "Bottega_131.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_131.jpg",
+              "confidence": 0.4035,
+              "rarity": 0.2332
+            },
+            {
+              "filename": "Bottega_154.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_154.jpg",
+              "confidence": 0.3034,
+              "rarity": 0.2235
+            }
+          ],
+          "colors": [
+            {
+              "hex": "#211f1e",
+              "name": "dark_grey",
+              "count": 13,
+              "share_pct": 76.5
+            },
+            {
+              "hex": "#7b6d66",
+              "name": "grey",
+              "count": 8,
+              "share_pct": 47.1
+            },
+            {
+              "hex": "#1d1511",
+              "name": "black",
+              "count": 7,
+              "share_pct": 41.2
+            },
+            {
+              "hex": "#331b0f",
+              "name": "brown",
+              "count": 5,
+              "share_pct": 29.4
+            },
+            {
+              "hex": "#b2b3ad",
+              "name": "light_grey",
+              "count": 4,
+              "share_pct": 23.5
+            },
+            {
+              "hex": "#43221a",
+              "name": "burgundy",
+              "count": 3,
+              "share_pct": 17.6
+            },
+            {
+              "hex": "#aa8d45",
+              "name": "tortoise",
+              "count": 2,
+              "share_pct": 11.8
+            },
+            {
+              "hex": "#d9c98f",
+              "name": "yellow",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#ca9197",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#a3656c",
+              "name": "red",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#a58e45",
+              "name": "gold",
+              "count": 1,
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#deded8",
+              "name": "white",
+              "count": 1,
+              "share_pct": 5.9
+            }
+          ],
+          "signature": false,
+          "delta_vs_F25": -5
         },
         {
           "style": "hexagonal",
-          "count": 11,
-          "share_pct": 6.9,
-          "hero_filename": "Bottega_58.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_58.jpg",
-          "hero_confidence": 0.6739,
-          "hero_rarity": 0.1991,
+          "count": 14,
+          "share_pct": 8.8,
+          "hero_filename": "Bottega_5.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_5.jpg",
+          "hero_confidence": 0.8271,
+          "hero_rarity": 0.2689,
           "products": [
+            {
+              "filename": "Bottega_5.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_5.jpg",
+              "confidence": 0.8271,
+              "rarity": 0.2689
+            },
             {
               "filename": "Bottega_58.jpg",
               "url": "/snapshots/S26/bottega/Bottega_58.jpg",
@@ -2587,6 +2671,18 @@
               "url": "/snapshots/S26/bottega/Bottega_64.jpg",
               "confidence": 0.6581,
               "rarity": 0.2051
+            },
+            {
+              "filename": "Bottega_104.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_104.jpg",
+              "confidence": 0.6255,
+              "rarity": 0.2892
+            },
+            {
+              "filename": "Bottega_59.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_59.jpg",
+              "confidence": 0.5004,
+              "rarity": 0.3153
             },
             {
               "filename": "Bottega_115.jpg",
@@ -2645,62 +2741,74 @@
           ],
           "colors": [
             {
-              "hex": "#0e0e0e",
-              "name": "black",
-              "count": 9,
-              "share_pct": 81.8
-            },
-            {
               "hex": "#3b3533",
               "name": "dark_grey",
-              "count": 9,
-              "share_pct": 81.8
+              "count": 11,
+              "share_pct": 78.6
+            },
+            {
+              "hex": "#0e0e0e",
+              "name": "black",
+              "count": 10,
+              "share_pct": 71.4
             },
             {
               "hex": "#785748",
               "name": "tortoise",
-              "count": 6,
-              "share_pct": 54.5
+              "count": 8,
+              "share_pct": 57.1
             },
             {
               "hex": "#5c3b2f",
               "name": "burgundy",
+              "count": 4,
+              "share_pct": 28.6
+            },
+            {
+              "hex": "#59451f",
+              "name": "brown",
+              "count": 4,
+              "share_pct": 28.6
+            },
+            {
+              "hex": "#808a76",
+              "name": "grey",
               "count": 3,
-              "share_pct": 27.3
+              "share_pct": 21.4
+            },
+            {
+              "hex": "#c7af7d",
+              "name": "orange",
+              "count": 3,
+              "share_pct": 21.4
             },
             {
               "hex": "#dbd3cb",
               "name": "light_grey",
               "count": 3,
-              "share_pct": 27.3
+              "share_pct": 21.4
             },
             {
-              "hex": "#84706b",
-              "name": "grey",
-              "count": 2,
-              "share_pct": 18.2
-            },
-            {
-              "hex": "#3f220d",
-              "name": "brown",
-              "count": 2,
-              "share_pct": 18.2
-            },
-            {
-              "hex": "#d0b39d",
-              "name": "orange",
+              "hex": "#4c4527",
+              "name": "gold",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
             },
             {
               "hex": "#745346",
               "name": "red",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
+            },
+            {
+              "hex": "#cab36d",
+              "name": "yellow",
+              "count": 1,
+              "share_pct": 7.1
             }
           ],
           "signature": false,
-          "delta_vs_F25": 10
+          "delta_vs_F25": 13
         },
         {
           "style": "oversized",
@@ -3096,7 +3204,52 @@
             }
           ],
           "signature": false,
-          "delta_vs_F25": -2
+          "delta_vs_F25": -3
+        },
+        {
+          "style": "browline",
+          "count": 1,
+          "share_pct": 0.6,
+          "hero_filename": "Bottega_149.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_149.jpg",
+          "hero_confidence": 0.5068,
+          "hero_rarity": 0.2841,
+          "products": [
+            {
+              "filename": "Bottega_149.jpg",
+              "url": "/snapshots/S26/bottega/Bottega_149.jpg",
+              "confidence": 0.5068,
+              "rarity": 0.2841
+            }
+          ],
+          "colors": [
+            {
+              "hex": "#ccd0d2",
+              "name": "light_grey",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#a9c8d2",
+              "name": "blue",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#dfe3e2",
+              "name": "white",
+              "count": 1,
+              "share_pct": 100.0
+            },
+            {
+              "hex": "#9caaae",
+              "name": "grey",
+              "count": 1,
+              "share_pct": 100.0
+            }
+          ],
+          "signature": false,
+          "delta_vs_F25": 1
         },
         {
           "style": "mask",
@@ -3184,37 +3337,13 @@
         },
         {
           "style": "signature",
-          "count": 23,
-          "share_pct": 14.4,
-          "hero_filename": "Bottega_59.jpg",
-          "hero_url": "/snapshots/S26/bottega/Bottega_59.jpg",
-          "hero_confidence": 0.5004,
-          "hero_rarity": 0.3153,
+          "count": 13,
+          "share_pct": 8.1,
+          "hero_filename": "Bottega_140.jpg",
+          "hero_url": "/snapshots/S26/bottega/Bottega_140.jpg",
+          "hero_confidence": 0.4029,
+          "hero_rarity": 0.2874,
           "products": [
-            {
-              "filename": "Bottega_59.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_59.jpg",
-              "confidence": 0.5004,
-              "rarity": 0.3153
-            },
-            {
-              "filename": "Bottega_34.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_34.jpg",
-              "confidence": 0.9806,
-              "rarity": 0.3072
-            },
-            {
-              "filename": "Bottega_56.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_56.jpg",
-              "confidence": 0.8574,
-              "rarity": 0.2898
-            },
-            {
-              "filename": "Bottega_104.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_104.jpg",
-              "confidence": 0.6255,
-              "rarity": 0.2892
-            },
             {
               "filename": "Bottega_140.jpg",
               "url": "/snapshots/S26/bottega/Bottega_140.jpg",
@@ -3222,46 +3351,10 @@
               "rarity": 0.2874
             },
             {
-              "filename": "Bottega_149.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_149.jpg",
-              "confidence": 0.5068,
-              "rarity": 0.2841
-            },
-            {
               "filename": "Bottega_29.jpg",
               "url": "/snapshots/S26/bottega/Bottega_29.jpg",
               "confidence": 0.4193,
               "rarity": 0.2762
-            },
-            {
-              "filename": "Bottega_118.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_118.jpg",
-              "confidence": 0.7351,
-              "rarity": 0.276
-            },
-            {
-              "filename": "Bottega_15.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_15.jpg",
-              "confidence": 0.8761,
-              "rarity": 0.2725
-            },
-            {
-              "filename": "Bottega_129.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_129.jpg",
-              "confidence": 0.7668,
-              "rarity": 0.2695
-            },
-            {
-              "filename": "Bottega_5.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_5.jpg",
-              "confidence": 0.8271,
-              "rarity": 0.2689
-            },
-            {
-              "filename": "Bottega_130.jpg",
-              "url": "/snapshots/S26/bottega/Bottega_130.jpg",
-              "confidence": 0.5007,
-              "rarity": 0.2688
             },
             {
               "filename": "Bottega_38.jpg",
@@ -3332,116 +3425,80 @@
           ],
           "colors": [
             {
-              "hex": "#505846",
-              "name": "dark_grey",
-              "count": 13,
-              "share_pct": 56.5
-            },
-            {
               "hex": "#130906",
               "name": "black",
-              "count": 10,
-              "share_pct": 43.5
-            },
-            {
-              "hex": "#7c3615",
-              "name": "brown",
               "count": 8,
-              "share_pct": 34.8
+              "share_pct": 61.5
             },
             {
-              "hex": "#808a76",
-              "name": "grey",
-              "count": 7,
-              "share_pct": 30.4
-            },
-            {
-              "hex": "#c7af7d",
-              "name": "orange",
-              "count": 7,
-              "share_pct": 30.4
-            },
-            {
-              "hex": "#a56f56",
-              "name": "tortoise",
-              "count": 7,
-              "share_pct": 30.4
-            },
-            {
-              "hex": "#dbdbd5",
-              "name": "light_grey",
-              "count": 7,
-              "share_pct": 30.4
+              "hex": "#272728",
+              "name": "dark_grey",
+              "count": 8,
+              "share_pct": 61.5
             },
             {
               "hex": "#4f3025",
               "name": "burgundy",
-              "count": 5,
-              "share_pct": 21.7
+              "count": 4,
+              "share_pct": 30.8
+            },
+            {
+              "hex": "#889b91",
+              "name": "grey",
+              "count": 4,
+              "share_pct": 30.8
             },
             {
               "hex": "#764f40",
               "name": "red",
-              "count": 4,
-              "share_pct": 17.4
-            },
-            {
-              "hex": "#4c4527",
-              "name": "gold",
               "count": 3,
-              "share_pct": 13.0
+              "share_pct": 23.1
             },
             {
-              "hex": "#efecdb",
-              "name": "white",
-              "count": 2,
-              "share_pct": 8.7
+              "hex": "#a56f56",
+              "name": "tortoise",
+              "count": 3,
+              "share_pct": 23.1
             },
             {
-              "hex": "#d4b99d",
-              "name": "peach",
-              "count": 2,
-              "share_pct": 8.7
-            },
-            {
-              "hex": "#ca9197",
-              "name": "pink",
-              "count": 1,
-              "share_pct": 4.3
+              "hex": "#7c3615",
+              "name": "brown",
+              "count": 3,
+              "share_pct": 23.1
             },
             {
               "hex": "#1c4e3c",
               "name": "turquoise",
               "count": 1,
-              "share_pct": 4.3
+              "share_pct": 7.7
             },
             {
-              "hex": "#a9c8d2",
-              "name": "blue",
+              "hex": "#cecfcc",
+              "name": "light_grey",
               "count": 1,
-              "share_pct": 4.3
+              "share_pct": 7.7
             },
             {
-              "hex": "#3a5627",
-              "name": "dark_green",
+              "hex": "#5d5435",
+              "name": "gold",
               "count": 1,
-              "share_pct": 4.3
+              "share_pct": 7.7
             },
             {
-              "hex": "#a6c192",
-              "name": "green",
+              "hex": "#b69c8d",
+              "name": "orange",
               "count": 1,
-              "share_pct": 4.3
+              "share_pct": 7.7
             },
             {
-              "hex": "#cab36d",
-              "name": "yellow",
+              "hex": "#cbb9aa",
+              "name": "peach",
               "count": 1,
-              "share_pct": 4.3
+              "share_pct": 7.7
             }
           ],
           "signature": true,
-          "delta_vs_F25": 9
+          "delta_vs_F25": 6
         }
       ]
     }
@@ -3452,8 +3509,8 @@
       "clusters": [
         {
           "style": "navigator",
-          "count": 49,
-          "share_pct": 30.4,
+          "count": 51,
+          "share_pct": 31.7,
           "hero_filename": "D&G_141.jpg",
           "hero_url": "/brands/dolce_and_gabbana/3/D&G_141.jpg",
           "hero_confidence": 0.9854,
@@ -3524,6 +3581,12 @@
               "url": "/brands/dolce_and_gabbana/3/D&G_48.jpg",
               "confidence": 0.815,
               "rarity": 0.1727
+            },
+            {
+              "filename": "D&G_28.jpg",
+              "url": "/brands/dolce_and_gabbana/2/D&G_28.jpg",
+              "confidence": 0.7932,
+              "rarity": 0.2699
             },
             {
               "filename": "D&G_46.jpg",
@@ -3658,6 +3721,12 @@
               "rarity": 0.203
             },
             {
+              "filename": "D&G_149.jpg",
+              "url": "/brands/dolce_and_gabbana/2/D&G_149.jpg",
+              "confidence": 0.5683,
+              "rarity": 0.252
+            },
+            {
               "filename": "D&G_99.jpg",
               "url": "/brands/dolce_and_gabbana/1/D&G_99.jpg",
               "confidence": 0.5612,
@@ -3758,66 +3827,66 @@
             {
               "hex": "#555555",
               "name": "dark_grey",
-              "count": 43,
-              "share_pct": 87.8
+              "count": 45,
+              "share_pct": 88.2
             },
             {
               "hex": "#11110f",
               "name": "black",
               "count": 20,
-              "share_pct": 40.8
+              "share_pct": 39.2
             },
             {
               "hex": "#7e7c79",
               "name": "grey",
-              "count": 14,
-              "share_pct": 28.6
+              "count": 16,
+              "share_pct": 31.4
             },
             {
               "hex": "#7b634b",
               "name": "tortoise",
               "count": 12,
-              "share_pct": 24.5
+              "share_pct": 23.5
             },
             {
               "hex": "#a0936c",
               "name": "orange",
               "count": 6,
-              "share_pct": 12.2
+              "share_pct": 11.8
             },
             {
               "hex": "#3b281a",
               "name": "brown",
               "count": 6,
-              "share_pct": 12.2
+              "share_pct": 11.8
+            },
+            {
+              "hex": "#bdb2a9",
+              "name": "light_grey",
+              "count": 4,
+              "share_pct": 7.8
             },
             {
               "hex": "#95b5d0",
               "name": "blue",
               "count": 3,
-              "share_pct": 6.1
+              "share_pct": 5.9
+            },
+            {
+              "hex": "#3a201f",
+              "name": "burgundy",
+              "count": 2,
+              "share_pct": 3.9
             },
             {
               "hex": "#77615c",
               "name": "red",
               "count": 2,
-              "share_pct": 4.1
-            },
-            {
-              "hex": "#ccd2d7",
-              "name": "light_grey",
-              "count": 2,
-              "share_pct": 4.1
+              "share_pct": 3.9
             },
             {
               "hex": "#8a967c",
               "name": "green",
-              "count": 1,
-              "share_pct": 2.0
-            },
-            {
-              "hex": "#3a201f",
-              "name": "burgundy",
               "count": 1,
               "share_pct": 2.0
             },
@@ -3832,8 +3901,8 @@
         },
         {
           "style": "rectangular",
-          "count": 38,
-          "share_pct": 23.6,
+          "count": 39,
+          "share_pct": 24.2,
           "hero_filename": "D&G_117.jpg",
           "hero_url": "/brands/dolce_and_gabbana/2/D&G_117.jpg",
           "hero_confidence": 0.8,
@@ -3922,6 +3991,12 @@
               "url": "/brands/dolce_and_gabbana/3/D&G_81.jpg",
               "confidence": 0.6225,
               "rarity": 0.2177
+            },
+            {
+              "filename": "D&G_107.jpg",
+              "url": "/brands/dolce_and_gabbana/0/D&G_107.jpg",
+              "confidence": 0.5958,
+              "rarity": 0.2871
             },
             {
               "filename": "D&G_36.jpg",
@@ -4073,61 +4148,67 @@
               "hex": "#302f2e",
               "name": "dark_grey",
               "count": 38,
-              "share_pct": 100.0
+              "share_pct": 97.4
             },
             {
               "hex": "#151513",
               "name": "black",
               "count": 21,
-              "share_pct": 55.3
+              "share_pct": 53.8
             },
             {
               "hex": "#686b70",
               "name": "grey",
               "count": 10,
-              "share_pct": 26.3
+              "share_pct": 25.6
             },
             {
               "hex": "#7a6248",
               "name": "tortoise",
               "count": 7,
-              "share_pct": 18.4
+              "share_pct": 17.9
             },
             {
               "hex": "#3c2920",
               "name": "brown",
               "count": 7,
-              "share_pct": 18.4
+              "share_pct": 17.9
             },
             {
               "hex": "#e4e4e4",
               "name": "white",
               "count": 3,
-              "share_pct": 7.9
+              "share_pct": 7.7
             },
             {
               "hex": "#ca9955",
               "name": "orange",
               "count": 3,
-              "share_pct": 7.9
+              "share_pct": 7.7
             },
             {
               "hex": "#cacaca",
               "name": "light_grey",
               "count": 3,
-              "share_pct": 7.9
+              "share_pct": 7.7
             },
             {
               "hex": "#a8bac2",
               "name": "blue",
               "count": 2,
-              "share_pct": 5.3
+              "share_pct": 5.1
             },
             {
               "hex": "#b7978e",
               "name": "red",
               "count": 2,
-              "share_pct": 5.3
+              "share_pct": 5.1
+            },
+            {
+              "hex": "#c6ada8",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 2.6
             },
             {
               "hex": "#7c7958",
@@ -4146,13 +4227,25 @@
         },
         {
           "style": "shield",
-          "count": 16,
-          "share_pct": 9.9,
-          "hero_filename": "D&G_2.jpg",
-          "hero_url": "/brands/dolce_and_gabbana/3/D&G_2.jpg",
-          "hero_confidence": 0.9515,
-          "hero_rarity": 0.1811,
+          "count": 20,
+          "share_pct": 12.4,
+          "hero_filename": "D&G_85.jpg",
+          "hero_url": "/brands/dolce_and_gabbana/1/D&G_85.jpg",
+          "hero_confidence": 0.9904,
+          "hero_rarity": 0.2449,
           "products": [
+            {
+              "filename": "D&G_85.jpg",
+              "url": "/brands/dolce_and_gabbana/1/D&G_85.jpg",
+              "confidence": 0.9904,
+              "rarity": 0.2449
+            },
+            {
+              "filename": "D&G_86.jpg",
+              "url": "/brands/dolce_and_gabbana/1/D&G_86.jpg",
+              "confidence": 0.9839,
+              "rarity": 0.2519
+            },
             {
               "filename": "D&G_2.jpg",
               "url": "/brands/dolce_and_gabbana/3/D&G_2.jpg",
@@ -4170,6 +4263,12 @@
               "url": "/brands/dolce_and_gabbana/3/D&G_84.jpg",
               "confidence": 0.9279,
               "rarity": 0.2219
+            },
+            {
+              "filename": "D&G_95.jpg",
+              "url": "/brands/dolce_and_gabbana/0/D&G_95.jpg",
+              "confidence": 0.9237,
+              "rarity": 0.2881
             },
             {
               "filename": "D&G_76.jpg",
@@ -4206,6 +4305,12 @@
               "url": "/brands/dolce_and_gabbana/2/D&G_87.jpg",
               "confidence": 0.7535,
               "rarity": 0.2178
+            },
+            {
+              "filename": "D&G_140.jpg",
+              "url": "/brands/dolce_and_gabbana/3/D&G_140.jpg",
+              "confidence": 0.7276,
+              "rarity": 0.2559
             },
             {
               "filename": "D&G_77.jpg",
@@ -4254,46 +4359,64 @@
             {
               "hex": "#241e1a",
               "name": "dark_grey",
-              "count": 16,
-              "share_pct": 100.0
+              "count": 17,
+              "share_pct": 85.0
             },
             {
               "hex": "#120d0a",
               "name": "black",
-              "count": 14,
-              "share_pct": 87.5
+              "count": 15,
+              "share_pct": 75.0
             },
             {
-              "hex": "#6b6a6a",
+              "hex": "#8c8c8c",
               "name": "grey",
-              "count": 3,
-              "share_pct": 18.8
+              "count": 4,
+              "share_pct": 20.0
             },
             {
               "hex": "#8c6d5b",
               "name": "tortoise",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.0
             },
             {
               "hex": "#dddcdc",
               "name": "white",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.0
             },
             {
               "hex": "#ccb08f",
               "name": "orange",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.0
+            },
+            {
+              "hex": "#6e83a1",
+              "name": "blue",
+              "count": 1,
+              "share_pct": 5.0
+            },
+            {
+              "hex": "#b6b6b8",
+              "name": "light_grey",
+              "count": 1,
+              "share_pct": 5.0
+            },
+            {
+              "hex": "#e9bbc9",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 5.0
             }
           ],
           "signature": false
         },
         {
           "style": "square",
-          "count": 16,
-          "share_pct": 9.9,
+          "count": 17,
+          "share_pct": 10.6,
           "hero_filename": "D&G_16.jpg",
           "hero_url": "/brands/dolce_and_gabbana/2/D&G_16.jpg",
           "hero_confidence": 0.6514,
@@ -4316,6 +4439,12 @@
               "url": "/brands/dolce_and_gabbana/3/D&G_50.jpg",
               "confidence": 0.6307,
               "rarity": 0.2004
+            },
+            {
+              "filename": "D&G_156.jpg",
+              "url": "/brands/dolce_and_gabbana/1/D&G_156.jpg",
+              "confidence": 0.5926,
+              "rarity": 0.2454
             },
             {
               "filename": "D&G_126.jpg",
@@ -4400,74 +4529,74 @@
             {
               "hex": "#535250",
               "name": "dark_grey",
-              "count": 15,
-              "share_pct": 93.8
+              "count": 16,
+              "share_pct": 94.1
             },
             {
               "hex": "#070706",
               "name": "black",
               "count": 4,
-              "share_pct": 25.0
+              "share_pct": 23.5
+            },
+            {
+              "hex": "#67676a",
+              "name": "grey",
+              "count": 3,
+              "share_pct": 17.6
             },
             {
               "hex": "#a3794a",
               "name": "tortoise",
               "count": 3,
-              "share_pct": 18.8
+              "share_pct": 17.6
             },
             {
               "hex": "#d6d6d6",
               "name": "light_grey",
               "count": 2,
-              "share_pct": 12.5
+              "share_pct": 11.8
             },
             {
               "hex": "#a9bac3",
               "name": "blue",
               "count": 2,
-              "share_pct": 12.5
+              "share_pct": 11.8
             },
             {
               "hex": "#873114",
               "name": "red",
               "count": 2,
-              "share_pct": 12.5
+              "share_pct": 11.8
             },
             {
               "hex": "#d39151",
               "name": "orange",
               "count": 2,
-              "share_pct": 12.5
-            },
-            {
-              "hex": "#919b97",
-              "name": "grey",
-              "count": 2,
-              "share_pct": 12.5
+              "share_pct": 11.8
             },
             {
               "hex": "#dfdfdf",
               "name": "white",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.9
             },
             {
               "hex": "#4d5c3d",
               "name": "dark_green",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.9
             },
             {
               "hex": "#50322a",
               "name": "burgundy",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.9
             },
             {
               "hex": "#372115",
               "name": "brown",
               "count": 1,
-              "share_pct": 6.2
+              "share_pct": 5.9
             }
           ],
           "signature": false
@@ -4542,13 +4671,19 @@
         },
         {
           "style": "aviator",
-          "count": 2,
-          "share_pct": 1.2,
-          "hero_filename": "D&G_94.jpg",
-          "hero_url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
-          "hero_confidence": 0.491,
-          "hero_rarity": 0.2156,
+          "count": 3,
+          "share_pct": 1.9,
+          "hero_filename": "D&G_150.jpg",
+          "hero_url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
+          "hero_confidence": 0.8835,
+          "hero_rarity": 0.3149,
           "products": [
+            {
+              "filename": "D&G_150.jpg",
+              "url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
+              "confidence": 0.8835,
+              "rarity": 0.3149
+            },
             {
               "filename": "D&G_94.jpg",
               "url": "/brands/dolce_and_gabbana/1/D&G_94.jpg",
@@ -4567,7 +4702,25 @@
               "hex": "#49494d",
               "name": "dark_grey",
               "count": 2,
-              "share_pct": 100.0
+              "share_pct": 66.7
+            },
+            {
+              "hex": "#d89f8c",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#c1876c",
+              "name": "orange",
+              "count": 1,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#cc917d",
+              "name": "red",
+              "count": 1,
+              "share_pct": 33.3
             }
           ],
           "signature": false
@@ -4644,8 +4797,8 @@
         },
         {
           "style": "signature",
-          "count": 32,
-          "share_pct": 19.9,
+          "count": 23,
+          "share_pct": 14.3,
           "hero_filename": "D&G_118.jpg",
           "hero_url": "/brands/dolce_and_gabbana/1/D&G_118.jpg",
           "hero_confidence": 0.3496,
@@ -4662,60 +4815,6 @@
               "url": "/brands/dolce_and_gabbana/3/D&G_22.jpg",
               "confidence": 0.267,
               "rarity": 0.3618
-            },
-            {
-              "filename": "D&G_150.jpg",
-              "url": "/brands/dolce_and_gabbana/0/D&G_150.jpg",
-              "confidence": 0.8835,
-              "rarity": 0.3149
-            },
-            {
-              "filename": "D&G_95.jpg",
-              "url": "/brands/dolce_and_gabbana/0/D&G_95.jpg",
-              "confidence": 0.9237,
-              "rarity": 0.2881
-            },
-            {
-              "filename": "D&G_107.jpg",
-              "url": "/brands/dolce_and_gabbana/0/D&G_107.jpg",
-              "confidence": 0.5958,
-              "rarity": 0.2871
-            },
-            {
-              "filename": "D&G_28.jpg",
-              "url": "/brands/dolce_and_gabbana/2/D&G_28.jpg",
-              "confidence": 0.7932,
-              "rarity": 0.2699
-            },
-            {
-              "filename": "D&G_140.jpg",
-              "url": "/brands/dolce_and_gabbana/3/D&G_140.jpg",
-              "confidence": 0.7276,
-              "rarity": 0.2559
-            },
-            {
-              "filename": "D&G_149.jpg",
-              "url": "/brands/dolce_and_gabbana/2/D&G_149.jpg",
-              "confidence": 0.5683,
-              "rarity": 0.252
-            },
-            {
-              "filename": "D&G_86.jpg",
-              "url": "/brands/dolce_and_gabbana/1/D&G_86.jpg",
-              "confidence": 0.9839,
-              "rarity": 0.2519
-            },
-            {
-              "filename": "D&G_156.jpg",
-              "url": "/brands/dolce_and_gabbana/1/D&G_156.jpg",
-              "confidence": 0.5926,
-              "rarity": 0.2454
-            },
-            {
-              "filename": "D&G_85.jpg",
-              "url": "/brands/dolce_and_gabbana/1/D&G_85.jpg",
-              "confidence": 0.9904,
-              "rarity": 0.2449
             },
             {
               "filename": "D&G_127.jpg",
@@ -4848,86 +4947,68 @@
             {
               "hex": "#292727",
               "name": "dark_grey",
-              "count": 26,
-              "share_pct": 81.2
-            },
-            {
-              "hex": "#696c6d",
-              "name": "grey",
-              "count": 12,
-              "share_pct": 37.5
+              "count": 22,
+              "share_pct": 95.7
             },
             {
               "hex": "#190f0c",
               "name": "black",
-              "count": 10,
-              "share_pct": 31.2
+              "count": 9,
+              "share_pct": 39.1
+            },
+            {
+              "hex": "#696c6d",
+              "name": "grey",
+              "count": 8,
+              "share_pct": 34.8
             },
             {
               "hex": "#506182",
               "name": "blue",
-              "count": 4,
-              "share_pct": 12.5
-            },
-            {
-              "hex": "#bdb2a9",
-              "name": "light_grey",
-              "count": 4,
-              "share_pct": 12.5
-            },
-            {
-              "hex": "#c6ada8",
-              "name": "pink",
               "count": 3,
-              "share_pct": 9.4
+              "share_pct": 13.0
             },
             {
               "hex": "#3c2216",
               "name": "brown",
               "count": 3,
-              "share_pct": 9.4
+              "share_pct": 13.0
             },
             {
               "hex": "#736050",
               "name": "tortoise",
               "count": 3,
-              "share_pct": 9.4
+              "share_pct": 13.0
             },
             {
               "hex": "#424f33",
               "name": "dark_green",
               "count": 2,
-              "share_pct": 6.2
-            },
-            {
-              "hex": "#c8b273",
-              "name": "orange",
-              "count": 2,
-              "share_pct": 6.2
+              "share_pct": 8.7
             },
             {
               "hex": "#e3e2dd",
               "name": "white",
               "count": 2,
-              "share_pct": 6.2
+              "share_pct": 8.7
             },
             {
-              "hex": "#cc917d",
-              "name": "red",
+              "hex": "#c8b273",
+              "name": "orange",
               "count": 1,
-              "share_pct": 3.1
+              "share_pct": 4.3
             },
             {
-              "hex": "#402d25",
-              "name": "burgundy",
+              "hex": "#c7c6c4",
+              "name": "light_grey",
               "count": 1,
-              "share_pct": 3.1
+              "share_pct": 4.3
             },
             {
               "hex": "#838a69",
               "name": "green",
               "count": 1,
-              "share_pct": 3.1
+              "share_pct": 4.3
             }
           ],
           "signature": true
@@ -4939,8 +5020,8 @@
       "clusters": [
         {
           "style": "navigator",
-          "count": 47,
-          "share_pct": 41.2,
+          "count": 48,
+          "share_pct": 42.1,
           "hero_filename": "D&G_19.jpg",
           "hero_url": "/snapshots/S26/dg/D&G_19.jpg",
           "hero_confidence": 0.9609,
@@ -5005,6 +5086,12 @@
               "url": "/snapshots/S26/dg/D&G_18.jpg",
               "confidence": 0.8564,
               "rarity": 0.1647
+            },
+            {
+              "filename": "D&G_70.jpg",
+              "url": "/snapshots/S26/dg/D&G_70.jpg",
+              "confidence": 0.826,
+              "rarity": 0.2705
             },
             {
               "filename": "D&G_37.jpg",
@@ -5233,74 +5320,74 @@
             {
               "hex": "#202022",
               "name": "dark_grey",
-              "count": 36,
-              "share_pct": 76.6
+              "count": 37,
+              "share_pct": 77.1
             },
             {
               "hex": "#0c0c0c",
               "name": "black",
-              "count": 17,
-              "share_pct": 36.2
+              "count": 18,
+              "share_pct": 37.5
             },
             {
               "hex": "#797876",
               "name": "grey",
-              "count": 17,
-              "share_pct": 36.2
+              "count": 18,
+              "share_pct": 37.5
             },
             {
               "hex": "#9d7e51",
               "name": "tortoise",
               "count": 15,
-              "share_pct": 31.9
+              "share_pct": 31.2
             },
             {
               "hex": "#b8a580",
               "name": "orange",
               "count": 6,
-              "share_pct": 12.8
+              "share_pct": 12.5
             },
             {
               "hex": "#81280b",
               "name": "burgundy",
               "count": 4,
-              "share_pct": 8.5
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#c6bcb8",
+              "name": "light_grey",
+              "count": 4,
+              "share_pct": 8.3
             },
             {
               "hex": "#9ebfe6",
               "name": "blue",
               "count": 3,
-              "share_pct": 6.4
+              "share_pct": 6.2
             },
             {
               "hex": "#a83406",
               "name": "red",
               "count": 3,
-              "share_pct": 6.4
+              "share_pct": 6.2
             },
             {
-              "hex": "#c6bcb8",
-              "name": "light_grey",
+              "hex": "#483429",
+              "name": "brown",
               "count": 3,
-              "share_pct": 6.4
+              "share_pct": 6.2
             },
             {
               "hex": "#a6ac86",
               "name": "yellow",
               "count": 2,
-              "share_pct": 4.3
+              "share_pct": 4.2
             },
             {
               "hex": "#cec3b4",
               "name": "peach",
               "count": 2,
-              "share_pct": 4.3
-            },
-            {
-              "hex": "#483429",
-              "name": "brown",
-              "count": 2,
-              "share_pct": 4.3
+              "share_pct": 4.2
             },
             {
               "hex": "#807a62",
@@ -5322,22 +5409,34 @@
             }
           ],
           "signature": false,
-          "delta_vs_F25": -2
+          "delta_vs_F25": -3
         },
         {
           "style": "aviator",
-          "count": 11,
-          "share_pct": 9.6,
-          "hero_filename": "D&G_15.jpg",
-          "hero_url": "/snapshots/S26/dg/D&G_15.jpg",
-          "hero_confidence": 0.9426,
-          "hero_rarity": 0.2579,
+          "count": 14,
+          "share_pct": 12.3,
+          "hero_filename": "D&G_8.jpg",
+          "hero_url": "/snapshots/S26/dg/D&G_8.jpg",
+          "hero_confidence": 0.9597,
+          "hero_rarity": 0.3022,
           "products": [
+            {
+              "filename": "D&G_8.jpg",
+              "url": "/snapshots/S26/dg/D&G_8.jpg",
+              "confidence": 0.9597,
+              "rarity": 0.3022
+            },
             {
               "filename": "D&G_15.jpg",
               "url": "/snapshots/S26/dg/D&G_15.jpg",
               "confidence": 0.9426,
               "rarity": 0.2579
+            },
+            {
+              "filename": "D&G_9.jpg",
+              "url": "/snapshots/S26/dg/D&G_9.jpg",
+              "confidence": 0.9131,
+              "rarity": 0.2846
             },
             {
               "filename": "D&G_13.jpg",
@@ -5362,6 +5461,12 @@
               "url": "/snapshots/S26/dg/D&G_7.jpg",
               "confidence": 0.824,
               "rarity": 0.2466
+            },
+            {
+              "filename": "D&G_14.jpg",
+              "url": "/snapshots/S26/dg/D&G_14.jpg",
+              "confidence": 0.8231,
+              "rarity": 0.2786
             },
             {
               "filename": "D&G_11.jpg",
@@ -5404,65 +5509,89 @@
             {
               "hex": "#fec385",
               "name": "peach",
-              "count": 4,
-              "share_pct": 36.4
+              "count": 6,
+              "share_pct": 42.9
             },
             {
               "hex": "#fdad63",
               "name": "orange",
-              "count": 4,
-              "share_pct": 36.4
+              "count": 5,
+              "share_pct": 35.7
             },
             {
               "hex": "#747862",
               "name": "grey",
               "count": 2,
-              "share_pct": 18.2
+              "share_pct": 14.3
             },
             {
               "hex": "#bacce5",
               "name": "blue",
               "count": 2,
-              "share_pct": 18.2
+              "share_pct": 14.3
             },
             {
               "hex": "#927645",
               "name": "tortoise",
               "count": 2,
-              "share_pct": 18.2
+              "share_pct": 14.3
             },
             {
               "hex": "#555952",
               "name": "dark_grey",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
+            },
+            {
+              "hex": "#fec0c3",
+              "name": "pink",
+              "count": 1,
+              "share_pct": 7.1
             },
             {
               "hex": "#f9e179",
               "name": "yellow",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
             },
             {
               "hex": "#ddd0c5",
               "name": "light_grey",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
             },
             {
               "hex": "#e9e8e6",
               "name": "white",
               "count": 1,
-              "share_pct": 9.1
+              "share_pct": 7.1
+            },
+            {
+              "hex": "#cb8d73",
+              "name": "red",
+              "count": 1,
+              "share_pct": 7.1
+            },
+            {
+              "hex": "#b9e598",
+              "name": "green",
+              "count": 1,
+              "share_pct": 7.1
+            },
+            {
+              "hex": "#c3e7de",
+              "name": "turquoise",
+              "count": 1,
+              "share_pct": 7.1
             }
           ],
           "signature": false,
-          "delta_vs_F25": 9
+          "delta_vs_F25": 11
         },
         {
           "style": "shield",
-          "count": 10,
-          "share_pct": 8.8,
+          "count": 12,
+          "share_pct": 10.5,
           "hero_filename": "D&G_59.jpg",
           "hero_url": "/snapshots/S26/dg/D&G_59.jpg",
           "hero_confidence": 0.9454,
@@ -5485,6 +5614,12 @@
               "url": "/snapshots/S26/dg/D&G_29.jpg",
               "confidence": 0.7626,
               "rarity": 0.2572
+            },
+            {
+              "filename": "D&G_108.jpg",
+              "url": "/snapshots/S26/dg/D&G_108.jpg",
+              "confidence": 0.7224,
+              "rarity": 0.264
             },
             {
               "filename": "D&G_45.jpg",
@@ -5517,6 +5652,12 @@
               "rarity": 0.2211
             },
             {
+              "filename": "D&G_31.jpg",
+              "url": "/snapshots/S26/dg/D&G_31.jpg",
+              "confidence": 0.5583,
+              "rarity": 0.2809
+            },
+            {
               "filename": "D&G_54.jpg",
               "url": "/snapshots/S26/dg/D&G_54.jpg",
               "confidence": 0.4545,
@@ -5533,48 +5674,60 @@
             {
               "hex": "#444449",
               "name": "dark_grey",
-              "count": 10,
+              "count": 12,
               "share_pct": 100.0
             },
             {
-              "hex": "#0c0b0a",
+              "hex": "#0f0f0f",
               "name": "black",
-              "count": 7,
-              "share_pct": 70.0
+              "count": 8,
+              "share_pct": 66.7
             },
             {
-              "hex": "#95969a",
+              "hex": "#8f8f8f",
               "name": "grey",
-              "count": 3,
-              "share_pct": 30.0
+              "count": 4,
+              "share_pct": 33.3
+            },
+            {
+              "hex": "#a28175",
+              "name": "red",
+              "count": 2,
+              "share_pct": 16.7
             },
             {
               "hex": "#a5a6aa",
               "name": "light_grey",
               "count": 1,
-              "share_pct": 10.0
+              "share_pct": 8.3
             },
             {
-              "hex": "#a28175",
-              "name": "red",
+              "hex": "#e39795",
+              "name": "pink",
               "count": 1,
-              "share_pct": 10.0
+              "share_pct": 8.3
+            },
+            {
+              "hex": "#522c27",
+              "name": "burgundy",
+              "count": 1,
+              "share_pct": 8.3
             },
             {
               "hex": "#5387b6",
               "name": "blue",
               "count": 1,
-              "share_pct": 10.0
+              "share_pct": 8.3
             },
             {
               "hex": "#dddddc",
               "name": "white",
               "count": 1,
-              "share_pct": 10.0
+              "share_pct": 8.3
             }
           ],
           "signature": false,
-          "delta_vs_F25": -6
+          "delta_vs_F25": -8
         },
         {
           "style": "square",
@@ -5691,7 +5844,7 @@
             }
           ],
           "signature": false,
-          "delta_vs_F25": -6
+          "delta_vs_F25": -7
         },
         {
           "style": "rectangular",
@@ -5772,7 +5925,7 @@
             }
           ],
           "signature": false,
-          "delta_vs_F25": -31
+          "delta_vs_F25": -32
         },
         {
           "style": "hexagonal",
@@ -5884,8 +6037,8 @@
         },
         {
           "style": "signature",
-          "count": 25,
-          "share_pct": 21.9,
+          "count": 19,
+          "share_pct": 16.7,
           "hero_filename": "D&G_98.jpg",
           "hero_url": "/snapshots/S26/dg/D&G_98.jpg",
           "hero_confidence": 0.337,
@@ -5902,42 +6055,6 @@
               "url": "/snapshots/S26/dg/D&G_60.jpg",
               "confidence": 0.2636,
               "rarity": 0.3724
-            },
-            {
-              "filename": "D&G_8.jpg",
-              "url": "/snapshots/S26/dg/D&G_8.jpg",
-              "confidence": 0.9597,
-              "rarity": 0.3022
-            },
-            {
-              "filename": "D&G_9.jpg",
-              "url": "/snapshots/S26/dg/D&G_9.jpg",
-              "confidence": 0.9131,
-              "rarity": 0.2846
-            },
-            {
-              "filename": "D&G_31.jpg",
-              "url": "/snapshots/S26/dg/D&G_31.jpg",
-              "confidence": 0.5583,
-              "rarity": 0.2809
-            },
-            {
-              "filename": "D&G_14.jpg",
-              "url": "/snapshots/S26/dg/D&G_14.jpg",
-              "confidence": 0.8231,
-              "rarity": 0.2786
-            },
-            {
-              "filename": "D&G_70.jpg",
-              "url": "/snapshots/S26/dg/D&G_70.jpg",
-              "confidence": 0.826,
-              "rarity": 0.2705
-            },
-            {
-              "filename": "D&G_108.jpg",
-              "url": "/snapshots/S26/dg/D&G_108.jpg",
-              "confidence": 0.7224,
-              "rarity": 0.264
             },
             {
               "filename": "D&G_74.jpg",
@@ -6046,96 +6163,72 @@
             {
               "hex": "#3d4632",
               "name": "dark_grey",
-              "count": 21,
-              "share_pct": 84.0
+              "count": 18,
+              "share_pct": 94.7
             },
             {
               "hex": "#12100e",
               "name": "black",
-              "count": 12,
-              "share_pct": 48.0
+              "count": 10,
+              "share_pct": 52.6
             },
             {
               "hex": "#8e8c8d",
               "name": "grey",
-              "count": 7,
-              "share_pct": 28.0
+              "count": 5,
+              "share_pct": 26.3
             },
             {
               "hex": "#442f26",
               "name": "brown",
-              "count": 4,
-              "share_pct": 16.0
-            },
-            {
-              "hex": "#70443e",
-              "name": "red",
               "count": 3,
-              "share_pct": 12.0
-            },
-            {
-              "hex": "#9a7865",
-              "name": "orange",
-              "count": 3,
-              "share_pct": 12.0
+              "share_pct": 15.8
             },
             {
               "hex": "#926f5b",
               "name": "tortoise",
               "count": 3,
-              "share_pct": 12.0
+              "share_pct": 15.8
             },
             {
               "hex": "#e3e3de",
               "name": "white",
               "count": 2,
-              "share_pct": 8.0
+              "share_pct": 10.5
+            },
+            {
+              "hex": "#9a7865",
+              "name": "orange",
+              "count": 2,
+              "share_pct": 10.5
             },
             {
               "hex": "#cdcbc7",
               "name": "light_grey",
-              "count": 2,
-              "share_pct": 8.0
-            },
-            {
-              "hex": "#fec0c3",
-              "name": "pink",
-              "count": 2,
-              "share_pct": 8.0
-            },
-            {
-              "hex": "#522c27",
-              "name": "burgundy",
-              "count": 2,
-              "share_pct": 8.0
-            },
-            {
-              "hex": "#e6ae90",
-              "name": "peach",
-              "count": 2,
-              "share_pct": 8.0
+              "count": 1,
+              "share_pct": 5.3
             },
             {
               "hex": "#7e8ea8",
               "name": "blue",
               "count": 1,
-              "share_pct": 4.0
+              "share_pct": 5.3
             },
             {
-              "hex": "#b9e598",
-              "name": "green",
+              "hex": "#341e16",
+              "name": "burgundy",
               "count": 1,
-              "share_pct": 4.0
+              "share_pct": 5.3
             },
             {
-              "hex": "#c3e7de",
-              "name": "turquoise",
+              "hex": "#b7978e",
+              "name": "red",
               "count": 1,
-              "share_pct": 4.0
+              "share_pct": 5.3
             }
           ],
           "signature": true,
-          "delta_vs_F25": -7
+          "delta_vs_F25": -4
         }
       ]
     }
