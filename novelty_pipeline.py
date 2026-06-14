@@ -58,6 +58,7 @@ EMBED_DIR       = REPO_ROOT / "snapshots" / "embeddings"
 PALETTES_F25    = REPO_ROOT / "palettes_all_brands_v2.json"
 PALETTES_S26    = REPO_ROOT / "palettes_S26.json"
 ASSIGN_FILE     = REPO_ROOT / "snapshots" / "styles" / "style_assignments.json"
+PRICES_FILE     = REPO_ROOT / "snapshots" / "cluster_data_v2.json"
 OUT_FILE        = REPO_ROOT / "snapshots" / "novelty.json"
 FRONTEND_PUBLIC = Path("/Users/benja/conan-insight-hub/public")
 
@@ -160,6 +161,35 @@ def style_for_file(assigns: dict, brand: str, season: str, fname: str) -> str:
     return "unknown"
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Per-product prices — loaded once from cluster_data_v2.json and indexed
+# by (brand, season, filename) for O(1) lookup during the per-row enrichment.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def load_price_index() -> dict[tuple[str, str, str], float]:
+    """{(brand, season, filename): price_eur}."""
+    if not PRICES_FILE.exists():
+        return {}
+    raw = json.load(open(PRICES_FILE))
+    index: dict[tuple[str, str, str], float] = {}
+    for brand, block in raw.get("brands", {}).items():
+        for season, snap in block.get("snapshots", {}).items():
+            for p in snap.get("products", []):
+                price = p.get("price_eur")
+                if price is None:
+                    continue
+                fname = p.get("image") or p.get("filename")
+                if not fname:
+                    continue
+                index[(brand, season, fname)] = float(price)
+    return index
+
+
+def price_for(price_index: dict, brand: str, season: str, fname: str) -> float | None:
+    return price_index.get((brand, season, fname))
+
+
 def intra_season_rarity(emb_l2: torch.Tensor) -> torch.Tensor:
     sims = emb_l2 @ emb_l2.T
     n = sims.shape[0]
@@ -169,6 +199,7 @@ def intra_season_rarity(emb_l2: torch.Tensor) -> torch.Tensor:
 
 def main():
     assigns = json.load(open(ASSIGN_FILE))
+    price_index = load_price_index()
     out: dict = {}
 
     for brand, f25_emb_file, f25_folder, s26_emb_file, s26_folder in SOURCES:
@@ -228,6 +259,7 @@ def main():
                 "is_hit":              False,
                 "style":               style_for_file(assigns, brand, "S26", fname),
                 "colors":              palette_for(fname, s26_pal),
+                "price_eur":           price_for(price_index, brand, "S26", fname),
             })
 
         # Promote top X% of new by hit_score to is_hit. Always at least 1
@@ -260,6 +292,7 @@ def main():
                 "intra_season_rarity":   round(rarity, 4),
                 "style":                 style_for_file(assigns, brand, "F25", fname),
                 "colors":                palette_for(fname, f25_pal),
+                "price_eur":             price_for(price_index, brand, "F25", fname),
             })
         disc_products.sort(key=lambda x: -x["discontinuation_score"])
 

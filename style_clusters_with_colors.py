@@ -53,6 +53,15 @@ PALETTES_F25  = REPO_ROOT / "palettes_all_brands_v2.json"
 PALETTES_S26  = REPO_ROOT / "palettes_S26.json"
 EMBED_DIR     = REPO_ROOT / "snapshots" / "embeddings"
 OUT_FILE      = REPO_ROOT / "snapshots" / "styles" / "style_clusters.json"
+DEDUP_FILE    = REPO_ROOT / "snapshots" / "visual_dedup.json"
+
+# Visual near-duplicate detection threshold. Pairs of products whose
+# FashionCLIP cos sim is above this cutoff get treated as the same product
+# (same design photographed twice or the same SKU in a colourway pair the
+# user does not want listed twice). 0.97 is conservative — at this level
+# the dropped files are unambiguous duplicates; 0.95 starts to remove
+# "same model different colourway" pairs that are editorially valuable.
+VISUAL_DEDUP_THRESHOLD = 0.97
 
 # FashionCLIP embeddings, keyed by (brand, season). Used for the L2 sub-
 # clustering pass inside each silhouette.

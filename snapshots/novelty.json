@@ -48,7 +48,8 @@
             "name": "light_grey",
             "coverage": 0.0779
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_162.jpg",
@@ -87,7 +88,8 @@
             "name": "tortoise",
             "coverage": 0.074
           }
-        ]
+        ],
+        "price_eur": 400.0
       },
       {
         "filename": "Bottega_122.jpg",
@@ -126,7 +128,8 @@
             "name": "peach",
             "coverage": 0.1026
           }
-        ]
+        ],
+        "price_eur": 400.0
       },
       {
         "filename": "Bottega_70.jpg",
@@ -165,7 +168,8 @@
             "name": "pink",
             "coverage": 0.0913
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_140.jpg",
@@ -204,7 +208,8 @@
             "name": "light_grey",
             "coverage": 0.0922
           }
-        ]
+        ],
+        "price_eur": 410.0
       },
       {
         "filename": "Bottega_161.jpg",
@@ -243,7 +248,8 @@
             "name": "turquoise",
             "coverage": 0.0795
           }
-        ]
+        ],
+        "price_eur": 400.0
       },
       {
         "filename": "Bottega_121.jpg",
@@ -282,7 +288,8 @@
             "name": "turquoise",
             "coverage": 0.1001
           }
-        ]
+        ],
+        "price_eur": 390.0
       },
       {
         "filename": "Bottega_5.jpg",
@@ -321,7 +328,8 @@
             "name": "brown",
             "coverage": 0.0569
           }
-        ]
+        ],
+        "price_eur": 480.0
       },
       {
         "filename": "Bottega_81.jpg",
@@ -360,7 +368,8 @@
             "name": "burgundy",
             "coverage": 0.095
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_80.jpg",
@@ -399,7 +408,8 @@
             "name": "peach",
             "coverage": 0.0999
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_43.jpg",
@@ -438,7 +448,8 @@
             "name": "red",
             "coverage": 0.0983
           }
-        ]
+        ],
+        "price_eur": 530.0
       },
       {
         "filename": "Bottega_115.jpg",
@@ -477,7 +488,8 @@
             "name": "orange",
             "coverage": 0.0834
           }
-        ]
+        ],
+        "price_eur": 340.0
       },
       {
         "filename": "Bottega_14.jpg",
@@ -516,7 +528,8 @@
             "name": "black",
             "coverage": 0.0923
           }
-        ]
+        ],
+        "price_eur": 440.0
       },
       {
         "filename": "Bottega_109.jpg",
@@ -555,7 +568,8 @@
             "name": "red",
             "coverage": 0.0766
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_99.jpg",
@@ -594,7 +608,8 @@
             "name": "burgundy",
             "coverage": 0.1208
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "Bottega_18.jpg",
@@ -633,7 +648,8 @@
             "name": "light_grey",
             "coverage": 0.0801
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_75.jpg",
@@ -672,7 +688,8 @@
             "name": "dark_grey",
             "coverage": 0.0226
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_62.jpg",
@@ -711,7 +728,8 @@
             "name": "dark_grey",
             "coverage": 0.0302
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_47.jpg",
@@ -750,7 +768,8 @@
             "name": "dark_grey",
             "coverage": 0.0259
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_112.jpg",
@@ -789,7 +808,8 @@
             "name": "light_grey",
             "coverage": 0.1024
           }
-        ]
+        ],
+        "price_eur": 390.0
       },
       {
         "filename": "Bottega_125.jpg",
@@ -828,7 +848,8 @@
             "name": "orange",
             "coverage": 0.0894
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_24.jpg",
@@ -867,7 +888,8 @@
             "name": "dark_grey",
             "coverage": 0.0793
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_23.jpg",
@@ -906,7 +928,8 @@
             "name": "yellow",
             "coverage": 0.0786
           }
-        ]
+        ],
+        "price_eur": 390.0
       },
       {
         "filename": "Bottega_78.jpg",
@@ -945,7 +968,8 @@
             "name": "tortoise",
             "coverage": 0.0738
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_36.jpg",
@@ -984,7 +1008,8 @@
             "name": "tortoise",
             "coverage": 0.0601
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_22.jpg",
@@ -1023,7 +1048,8 @@
             "name": "orange",
             "coverage": 0.0936
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_69.jpg",
@@ -1062,7 +1088,8 @@
             "name": "grey",
             "coverage": 0.0596
           }
-        ]
+        ],
+        "price_eur": 650.0
       },
       {
         "filename": "Bottega_129.jpg",
@@ -1101,7 +1128,8 @@
             "name": "grey",
             "coverage": 0.0818
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_11.jpg",
@@ -1140,7 +1168,8 @@
             "name": "orange",
             "coverage": 0.089
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_116.jpg",
@@ -1179,7 +1208,8 @@
             "name": "dark_grey",
             "coverage": 0.0461
           }
-        ]
+        ],
+        "price_eur": 410.0
       },
       {
         "filename": "Bottega_91.jpg",
@@ -1218,7 +1248,8 @@
             "name": "brown",
             "coverage": 0.109
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_107.jpg",
@@ -1257,7 +1288,8 @@
             "name": "dark_grey",
             "coverage": 0.0883
           }
-        ]
+        ],
+        "price_eur": 450.0
       }
     ],
     "discontinued_products": [
@@ -1296,7 +1328,8 @@
             "name": "burgundy",
             "coverage": 0.083
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "Bottega_92.jpg",
@@ -1333,7 +1366,8 @@
             "name": "burgundy",
             "coverage": 0.0866
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_31.jpg",
@@ -1370,7 +1404,8 @@
             "name": "dark_grey",
             "coverage": 0.0857
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_81.jpg",
@@ -1407,7 +1442,8 @@
             "name": "grey",
             "coverage": 0.0412
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_114.jpg",
@@ -1444,7 +1480,8 @@
             "name": "burgundy",
             "coverage": 0.0946
           }
-        ]
+        ],
+        "price_eur": 410.0
       },
       {
         "filename": "Bottega_86.jpg",
@@ -1481,7 +1518,8 @@
             "name": "brown",
             "coverage": 0.088
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_72.jpg",
@@ -1518,7 +1556,8 @@
             "name": "tortoise",
             "coverage": 0.0815
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_48.jpg",
@@ -1555,7 +1594,8 @@
             "name": "dark_grey",
             "coverage": 0.0756
           }
-        ]
+        ],
+        "price_eur": 360.0
       },
       {
         "filename": "Bottega_84.jpg",
@@ -1587,7 +1627,8 @@
             "name": "dark_grey",
             "coverage": 0.0362
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_79.jpg",
@@ -1624,7 +1665,8 @@
             "name": "burgundy",
             "coverage": 0.0729
           }
-        ]
+        ],
+        "price_eur": 360.0
       },
       {
         "filename": "Bottega_57.jpg",
@@ -1661,7 +1703,8 @@
             "name": "black",
             "coverage": 0.1084
           }
-        ]
+        ],
+        "price_eur": 330.0
       },
       {
         "filename": "Bottega_71.jpg",
@@ -1698,7 +1741,8 @@
             "name": "dark_grey",
             "coverage": 0.1285
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_10.jpg",
@@ -1730,7 +1774,8 @@
             "name": "dark_grey",
             "coverage": 0.034
           }
-        ]
+        ],
+        "price_eur": 400.0
       },
       {
         "filename": "Bottega_98.jpg",
@@ -1767,7 +1812,8 @@
             "name": "dark_grey",
             "coverage": 0.0531
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "Bottega_62.jpg",
@@ -1804,7 +1850,8 @@
             "name": "orange",
             "coverage": 0.1015
           }
-        ]
+        ],
+        "price_eur": 420.0
       },
       {
         "filename": "Bottega_45.jpg",
@@ -1841,7 +1888,8 @@
             "name": "brown",
             "coverage": 0.0681
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "Bottega_37.jpg",
@@ -1878,7 +1926,8 @@
             "name": "dark_grey",
             "coverage": 0.0526
           }
-        ]
+        ],
+        "price_eur": 520.0
       },
       {
         "filename": "Bottega_101.jpg",
@@ -1915,7 +1964,8 @@
             "name": "brown",
             "coverage": 0.1134
           }
-        ]
+        ],
+        "price_eur": 290.0
       },
       {
         "filename": "Bottega_35.jpg",
@@ -1952,7 +2002,8 @@
             "name": "dark_grey",
             "coverage": 0.0834
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_11.jpg",
@@ -1989,7 +2040,8 @@
             "name": "dark_grey",
             "coverage": 0.0727
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_7.jpg",
@@ -2026,7 +2078,8 @@
             "name": "brown",
             "coverage": 0.0704
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_60.jpg",
@@ -2063,7 +2116,8 @@
             "name": "grey",
             "coverage": 0.1024
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_32.jpg",
@@ -2100,7 +2154,8 @@
             "name": "dark_grey",
             "coverage": 0.0596
           }
-        ]
+        ],
+        "price_eur": 330.0
       },
       {
         "filename": "Bottega_58.jpg",
@@ -2137,7 +2192,8 @@
             "name": "gold",
             "coverage": 0.051
           }
-        ]
+        ],
+        "price_eur": 450.0
       },
       {
         "filename": "Bottega_34.jpg",
@@ -2174,7 +2230,8 @@
             "name": "dark_grey",
             "coverage": 0.0534
           }
-        ]
+        ],
+        "price_eur": 370.0
       }
     ]
   },
@@ -2227,7 +2284,8 @@
             "name": "orange",
             "coverage": 0.0337
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_9.jpg",
@@ -2266,7 +2324,8 @@
             "name": "green",
             "coverage": 0.1244
           }
-        ]
+        ],
+        "price_eur": 510.0
       },
       {
         "filename": "D&G_31.jpg",
@@ -2305,7 +2364,8 @@
             "name": "dark_grey",
             "coverage": 0.0551
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_30.jpg",
@@ -2344,7 +2404,8 @@
             "name": "dark_grey",
             "coverage": 0.052
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_15.jpg",
@@ -2383,7 +2444,8 @@
             "name": "peach",
             "coverage": 0.0641
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_8.jpg",
@@ -2422,7 +2484,8 @@
             "name": "peach",
             "coverage": 0.046
           }
-        ]
+        ],
+        "price_eur": 510.0
       },
       {
         "filename": "D&G_52.jpg",
@@ -2461,7 +2524,8 @@
             "name": "grey",
             "coverage": 0.0946
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_36.jpg",
@@ -2500,7 +2564,8 @@
             "name": "orange",
             "coverage": 0.0283
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_47.jpg",
@@ -2539,7 +2604,8 @@
             "name": "white",
             "coverage": 0.0543
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_40.jpg",
@@ -2578,7 +2644,8 @@
             "name": "blue",
             "coverage": 0.0376
           }
-        ]
+        ],
+        "price_eur": 220.0
       },
       {
         "filename": "D&G_6.jpg",
@@ -2617,7 +2684,8 @@
             "name": "orange",
             "coverage": 0.0317
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_5.jpg",
@@ -2656,7 +2724,8 @@
             "name": "blue",
             "coverage": 0.0971
           }
-        ]
+        ],
+        "price_eur": 510.0
       },
       {
         "filename": "D&G_109.jpg",
@@ -2695,7 +2764,8 @@
             "name": "grey",
             "coverage": 0.082
           }
-        ]
+        ],
+        "price_eur": 504.0
       },
       {
         "filename": "D&G_12.jpg",
@@ -2734,7 +2804,8 @@
             "name": "peach",
             "coverage": 0.0285
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_17.jpg",
@@ -2773,7 +2844,8 @@
             "name": "grey",
             "coverage": 0.0464
           }
-        ]
+        ],
+        "price_eur": 220.0
       },
       {
         "filename": "D&G_41.jpg",
@@ -2812,7 +2884,8 @@
             "name": "brown",
             "coverage": 0.0437
           }
-        ]
+        ],
+        "price_eur": 220.0
       },
       {
         "filename": "D&G_13.jpg",
@@ -2851,7 +2924,8 @@
             "name": "white",
             "coverage": 0.0283
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_11.jpg",
@@ -2890,7 +2964,8 @@
             "name": "orange",
             "coverage": 0.0304
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_7.jpg",
@@ -2929,7 +3004,8 @@
             "name": "orange",
             "coverage": 0.0479
           }
-        ]
+        ],
+        "price_eur": 490.0
       },
       {
         "filename": "D&G_53.jpg",
@@ -2968,7 +3044,8 @@
             "name": "orange",
             "coverage": 0.1178
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_114.jpg",
@@ -3007,7 +3084,8 @@
             "name": "gold",
             "coverage": 0.0449
           }
-        ]
+        ],
+        "price_eur": 315.0
       },
       {
         "filename": "D&G_23.jpg",
@@ -3046,7 +3124,8 @@
             "name": "dark_grey",
             "coverage": 0.0451
           }
-        ]
+        ],
+        "price_eur": 315.0
       },
       {
         "filename": "D&G_10.jpg",
@@ -3085,7 +3164,8 @@
             "name": "orange",
             "coverage": 0.04
           }
-        ]
+        ],
+        "price_eur": 490.0
       }
     ],
     "discontinued_products": [
@@ -3124,7 +3204,8 @@
             "name": "pink",
             "coverage": 0.0312
           }
-        ]
+        ],
+        "price_eur": 240.0
       },
       {
         "filename": "D&G_95.jpg",
@@ -3156,7 +3237,8 @@
             "name": "pink",
             "coverage": 0.0179
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "D&G_85.jpg",
@@ -3193,7 +3275,8 @@
             "name": "grey",
             "coverage": 0.026
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_29.jpg",
@@ -3230,7 +3313,8 @@
             "name": "dark_grey",
             "coverage": 0.0366
           }
-        ]
+        ],
+        "price_eur": 345.0
       },
       {
         "filename": "D&G_139.jpg",
@@ -3267,7 +3351,8 @@
             "name": "orange",
             "coverage": 0.0609
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_106.jpg",
@@ -3304,7 +3389,8 @@
             "name": "light_grey",
             "coverage": 0.0256
           }
-        ]
+        ],
+        "price_eur": 240.0
       },
       {
         "filename": "D&G_82.jpg",
@@ -3336,7 +3422,8 @@
             "name": "dark_grey",
             "coverage": 0.0543
           }
-        ]
+        ],
+        "price_eur": 230.0
       },
       {
         "filename": "D&G_127.jpg",
@@ -3373,7 +3460,8 @@
             "name": "dark_grey",
             "coverage": 0.0391
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_87.jpg",
@@ -3410,7 +3498,8 @@
             "name": "dark_grey",
             "coverage": 0.0474
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_158.jpg",
@@ -3437,7 +3526,8 @@
             "name": "light_grey",
             "coverage": 0.0279
           }
-        ]
+        ],
+        "price_eur": 265.0
       },
       {
         "filename": "D&G_86.jpg",
@@ -3474,7 +3564,8 @@
             "name": "white",
             "coverage": 0.0227
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_117.jpg",
@@ -3511,7 +3602,8 @@
             "name": "dark_grey",
             "coverage": 0.0401
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_52.jpg",
@@ -3548,7 +3640,8 @@
             "name": "red",
             "coverage": 0.0373
           }
-        ]
+        ],
+        "price_eur": 315.0
       },
       {
         "filename": "D&G_159.jpg",
@@ -3585,7 +3678,8 @@
             "name": "tortoise",
             "coverage": 0.0466
           }
-        ]
+        ],
+        "price_eur": 265.0
       },
       {
         "filename": "D&G_156.jpg",
@@ -3622,7 +3716,8 @@
             "name": "dark_grey",
             "coverage": 0.0316
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_26.jpg",
@@ -3659,7 +3754,8 @@
             "name": "brown",
             "coverage": 0.0502
           }
-        ]
+        ],
+        "price_eur": 345.0
       },
       {
         "filename": "D&G_84.jpg",
@@ -3691,7 +3787,8 @@
             "name": "dark_grey",
             "coverage": 0.0202
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_142.jpg",
@@ -3728,7 +3825,8 @@
             "name": "brown",
             "coverage": 0.0273
           }
-        ]
+        ],
+        "price_eur": 265.0
       },
       {
         "filename": "D&G_36.jpg",
@@ -3765,7 +3863,8 @@
             "name": "burgundy",
             "coverage": 0.068
           }
-        ]
+        ],
+        "price_eur": 265.0
       },
       {
         "filename": "D&G_149.jpg",
@@ -3802,7 +3901,8 @@
             "name": "grey",
             "coverage": 0.0531
           }
-        ]
+        ],
+        "price_eur": 704.0
       },
       {
         "filename": "D&G_20.jpg",
@@ -3839,7 +3939,8 @@
             "name": "light_grey",
             "coverage": 0.036
           }
-        ]
+        ],
+        "price_eur": 240.0
       },
       {
         "filename": "D&G_125.jpg",
@@ -3876,7 +3977,8 @@
             "name": "dark_grey",
             "coverage": 0.0585
           }
-        ]
+        ],
+        "price_eur": 220.0
       },
       {
         "filename": "D&G_115.jpg",
@@ -3908,7 +4010,8 @@
             "name": "dark_grey",
             "coverage": 0.0178
           }
-        ]
+        ],
+        "price_eur": 240.0
       },
       {
         "filename": "D&G_47.jpg",
@@ -3945,7 +4048,8 @@
             "name": "dark_grey",
             "coverage": 0.0587
           }
-        ]
+        ],
+        "price_eur": 265.0
       },
       {
         "filename": "D&G_160.jpg",
@@ -3982,7 +4086,8 @@
             "name": "dark_grey",
             "coverage": 0.019
           }
-        ]
+        ],
+        "price_eur": 230.0
       },
       {
         "filename": "D&G_138.jpg",
@@ -4019,7 +4124,8 @@
             "name": "dark_grey",
             "coverage": 0.0226
           }
-        ]
+        ],
+        "price_eur": 370.0
       },
       {
         "filename": "D&G_150.jpg",
@@ -4056,7 +4162,8 @@
             "name": "red",
             "coverage": 0.0933
           }
-        ]
+        ],
+        "price_eur": 685.0
       },
       {
         "filename": "D&G_51.jpg",
@@ -4093,7 +4200,8 @@
             "name": "tortoise",
             "coverage": 0.0587
           }
-        ]
+        ],
+        "price_eur": 315.0
       },
       {
         "filename": "D&G_83.jpg",
@@ -4130,7 +4238,8 @@
             "name": "grey",
             "coverage": 0.0549
           }
-        ]
+        ],
+        "price_eur": 315.0
       },
       {
         "filename": "D&G_124.jpg",
@@ -4167,7 +4276,8 @@
             "name": "grey",
             "coverage": 0.0337
           }
-        ]
+        ],
+        "price_eur": 285.0
       },
       {
         "filename": "D&G_62.jpg",
@@ -4204,7 +4314,8 @@
             "name": "brown",
             "coverage": 0.0568
           }
-        ]
+        ],
+        "price_eur": 350.0
       },
       {
         "filename": "D&G_50.jpg",
@@ -4241,7 +4352,8 @@
             "name": "brown",
             "coverage": 0.0464
           }
-        ]
+        ],
+        "price_eur": 285.0
       }
     ]
   }
