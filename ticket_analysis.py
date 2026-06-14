@@ -27,7 +27,7 @@ from pathlib import Path
 import numpy as np
 
 REPO_ROOT       = Path(__file__).parent
-CLUSTER_FILE    = REPO_ROOT / "public" / "cluster_data.json"
+CLUSTER_FILE    = Path("/Users/benja/conan-insight-hub/public/cluster_data.json")
 OUT_FILE        = REPO_ROOT / "snapshots" / "ticket_analysis.json"
 FRONTEND_PUBLIC = Path("/Users/benja/conan-insight-hub/public")
 
@@ -89,14 +89,21 @@ def parse_price(raw: str) -> float | None:
 
 
 def load_brand_products(brand: str) -> list[tuple[str, float]]:
-    """Return [(product_name, price), …] for the brand, skipping rows with
-    no parseable price."""
+    """Return [(product_name, price), …] for the brand. The scrapers used
+    a few different column conventions over time — "Product Name",
+    "Product_ID", "Name" — so we try them all. Rows with no parseable
+    price are dropped silently."""
     csv_path = REPO_ROOT / BRAND_CSVS[brand]
     out: list[tuple[str, float]] = []
     with csv_path.open(encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            name = row.get("Product Name") or row.get("Name") or ""
+            name = (
+                row.get("Product Name")
+                or row.get("Product_ID")
+                or row.get("Name")
+                or ""
+            )
             price = parse_price(row.get("Price", ""))
             if not name or price is None:
                 continue
