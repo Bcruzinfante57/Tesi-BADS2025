@@ -53,11 +53,18 @@ BRAND_DIRS = {
     "YSL":              "ysl",
 }
 
-# Percentile anchor points — the four touchpoints CONAN's card calls out
-# explicitly on the curve. p95 is intentionally not p99 / p100 because
-# the very top is often a single outlier and the editorial reading is
-# weaker than at p95.
-ANCHOR_PERCENTILES = [25, 50, 75, 95]
+# Percentile anchors — five touchpoints CONAN's card surfaces on the
+# curve. Replacing the old [25, 50, 75, 95] set:
+#   • Adds a 5th anchor so right-skewed distributions (Cartier's high-
+#     jewellery satellite at €19k, for instance) get visual coverage on
+#     the right side of the curve — previously p95 still sat far left
+#     of the actual tail.
+#   • Uses p99 instead of p95 for the top anchor so it lands inside the
+#     high-end satellite, not in the dense common-price mass.
+#   • Spreads the lower four across the body of the distribution at
+#     quintile midpoints (p10, p30, p50, p70) so the bottom of the
+#     curve is also represented evenly.
+ANCHOR_PERCENTILES = [10, 30, 50, 70, 99]
 
 # Gaussian KDE bandwidth uses Silverman's rule by default. Resolution
 # of the output curve, in number of x-axis samples.

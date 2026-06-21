@@ -218,12 +218,20 @@
     },
     "anchors": [
       {
-        "percentile": 25,
-        "target_price": 335.0,
-        "actual_price": 340.0,
-        "filename": "Bottega_29.jpg",
-        "url": "/brands/bottega_veneta/3/Bottega_29.jpg",
-        "cluster_id": 3
+        "percentile": 10,
+        "target_price": 280.0,
+        "actual_price": 280.0,
+        "filename": "Bottega_125.jpg",
+        "url": "/brands/bottega_veneta/1/Bottega_125.jpg",
+        "cluster_id": 10
+      },
+      {
+        "percentile": 30,
+        "target_price": 350.0,
+        "actual_price": 350.0,
+        "filename": "Bottega_88.jpg",
+        "url": "/brands/bottega_veneta/9/Bottega_88.jpg",
+        "cluster_id": 9
       },
       {
         "percentile": 50,
@@ -234,15 +242,15 @@
         "cluster_id": 7
       },
       {
-        "percentile": 75,
-        "target_price": 450.0,
-        "actual_price": 450.0,
-        "filename": "Bottega_35.jpg",
-        "url": "/brands/bottega_veneta/12/Bottega_35.jpg",
-        "cluster_id": 12
+        "percentile": 70,
+        "target_price": 432.0,
+        "actual_price": 420.0,
+        "filename": "Bottega_65.jpg",
+        "url": "/brands/bottega_veneta/7/Bottega_65.jpg",
+        "cluster_id": 7
       },
       {
-        "percentile": 95,
+        "percentile": 99,
         "target_price": 520.0,
         "actual_price": 520.0,
         "filename": "Bottega_1.jpg",
@@ -470,12 +478,20 @@
     },
     "anchors": [
       {
-        "percentile": 25,
-        "target_price": 890.0,
-        "actual_price": 890.0,
-        "filename": "Cartier_29.jpg",
-        "url": "/brands/cartier/9/Cartier_29.jpg",
-        "cluster_id": 9
+        "percentile": 10,
+        "target_price": 690.0,
+        "actual_price": 690.0,
+        "filename": "Cartier_15.jpg",
+        "url": "/brands/cartier/14/Cartier_15.jpg",
+        "cluster_id": 14
+      },
+      {
+        "percentile": 30,
+        "target_price": 906.0,
+        "actual_price": 900.0,
+        "filename": "Cartier_38.jpg",
+        "url": "/brands/cartier/15/Cartier_38.jpg",
+        "cluster_id": 15
       },
       {
         "percentile": 50,
@@ -486,20 +502,20 @@
         "cluster_id": 12
       },
       {
-        "percentile": 75,
-        "target_price": 1200.0,
-        "actual_price": 1200.0,
-        "filename": "Cartier_100.jpg",
-        "url": "/brands/cartier/0/Cartier_100.jpg",
+        "percentile": 70,
+        "target_price": 1100.0,
+        "actual_price": 1100.0,
+        "filename": "Cartier_87.jpg",
+        "url": "/brands/cartier/13/Cartier_87.jpg",
         "cluster_id": 13
       },
       {
-        "percentile": 95,
-        "target_price": 2690.0,
-        "actual_price": 2600.0,
-        "filename": "Cartier_125.jpg",
-        "url": "/brands/cartier/13/Cartier_125.jpg",
-        "cluster_id": 13
+        "percentile": 99,
+        "target_price": 8845.0,
+        "actual_price": 9000.0,
+        "filename": "Cartier_131.jpg",
+        "url": "/brands/cartier/17/Cartier_131.jpg",
+        "cluster_id": 17
       }
     ]
   },
@@ -722,7 +738,15 @@
     },
     "anchors": [
       {
-        "percentile": 25,
+        "percentile": 10,
+        "target_price": 240.0,
+        "actual_price": 240.0,
+        "filename": "D&G_17.jpg",
+        "url": "/brands/dolce_and_gabbana/3/D&G_17.jpg",
+        "cluster_id": 3
+      },
+      {
+        "percentile": 30,
         "target_price": 285.0,
         "actual_price": 285.0,
         "filename": "D&G_23.jpg",
@@ -738,7 +762,7 @@
         "cluster_id": 3
       },
       {
-        "percentile": 75,
+        "percentile": 70,
         "target_price": 345.0,
         "actual_price": 345.0,
         "filename": "D&G_1.jpg",
@@ -746,12 +770,12 @@
         "cluster_id": 3
       },
       {
-        "percentile": 95,
-        "target_price": 475.0,
-        "actual_price": 475.0,
-        "filename": "D&G_76.jpg",
-        "url": "/brands/dolce_and_gabbana/2/D&G_76.jpg",
-        "cluster_id": 2
+        "percentile": 99,
+        "target_price": 785.0,
+        "actual_price": 775.0,
+        "filename": "D&G_64.jpg",
+        "url": "/brands/dolce_and_gabbana/0/D&G_64.jpg",
+        "cluster_id": 0
       }
     ]
   },
@@ -974,7 +998,15 @@
     },
     "anchors": [
       {
-        "percentile": 25,
+        "percentile": 10,
+        "target_price": 336.0,
+        "actual_price": 330.0,
+        "filename": "FENDI_37.jpg",
+        "url": "/brands/fendi/2/FENDI_37.jpg",
+        "cluster_id": 2
+      },
+      {
+        "percentile": 30,
         "target_price": 390.0,
         "actual_price": 390.0,
         "filename": "FENDI_94.jpg",
@@ -990,20 +1022,20 @@
         "cluster_id": 0
       },
       {
-        "percentile": 75,
-        "target_price": 420.0,
-        "actual_price": 420.0,
-        "filename": "FENDI_33.jpg",
-        "url": "/brands/fendi/2/FENDI_33.jpg",
-        "cluster_id": 2
+        "percentile": 70,
+        "target_price": 410.0,
+        "actual_price": 410.0,
+        "filename": "FENDI_42.jpg",
+        "url": "/brands/fendi/1/FENDI_42.jpg",
+        "cluster_id": 1
       },
       {
-        "percentile": 95,
-        "target_price": 437.0,
-        "actual_price": 430.0,
-        "filename": "FENDI_47.jpg",
-        "url": "/brands/fendi/2/FENDI_47.jpg",
-        "cluster_id": 2
+        "percentile": 99,
+        "target_price": 470.0,
+        "actual_price": 470.0,
+        "filename": "FENDI_22.jpg",
+        "url": "/brands/fendi/3/FENDI_22.jpg",
+        "cluster_id": 3
       }
     ]
   },
@@ -1226,7 +1258,15 @@
     },
     "anchors": [
       {
-        "percentile": 25,
+        "percentile": 10,
+        "target_price": 330.0,
+        "actual_price": 330.0,
+        "filename": "Prada_1.jpg",
+        "url": "/brands/prada/0/Prada_1.jpg",
+        "cluster_id": 3
+      },
+      {
+        "percentile": 30,
         "target_price": 370.0,
         "actual_price": 370.0,
         "filename": "Prada_48.jpg",
@@ -1242,7 +1282,7 @@
         "cluster_id": 2
       },
       {
-        "percentile": 75,
+        "percentile": 70,
         "target_price": 410.0,
         "actual_price": 410.0,
         "filename": "Prada_42.jpg",
@@ -1250,11 +1290,11 @@
         "cluster_id": 3
       },
       {
-        "percentile": 95,
-        "target_price": 450.0,
-        "actual_price": 450.0,
-        "filename": "Prada_90.jpg",
-        "url": "/brands/prada/2/Prada_90.jpg",
+        "percentile": 99,
+        "target_price": 473.0,
+        "actual_price": 470.0,
+        "filename": "Prada_11.jpg",
+        "url": "/brands/prada/0/Prada_11.jpg",
         "cluster_id": 2
       }
     ]
@@ -1478,7 +1518,15 @@
     },
     "anchors": [
       {
-        "percentile": 25,
+        "percentile": 10,
+        "target_price": 340.0,
+        "actual_price": 340.0,
+        "filename": "YSL_75.jpg",
+        "url": "/brands/ysl/11/YSL_75.jpg",
+        "cluster_id": 11
+      },
+      {
+        "percentile": 30,
         "target_price": 360.0,
         "actual_price": 360.0,
         "filename": "YSL_1.jpg",
@@ -1494,20 +1542,20 @@
         "cluster_id": 13
       },
       {
-        "percentile": 75,
-        "target_price": 390.0,
+        "percentile": 70,
+        "target_price": 389.0,
         "actual_price": 390.0,
-        "filename": "YSL_111.jpg",
-        "url": "/brands/ysl/15/YSL_111.jpg",
+        "filename": "YSL_106.jpg",
+        "url": "/brands/ysl/15/YSL_106.jpg",
         "cluster_id": 15
       },
       {
-        "percentile": 95,
-        "target_price": 450.0,
-        "actual_price": 450.0,
-        "filename": "YSL_109.jpg",
-        "url": "/brands/ysl/7/YSL_109.jpg",
-        "cluster_id": 7
+        "percentile": 99,
+        "target_price": 750.0,
+        "actual_price": 750.0,
+        "filename": "YSL_94.jpg",
+        "url": "/brands/ysl/1/YSL_94.jpg",
+        "cluster_id": 1
       }
     ]
   }
