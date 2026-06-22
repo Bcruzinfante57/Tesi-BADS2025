@@ -152,27 +152,65 @@ def compute_stats(prices: np.ndarray) -> dict:
     }
 
 
-def silverman_bandwidth(x: np.ndarray) -> float:
-    n = max(2, x.size)
-    return 1.06 * float(x.std()) * (n ** (-1 / 5))
-
-
 def kde_curve(prices: np.ndarray) -> dict:
-    """Gaussian KDE on raw prices (not log). Returns x-grid + density."""
+    """Log-binned smoothed histogram of catalogue prices.
+
+    Replaces the previous gaussian KDE. The user's mental model of the
+    chart is "show me where products actually cluster" — a count-based
+    histogram — not "estimate the probability of a product at any
+    price" — which is what a true KDE does. A gaussian KDE smears
+    density beyond the data extrema (the gaussian centered at €450 has
+    a tail that extends to €300, €200, even €0), and rendering that
+    outside-the-data tail confuses viewers who reasonably expect the
+    curve to vanish where the catalogue does.
+
+    The histogram is strictly bounded by [prices.min(), prices.max()]:
+
+      1. Bins are log-spaced between min and max (KDE_RESOLUTION bins).
+         Log spacing gives equal sample density across the chart when
+         the frontend renders on a log-scale x-axis — without it, the
+         lower-price region (where most luxury catalogues peak) gets
+         too few bins to render smoothly.
+
+      2. Counts per bin are gaussian-smoothed with zero-edge padding so
+         the smoothed curve tapers cleanly to zero at the boundaries.
+         The padding is what makes the boundary go to zero — without
+         it the boundary bin would smooth to its own count divided by
+         the kernel partial sum, which is non-zero.
+
+    Output schema kept identical to the old KDE so the frontend doesn't
+    need to know the underlying algorithm changed.
+    """
     if prices.size < 2:
         x = np.array([float(prices[0]), float(prices[0]) + 1])
         return {"x_euros": x.tolist(), "density": [1.0, 1.0]}
+
     lo, hi = float(prices.min()), float(prices.max())
-    pad = max(50.0, (hi - lo) * 0.05)
-    lo, hi = max(0.0, lo - pad), hi + pad
-    x = np.linspace(lo, hi, KDE_RESOLUTION)
-    bw = max(silverman_bandwidth(prices), (hi - lo) / 100)
-    diffs = (x[None, :] - prices[:, None]) / bw
-    weights = np.exp(-0.5 * diffs * diffs) / np.sqrt(2 * np.pi)
-    density = weights.sum(axis=0) / (prices.size * bw)
+    log_lo, log_hi = float(np.log(lo)), float(np.log(hi))
+
+    n_bins = KDE_RESOLUTION
+    log_edges = np.linspace(log_lo, log_hi, n_bins + 1)
+    edges = np.exp(log_edges)
+    counts, _ = np.histogram(prices, bins=edges)
+    bin_centers = np.sqrt(edges[:-1] * edges[1:])  # geometric mean in log space
+
+    # Gaussian smoothing with zero edge padding. Sigma is in "bins"
+    # units; scaled with n_bins so the smoothing kernel always covers
+    # the same fraction of the chart regardless of resolution.
+    sigma = max(2.0, n_bins / 40.0)
+    pad = max(int(np.ceil(3 * sigma)), 3)
+    padded = np.concatenate([np.zeros(pad), counts.astype(float), np.zeros(pad)])
+
+    kx = np.arange(-pad, pad + 1)
+    kernel = np.exp(-0.5 * (kx / sigma) ** 2)
+    kernel /= kernel.sum()
+
+    smoothed_padded = np.convolve(padded, kernel, mode="same")
+    smoothed = smoothed_padded[pad:-pad]
+
     return {
-        "x_euros": [round(v, 1) for v in x.tolist()],
-        "density": [round(v, 8) for v in density.tolist()],
+        "x_euros": [round(v, 1) for v in bin_centers.tolist()],
+        "density": [round(v, 6) for v in smoothed.tolist()],
     }
 
 
