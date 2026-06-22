@@ -53,22 +53,34 @@ BRAND_DIRS = {
     "YSL":              "ysl",
 }
 
-# Percentile anchors — five touchpoints CONAN's card surfaces on the
-# curve. Replacing the old [25, 50, 75, 95] set:
-#   • Adds a 5th anchor so right-skewed distributions (Cartier's high-
-#     jewellery satellite at €19k, for instance) get visual coverage on
-#     the right side of the curve — previously p95 still sat far left
-#     of the actual tail.
-#   • Uses p99 instead of p95 for the top anchor so it lands inside the
-#     high-end satellite, not in the dense common-price mass.
-#   • Spreads the lower four across the body of the distribution at
-#     quintile midpoints (p10, p30, p50, p70) so the bottom of the
-#     curve is also represented evenly.
-ANCHOR_PERCENTILES = [10, 30, 50, 70, 99]
+# Anchor kinds — four statistical landmarks of the price distribution
+# that the frontend KdeCard surfaces as a row of clickable thumbnails
+# in the empty top-right space, with dashed lines connecting each to
+# its actual position on the x-axis.
+#
+# Replaces the older percentile-based anchors (p10/p30/p50/p70/p99).
+# The previous percentile scheme worked for skewed distributions like
+# Cartier but produced overlapping thumbs in tight distributions
+# (Fendi, Prada — where median ≈ p10 ≈ p70 ≈ p90). The four-stat
+# scheme — min / median / mean / max — always renders four distinct
+# touchpoints whose semantics every visitor immediately understands.
+#
+# For each kind we record the target value (the statistic) and the
+# actual_price of the product nearest it.
+ANCHOR_KINDS = ["min", "median", "mean", "max"]
 
 # Gaussian KDE bandwidth uses Silverman's rule by default. Resolution
 # of the output curve, in number of x-axis samples.
-KDE_RESOLUTION = 100
+#
+# Bumped 100 → 300 so the curve has enough density samples to render
+# smoothly in the lower-price region when the frontend uses a log-scale
+# x-axis. With 100 linear samples and a range like Cartier's €0–€19,927,
+# only ~5 samples fall into the dense €450–€1,500 band where the catalogue
+# actually lives — producing a visible "plateau" near the peak instead of
+# a smooth bell. 300 samples give ~15 samples in that same band, which is
+# enough for the bezier-smoothed path on the frontend to render a clean
+# bell-shape.
+KDE_RESOLUTION = 300
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -192,16 +204,25 @@ def cluster_for_product(brand_block: dict, name_stem: str) -> int | None:
 
 
 def pick_anchors(brand: str, products: list[tuple[str, float]], brand_block: dict) -> list[dict]:
-    """For each anchor percentile, pick the product whose price is closest
-    to that percentile value, and resolve its URL + cluster."""
+    """For each anchor kind (min / median / mean / max), pick the product
+    whose price is closest to that statistic and resolve its URL +
+    cluster. Ensures the four returned anchors are four distinct
+    products, even when (e.g.) median == mean.
+    """
     prices = np.array([p for _, p in products])
+    targets: dict[str, float] = {
+        "min":    float(prices.min()),
+        "median": float(np.median(prices)),
+        "mean":   float(prices.mean()),
+        "max":    float(prices.max()),
+    }
     anchors: list[dict] = []
     seen_names: set[str] = set()
     brand_dir = BRAND_DIRS[brand]
-    for pct in ANCHOR_PERCENTILES:
-        target_price = percentile(prices, pct)
-        # Iterate candidates by distance to target until we find one not
-        # already used (so the four anchors are four distinct products).
+    for kind in ANCHOR_KINDS:
+        target_price = targets[kind]
+        # Iterate candidates by distance to the target until we find one
+        # not already used elsewhere in this anchor set.
         order = np.argsort(np.abs(prices - target_price))
         chosen = None
         for idx in order:
@@ -217,12 +238,12 @@ def pick_anchors(brand: str, products: list[tuple[str, float]], brand_block: dic
         url = url_for(brand_dir, name)
         cluster_id = cluster_for_product(brand_block, name)
         anchors.append({
-            "percentile":      pct,
-            "target_price":    round(target_price, 0),
-            "actual_price":    round(price, 0),
-            "filename":        f"{name}.jpg",
-            "url":             url,
-            "cluster_id":      cluster_id,
+            "kind":         kind,
+            "target_price": round(target_price, 0),
+            "actual_price": round(price, 0),
+            "filename":     f"{name}.jpg",
+            "url":          url,
+            "cluster_id":   cluster_id,
         })
     return anchors
 
