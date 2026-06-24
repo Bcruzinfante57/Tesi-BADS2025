@@ -208,6 +208,23 @@ def kde_curve(prices: np.ndarray) -> dict:
     smoothed_padded = np.convolve(padded, kernel, mode="same")
     smoothed = smoothed_padded[pad:-pad]
 
+    # Tukey window — soft cosine taper on the outer 6% of each side so
+    # the smoothed curve closes to zero exactly at the chart edges.
+    # The zero-pad smoothing above already pulls the boundaries down
+    # somewhat, but for catalogues with real product clusters right at
+    # the extrema (Bottega Veneta has a tight knot at €520, very close
+    # to its €530 max), the smoothed boundary still sits high enough to
+    # read as "cut" against the right edge. The window only touches the
+    # outer ~6% on each side; the central bell stays unchanged.
+    taper_frac = 0.06
+    n = smoothed.size
+    n_taper = max(int(round(n * taper_frac)), 1)
+    ramp = 0.5 * (1.0 - np.cos(np.pi * np.arange(n_taper) / max(n_taper, 1)))
+    window = np.ones(n)
+    window[:n_taper] = ramp
+    window[-n_taper:] = ramp[::-1]
+    smoothed = smoothed * window
+
     return {
         "x_euros": [round(v, 1) for v in bin_centers.tolist()],
         "density": [round(v, 6) for v in smoothed.tolist()],
