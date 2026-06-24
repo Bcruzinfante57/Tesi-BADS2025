@@ -38,7 +38,14 @@ BRAND_CSVS = {
     "Cartier":          "images_Cartier/Cartier_products.csv",
     "Dolce & Gabbana":  "images_D&G/dolcegabbana_products.csv",
     "Fendi":            "images_Fendi/Fendi_products.csv",
-    "Prada":            "images_Prada/prada_products.csv",
+    # Switched from the original thesis images_Prada/ (95 mens
+    # accessories scraped in 2025 — bags + small leather goods) to
+    # the 2026 eyewear catalogue. images_Prada_2026/ holds 225 unique
+    # sunglasses across women's, men's and Linea Rossa, deduped by
+    # image URL. The thesis-era folder stays on disk untouched for
+    # the cross-season comparison once we run a proper F25→S26
+    # matching with embeddings.
+    "Prada":            "images_Prada_2026/prada_products.csv",
     "YSL":              "images_ysl/ysl_products.csv",
 }
 

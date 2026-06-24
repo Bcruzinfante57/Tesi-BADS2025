@@ -29,7 +29,10 @@ BRAND_CSVS = {
     "Cartier":          "images_Cartier/Cartier_products.csv",
     "Dolce & Gabbana":  "images_D&G/dolcegabbana_products.csv",
     "Fendi":            "images_Fendi/Fendi_products.csv",
-    "Prada":            "images_Prada/prada_products.csv",
+    # 2026 eyewear catalogue replaces the original thesis mens
+    # accessories pull. 225 deduped sunglasses (women + men + Linea
+    # Rossa) with their current EUR prices.
+    "Prada":            "images_Prada_2026/prada_products.csv",
     "YSL":              "images_ysl/ysl_products.csv",
 }
 
