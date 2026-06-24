@@ -89,6 +89,13 @@ SOURCES = [
         "FashionCLIP_Dolce_and_Gabbana_F25_n161.pt", "images_D&G",
         "FashionCLIP_Dolce_and_Gabbana_S26_n114.pt", "snapshots/S26/raw/dg",
     ),
+    # Prada added 2026-06-24. F25 = thesis original eyewear scrape (95).
+    # S26 = 2026 re-scrape across women + men + Linea Rossa (225).
+    (
+        "Prada",
+        "FashionCLIP_Prada_F25_n95.pt",  "images_Prada",
+        "FashionCLIP_Prada_S26_n225.pt", "images_Prada_2026",
+    ),
 ]
 
 
@@ -124,11 +131,44 @@ def find_unique_files(folder: Path) -> tuple[list[Path], list[int]]:
 
 
 def build_image_url_map(brand: str, season: str) -> dict[str, str]:
+    """Map filename → public URL the frontend can fetch.
+
+    Per-brand folder layout (mirrors the conan-insight-hub public/ tree):
+      Bottega Veneta   F25  /brands/bottega_veneta/N/Bottega_X.jpg
+                       S26  /snapshots/S26/bottega/Bottega_X.jpg
+      Dolce & Gabbana  F25  /brands/dolce_and_gabbana/N/D&G_X.jpg
+                       S26  /snapshots/S26/dg/D&G_X.jpg
+      Prada            F25  /brands/prada/N/Prada_X.jpg            (thesis 2025)
+                       S26  /snapshots/2026/prada/Prada_X.jpg      (2026 re-scrape)
+    """
     if season == "S26":
-        brand_dir = "bottega" if "Bottega" in brand else "dg"
-        folder = FRONTEND_PUBLIC / "snapshots" / "S26" / brand_dir
-        return {p.name: f"/snapshots/S26/{brand_dir}/{p.name}" for p in folder.glob("*.jpg")}
-    brand_dir = "bottega_veneta" if "Bottega" in brand else "dolce_and_gabbana"
+        if "Bottega" in brand:
+            brand_dir = "bottega"
+            folder = FRONTEND_PUBLIC / "snapshots" / "S26" / brand_dir
+            prefix = f"/snapshots/S26/{brand_dir}"
+        elif "Dolce" in brand or "D&G" in brand:
+            brand_dir = "dg"
+            folder = FRONTEND_PUBLIC / "snapshots" / "S26" / brand_dir
+            prefix = f"/snapshots/S26/{brand_dir}"
+        elif "Prada" in brand:
+            # Prada's "S26" is the 2026 re-scrape — frontend keeps it
+            # under snapshots/2026/prada/ to leave the S26 folder
+            # reserved for the Bottega + D&G AW26 reference run.
+            brand_dir = "prada"
+            folder = FRONTEND_PUBLIC / "snapshots" / "2026" / brand_dir
+            prefix = f"/snapshots/2026/{brand_dir}"
+        else:
+            return {}
+        return {p.name: f"{prefix}/{p.name}" for p in folder.glob("*.jpg")}
+
+    # F25 — every brand lives under public/brands/<slug>/<cluster_id>/…jpg
+    brand_dir = {
+        "Bottega Veneta":   "bottega_veneta",
+        "Dolce & Gabbana":  "dolce_and_gabbana",
+        "Prada":            "prada",
+    }.get(brand)
+    if brand_dir is None:
+        return {}
     root = FRONTEND_PUBLIC / "brands" / brand_dir
     return {p.name: "/" + str(p.relative_to(FRONTEND_PUBLIC)).replace("\\", "/")
             for p in root.rglob("*.jpg")}

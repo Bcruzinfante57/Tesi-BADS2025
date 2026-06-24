@@ -40,6 +40,13 @@ PATHS = {
         "F25": "images_D&G",
         "S26": "snapshots/S26/raw/dg",
     },
+    # Prada added 2026-06-24. F25 baseline = the original thesis catalogue
+    # (95 sunglasses scraped in 2025). S26 = the 2026 eyewear re-scrape
+    # (225 sunglasses, women + men + Linea Rossa, deduped by image URL).
+    "Prada": {
+        "F25": "images_Prada",
+        "S26": "images_Prada_2026",
+    },
 }
 
 
@@ -89,8 +96,15 @@ def main():
     t0 = time.time()
     for brand, seasons in PATHS.items():
         for season in seasons:
-            cache = EMBED_DIR / f"FashionCLIP_{slug(brand)}_{season}_n0.pt"
-            # Filename gets renamed with actual N below
+            # Skip if a matching embedding file already exists (any n).
+            # Avoids re-computing Bottega + D&G every time we add a new
+            # brand to the PATHS dict.
+            existing = list(
+                EMBED_DIR.glob(f"FashionCLIP_{slug(brand)}_{season}_n*.pt")
+            )
+            if existing:
+                print(f"  [{brand} {season}] cached: {existing[0].name} — skipping")
+                continue
             t_start = time.time()
             emb, paths = embed_brand_season(model, processor, brand, season)
             cache = EMBED_DIR / f"FashionCLIP_{slug(brand)}_{season}_n{len(paths)}.pt"
