@@ -89,13 +89,13 @@ SOURCES = [
         "FashionCLIP_Dolce_and_Gabbana_F25_n161.pt", "images_D&G",
         "FashionCLIP_Dolce_and_Gabbana_S26_n114.pt", "snapshots/S26/raw/dg",
     ),
-    # Prada added 2026-06-24. F25 = thesis original eyewear scrape (95).
-    # S26 = 2026 re-scrape across women + men + Linea Rossa (225).
-    (
-        "Prada",
-        "FashionCLIP_Prada_F25_n95.pt",  "images_Prada",
-        "FashionCLIP_Prada_S26_n225.pt", "images_Prada_2026",
-    ),
+    # Prada was added briefly (2026-06-24) but the F25 baseline
+    # (thesis 2025 scrape) wasn't actually clean eyewear — the
+    # cross-season match against the 2026 re-scrape produced
+    # unreliable hits/discontinued, so Prada is held back until we
+    # have a proper paired F25 + S26 catalogue. Embeddings stay on
+    # disk (FashionCLIP_Prada_F25_n95.pt, ..._S26_n225.pt) for the
+    # next attempt.
 ]
 
 
